@@ -1,4 +1,4 @@
-# Amazon clone with Firebase and Hooks
+# FRONTEND FOR FINAL PROYECT CERTIFIED TECH DEVELOPER
 
 ----in progress----
 
@@ -7,3 +7,5 @@
 In the project directory, you can run:
 
 ### `npm start`
+### `npm install react router dom`
+### `npm install --save styled-components`
