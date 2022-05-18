@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  width: 100%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-style: Italic;
+  font-size: 20px;
+  line-height: 23px;
+  line-height: 100%;
+  background-color: aqua;
+}
+
+.header_logo_motto {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.4rem;
+}
+
+.logo {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  color: white;
+}
+
+.header_logo {
+  background-color: var(--main-color);
+  width: 71px;
+  height: 52px;
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+  object-fit: contain;
+  border: 1px solid;
+  box-shadow: 11px -1px 15px 1px rgba(0, 0, 0, 0.34);
+  border-radius: 0.4rem;
+}
+
+.header_motto {
+  color: black;
+  text-decoration: none;
+}
+
+.header_login {
+  width: 206px;
+  height: 40px;
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+  margin-top: 0.9rem;
+  padding: 0.7rem;
+  border-radius: 0.3rem;
+  background-color: white;
+  border: 1px solid;
+  color: var(--main-color);
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  justify-content: flex-end;
+  
+}
+
+@media screen and (min-width: 320px) and (max-width: 960px) {
+    .header_motto{
+        display: none;
+    }
+}
