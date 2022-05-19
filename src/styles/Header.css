@@ -1,22 +1,25 @@
 .header {
-  display: flex;
   width: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-style: Italic;
   font-size: 20px;
   line-height: 23px;
   line-height: 100%;
-  background-color: aqua;
+  background-color: gray;
+  height: 70px;
+}
+
+.header_wrapper{
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  font-size: 2em;
 }
 
 .header_logo_motto {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 1.4rem;
-}
-
-.logo {
   margin-left: 0.5rem;
   margin-top: 0.5rem;
   display: flex;
@@ -47,9 +50,7 @@
 .header_login {
   width: 206px;
   height: 40px;
-  margin-left: 1.3rem;
-  margin-right: 1.3rem;
-  margin-top: 0.9rem;
+  margin:1.3rem;
   padding: 0.7rem;
   border-radius: 0.3rem;
   background-color: white;
@@ -59,8 +60,22 @@
   font-weight: 700;
   font-size: 1rem;
 
-  justify-content: flex-end;
-  
+  align-self: flex-end;
+}
+
+.items{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 10rem;
+}
+
+.items_title{
+  font-size: 1.5rem;
+  font-weight: 400;
+  align-self: flex-end;
+  margin-right: rem;
+  color: white;
 }
 
 @media screen and (min-width: 320px) and (max-width: 960px) {
@@ -68,3 +83,4 @@
         display: none;
     }
 }
+

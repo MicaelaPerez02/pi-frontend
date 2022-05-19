@@ -3,18 +3,18 @@ import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 
-import { Container, Wrapper, Menu, MenuItem, MobileIcon } from "./Header.elements";
-import { FaBars, FaTimes} from "react-icons/fa";
-import { IconContext } from "react-icons";
+import { Menu, MenuItem, MobileIcon } from "./Header.elements";
+import  CloseIcon  from '@mui/icons-material/Close';
+import  MenuIcon  from '@mui/icons-material/Menu';
 
 const Navbar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     return (
-        <Container>
-            <Wrapper className='header'>
-                <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
-                    <div className="logo">
+        <Link to="/">
+        <div className='header'>
+            <div className='header_wrapper'>
+                    <div className="header_logo_motto">
                         <img
                             className='header_logo'
                             src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png"
@@ -24,7 +24,7 @@ const Navbar = () => {
                     </div>
 
                     <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                        {showMobileMenu ? <FaTimes /> : <FaBars />}
+                        {showMobileMenu ? <CloseIcon className='close_icon'/> : <MenuIcon/>}
                     </MobileIcon>
 
                     <Menu open={showMobileMenu}>
@@ -36,9 +36,9 @@ const Navbar = () => {
                         </MenuItem>
                     </Menu>
     
-                </IconContext.Provider>
-            </Wrapper>
-        </Container>
+            </div>
+        </div>
+        </Link>
     );
 };
 

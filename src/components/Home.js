@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className='home'>
       <div className='header_home'>
-        {/*<Header />*/}
+        {<Header />}
       </div>
     </div>
   )

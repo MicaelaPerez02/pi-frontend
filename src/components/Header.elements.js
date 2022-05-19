@@ -1,21 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-    width: 100%;
-    height: 70px;
-`;
-
-export const Wrapper = styled.div`
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
-`;
-
-
 export const Menu = styled.ul`
   height: 100%;
   display: flex;
@@ -25,7 +9,7 @@ export const Menu = styled.ul`
     background-color: #23394d;
     position: absolute;
     top: 70px;
-    left: ${({ open }) => (open ? "0" : "-100%")}; //Import
+    left: ${({ open }) => (open ? "0" : "75%")};
     width: 100%;
     height: 90vh;
     justify-content: center;
@@ -45,7 +29,6 @@ export const MenuItem = styled.li`
     align-items: center;
   }
 `;
-
 
 export const MobileIcon = styled.div`
   display: none;
