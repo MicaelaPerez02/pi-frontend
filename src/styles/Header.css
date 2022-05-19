@@ -1,15 +1,13 @@
 .header {
   width: 100%;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-style: Italic;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   line-height: 23px;
   line-height: 100%;
-  background-color: gray;
   height: 70px;
 }
 
-.header_wrapper{
+.header_wrapper {
   max-width: 100%;
   height: 100%;
   display: flex;
@@ -21,66 +19,105 @@
 
 .header_logo_motto {
   margin-left: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 4px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-size: 1.2rem;
   font-family: sans-serif;
-  color: white;
+  color: var(--color4);
 }
 
 .header_logo {
-  background-color: var(--main-color);
+  background-color: var(--color3);
   width: 71px;
   height: 52px;
-  margin-left: 1.3rem;
-  margin-right: 1.3rem;
+  margin-left: 0.5rem;
+  margin-top: 0.3rem;
   object-fit: contain;
   border: 1px solid;
-  box-shadow: 11px -1px 15px 1px rgba(0, 0, 0, 0.34);
   border-radius: 0.4rem;
 }
 
 .header_motto {
+  margin-left: 0.8rem;
+  margin-top: 1.6rem;
   color: black;
   text-decoration: none;
+
+  font-size: 1.2rem;
+  font-weight:200;
+  font-style: italic;
+  line-height: 1.5rem;
+  color: var(--color3);
 }
 
-.header_login {
-  width: 206px;
-  height: 40px;
-  margin:1.3rem;
-  padding: 0.7rem;
-  border-radius: 0.3rem;
-  background-color: white;
-  border: 1px solid;
-  color: var(--main-color);
-
+.header_login_menu {
+  font-size: 1.25rem;
   font-weight: 700;
-  font-size: 1rem;
-
-  align-self: flex-end;
-}
-
-.items{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-top: 10rem;
-}
-
-.items_title{
-  font-size: 1.5rem;
-  font-weight: 400;
-  align-self: flex-end;
-  margin-right: rem;
+  line-height: 1.5rem;
+  text-decoration: none;
   color: white;
 }
 
-@media screen and (min-width: 320px) and (max-width: 960px) {
-    .header_motto{
-        display: none;
-    }
+.header_login {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-decoration: none;
+  color: white;
 }
 
+.header_login:hover,
+.header_login_menu:hover {
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34);
+  transition: all 0.3s ease-in-out;
+}
+
+.header_link {
+  text-decoration: none;
+}
+
+
+/*MEDIAQUERYS*/
+
+@media screen and (min-width: 320px) and (max-width: 960px) {
+  .header_motto {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .header_login_menu {
+    display: none;
+  }
+  .header_login {
+    box-shadow: none;
+    transition: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 206px;
+    height: 40px;
+    margin: 1.3rem;
+   
+    border-radius: 0.3rem;
+    background-color: var(--color4);
+    border: 1px solid;
+    color: var(--main-color);
+
+    font-weight: 700;
+    font-size: 1rem;
+
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .close_icon {
+    position: absolute;
+    top: 0.1rem;
+    right: 18.5rem;
+    z-index: 1;
+  }
+}

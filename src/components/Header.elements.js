@@ -6,12 +6,12 @@ export const Menu = styled.ul`
   justify-content: space-between;
   list-style: none;
   @media screen and (max-width: 767px) {
-    background-color: #23394d;
+    background-color: var(--main-color);
     position: absolute;
-    top: 70px;
-    left: ${({ open }) => (open ? "0" : "75%")};
+    top: 0px;
+    left: ${({ open }) => (open ? "25%" : "100%")};
     width: 100%;
-    height: 90vh;
+    height: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,6 @@ export const Menu = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  height: 100%;
   @media screen and (max-width: 767px) {
     width: 100%;
     height: 70px;
@@ -35,10 +34,14 @@ export const MobileIcon = styled.div`
   @media screen and (max-width: 767px) {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    margin-left: 18rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
     svg {
       fill: #e07924;
       margin-right: 0.5rem;
     }
+    
   }
 `;
