@@ -8,4 +8,4 @@ In the project directory, you can run:
 
 ### `npm start`
 ### `npm install react router dom`
-### `npm install --save styled-components`
+### `npm install react-icons`
