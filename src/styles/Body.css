@@ -21,18 +21,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   color: var(--color3);
 }
 
-.body_input {
+.body_input,
+.calendar_mobile,
+.calendar_desktop {
   width: 95%;
   height: 2.3rem;
-  margin: 0.3rem;
   border-radius: 0.3rem;
+  margin: 0.3rem;
   box-shadow: 0px 1px 5px 0px #00000026;
 }
-
 
 .body_button {
   width: 95%;
@@ -48,8 +49,7 @@
   cursor: pointer;
 }
 
-.calendar_desktop{
-  display:none;
+.rs-picker-menu{
 }
 
 @media screen and (min-width: 375px) and (max-width: 768px) {
@@ -86,6 +86,14 @@
     height: 2.5rem;
     margin-top: 0rem;
     margin-left: 0.5rem;
+  }
+
+  .calendar_mobile {
+    display: none !important;
+  }
+
+  .calendar_desktop {
+    
   }
 }
 
