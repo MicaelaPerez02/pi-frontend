@@ -47,10 +47,10 @@ function Header() {
                     })}
                 </ul>
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
-                    <a href='http://www.facebook.com/' rel="noreferrer" target="_blank" className='icon'><FaFacebook /></a>
-                    <a href='http://www.linkedin.com/' rel="noreferrer" target="_blank" className='icon'><FaLinkedin /></a>
-                    <a href='http://www.instagram.com/' rel="noreferrer" target="_blank" className='icon'><FaInstagramSquare /></a>
-                    <a href='http://www.twitter.com/' rel="noreferrer" target="_blank" className='icon'><FaTwitterSquare /></a>
+                    <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaFacebook /></a>
+                    <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaLinkedin /></a>
+                    <a href='http://www.instagram.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaInstagramSquare /></a>
+                    <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaTwitterSquare /></a>
                 </div>
             </nav>
         </>

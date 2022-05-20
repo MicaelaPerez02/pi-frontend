@@ -10,16 +10,16 @@ function Footer() {
                 <span>HOMU</span>
             </div>
             <div className='footer_menu'>
-                <a href='http://www.facebook.com/' rel="noreferrer" target="_blank" className='footer_icon'>
+                <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
                     <FaFacebook/>
                 </a>
-                <a href='http://www.linkedin.com/' rel="noreferrer" target="_blank" className='footer_icon'>
+                <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
                     <FaLinkedin/>
                 </a>
-                <a href='http://www.twitter.com/' rel="noreferrer" target="_blank" className='footer_icon'>
+                <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
                     <FaTwitterSquare/>
                 </a>
-                <a href='http://www.instagram.com/' rel="noreferrer" target="_blank" className='footer_icon'>
+                <a href='http://www.instagram.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
                     <FaInstagramSquare/>
                 </a>
             </div>
