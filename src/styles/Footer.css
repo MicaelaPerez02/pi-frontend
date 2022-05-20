@@ -42,4 +42,8 @@
     .footer_menu{
         display: inline;
     }
+    .footer_icon{
+        color: var(--light);
+    }
 }
+
