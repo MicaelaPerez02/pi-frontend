@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
+import Body from './Body';
 import '../styles/Home.css';
 
 function Home() {
@@ -10,7 +11,7 @@ function Home() {
                 {< Header />}
             </div>
             <div className='home_body'>
-                <p>ESTO ES EL BODY</p>
+                {< Body/>}
             </div>
             <div className='home_footer'>
                 {< Footer />}
