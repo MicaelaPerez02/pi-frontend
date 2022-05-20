@@ -48,6 +48,10 @@
   cursor: pointer;
 }
 
+.calendar_desktop{
+  display:none;
+}
+
 @media screen and (min-width: 375px) and (max-width: 768px) {
   .body_container {
     height: 16rem;
