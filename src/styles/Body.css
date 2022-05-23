@@ -1,9 +1,9 @@
 .body_container {
   width: 100%;
   height: 42%;
-  position: fixed;
-  left: 0;
+
   background-color: var(--color3);
+  padding: 0.5rem;
   margin-top: 1rem;
 }
 
@@ -23,6 +23,10 @@
   justify-content: center;
   margin-top: 0rem;
   color: var(--color3);
+}
+
+.calendar_desktop {
+  display: none !important;
 }
 
 .body_input,
@@ -47,9 +51,6 @@
   font-weight: 700;
   text-align: center;
   cursor: pointer;
-}
-
-.rs-picker-menu{
 }
 
 @media screen and (min-width: 375px) and (max-width: 768px) {
@@ -93,9 +94,12 @@
   }
 
   .calendar_desktop {
-    
+    display: block !important;
+    width: 15.8rem;
   }
 }
+
+
 
 @media screen and (min-width: 1024px) {
   .body_container {

@@ -1,0 +1,64 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories_info {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.7rem;
+  margin-top: 1rem;
+}
+
+.categories_item img {
+  width: 100%;
+  height: 18rem;
+  object-fit: contain;
+}
+
+.card_box {
+  display: flex;
+  flex-direction: column;
+  flex: wrap;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border: 1px solid #f3f1ed;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  cursor: pointer;
+}
+
+.categories_name {
+  padding-left: 1rem;
+  font-size: 1.25rem;
+}
+
+.categories_description {
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .categories_item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card_box{
+    width: 45%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {  
+    .card_box{
+      flex: 20%;
+      height: 15rem;
+    }
+}

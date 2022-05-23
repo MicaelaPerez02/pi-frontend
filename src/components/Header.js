@@ -12,15 +12,15 @@ function Header() {
     const showSidebar = () => setSidebar(!sidebar);
 
     return (
-        <>
+        <div className='header'>
             <div className='header_container'>
                 <div className="header_logo_motto">
                     <img
                         className='header_logo'
-                        src="https://pbs.twimg.com/media/FCz8CeXXMA88prw.png"
+                        src="https://ibb.co/hc9d2mV"
                         alt='Logo Empresa'
                     />
-                    <p className='header_motto'>Sentite como en tu hogar</p>
+                    <p className='header_motto'>You are in the right place</p>
                 </div>
                 <div className="navbar">
                     <Link to="/" className='menu-bars'>
@@ -53,7 +53,7 @@ function Header() {
                     <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaTwitterSquare /></a>
                 </div>
             </nav>
-        </>
+        </div>
     )
 }
 

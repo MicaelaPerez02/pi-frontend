@@ -1,16 +1,12 @@
-.header_container{
+.header_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
 .navbar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 .menu-bars {
@@ -28,7 +24,7 @@
   position: fixed;
   top: 0;
   right: -100%;
-  z-index: 2;
+  z-index: 100;
   transition: 1s;
 }
 
@@ -95,6 +91,21 @@
 .header_logo {
   background-color: var(--color3);
   width: 71px;
+  
+  @media screen and (min-width: 768px) {
+    .categories_item {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card_box {
+      width: 45%;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
   height: 52px;
   object-fit: contain;
   border: 1px solid;
@@ -131,10 +142,6 @@
   margin-left: 1.3rem;
 }
 
-span {
-  margin-left: 1.3rem;
-}
-
 .menu_footer.active {
   right: 0;
   transition: 1.5s;
@@ -162,17 +169,17 @@ span {
     display: none;
   }
 
-  .nav-menu{
-    display:none;
+  .nav-menu {
+    display: none;
   }
 
   .header_button {
     display: inline-block;
     margin-left: 3rem;
-    
+
     position: relative;
     top: 0;
-    
+
     width: 206px;
     height: 40px;
     margin-top: 1.3rem;

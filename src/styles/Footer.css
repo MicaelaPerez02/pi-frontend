@@ -6,7 +6,7 @@
     background-color: var(--main-color);
     align-items: center;
     padding: 0 1.5rem 0 1rem;
-    position: fixed;
+    
     bottom: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -43,6 +43,10 @@
     }
     .footer_icon{
         color: var(--light);
+    }
+
+    .footer{
+        position: relative;
     }
 }
 
