@@ -4,6 +4,7 @@ import { useState } from 'react';
 import 'rsuite/dist/rsuite.min.css';
 import DateRangePicker from 'rsuite/DateRangePicker';
 import Categories from './Categories';
+import Cards from './Cards';
 
 function Body() {
     const [setDate] = useState(new Date());
@@ -25,6 +26,9 @@ function Body() {
             </div>
             <div className='categories'>
                 <Categories />
+            </div>
+            <div className='cards'>
+                <Cards />
             </div>
         </>
     )

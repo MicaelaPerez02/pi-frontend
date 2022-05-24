@@ -59,6 +59,5 @@
 @media screen and (min-width: 1024px) {  
     .card_box{
       flex: 20%;
-      height: 15rem;
     }
 }
