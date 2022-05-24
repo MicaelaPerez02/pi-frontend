@@ -194,7 +194,7 @@
   }
 
   .card_box_recomendations{
-    flex: 50%;
+    flex: 45%;
     height: 22.8rem;
   }
 
@@ -208,6 +208,6 @@
   }
 
   .img_container{
-    width: 250%;
+    width: 200%;
   }
 }
