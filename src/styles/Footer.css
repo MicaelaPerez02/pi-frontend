@@ -44,10 +44,5 @@
     .footer_icon{
         color: var(--light);
     }
-
-    .footer{
-        position:absolute;
-        bottom: 0;
-    }
 }
 

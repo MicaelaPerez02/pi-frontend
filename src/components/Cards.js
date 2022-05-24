@@ -15,28 +15,30 @@ function Cards() {
                                 <div className='img_container'>
                                     <img src={item.url} alt={item.name} />
                                 </div>
-                                <div className='rating'>
-                                    <span><p className='hotel'> HOTEL </p>{
-                                        Array(item.rating)
-                                            .fill()
-                                            .map((_) => (
-                                                <p key={item.rating}>⭐</p>
-                                            ))
-                                    }</span>
-                                    <p className="review">{item.review}</p>
-                                </div>
-                                <div className='title'>
-                                    <p>{item.title}</p>
-                                </div>
-                                <div className='distances'>
-                                    <p><FaMapMarkerAlt className='icon_map' /> {item.ubication}</p>
-                                    <span>{item.watch}</span>
-                                </div>
-                                <div className='description'>
-                                    <p>{item.description}<span className='more'>...continuar leyendo</span></p>
-                                </div>
-                                <div className='button'>
-                                    <button>Ver más</button>
+                                <div className='flex_deskt'>
+                                    <div className='rating'>
+                                        <span><p className='hotel'> HOTEL </p>{
+                                            Array(item.rating)
+                                                .fill()
+                                                .map((_) => (
+                                                    <p key={item.id++}>⭐</p>
+                                                ))
+                                        }</span>
+                                        <p className="review">{item.review}</p>
+                                    </div>
+                                    <div className='title'>
+                                        <p>{item.title}</p>
+                                    </div>
+                                    <div className='distances'>
+                                        <p><FaMapMarkerAlt className='icon_map' /> {item.ubication}</p>
+                                        <span>{item.watch}</span>
+                                    </div>
+                                    <div className='description'>
+                                        <p>{item.description}<span className='more'>...continuar leyendo</span></p>
+                                    </div>
+                                    <div className='button'>
+                                        <button>Ver más</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
