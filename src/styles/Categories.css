@@ -49,15 +49,20 @@
     justify-content: center;
   }
 
-  .card_box{
+  .card_box {
     width: 45%;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
+
+  .categories_item img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
-@media screen and (min-width: 1024px) {  
-    .card_box{
-      flex: 20%;
-    }
+@media screen and (min-width: 1024px) {
+  .card_box {
+    flex: 20%;
+  }
 }
