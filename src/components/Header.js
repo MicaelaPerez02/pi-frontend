@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { SidebarData } from './SidebarData';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
 import '../styles/Header.css';
+import Login from './Login';
 
 function Header() {
     const [sidebar, setSidebar] = useState(false);
@@ -26,7 +27,9 @@ function Header() {
                     <Link to="/" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
+                    <Link to="/login">
                     <button className='header_button'>Inicia Sesion</button>
+                    </Link>
                     <button className='header_button'>Crear cuenta</button>
                 </div>
             </div>
