@@ -5,27 +5,74 @@ import HeaderRegister from "./Header-Register";
 import "../styles/Header.css";
 import Footer from "./Footer";
 import "../styles/Footer.css";
+import {AiOutlineEyeInvisible, AiOutlineEye} from "react-icons/ai";
+import { useState } from "react";
+
 
 function Register() {
+
+    const [state , setState] = useState(false);
+    const toggleBtn = (e) => {{
+        setState(prevState => !prevState);
+    }
+    e.preventDefault();
+
+    
+}
+const [state1 , setState1] = useState(false);
+const toggleBtn2 = (e) => {{
+    setState1(prevState => !prevState);
+}
+e.preventDefault();
+
+}
+
     return (
         <>
         <HeaderRegister/>
         <div className="login">
        
             <form className="form_container">
-                <h1 className="title">Iniciar sesión</h1>
+                <h1 >Crear Cuenta</h1>
                 <form className="input_container">
-                    <h5 className="text">Correo electronico</h5>
-                    <input type="email" name="email" placeholder="Email" />
-                    <h5 className="text">Contraseña</h5>
-                    <input type="password" name="password" placeholder="Password" />
+                  
+                    <div className="container-fullName">
+
+                        <div>
+                            
+
+                    <h4 className="inputFullName">Nombre</h4>
+                    <input className="inputs-Data-fullName" type="text" name="Nombre" placeholder="Nombre" />
+                    </div>
+                    <div>
+                    <h4 className="inputFullName">Apellido</h4>
+                    <input className="inputs-Data-fullName" type="text" name="Apellido" placeholder="Apellido" />
+                    </div>
+                    </div>
+                    <h4 >Email</h4>
+                    <input className="inputs-Data" type="email" name="Email" placeholder="Email"  /> 
+                    <h4 >Contraseña</h4>
+                    <div className="inputWrapper">
+                    <input className="inputs-Data" type={state ? "text": "password"} name="password" placeholder="Password" />
+                    <button className="btn-icon" onClick={toggleBtn}>
+                    {state ?   <AiOutlineEye className="icon-eyeBlind"/>: <AiOutlineEyeInvisible className="icon-eyeBlind"/>}
+                    </button>
+                    </div>
+                    <h4 >Confirmar Contraseña </h4>
+                    <div className="inputWrapper">
+                    <input className="inputs-Data" type={state1 ? "text": "password"} name="password" placeholder="Password" />
+                    <button className="btn-icon" onClick={toggleBtn2}>
+                    {state1 ?   <AiOutlineEye className="icon-eyeBlind"/>: <AiOutlineEyeInvisible className="icon-eyeBlind"/>}
+                    </button>
+                    </div>
                 </form>
+                <br/> <br/>
                 <button className="btn_singIn">Ingresar</button>
                <br/>
                 <p className="text_register">
                     ¿Aún no tenes cuenta?{" "}
-                    <Link to="/register" className="btn_register_link">
-                        Registrate
+                    <Link to="/login" className="btn_register_link">
+                        Inicia Sesión
                     </Link>
                 </p>
             </form>

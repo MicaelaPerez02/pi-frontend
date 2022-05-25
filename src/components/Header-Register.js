@@ -24,7 +24,7 @@ function Header() {
                     <p className='header_motto'>You are in the right place</p>
                 </div>
                 <div className="navbar">
-                    <Link to="/" className='menu-bars'>
+                    <Link to="" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
                     <Link to="/login">
@@ -37,17 +37,27 @@ function Header() {
                 className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
-                        <Link to='/' className='menu-bars'>
+                        <Link to='' className='menu-bars'>
                             <FaWindowClose className='icon_close' />
                         </Link>
                     </li>
-                    {SidebarData.map((item, index) => {
-                        return (
-                            <li key={index} className={item.className}>
-                                <span>{item.title}</span>
+                    <li  className="nav-text-menu">
+                    <Link to="/">
+                                <span>MENÚ</span>
+                                </Link>
                             </li>
-                        )
-                    })}
+                    <li  className="nav-text">
+                        <Link to="/login">
+                                <span>Iniciar Sesión</span>
+                                </Link>
+                            </li>
+                            
+                            <li  className="nav-text">
+                                <Link to="/register">
+                                <span>Crear cuenta</span>
+                                </Link>
+                            </li>
+                    
                 </ul>
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
                     <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaFacebook /></a>
@@ -59,5 +69,6 @@ function Header() {
         </div>
     )
 }
+
 
 export default Header;
