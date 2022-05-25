@@ -27,14 +27,21 @@
 .calendar_desktop {
   display: none !important;
 }
-
-.form_select{
+.form_InputSelect{
+   width:95%;
+   border-radius:6px ;
+   -webkit-border-radius:6px ;
+   -moz-border-radius:6px ;
+   -ms-border-radius:6px ;
+   -o-border-radius:6px ;
+}
+.form_select {
   width: 100%;
-  height: 2.3rem;
-  padding-right: 6.38rem;
-
+  height: 37px;
+  position: relative;
+  top:1px;
   color: var(--color3);
-  border-radius:0.3rem;
+  border-radius: 6px;
 }
 
 .calendar_mobile,
@@ -65,17 +72,17 @@
     height: 16rem;
   }
 
-  .form_select{
-    padding-right: 16rem;
-  }
+  /* .form_select{                          
+    padding-right: 16rem;   <- *no es nesesario*
+  } */
   
 }
 
-@media screen and (min-width:425){
-  .form_select{
+/* @media screen and (min-width:425px){
+  .form_select{                                  <- *no es nesesario*
     padding-right: 15rem;
   }
-}
+} */
 
 @media screen and (min-width: 768px) {
   .body_container {
@@ -95,7 +102,7 @@
     color: var(--color3);
   }
 
-  .body_input {
+  .body_input,.form_InputSelect {
     width: 15.8rem;
     height: 2.5rem;
   }
@@ -116,9 +123,11 @@
     width: 15.8rem;
   }
 
-  .form_select{
-    padding-right: 4rem;
-  }
+  /* .form_select{
+    padding-right: 4rem;              <- *no es nesesario*
+  } */
+
+
 }
 
 

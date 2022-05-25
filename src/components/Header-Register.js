@@ -30,9 +30,7 @@ function Header() {
                     <Link to="/login">
                     <button className='header_button'>Inicia Sesion</button>
                     </Link >
-                    <Link to="/register">
-                    <button className='header_button'>Crear cuenta</button>
-                    </Link>
+                    
                 </div>
             </div>
             <nav

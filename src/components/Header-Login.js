@@ -27,9 +27,7 @@ function Header() {
                     <Link to="/" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
-                    <Link to="/login">
-                    <button className='header_button'>Inicia Sesion</button>
-                    </Link >
+                
                     <Link to="/register">
                     <button className='header_button'>Crear cuenta</button>
                     </Link>

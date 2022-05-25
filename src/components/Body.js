@@ -14,7 +14,7 @@ function Body() {
             <div className='body_container'>
                 <p className='body_title'>Buscar ofertas en hoteles, casas y mucho más</p>
                 <div className='body_input_container'>
-                    <form className='form'>
+                    <form className='form_InputSelect'>
                         <select id="city" name="city" className='form_select'>
                             <option className="form_option" value="" disabled selected hidden>Selecciona el destino</option>
                             {data.city.map((item, index) => (
@@ -33,6 +33,8 @@ function Body() {
             <div className='cards'>
                 <Cards />
             </div>
+
+            <hr/><hr/><hr/><hr/>
         </>
     )
 }

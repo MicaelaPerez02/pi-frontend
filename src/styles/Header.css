@@ -130,10 +130,10 @@
 
 .icon_menu {
   color: var(--color2);
-  position: fixed;
-  top: 2rem;
+  position: absolute;
+  top: 25px;
   margin-right: 1rem;
-  right: 0;
+  right: -1px;
 }
 
 .icon_close {
