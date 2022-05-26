@@ -19,7 +19,6 @@ function Register() {
         }
         e.preventDefault();
 
-
     }
     const [state1, setState1] = useState(false);
     const toggleBtn2 = (e) => {
@@ -43,7 +42,7 @@ function Register() {
                     <h1 >Crear Cuenta</h1>
                     <form className="form_container">
                         <div className="container-fullName">
-                            <div >
+                            <div>
                                 <h4 className="inputFullName">Nombre</h4>
                                 <input className="inputs-Data-fullName" type="text" placeholder="Nombre"{...register('nombre', {
                                     required: {
@@ -57,7 +56,7 @@ function Register() {
                                 })} />
                                 {errors.nombre && <span className="errors">{errors.nombre.message}</span>}
                             </div>
-                            <div >
+                            <div>
                                 <h4 className="inputFullName">Apellido</h4>
                                 <input className="inputs-Data-fullName" type="text" placeholder="Apellido" {...register('apellido', {
                                     required: {
@@ -68,7 +67,7 @@ function Register() {
                                 {errors.apellido && <span className="errors">{errors.apellido.message}</span>}
                             </div>
                         </div>
-                        <h4 >Email</h4>
+                        <h4>Email</h4>
                         <input className="inputEmail" type="email" placeholder="ejemplo@gmail.com"   {...register("email", {
                             required: {
                                 value: true,
@@ -86,7 +85,7 @@ function Register() {
                             <button className="btn-icon" onClick={toggleBtn}>
                                 {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
                             </button>
-                            
+
                         </div>
                         {errors.password && (<span className="errors">{errors.password.message}</span>)}
                         <h4 >Confirmar contraseña </h4>
@@ -104,12 +103,12 @@ function Register() {
                             <button className="btn-icon" onClick={toggleBtn2}>
                                 {state1 ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
                             </button>
-                            
+
                         </div>
                         {errors.passwordConfirmation && (<span className="errors">{errors.passwordConfirmation.message}</span>
-                            )}
+                        )}
                     </form>
-                  
+
                     <input className="btn_singIn" type="submit" value="Ingresar" />
                     {/* <button className="btn_singIn">Ingresar</button> */}
                     <br />
@@ -121,7 +120,7 @@ function Register() {
                     </p>
                 </form>
             </div>
-            <br/><br/><br/> <br/><br/><br/> <br/>
+ 
 
             <Footer />
         </>

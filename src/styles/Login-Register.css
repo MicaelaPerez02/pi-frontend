@@ -7,6 +7,8 @@
   width: 100%;
 
   margin-right: 1rem;
+
+  background-color: #f0ecec;
 }
 
 .title {
@@ -36,13 +38,21 @@ input {
   text-decoration: none;
 }
 
-
-.input_container-Login {
-  width: 45%;
-  font-size: 20px;
+.input1 {
+  margin-bottom: 2rem;
 }
 
-.btn-container{
+.input_container-Login {
+  width: 70%;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.input_container-Login h5 {
+  text-align: left;
+}
+
+.btn-container {
   width: 115%;
   font-size: 20px;
   text-align: center;
@@ -60,13 +70,9 @@ input {
   line-height: 19px;
   letter-spacing: 0em;
   text-align: center;
-}
 
-.text_register {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 14px;
-  text-align: center;
+  width: 70%;
+  height: 40px;
 }
 
 .btn_register_link {
@@ -116,8 +122,8 @@ input {
   background-color: transparent;
 
   position: relative;
-  top: -2.3rem;
-  left: 110%;
+  top: -2.5rem;
+  left: 60%;
 }
 
 .errors {
@@ -126,17 +132,6 @@ input {
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
-  .input_container-Login {
-    width: 70%;
-    font-size: 15px;
-  }
-  .btn_singIn {
-    width: 70%;
-    height: 40px;
-  }
-  input {
-    height: 40px;
-  }
   .text_register {
     font-size: 12px;
   }
@@ -152,5 +147,60 @@ input {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
+  input {
+    width: 65%;
+  }
+
+  .input_container-Login h5 {
+    text-align: center;
+    margin-right: 30%;
+  }
+
+  .input1 {
+    margin-left: 0.5rem;
+  }
+
+  .text_register,
+  .btn_register_link {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  .btn-icon {
+    top: 0.5rem;
+    left: 0;
+  }
+
+  .text_password {
+    margin-left: -12%;
+  }
+
+  .btn-container {
+    width: 55%;
+    margin-right: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .btn-container {
+    width: 30%;
+    padding-bottom: 1rem;
+  }
+
+  input {
+    width: 55%;
+    text-align: center;
+  }
+
+  .text_password{
+    margin-left: -8%;
+  }
 }

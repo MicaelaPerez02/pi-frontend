@@ -26,10 +26,10 @@ function Login() {
                         <div className="input1">
                             <h5>Correo electronico</h5>
                             <input type="email" name="email" placeholder="Email" />
-                        </div> <br /><br />
+                        </div>
                         <div className="input2">
-                            <h5>Contraseña</h5>
-                            <input className="input1" type={state ? "text" : "password"} name="password" placeholder="Password" />
+                            <h5 className="text_password">Contraseña</h5>
+                            <input type={state ? "text" : "password"} name="password" placeholder="Password" />
                             <button className="btn-icon" onClick={toggleBtn}>
                                 {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
                             </button>
@@ -38,7 +38,6 @@ function Login() {
 
                     <div className="btn-container">
                         <button className="btn_singIn">Ingresar</button>
-                        <br />
                     </div>
 
                     <p className="text_register">
