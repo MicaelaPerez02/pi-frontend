@@ -80,72 +80,12 @@ input {
   color: var(--main-color);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                                  Register                                  */
-/* -------------------------------------------------------------------------- */
-
-.container-fullName {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 50%;
-  outline: 2px solid crimson;
-}
-
-.inputs-Data-fullName {
-  width: 400px;
-}
-
-.div_full_name {
-  width: 50%;
-}
-
-.inputEmail {
-  width: 50%;
-}
-.icon-eyeBlind {
-  font-size: 1.5rem;
-}
-
-.inputWrapper {
-  display: flex;
-  width: 50%;
-}
-.inputWrapper1 {
-  display: flex;
-}
-
-.btn-icon {
-  margin-left: -35px;
-  margin-top: 6px;
-  background-color: transparent;
-
-  position: relative;
-  top: -2.5rem;
-  left: 60%;
-}
 
 .errors {
   display: block;
   color: red;
 }
 
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  .text_register {
-    font-size: 12px;
-  }
-
-  .btn_register_link {
-    font-size: 12px;
-  }
-  .title {
-    font-size: 30px;
-  }
-  .container-fullName {
-    flex-direction: column;
-  }
-}
 
 @media screen and (min-width: 768px) {
   input {

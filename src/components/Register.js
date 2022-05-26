@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Login-Register.css";
+import "../styles/Register.css";
 import HeaderRegister from "./Header-Register";
 import "../styles/Header.css";
 import Footer from "./Footer";
@@ -37,28 +37,27 @@ function Register() {
     return (
         <>
             <HeaderRegister />
-            <div className="login">
-                <form className="form_container" onSubmit={handleSubmit(onSubmit)} >
-                    <h1 >Crear Cuenta</h1>
-                    <form className="form_container">
+            <div className="register_container">
+                <form className="form_register" onSubmit={handleSubmit(onSubmit)} >
+                    <h1 className="form_title">Crear Cuenta</h1>
+                    <form className="form_register">
                         <div className="container-fullName">
-                            <div>
-                                <h4 className="inputFullName">Nombre</h4>
-                                <input className="inputs-Data-fullName" type="text" placeholder="Nombre"{...register('nombre', {
-                                    required: {
-                                        value: true,
-                                        message: "*Este campo es requerido"
-                                    },
-                                    maxLength: {
-                                        value: 10,
-                                        message: "El campo nombre debe tener menos de 10 caracteres"
-                                    }
-                                })} />
-                                {errors.nombre && <span className="errors">{errors.nombre.message}</span>}
-                            </div>
+                            <h4 className="inputFullName">Nombre</h4>
+                            <input className="input" type="text" placeholder="Nombre"{...register('nombre', {
+                                required: {
+                                    value: true,
+                                    message: "*Este campo es requerido"
+                                },
+                                maxLength: {
+                                    value: 10,
+                                    message: "El campo nombre debe tener menos de 10 caracteres"
+                                }
+                            })} />
+                            {errors.nombre && <span className="errors">{errors.nombre.message}</span>}
+
                             <div>
                                 <h4 className="inputFullName">Apellido</h4>
-                                <input className="inputs-Data-fullName" type="text" placeholder="Apellido" {...register('apellido', {
+                                <input className="input" type="text" placeholder="Apellido" {...register('apellido', {
                                     required: {
                                         value: true,
                                         message: "*Este campo es requerido"
@@ -67,8 +66,8 @@ function Register() {
                                 {errors.apellido && <span className="errors">{errors.apellido.message}</span>}
                             </div>
                         </div>
-                        <h4>Email</h4>
-                        <input className="inputEmail" type="email" placeholder="ejemplo@gmail.com"   {...register("email", {
+                        <h4 className="inputFullName">Email</h4>
+                        <input className="input" type="email" placeholder="ejemplo@gmail.com"   {...register("email", {
                             required: {
                                 value: true,
                                 message: "*Este campo es requerido"
@@ -79,18 +78,18 @@ function Register() {
                             }
                         })} />
                         {errors.email && <span className="errors">{errors.email.message}</span>}
-                        <h4 >Contraseña</h4>
+                        <h4 className="inputFullName">Contraseña</h4>
                         <div className="inputWrapper">
-                            <input className="inputs-Data" type={state ? "text" : "password"} name="password" placeholder="Password" {...register("password", { required: "*La contraseña es requerida" })} />
-                            <button className="btn-icon" onClick={toggleBtn}>
-                                {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
+                            <input className="input" type={state ? "text" : "password"} name="password" placeholder="Password" {...register("password", { required: "*La contraseña es requerida" })} />
+                            <button className="btn-icon-reg" onClick={toggleBtn}>
+                                {state ? <AiOutlineEye className="icon-eyeBlind-reg" /> : <AiOutlineEyeInvisible className="icon-eyeBlind-reg" />}
                             </button>
 
                         </div>
                         {errors.password && (<span className="errors">{errors.password.message}</span>)}
-                        <h4 >Confirmar contraseña </h4>
+                        <h4 className="inputFullName">Confirmar contraseña </h4>
                         <div className="inputWrapper">
-                            <input className="inputs-Data" type={state1 ? "text" : "password"} placeholder="Password"  {...register("passwordConfirmation", {
+                            <input className="input" type={state1 ? "text" : "password"} placeholder="Password"  {...register("passwordConfirmation", {
                                 required: "*Por favor, confirma la contraseña!",
                                 validate: {
                                     matchesPreviousPassword: (value) => {
@@ -100,18 +99,17 @@ function Register() {
                                 }
                             })}
                             />
-                            <button className="btn-icon" onClick={toggleBtn2}>
-                                {state1 ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
+                            <button className="btn-icon-reg" onClick={toggleBtn2}>
+                                {state1 ? <AiOutlineEye className="icon-eyeBlind-reg" /> : <AiOutlineEyeInvisible className="icon-eyeBlind-reg" />}
                             </button>
 
                         </div>
                         {errors.passwordConfirmation && (<span className="errors">{errors.passwordConfirmation.message}</span>
                         )}
                     </form>
-
-                    <input className="btn_singIn" type="submit" value="Ingresar" />
-                    {/* <button className="btn_singIn">Ingresar</button> */}
-                    <br />
+                    <div className="btn_register">
+                    <input type="submit" value="Crear Cuenta" />
+                    </div>
                     <p className="text_register">
                         ¿Ya tienes cuenta?{" "}
                         <Link to="/login" className="btn_register_link">
@@ -120,7 +118,7 @@ function Register() {
                     </p>
                 </form>
             </div>
- 
+
 
             <Footer />
         </>

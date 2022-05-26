@@ -37,7 +37,9 @@ function Login() {
                     </form>
 
                     <div className="btn-container">
-                        <button className="btn_singIn">Ingresar</button>
+                        <Link to="/">
+                            <button className="btn_singIn">Ingresar</button>
+                        </Link>
                     </div>
 
                     <p className="text_register">
