@@ -42,22 +42,23 @@ function Register() {
                     <h1 className="form_title">Crear Cuenta</h1>
                     <form className="form_register">
                         <div className="container-fullName">
-                            <h4 className="inputFullName">Nombre</h4>
-                            <input className="input" type="text" placeholder="Nombre"{...register('nombre', {
-                                required: {
-                                    value: true,
-                                    message: "*Este campo es requerido"
-                                },
-                                maxLength: {
-                                    value: 10,
-                                    message: "El campo nombre debe tener menos de 10 caracteres"
-                                }
-                            })} />
-                            {errors.nombre && <span className="errors">{errors.nombre.message}</span>}
-
+                            <div>
+                                <h4 className="inputFullName">Nombre</h4>
+                                <input className="input_f" type="text" placeholder="Nombre"{...register('nombre', {
+                                    required: {
+                                        value: true,
+                                        message: "*Este campo es requerido"
+                                    },
+                                    maxLength: {
+                                        value: 10,
+                                        message: "El campo nombre debe tener menos de 10 caracteres"
+                                    }
+                                })} />
+                                {errors.nombre && <span className="errors">{errors.nombre.message}</span>}
+                            </div>
                             <div>
                                 <h4 className="inputFullName">Apellido</h4>
-                                <input className="input" type="text" placeholder="Apellido" {...register('apellido', {
+                                <input className="input_f" type="text" placeholder="Apellido" {...register('apellido', {
                                     required: {
                                         value: true,
                                         message: "*Este campo es requerido"
@@ -66,7 +67,7 @@ function Register() {
                                 {errors.apellido && <span className="errors">{errors.apellido.message}</span>}
                             </div>
                         </div>
-                        <h4 className="inputFullName">Email</h4>
+                        <h4 className="input_text">Email</h4>
                         <input className="input" type="email" placeholder="ejemplo@gmail.com"   {...register("email", {
                             required: {
                                 value: true,
@@ -78,7 +79,7 @@ function Register() {
                             }
                         })} />
                         {errors.email && <span className="errors">{errors.email.message}</span>}
-                        <h4 className="inputFullName">Contraseña</h4>
+                        <h4 className="input_text">Contraseña</h4>
                         <div className="inputWrapper">
                             <input className="input" type={state ? "text" : "password"} name="password" placeholder="Password" {...register("password", { required: "*La contraseña es requerida" })} />
                             <button className="btn-icon-reg" onClick={toggleBtn}>
@@ -87,7 +88,7 @@ function Register() {
 
                         </div>
                         {errors.password && (<span className="errors">{errors.password.message}</span>)}
-                        <h4 className="inputFullName">Confirmar contraseña </h4>
+                        <h4 className="input_text">Confirmar contraseña </h4>
                         <div className="inputWrapper">
                             <input className="input" type={state1 ? "text" : "password"} placeholder="Password"  {...register("passwordConfirmation", {
                                 required: "*Por favor, confirma la contraseña!",
@@ -108,7 +109,7 @@ function Register() {
                         )}
                     </form>
                     <div className="btn_register">
-                    <input type="submit" value="Crear Cuenta" />
+                        <input type="submit" value="Crear Cuenta" />
                     </div>
                     <p className="text_register">
                         ¿Ya tienes cuenta?{" "}

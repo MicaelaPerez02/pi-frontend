@@ -12,7 +12,12 @@
 }
 
 .title {
-  font-size: 40px;
+  height: 40px;
+  width: 390px;
+  left: 11px;
+  top: 125px;
+
+  font-size: 24px;
   font-weight: 700;
   line-height: 28px;
   text-align: center;
@@ -80,13 +85,6 @@ input {
   color: var(--main-color);
 }
 
-
-.errors {
-  display: block;
-  color: red;
-}
-
-
 @media screen and (min-width: 768px) {
   input {
     width: 65%;
@@ -129,7 +127,7 @@ input {
   }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
   .btn-container {
     width: 30%;
     padding-bottom: 1rem;
@@ -140,7 +138,7 @@ input {
     text-align: center;
   }
 
-  .text_password{
+  .text_password {
     margin-left: -8%;
   }
 }
