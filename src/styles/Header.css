@@ -89,8 +89,9 @@
 }
 
 .header_logo {
-  background-color: var(--color3);
+  /* background-color: var(--color3); */
   width: 71px;
+  /* height: 60px; */
   
   @media screen and (min-width: 768px) {
     .categories_item {
@@ -106,9 +107,7 @@
       margin-right: 0.5rem;
     }
   }
-  height: 52px;
-  object-fit: contain;
-  border: 1px solid;
+  /* border: 1px solid; */
   border-radius: 0.4rem;
   margin-left: 1rem;
   margin-top: 1.3rem;

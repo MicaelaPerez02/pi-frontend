@@ -15,14 +15,16 @@ function Header() {
     return (
         <div className='header'>
             <div className='header_container'>
+            <Link to="/">
                 <div className="header_logo_motto">
                     <img
                         className='header_logo'
-                        src="https://ibb.co/hc9d2mV"
+                        src="https://fv9-5.failiem.lv/thumb_show.php?i=p9ex3xf8c&download_checksum=3aecc5a468db23099426e4f52e8a9fce89571c3d&download_timestamp=1653513355"
                         alt='Logo Empresa'
                     />
                     <p className='header_motto'>You are in the right place</p>
                 </div>
+                </Link>
                 <div className="navbar">
                     <Link to="" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />
@@ -42,22 +44,13 @@ function Header() {
                         </Link>
                     </li>
                     <li  className="nav-text-menu">
-                    <Link to="/">
                                 <span>MENÚ</span>
-                                </Link>
                             </li>
                     <li  className="nav-text">
                         <Link to="/login">
                                 <span>Iniciar Sesión</span>
                                 </Link>
                             </li>
-                            
-                            <li  className="nav-text">
-                                <Link to="/register">
-                                <span>Crear cuenta</span>
-                                </Link>
-                            </li>
-                    
                 </ul>
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
                     <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaFacebook /></a>
