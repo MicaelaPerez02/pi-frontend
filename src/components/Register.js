@@ -41,9 +41,9 @@ function Register() {
             <div className="login">
                 <form className="form_container" onSubmit={handleSubmit(onSubmit)} >
                     <h1 >Crear Cuenta</h1>
-                    <form className="input_container">
+                    <form className="form_container">
                         <div className="container-fullName">
-                            <div>
+                            <div >
                                 <h4 className="inputFullName">Nombre</h4>
                                 <input className="inputs-Data-fullName" type="text" placeholder="Nombre"{...register('nombre', {
                                     required: {
@@ -57,7 +57,7 @@ function Register() {
                                 })} />
                                 {errors.nombre && <span className="errors">{errors.nombre.message}</span>}
                             </div>
-                            <div>
+                            <div >
                                 <h4 className="inputFullName">Apellido</h4>
                                 <input className="inputs-Data-fullName" type="text" placeholder="Apellido" {...register('apellido', {
                                     required: {
@@ -69,7 +69,7 @@ function Register() {
                             </div>
                         </div>
                         <h4 >Email</h4>
-                        <input className="inputs-Data" type="email" placeholder="ejemplo@gmail.com"   {...register("email", {
+                        <input className="inputEmail" type="email" placeholder="ejemplo@gmail.com"   {...register("email", {
                             required: {
                                 value: true,
                                 message: "*Este campo es requerido"
@@ -86,8 +86,9 @@ function Register() {
                             <button className="btn-icon" onClick={toggleBtn}>
                                 {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
                             </button>
-                            {errors.password && (<span className="errors">{errors.password.message}</span>)}
+                            
                         </div>
+                        {errors.password && (<span className="errors">{errors.password.message}</span>)}
                         <h4 >Confirmar contraseña </h4>
                         <div className="inputWrapper">
                             <input className="inputs-Data" type={state1 ? "text" : "password"} placeholder="Password"  {...register("passwordConfirmation", {
@@ -103,11 +104,12 @@ function Register() {
                             <button className="btn-icon" onClick={toggleBtn2}>
                                 {state1 ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
                             </button>
-                            {errors.passwordConfirmation && (<span className="errors">{errors.passwordConfirmation.message}</span>
-                            )}
+                            
                         </div>
+                        {errors.passwordConfirmation && (<span className="errors">{errors.passwordConfirmation.message}</span>
+                            )}
                     </form>
-                    <br /> <br />
+                  
                     <input className="btn_singIn" type="submit" value="Ingresar" />
                     {/* <button className="btn_singIn">Ingresar</button> */}
                     <br />
@@ -119,6 +121,7 @@ function Register() {
                     </p>
                 </form>
             </div>
+            <br/><br/><br/> <br/><br/><br/> <br/>
 
             <Footer />
         </>

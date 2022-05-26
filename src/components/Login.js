@@ -22,17 +22,22 @@ function Login() {
         <div className="login">
         
             <form className="form_container">
+
                 <h1 className="title">Iniciar sesión</h1><br/><br/>
-                <form className="input_container-">
-                    <h5 >Correo electronico</h5>
-                    <input type="email" name="email" placeholder="Email" /> <br/><br/>
+                <form className="input_container-Login">
+                    <div className="input1">
+                                      <h5 >Correo electronico</h5>
+                    <input  type="email" name="email" placeholder="Email" />
+                    </div> <br/><br/>
                     <h5 >Contraseña</h5>
-                    <div className="inputWrapper">
-                    <input className="inputs-Data" type={state ? "text": "password"} name="password" placeholder="Password" />
+                    <div className="inputWrapper1">
+                    <input className="input1" type={state ? "text": "password"} name="password" placeholder="Password" />
                     <button className="btn-icon" onClick={toggleBtn}>
                     {state ?   <AiOutlineEye className="icon-eyeBlind"/>: <AiOutlineEyeInvisible className="icon-eyeBlind"/>}
                     </button>
                     </div><hr/>
+                   
+
                 </form>
                 <button className="btn_singIn">Ingresar</button>
                 <br/>
@@ -42,8 +47,11 @@ function Login() {
                         Registrate
                     </Link>
                 </p>
+               
+
             </form>
         </div>
+        <br/><br/><br/> <br/><br/><br/>
         <Footer/>
         </>
     );
