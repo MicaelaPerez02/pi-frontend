@@ -81,7 +81,16 @@ function Register() {
                         {errors.email && <span className="errors">{errors.email.message}</span>}
                         <h4 className="input_text">Contraseña</h4>
                         <div className="inputWrapper">
-                            <input className="input" type={state ? "text" : "password"} name="password" placeholder="Password" {...register("password", { required: "*La contraseña es requerida" })} />
+                            <input className="input" type={state ? "text" : "password"} name="password" placeholder="Password" {...register("password", {
+                                required: {
+                                    value: true,
+                                    message: "*La contraseña es requerida"
+                                },
+                                minLength: {
+                                    value: 7,
+                                    message: "*La contraseña debe tener mas de 6 caracteres"
+                                }
+                            })} />
                             <button className="btn-icon-reg" onClick={toggleBtn}>
                                 {state ? <AiOutlineEye className="icon-eyeBlind-reg" /> : <AiOutlineEyeInvisible className="icon-eyeBlind-reg" />}
                             </button>
