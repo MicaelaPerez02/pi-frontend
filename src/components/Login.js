@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Login-Register.css";
+import "../styles/Login.css";
 import HeaderLogin from "./Header-Login";
 import "../styles/Header.css";
 import Footer from "./Footer";
@@ -27,7 +27,7 @@ function Login() {
                             <h5>Correo electronico</h5>
                             <input type="email" name="email" placeholder="Email" />
                         </div>
-                        <div className="input2">
+                        <div className="input1">
                             <h5 className="text_password">Contraseña</h5>
                             <input type={state ? "text" : "password"} name="password" placeholder="Password" />
                             <button className="btn-icon" onClick={toggleBtn}>
@@ -48,8 +48,6 @@ function Login() {
                             Registrate
                         </Link>
                     </p>
-
-
                 </form>
             </div>
             <br /><br /><br /> <br /><br /><br />
