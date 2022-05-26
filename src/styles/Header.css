@@ -1,6 +1,10 @@
 .header_container {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
+}
+
+.mail{
+  display: none;
 }
 
 .navbar {
@@ -45,6 +49,22 @@
   padding: 0.5rem 0px 0.5rem 1rem;
   list-style: none;
   height: 60px;
+}
+
+.mail-no {
+  display: none;
+}
+
+.mail-yes.active {
+  display: flex;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: var(--main-color);
 }
 
 .nav-text span {
@@ -92,7 +112,7 @@
   /* background-color: var(--color3); */
   width: 71px;
   /* height: 60px; */
-  
+
   @media screen and (min-width: 768px) {
     .categories_item {
       display: flex;
@@ -164,6 +184,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .mail{
+    display: flex;
+  }
+  
   .icon_menu {
     display: none;
   }
