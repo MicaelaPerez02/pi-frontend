@@ -21,7 +21,6 @@ function Login() {
             <div className="login">
 
                 <form className="form_container">
-
                     <h1 className="title">Iniciar sesión</h1><br /><br />
                     <form className="input_container-Login">
                         <div className="input1">

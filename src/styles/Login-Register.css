@@ -29,16 +29,13 @@
 
 input {
   height: 45px;
-  width: 215%;
+  width: 110%;
   border-radius: 5px;
 
   box-shadow: 0px 1px 5px 0px #00000026;
   text-decoration: none;
 }
 
-.input2{
-  width:215%;
-}
 
 .input_container-Login {
   width: 45%;
@@ -93,9 +90,7 @@ input {
 .inputs-Data-fullName {
   width: 400px;
 }
-.input1 {
-  width: 50%;
-}
+
 .div_full_name {
   width: 50%;
 }
@@ -121,7 +116,8 @@ input {
   background-color: transparent;
 
   position: relative;
-  top: 0.5rem;
+  top: -2.3rem;
+  left: 110%;
 }
 
 .errors {
