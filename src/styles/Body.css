@@ -27,21 +27,55 @@
 .calendar_desktop {
   display: none !important;
 }
-.form_InputSelect{
-   width:95%;
-   border-radius:6px ;
-   -webkit-border-radius:6px ;
-   -moz-border-radius:6px ;
-   -ms-border-radius:6px ;
-   -o-border-radius:6px ;
+
+.form_InputSelect {
+  width: 95%;
+  border-radius: 6px;
+  
 }
+
 .form_select {
   width: 100%;
   height: 37px;
   position: relative;
-  top:1px;
-  color: var(--color3);
+  top: 1px;
+  color: gray;
+  padding-left: 0.5rem;
   border-radius: 6px;
+  
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select.form_select {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.form_select:focus {
+  background-image: linear-gradient(45deg, var(--main-color) 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, var(--main-color) 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: var(--main-color);
+  outline: 0;
 }
 
 .calendar_mobile,
@@ -75,7 +109,6 @@
   /* .form_select{                          
     padding-right: 16rem;   <- *no es nesesario*
   } */
-  
 }
 
 /* @media screen and (min-width:425px){
@@ -102,7 +135,8 @@
     color: var(--color3);
   }
 
-  .body_input,.form_InputSelect {
+  .body_input,
+  .form_InputSelect {
     width: 15.8rem;
     height: 2.5rem;
   }
@@ -126,10 +160,7 @@
   /* .form_select{
     padding-right: 4rem;              <- *no es nesesario*
   } */
-
-
 }
-
 
 @media screen and (min-width: 1024px) {
   .body_container {
