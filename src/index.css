@@ -11,26 +11,15 @@
   --color2: #383b58;
   --color3: #545776;
   --color3-gradient: #8689a1;
-  --color4: #f3f1ed;
+  --color4: #d0d0d0;
   --light: white;
 }
 
 :root {
-  --main-color: #56307f;
-  --gradient-main: #7a64aa;
-  --color2: #9ba8c7;
-  --color3: #7a64aa;
-  --color3-gradient: #5c3487;
-  --color4: #a995e4;
-  --light: white;
-}
-
-:root {
-  --main-color: #bc653e;
-  --gradient-main: #e6b672;
-  --color2: #ffcb69;
-  --color3: #cda163;
-  --color3-gradient: #423e38;
-  --color4: #f1eeea;
+  --main-color: #727272;
+  --gradient-main: #000000;
+  --color2: #0d0d0d;
+  --color3: #202026;
+  --color3-gradient: #383939;
   --light: white;
 }
