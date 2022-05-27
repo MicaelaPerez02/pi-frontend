@@ -1,11 +1,9 @@
 import React from 'react';
-import { SidebarData } from './SidebarData';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
-import Login from './Login';
+import { Button } from 'rsuite';
 
 function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
@@ -24,6 +22,7 @@ function Sidebar() {
                     <li className="nav-text-menu">
                         <span>MENÚ</span>
                     </li>
+
                     <li className="nav-text">
                         <Link to="/login">
                             <span>Iniciar Sesión</span>
@@ -48,10 +47,14 @@ function Sidebar() {
                     <FaBars onClick={showSidebar} className='icon_menu' />
                 </Link>
                 <Link to="/login">
-                    <button className='header_button'>Inicia Sesion</button>
+                    <button className='header_button'>
+                        Iniciar Sesión
+                    </button>
                 </Link>
                 <Link to="/register">
-                    <button className='header_button'>Crear cuenta</button>
+                    <button className='header_button'>
+                        Crear cuenta
+                    </button>
                 </Link>
             </div>
         </div>

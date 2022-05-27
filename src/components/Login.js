@@ -1,14 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Login.css";
-import HeaderLogin from "./Header-Login";
-import "../styles/Header.css";
-import Footer from "./Footer";
 import { Profile } from "./Profile";
 import { useState } from "react";
-import SidebarClose from "./SidebarClose";
-import Sidebar from "./Sidebar";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import HeaderLogin from "./HeaderLogin";
+import Footer from "./Footer";
+import "../styles/Login.css";
+import "../styles/Header.css";
 
 function Login() {
     const [inputMail, setInputMail] = useState('');

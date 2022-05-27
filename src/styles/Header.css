@@ -1,9 +1,19 @@
 .header_container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 5rem;
+
+  background-color: var(--light);
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
-.mail{
+.mail {
   display: none;
 }
 
@@ -109,9 +119,7 @@
 }
 
 .header_logo {
-  /* background-color: var(--color3); */
   width: 71px;
-  /* height: 60px; */
 
   @media screen and (min-width: 768px) {
     .categories_item {
@@ -129,8 +137,8 @@
   }
   /* border: 1px solid; */
   border-radius: 0.4rem;
-  margin-left: 1rem;
-  margin-top: 1.3rem;
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
 }
 
 .header_logo_motto {
@@ -138,6 +146,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 
 .header_motto {
   display: none;
@@ -184,10 +193,10 @@
 }
 
 @media screen and (min-width: 768px) {
-  .mail{
+  .mail {
     display: flex;
   }
-  
+
   .icon_menu {
     display: none;
   }
@@ -197,22 +206,30 @@
   }
 
   .header_button {
+    text-decoration: none;
     display: inline-block;
-    margin-left: 3rem;
+    
+    width: 11.25rem;
+    height: 2.8rem;
+   
+    margin: 0rem 1rem 0rem 0rem;
 
-    position: relative;
-    top: 0;
-
-    width: 206px;
-    height: 40px;
-    margin-top: 1.3rem;
-    margin-right: 1.3rem;
     cursor: pointer;
 
     border-radius: 0.3rem;
-    background-color: var(--color4);
-    border: 1px solid;
-    color: var(--main-color);
+    background-color: var(--main-color);
+    border: 1px solid #91c9ff;
+    color: var(--light);
+    transition: 0.5 ease-in-out;
+  }
+
+  .header_button:hover {
+    transition: 0.5s ease-in-out;
+    background: var(--gradient-main);
+  }
+
+  .header_button:hover svg {
+    stroke-dashoffset: -715;
   }
 }
 
