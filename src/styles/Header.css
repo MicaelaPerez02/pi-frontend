@@ -222,20 +222,17 @@
 
     cursor: pointer;
 
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
     background-color: var(--main-color);
-    border: 1px solid #91c9ff;
+    border: 1px solid #060607;
     color: var(--light);
-    transition: 0.5 ease-in-out;
+
+    transition: 0.50s;
   }
 
-  .header_button:hover {
-    transition: 0.5s ease-in-out;
-    background: var(--gradient-main);
-  }
-
-  .header_button:hover svg {
-    stroke-dashoffset: -715;
+  .header_button:hover,
+  .header_button:focus {
+    box-shadow: inset 11.25rem 0 0 0 #f99a01;
   }
 }
 
