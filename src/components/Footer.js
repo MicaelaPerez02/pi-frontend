@@ -19,7 +19,7 @@ function Footer() {
                 <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
                     <FaTwitterSquare/>
                 </a>
-                <a href='http://www.instagram.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
+                <a href='https://www.instagram.com/homuproyect/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
                     <FaInstagramSquare/>
                 </a>
             </div>

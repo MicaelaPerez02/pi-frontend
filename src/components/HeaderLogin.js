@@ -53,7 +53,7 @@ function HeaderRegister() {
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
                     <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaFacebook /></a>
                     <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaLinkedin /></a>
-                    <a href='http://www.instagram.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaInstagramSquare /></a>
+                    <a href='https://www.instagram.com/homuproyect/' rel="noopener noreferrer" target="_blank" className='icon'><FaInstagramSquare /></a>
                     <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaTwitterSquare /></a>
                 </div>
             </nav>

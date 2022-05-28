@@ -23,21 +23,21 @@ function Sidebar() {
                     </li>
 
                     <li className="nav-text">
-                        <Link to="/login">
+                        <Link to="/login" style={{ textDecoration: 'none' }}>
                             <span>Iniciar Sesión</span>
                         </Link>
                     </li>
 
                     <li className="nav-text">
-                        <Link to="/register">
-                            <span>Crear cuenta</span>
+                        <Link to="/register" style={{ textDecoration: 'none' }}>
+                            <span >Crear cuenta</span>
                         </Link>
                     </li>
                 </ul>
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
                     <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaFacebook /></a>
                     <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaLinkedin /></a>
-                    <a href='http://www.instagram.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaInstagramSquare /></a>
+                    <a href='https://www.instagram.com/homuproyect/' rel="noopener noreferrer" target="_blank" className='icon'><FaInstagramSquare /></a>
                     <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaTwitterSquare /></a>
                 </div>
             </nav>

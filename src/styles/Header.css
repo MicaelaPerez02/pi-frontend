@@ -62,30 +62,18 @@
   align-items: center;
 
   position: relative;
-  right: 0;
-  padding: 0.5rem 0px 0.5rem 1rem;
+  right: 10;
+
   list-style: none;
   height: 60px;
+
+  text-decoration: none;
 }
 
-.mail-no {
-  display: none;
-}
-
-.mail-yes.active {
-  display: flex;
-
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: left;
-
-  color: var(--main-color);
-}
 
 .nav-text span {
   text-decoration: none;
+
   color: var(--color2);
   font-size: 1.2rem;
   width: 95%;
@@ -94,22 +82,35 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 3rem;
+  padding: 0.5rem;
   margin-right: 1rem;
   border-radius: 4px;
+}
+
+
+.nav-text span:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  right: 50%;
+  position: absolute;
+  background: var(--color2);
+  transition: width 0.3s ease 0s, right 0.3s ease 0s;
+  width: 0;
+}
+.nav-text span:hover:after { 
+  width: 100%; 
+  right: 0; 
 }
 
 .nav-text-menu {
   text-decoration: none;
   color: var(--light);
-  padding-right: 4rem;
+  padding-right: 1rem;
   font-size: 1.5rem;
   background-color: var(--main-color);
-}
-
-.nav-text span:hover {
-  background-color: var(--color3);
-  cursor: pointer;
 }
 
 .nav-menu-items {
@@ -227,12 +228,12 @@
     border: 1px solid #060607;
     color: var(--light);
 
-    transition: 0.50s;
+    transition: 0.5s;
   }
 
   .header_button:hover,
   .header_button:focus {
-    box-shadow: inset 11.25rem 0 0 0 #f99a01;
+    box-shadow: inset 11.25rem 0 0 0 var(--complementary);
   }
 }
 

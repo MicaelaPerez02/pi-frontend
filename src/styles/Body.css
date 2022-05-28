@@ -87,18 +87,30 @@ select.form_select:focus {
   box-shadow: 0px 1px 5px 0px #00000026;
 }
 
+svg .rs-picker-toggler-caret.rs-icon{
+  background-color: var(--complementary) !important;
+}
+
+
+
 .body_button {
   width: 95%;
   height: 2.5rem;
-  border-radius: 0.3rem;
+  border-radius: 0.2rem;
   background-color: var(--main-color);
-  box-shadow: 0px 2px 4px 0px #0000001f;
   margin-top: 0.5rem;
   color: var(--light);
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
+
+  transition: 0.50s;
+}
+
+.body_button:hover,
+.body_button:focus {
+  box-shadow: inset 11.25rem 0 0 0 var(--complementary);
 }
 
 .categories{
