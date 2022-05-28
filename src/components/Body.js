@@ -8,7 +8,6 @@ import Cards from './Cards';
 import data from '../utils/city.json';
 
 function Body() {
-    const [setDate] = useState(new Date());
     return (
         <>
             <div className='body_container'>
@@ -18,12 +17,12 @@ function Body() {
                         <select id="city" name="city" className='form_select' defaultValue={'DEFAULT'}>
                             <option className="form_option" value="DEFAULT" disabled hidden>Selecciona el destino</option>
                             {data.city.map((item, index) => (
-                            <option key={item.id}>{item.name}</option>
-                        ))}
+                                <option key={item.id}>{item.name}</option>
+                            ))}
                         </select>
                     </form>
-                    <DateRangePicker placeholder="Select Date Range" className='calendar_desktop' />
-                    <DateRangePicker placeholder="Select Date Range" oneTap showOneCalendar hoverRange="week" ranges={[]} className='calendar_mobile' />
+                    <DateRangePicker placeholder="Seleccione el rango de fechas" className='calendar_desktop' format='dd-MM-yyyy' />
+                    <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='calendar_mobile' />
                     <button className='body_button'>Buscar</button>
                 </div>
             </div>
@@ -33,8 +32,6 @@ function Body() {
             <div className='cards'>
                 <Cards />
             </div>
-
-            <hr/><hr/><hr/><hr/>
         </>
     )
 }

@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { Profile } from "./Profile";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import HeaderLogin from "./HeaderLogin";
+import Header from "./Header";
 import Footer from "./Footer";
 import "../styles/Login.css";
-import "../styles/Header.css";
 
 function Login() {
     const [inputMail, setInputMail] = useState('');
@@ -33,7 +32,7 @@ function Login() {
     }
     return (
         <>
-            <HeaderLogin />
+            <Header className="header_login"/>
             <div className="login">
                 <form className="form_container">
                     <h1 className="title">Iniciar sesión</h1><br /><br />

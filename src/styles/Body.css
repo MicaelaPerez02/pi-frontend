@@ -101,6 +101,9 @@ select.form_select:focus {
   cursor: pointer;
 }
 
+.categories{
+  background-color: var(--light);
+}
 
 @media screen and (min-width: 768px) {
   .body_container {

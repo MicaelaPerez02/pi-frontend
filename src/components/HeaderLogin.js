@@ -5,14 +5,13 @@ import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
 import '../styles/Header.css';
 
-function HeaderLogin() {
+function HeaderRegister() {
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => setSidebar(!sidebar);
 
     return (
         <div className='header'>
-        
             <div className='header_container'>
                 <Link to="/">
                     <div className="header_logo_motto">
@@ -24,17 +23,16 @@ function HeaderLogin() {
                         <p className='header_motto'>You are in the right place</p>
                     </div>
                 </Link>
+                <div className="navbar">
+                    <Link to="" className='menu-bars'>
+                        <FaBars onClick={showSidebar} className='icon_menu' />
+                    </Link>
+                    <Link to="/login">
+                        <button className='header_button'>Inicia Sesion</button>
+                    </Link >
 
-                <Link to="" className='menu-bars'>
-                    <FaBars onClick={showSidebar} className='icon_menu' />
-                </Link>
-
-                <Link to="/register">
-                    <button className='header_button'>Crear cuenta</button>
-                </Link>
+                </div>
             </div>
-
-
             <nav
                 className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
@@ -45,11 +43,10 @@ function HeaderLogin() {
                     </li>
                     <li className="nav-text-menu">
                         <span>MENÚ</span>
-
                     </li>
                     <li className="nav-text">
-                        <Link to="/register">
-                            <span>Crear cuenta</span>
+                        <Link to="/login">
+                            <span>Iniciar Sesión</span>
                         </Link>
                     </li>
                 </ul>
@@ -64,4 +61,5 @@ function HeaderLogin() {
     )
 }
 
-export default HeaderLogin;
+
+export default HeaderRegister;

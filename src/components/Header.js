@@ -6,7 +6,6 @@ import Sidebar from './Sidebar';
 import '../styles/Header.css';
 
 
-
 function Header() {
     const [mail, setMail] = useState('');
 
@@ -29,7 +28,7 @@ function Header() {
                             alt='Logo Empresa'
                         />
                     </Link>
-                    <p className='header_motto'>You are in the right place</p>
+                    <p className='header_motto'>Estas en el lugar correcto</p>
                 </div>
                 <Sidebar></Sidebar>
             </div>

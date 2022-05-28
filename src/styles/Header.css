@@ -6,7 +6,14 @@
   width: 100%;
   height: 5rem;
 
-  background-color: var(--color2);
+  background-color: black;
+
+  background: rgb(13, 13, 13);
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 1) 0%,
+    rgba(32, 32, 38, 0.846673703661152) 80%
+  );
 
   position: fixed;
   top: 0;
@@ -147,7 +154,6 @@
   justify-content: flex-start;
 }
 
-
 .header_motto {
   display: none;
 }
@@ -208,10 +214,10 @@
   .header_button {
     text-decoration: none;
     display: inline-block;
-    
+
     width: 11.25rem;
     height: 2.8rem;
-   
+
     margin: 0rem 1rem 0rem 0rem;
 
     cursor: pointer;

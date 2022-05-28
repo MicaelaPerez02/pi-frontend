@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
-import { Button } from 'rsuite';
 
 function Sidebar() {
     const [sidebar, setSidebar] = useState(false);
