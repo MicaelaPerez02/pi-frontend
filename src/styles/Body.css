@@ -4,6 +4,7 @@
   background-color: var(--color3);
   padding: 0.5rem;
   margin-top: 5rem;
+  padding-bottom: 1rem;
 }
 
 .body_title {
@@ -28,15 +29,16 @@
   display: none !important;
 }
 
-.cards{
-  margin-bottom:3rem;
+.cards {
+  margin-bottom: 3rem;
 }
-
 
 /*********FORM SELEC STYLES*********/
 .form_InputSelect {
   width: 95%;
-  border-radius: 6px; 
+  border-radius: 2rem;
+
+  padding-bottom: 1rem;
 }
 
 .form_select {
@@ -46,14 +48,14 @@
   top: 1px;
   color: gray;
   padding-left: 0.5rem;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
-  text-overflow: '';
+  text-overflow: "";
 }
 
 select::-ms-expand {
@@ -71,7 +73,11 @@ select.form_select {
 }
 
 select.form_select:focus {
-  background-image: linear-gradient(45deg, var(--main-color) 50%, transparent 50%),
+  background-image: linear-gradient(
+      45deg,
+      var(--main-color) 50%,
+      transparent 50%
+    ),
     linear-gradient(135deg, transparent 50%, var(--main-color) 50%),
     linear-gradient(to right, #ccc, #ccc);
   background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
@@ -86,13 +92,9 @@ select.form_select:focus {
 .calendar_desktop {
   width: 95%;
   height: 2.3rem;
-  border-radius: 0.3rem;
+  border-radius: 4px;
   margin: 0.3rem;
   box-shadow: 0px 1px 5px 0px #00000026;
-}
-
-svg .rs-picker-toggler-caret.rs-icon{
-  background-color: var(--complementary) !important;
 }
 
 .body_button {
@@ -107,18 +109,19 @@ svg .rs-picker-toggler-caret.rs-icon{
   text-align: center;
   cursor: pointer;
 
-  transition: 0.50s;
+  transition: 0.8s;
+
+  margin-top: 1rem;
 }
 
 .body_button:hover,
 .body_button:focus {
-  box-shadow: inset 11.25rem 0 0 0 var(--complementary);
+  box-shadow: inset 50rem 0 0 0 var(--complementary);
 }
 
-.categories{
+.categories {
   background-color: var(--light);
 }
-
 
 @media screen and (min-width: 768px) {
   .body_container {
@@ -150,6 +153,11 @@ svg .rs-picker-toggler-caret.rs-icon{
     margin-left: 0.5rem;
   }
 
+  .body_button:hover,
+  .body_button:focus {
+    box-shadow: inset 11.25rem 0 0 0 var(--complementary);
+  }
+
   .calendar_mobile {
     display: none !important;
   }
@@ -158,7 +166,6 @@ svg .rs-picker-toggler-caret.rs-icon{
     display: block !important;
     width: 15.8rem;
   }
-
 }
 
 @media screen and (min-width: 1024px) {

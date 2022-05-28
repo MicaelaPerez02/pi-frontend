@@ -46,7 +46,7 @@ function HeaderRegister() {
                     </li>
                     <li className="nav-text">
                         <Link to="/login">
-                            <span>Iniciar Sesión</span>
+                            <span>Crear Cuenta</span>
                         </Link>
                     </li>
                 </ul>

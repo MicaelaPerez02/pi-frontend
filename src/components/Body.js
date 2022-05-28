@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Body.css';
-import { useState } from 'react';
 import 'rsuite/dist/rsuite.min.css';
 import DateRangePicker from 'rsuite/DateRangePicker';
 import Categories from './Categories';

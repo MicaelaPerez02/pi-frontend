@@ -6,21 +6,12 @@
 }
 
 :root {
-  --main-color: #1dbeb4;
-  --gradient-main: #217b75;
-  --color2: #383b58;
-  --color3: #545776;
-  --color3-gradient: #8689a1;
-  --color4: #d0d0d0;
-  --light: white;
-}
-
-:root {
   --main-color: #727272;
   --gradient-main: #000000;
   --color2: #0d0d0d;
   --color3: #202026;
   --color3-gradient: #383939;
+  --color4: #d0d0d0;
   --light: white;
   --complementary: #f99a01;
   }

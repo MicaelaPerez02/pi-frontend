@@ -1,22 +1,10 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import '../styles/Header.css';
 
 
 function Header() {
-    const [mail, setMail] = useState('');
-
-    const getData = () => {
-        return sessionStorage.getItem('mail');
-    }
-
-    useEffect(() => {
-        setMail(getData());
-    }, []);
-
     return (
         <div className='header'>
             <div className='header_container'>
