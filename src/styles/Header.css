@@ -70,7 +70,6 @@
   text-decoration: none;
 }
 
-
 .nav-text span {
   text-decoration: none;
 
@@ -86,7 +85,6 @@
   margin-right: 1rem;
   border-radius: 4px;
 }
-
 
 .nav-text span:after {    
   background: none repeat scroll 0 0 transparent;

@@ -28,6 +28,10 @@
   display: none !important;
 }
 
+.cards{
+  margin-bottom:3rem;
+}
+
 
 /*********FORM SELEC STYLES*********/
 .form_InputSelect {
@@ -91,8 +95,6 @@ svg .rs-picker-toggler-caret.rs-icon{
   background-color: var(--complementary) !important;
 }
 
-
-
 .body_button {
   width: 95%;
   height: 2.5rem;
@@ -116,6 +118,7 @@ svg .rs-picker-toggler-caret.rs-icon{
 .categories{
   background-color: var(--light);
 }
+
 
 @media screen and (min-width: 768px) {
   .body_container {
