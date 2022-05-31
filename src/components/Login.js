@@ -37,12 +37,12 @@ function Login() {
                     <h1 className="title">Iniciar sesión</h1>
 
                     <div className="input1">
-                        <h5>Correo electronico</h5>
-                        <input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
+                        <h5>Correo electrónico</h5>
+                        <input type="email" name="email" placeholder="Ingrese su correo electrónico" className="input" onChange={handleInputChange} />
                     </div>
-                    <div className="input1">
-                        <h5 className="text_password">Contraseña</h5>
-                        <input type={state ? "text" : "password"} name="password" placeholder="Password" />
+                    <div className="input2">
+                        <h5>Contraseña</h5>
+                        <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" className="input" />
                         <button className="btn-icon" onClick={toggleBtn}>
                             {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
                         </button>

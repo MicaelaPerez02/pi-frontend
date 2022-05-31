@@ -27,9 +27,9 @@ function HeaderRegister() {
                     <Link to="" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
-                    <Link to="/login">
-                        <button className='header_button'>Inicia Sesion</button>
-                    </Link >
+                    <Link to="/register">
+                        <button className='header_button'>Crear Cuenta</button>
+                    </Link>
 
                 </div>
             </div>
@@ -45,7 +45,7 @@ function HeaderRegister() {
                         <span>MENÚ</span>
                     </li>
                     <li className="nav-text">
-                        <Link to="/login">
+                        <Link to="/login" style={{ textDecoration: 'none' }}>
                             <span>Crear Cuenta</span>
                         </Link>
                     </li>

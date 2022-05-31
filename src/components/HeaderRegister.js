@@ -45,7 +45,7 @@ function HeaderRegister() {
                         <span>MENÚ</span>
                     </li>
                     <li className="nav-text">
-                        <Link to="/login">
+                        <Link to="/login" style={{ textDecoration: 'none' }}>
                             <span>Iniciar Sesión</span>
                         </Link>
                     </li>
