@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
+import Login from './Login';
 
-function Sidebar() {
+function Sidebar(props) {
+
+    const icon_close = () => {
+        localStorage.clear();
+    }
+
     const [sidebar, setSidebar] = useState(false);
 
     const showSidebar = () => setSidebar(!sidebar);
@@ -20,17 +26,18 @@ function Sidebar() {
                     <li className="nav-text-menu">
                         <span>MENÚ</span>
                     </li>
-
                     <li className="nav-text">
                         <Link to="/login" style={{ textDecoration: 'none' }}>
                             <span>Iniciar Sesión</span>
                         </Link>
                     </li>
-
                     <li className="nav-text">
                         <Link to="/register" style={{ textDecoration: 'none' }}>
                             <span >Crear cuenta</span>
                         </Link>
+                    </li>
+                    <li className="nav-text">
+                        <p>{JSON.parse(localStorage.getItem("email"))} </p>
                     </li>
                 </ul>
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
@@ -41,17 +48,19 @@ function Sidebar() {
                 </div>
             </nav>
             <div className="navbar">
+
                 <Link to="" className='menu-bars'>
                     <FaBars onClick={showSidebar} className='icon_menu' />
                 </Link>
+                <button onClick={() =>{icon_close(); window.location.reload();}}> <FaWindowClose /> Cerrar Sesion </button>
                 <Link to="/login">
                     <button className='header_button'>
-                        Iniciar Sesión
+                        {props.buttonLogin}
                     </button>
                 </Link>
                 <Link to="/register">
                     <button className='header_button'>
-                        Crear cuenta
+                        {props.buttonRegister}
                     </button>
                 </Link>
             </div>

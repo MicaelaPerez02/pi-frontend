@@ -103,20 +103,21 @@ select.form_select:focus {
   border-radius: 0.2rem;
   background-color: var(--main-color);
   margin-top: 0.5rem;
+  
   color: var(--light);
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
 
-  transition: 0.8s;
+  transition: 0.5s;
 
   margin-top: 1rem;
 }
 
 .body_button:hover,
 .body_button:focus {
-  box-shadow: inset 50rem 0 0 0 var(--complementary);
+  box-shadow: left 11.25rem 0 0 0 var(--complementary);
 }
 
 .categories {

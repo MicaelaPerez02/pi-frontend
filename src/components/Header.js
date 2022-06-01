@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import '../styles/Header.css';
 
-
-function Header() {
+function Header(props) {
     return (
         <div className='header'>
             <div className='header_container'>
@@ -18,7 +17,7 @@ function Header() {
                     </Link>
                     <p className='header_motto'>Estas en el lugar correcto</p>
                 </div>
-                <Sidebar></Sidebar>
+                <Sidebar buttonLogin={JSON.parse(localStorage.getItem("email"))} buttonRegister="Crear Cuenta"/>
             </div>
         </div>
     )
