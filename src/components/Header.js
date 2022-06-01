@@ -1,9 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import '../styles/Header.css';
 
 function Header(props) {
+
     return (
         <div className='header'>
             <div className='header_container'>
@@ -17,7 +18,7 @@ function Header(props) {
                     </Link>
                     <p className='header_motto'>Estas en el lugar correcto</p>
                 </div>
-                <Sidebar buttonLogin={JSON.parse(localStorage.getItem("email"))} buttonRegister="Crear Cuenta"/>
+                    <Sidebar buttonLogin={localStorage.getItem("email")? localStorage.getItem("email") :  "Iniciar Sesion"}/>
             </div>
         </div>
     )

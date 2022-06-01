@@ -70,6 +70,26 @@
   text-decoration: none;
 }
 
+.icon_close_sesion{
+  color: var(--main-color);
+  
+  display: flex;
+  align-items: center;
+ 
+  width: 2rem;
+  height: 1rem;
+
+  cursor: pointer;
+}
+
+.name_user{
+  color: var(--main-color);
+  font-size: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0.3rem;
+
+}
+
 .nav-text span {
   text-decoration: none;
 
@@ -161,6 +181,10 @@
   display: none;
 }
 
+.button_sesion{
+  display: none;
+}
+
 .icon_menu {
   color: var(--main-color);
   position: absolute;
@@ -209,6 +233,13 @@
   .nav-menu {
     display: none;
   }
+
+  .session_container{
+    display: inline-block;
+  }
+
+  
+  
 
   .header_button {
     text-decoration: none;

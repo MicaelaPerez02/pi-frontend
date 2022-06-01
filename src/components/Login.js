@@ -10,7 +10,6 @@ import "../styles/Login.css";
 function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [findEmail, setFindEmail] = useState(false);
 
     const singup = () => {
         localStorage.setItem("email", JSON.stringify(email));
@@ -53,7 +52,7 @@ function Login(props) {
                     </div>
                     <div className="btn-container">
                         <Link to="/">
-                            <button className="btn_singIn" onClick={() => { singup() }}>Ingresar</button>
+                            <button className="btn_singIn" onClick={singup}>Ingresar</button>
                         </Link>
                     </div>
 

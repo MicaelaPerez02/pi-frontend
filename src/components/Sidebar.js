@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
+import Header from './Header';
 import Login from './Login';
 
 function Sidebar(props) {
-
     const icon_close = () => {
         localStorage.clear();
     }
@@ -16,6 +16,7 @@ function Sidebar(props) {
     const showSidebar = () => setSidebar(!sidebar);
     return (
         <div>
+
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
@@ -26,20 +27,32 @@ function Sidebar(props) {
                     <li className="nav-text-menu">
                         <span>MENÚ</span>
                     </li>
-                    <li className="nav-text">
-                        <Link to="/login" style={{ textDecoration: 'none' }}>
-                            <span>Iniciar Sesión</span>
-                        </Link>
-                    </li>
-                    <li className="nav-text">
-                        <Link to="/register" style={{ textDecoration: 'none' }}>
-                            <span >Crear cuenta</span>
-                        </Link>
-                    </li>
-                    <li className="nav-text">
-                        <p>{JSON.parse(localStorage.getItem("email"))} </p>
-                    </li>
+                    {props.buttonLogin != localStorage.getItem("email") ? (
+                        <>
+                            <li className="nav-text">
+                                <Link to="/login" style={{ textDecoration: 'none' }}>
+                                    <span>Iniciar Sesión</span>
+                                </Link>
+                            </li>
+                            <li className="nav-text">
+                                <Link to="/register" style={{ textDecoration: 'none' }}>
+                                    <span>Crear cuenta</span>
+                                </Link>
+                            </li>
+                            <li className="nav-text">
+                                <p>{JSON.parse(localStorage.getItem("email"))} </p>
+                            </li>
+                        </>)
+                        :
+                        (
+                            <li className="nav-text" onClick={() => { icon_close(); window.location.reload(); }}>
+                                <p> <FaWindowClose className='icon_close_sesion' /> </p>
+                                <p className='name_user'> Hola  {JSON.parse(localStorage.getItem("email"))} </p>
+                            </li>)
+
+                    }
                 </ul>
+
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
                     <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaFacebook /></a>
                     <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaLinkedin /></a>
@@ -52,20 +65,31 @@ function Sidebar(props) {
                 <Link to="" className='menu-bars'>
                     <FaBars onClick={showSidebar} className='icon_menu' />
                 </Link>
-                <button onClick={() =>{icon_close(); window.location.reload();}}> <FaWindowClose /> Cerrar Sesion </button>
-                <Link to="/login">
-                    <button className='header_button'>
-                        {props.buttonLogin}
-                    </button>
-                </Link>
-                <Link to="/register">
-                    <button className='header_button'>
-                        {props.buttonRegister}
-                    </button>
-                </Link>
+                {props.buttonLogin != localStorage.getItem("email") ? (
+                    <>
+                        <Link to="/login">
+                            <button className='header_button'>
+                                Iniciar Sesion
+                            </button>
+                        </Link>
+                        <Link to="/register">
+                            <button className='header_button'>
+                                Crear Cuenta
+                            </button>
+                        </Link>
+                    </>) : (
+
+                    <div className='session_container'>
+                        <button className="button_session" onClick={() => { icon_close(); window.location.reload(); }}>
+                            Hola {JSON.parse(localStorage.getItem("email"))}
+                            <FaWindowClose />
+                        </button>
+                    </div>)
+
+                }
             </div>
         </div>
     )
 }
 
-export default Sidebar
+export default Sidebar;
