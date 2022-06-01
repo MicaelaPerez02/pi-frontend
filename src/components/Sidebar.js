@@ -81,7 +81,7 @@ function Sidebar(props) {
 
                     <div className='session_container'>
                         <button className="button_session" onClick={() => { icon_close(); window.location.reload(); }}>
-                            Hola {JSON.parse(localStorage.getItem("email"))}
+                            <p className='user_name'>Hola {JSON.parse(localStorage.getItem("email"))}</p>
                             <FaWindowClose />
                         </button>
                     </div>)
