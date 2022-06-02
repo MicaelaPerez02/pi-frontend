@@ -4,6 +4,7 @@ import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
 import "../../styles/Header.css";
+import "../../styles/Sidebar.css";
 
 function Sidebar(props) {
     const icon_close = () => {
@@ -46,7 +47,6 @@ function Sidebar(props) {
                                     <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
                                     <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("email"))}! </p>
                                 </div>
-
                                 <button className='button_close_sesion'> Cerrar Sesión <FaWindowClose className='icon_close_sesion' /> </button>
                             </li>)
 
@@ -54,14 +54,14 @@ function Sidebar(props) {
                 </ul>
 
                 <div className={sidebar ? 'menu_footer active' : 'menu_footer'}>
-                    <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaFacebook /></a>
-                    <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaLinkedin /></a>
-                    <a href='https://www.instagram.com/homuproyect/' rel="noopener noreferrer" target="_blank" className='icon'><FaInstagramSquare /></a>
-                    <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='icon'><FaTwitterSquare /></a>
+                    <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='icon_footer'><FaFacebook /></a>
+                    <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='icon_footer'><FaLinkedin /></a>
+                    <a href='https://www.instagram.com/homuproyect/' rel="noopener noreferrer" target="_blank" className='icon_footer'><FaInstagramSquare /></a>
+                    <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='icon_footer'><FaTwitterSquare /></a>
                 </div>
             </nav>
-            <div className="navbar">
 
+            <div className="navbar">
                 <Link to="" className='menu-bars'>
                     <FaBars onClick={showSidebar} className='icon_menu' />
                 </Link>
@@ -80,7 +80,6 @@ function Sidebar(props) {
                     </>) : (
 
                     <div className='session_container'>
-
                         <button className="button_session" onClick={() => { icon_close(); window.location.reload(); }}>
                             <div className='nav-text-user'>
                                 <p> <FaWindowClose className='icon_close_sesion' /> </p>
