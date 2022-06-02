@@ -26,8 +26,8 @@
   padding-top: 1rem;
 }
 
-.input2 h5,
-.input1 h5 {
+.input2 label,
+.input1 label {
   height: 21px;
   width: 218px;
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
-import '../styles/Header.css';
+import '../../styles/Header.css';
 
 function HeaderRegister() {
     const [sidebar, setSidebar] = useState(false);

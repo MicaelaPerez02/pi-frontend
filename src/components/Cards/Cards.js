@@ -1,6 +1,6 @@
 import React from 'react';
-import data from '../utils/products.json';
-import '../styles/Cards.css';
+import data from '../../utils/products.json';
+import '../../styles/Cards.css';
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 function Cards() {

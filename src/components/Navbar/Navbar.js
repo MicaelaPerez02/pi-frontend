@@ -1,12 +1,10 @@
 import React from 'react';
-import '../styles/Body.css';
+import '../../styles/Navbar.css';
 import 'rsuite/dist/rsuite.min.css';
 import DateRangePicker from 'rsuite/DateRangePicker';
-import Categories from './Categories';
-import Cards from './Cards';
-import data from '../utils/city.json';
+import data from '../../utils/city.json';
 
-function Body() {
+function Navbar() {
     return (
         <>
             <div className='body_container'>
@@ -25,13 +23,7 @@ function Body() {
                     <button className='body_button'>Buscar</button>
                 </div>
             </div>
-            <div className='categories'>
-                <Categories />
-            </div>
-            <div className='cards'>
-                <Cards />
-            </div>
         </>
     )
 }
-export default Body;
+export default Navbar;

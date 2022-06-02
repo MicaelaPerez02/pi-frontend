@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaWindowClose } from 'react-icons/fa';
-import { useState } from 'react';
-import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
-import Sidebar from './Sidebar';
-import '../styles/Header.css';
+import Sidebar from '../Sidebar/Sidebar';
+import '../../styles/Header.css';
 
 function HeaderLogin(props) {
     return (

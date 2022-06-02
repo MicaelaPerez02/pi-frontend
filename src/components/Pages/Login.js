@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
-import { FaWindowClose } from "react-icons/fa";
-import Header from "./Header";
-import Footer from "./Footer";
-import "../styles/Login.css";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import "../../styles/Login.css";
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -14,9 +13,11 @@ function Login(props) {
     const singup = () => {
         localStorage.setItem("email", JSON.stringify(email));
         console.log(localStorage.getItem("email"));
+
+        localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
+        console.log(localStorage.getItem("avatar"));
     }
 
-   
     const [state, setState] = useState(false);
 
     const toggleBtn = (e) => {
@@ -31,10 +32,10 @@ function Login(props) {
     return (
         <>
             <Header email={email} />
-            
+
             <div className="login">
 
-                <form className="form_container">
+                <form className="form_container" >
                     <h1 className="title">Iniciar sesión</h1>
 
                     <div className="input1">
@@ -43,7 +44,7 @@ function Login(props) {
                     </div>
                     <div className="input2">
                         <h5>Contraseña</h5>
-                        
+
                         <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" className="input" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <button className="btn-icon" onClick={toggleBtn}>
                             {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}

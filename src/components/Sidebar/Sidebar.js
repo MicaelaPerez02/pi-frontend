@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagramSquare } from 'react-icons/fa';
-import Header from './Header';
-import Login from './Login';
+import "../../styles/Header.css";
 
 function Sidebar(props) {
     const icon_close = () => {
@@ -39,15 +38,16 @@ function Sidebar(props) {
                                     <span>Crear cuenta</span>
                                 </Link>
                             </li>
-                            <li className="nav-text">
-                                <p>{JSON.parse(localStorage.getItem("email"))} </p>
-                            </li>
                         </>)
                         :
                         (
-                            <li className="nav-text" onClick={() => { icon_close(); window.location.reload(); }}>
-                                <p> <FaWindowClose className='icon_close_sesion' /> </p>
-                                <p className='name_user'> Hola  {JSON.parse(localStorage.getItem("email"))} </p>
+                            <li className="nav-text-user" onClick={() => { icon_close(); window.location.reload(); }}>
+                                <div className='nav-text-user'>
+                                    <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
+                                    <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("email"))}! </p>
+                                </div>
+
+                                <button className='button_close_sesion'> Cerrar Sesión <FaWindowClose className='icon_close_sesion' /> </button>
                             </li>)
 
                     }
@@ -80,10 +80,14 @@ function Sidebar(props) {
                     </>) : (
 
                     <div className='session_container'>
+
                         <button className="button_session" onClick={() => { icon_close(); window.location.reload(); }}>
-                            <p className='user_name'>Hola {JSON.parse(localStorage.getItem("email"))}</p>
-                            <FaWindowClose />
+                            <div className='nav-text-user'>
+                                <p> <FaWindowClose className='icon_close_sesion' /> </p>
+                                <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("email"))}! </p>
+                            </div>
                         </button>
+                        <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
                     </div>)
 
                 }

@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Register.css";
-import "./HeaderRegister";
-import "../styles/Header.css";
-import Footer from "./Footer";
-import "../styles/Footer.css";
+import "../../styles/Register.css";
+import "../Header/HeaderRegister";
+import "../../styles/Header.css";
+import Footer from "../Footer/Footer";
+import "../../styles/Footer.css";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import HeaderRegister from "./HeaderRegister";
+import HeaderRegister from "../Header/HeaderRegister";
 
 
 function Register() {

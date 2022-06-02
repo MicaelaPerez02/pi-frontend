@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Sidebar from './Sidebar';
-import '../styles/Header.css';
+import Sidebar from '../Sidebar/Sidebar';
+import '../../styles/Header.css';
 
 function Header(props) {
 

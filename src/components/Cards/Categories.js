@@ -1,6 +1,6 @@
 import React from 'react';
-import data from '../utils/categories.json';
-import '../styles/Categories.css';
+import data from '../../utils/categories.json';
+import '../../styles/Categories.css';
 
 function Categories() {
     return (
