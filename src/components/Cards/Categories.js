@@ -1,21 +1,28 @@
 import React from 'react';
 import data from '../../utils/categories.json';
 import '../../styles/Categories.css';
+import useFetch from '../../hooks/useFetch';
+import CardCategory from './CardCategory';
 
-function Categories() {
+function Categories(props) {
+    const { data, isLoaded } = useFetch(`/categories/allCategories`);
+
+    const categoryList = data.map((category, index) => {
+        return (
+            <CardCategory
+                key={category.id}
+                url={category.url}
+                title={category.title}
+                description={category.description}
+            />
+        )
+    })
+
     return (
-        <div className='categories'>
-            <p className='categories_info'>Buscar por tipo de alojamiento</p>
-            <div className='categories_item'>
-                {data.categories.map((item, index) => {
-                    return (
-                        <div key={item.id} className='card_box'>
-                            <img className='categories_img' src={item.url} alt={item.name} />
-                            <p className='categories_name'>{item.name}</p>
-                            <p className='categories_description'>{item.description}</p>
-                        </div>
-                    )
-                })}
+        <div className='categoryContainer'>
+            <p className='categoryP'>Buscar por tipo de alojamiento</p>
+            <div key={props.id} className="categoryItem">
+                    {isLoaded ? categoryList : <p>Cargando...</p>}
             </div>
         </div>
     )
