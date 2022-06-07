@@ -43,7 +43,7 @@
   object-fit: cover;
 }
 
-.productRatingContainer{
+.productRatingContainer {
   display: flex;
   flex-direction: row;
 
@@ -53,7 +53,7 @@
   margin: 0.5rem 1rem 0 1rem;
 }
 
-.productRatingFlex{
+.productRatingFlex {
   display: flex;
 }
 
@@ -89,14 +89,13 @@
 .productMap {
   display: flex;
   justify-content: flex-start;
-  
+
   margin: 1rem 0 0 1rem;
 }
 
 .productMap p {
   display: flex;
   align-items: left;
-
 
   font-size: 14px;
   font-weight: bold;
@@ -184,34 +183,38 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .productCardItems {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  .productContainer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color4);
   }
 
   .productCardBox {
     flex-direction: row;
-    flex: 45%;
-    height: 22.8rem;
   }
 
   .productInfoContainer {
-    width: 95%;
+    width: 48%;
     height: 100%;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+  }
+
+  .productImageContainer{
+    height: 20rem;
   }
 
   .productImageContainer img {
-    width: 31rem;
+    width: 15rem;
+    height: 120%;
+    object-fit:cover;
   }
 
-  .productDescription{
+  .productDescription {
     font-size: 1.1rem;
     line-height: 2rem;
   }
 
-  .flex_deskt{
+  .flex_deskt {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
