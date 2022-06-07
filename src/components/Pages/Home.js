@@ -3,7 +3,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
 import Categories from '../Cards/Categories';
-import Cards from '../Cards/Cards';
+import Products from '../Cards/Products';
 import '../../styles/Navbar.css';
 import '../../styles/Home.css';
 
@@ -20,7 +20,7 @@ function Home() {
                 <Categories />
             </div>
             <div className='cards_body'>
-                <Cards />
+                <Products />
             </div>
             <div className='home_footer'>
                 <Footer />
