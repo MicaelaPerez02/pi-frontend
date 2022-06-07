@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 function CardProduct(props) {
     return (
@@ -22,15 +23,17 @@ function CardProduct(props) {
                     <p>{props.title}</p>
                 </div>
                 <div className='productMap'>
-                    <p><FaMapMarkerAlt className='productIconMap'/> {props.location}</p>
+                    <p><FaMapMarkerAlt className='productIconMap' /> {props.location}</p>
                     <span>{props.watch}</span>
                 </div>
                 <div className='productDescription'>
                     <p>{props.description}<span className='productMoreInfo'>...continuar leyendo</span></p>
                 </div>
-                <div className='productButton'>
-                    <button>Ver más</button>
-                </div>
+                <Link to={"/product" + "/" + props.id}>
+                    <div className='productButton'>
+                        <button>Ver más</button>
+                    </div>
+                </Link>
             </div>
         </div>
     )

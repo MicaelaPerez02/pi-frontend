@@ -10,6 +10,7 @@ function Cards() {
         return (
             <CardProduct
                 key={product.id}
+                id={product.id}
                 url={product.url}
                 rating={product.rating}
                 review={product.review}
