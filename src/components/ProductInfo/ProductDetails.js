@@ -13,19 +13,24 @@ function ProductDetails(props) {
     const { data, isLoaded } = useFetch(`/products/allProducts`);
 
     const productSelected = data.map((product) => {
-        return (
-            <CardDetail
-                title={product.title}
-            />
-        )
+        if (product.id == productId) {
+            return (
+                <CardDetail
+                    key={product.id}
+                    title={product.title}
+                    categories={product.categories}
+                />
+            )
+            
+        }
+        {console.log(product.categories.title);}
     })
 
     return (
         <div className='productInfoContainer'>
             <div className='productInfoContent'>
                 <div className='productBanner'>
-                    <p>Hola {productId}</p>
-                    <p>AAA{productSelected}</p>
+                    <p>{productSelected}</p>
                 </div>
             </div>
 
