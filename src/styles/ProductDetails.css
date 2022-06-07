@@ -1,2 +1,54 @@
-.productBanner{
+.productHeader {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.productBanner {
+  margin-top: 5rem;
+  background-color: var(--main-color);
+}
+
+.detailHeaderContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: var(--light);
+}
+
+
+.detailHeader {
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  color: var(--light);
+}
+
+.detailCategories {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.detailTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.detailIcon{
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
+
+    margin-right: 0.8rem;
+
+    transition: 0.3s;
+
+    text-decoration: 'none' !important;
+
+    color: var(--light);
+}
+
+.detailIcon:hover{
+    color: var(--complementary);
 }

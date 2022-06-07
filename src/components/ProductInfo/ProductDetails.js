@@ -1,11 +1,11 @@
-import React from 'react'
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import { useParams } from "react-router-dom";
-import CardProduct from '../Cards/CardProduct';
-import "../../styles/ProductDetails.css";
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import CardDetail from '../ProductInfo/CardDetail';
+import { GoChevronLeft } from "react-icons/go";
+import "../../styles/ProductDetails.css";
 
 function ProductDetails(props) {
     const { productId } = useParams();
@@ -17,24 +17,24 @@ function ProductDetails(props) {
             return (
                 <CardDetail
                     key={product.id}
+                    categories={product.categories.title}
                     title={product.title}
-                    categories={product.categories}
                 />
             )
-            
         }
-        {console.log(product.categories.title);}
     })
 
     return (
-        <div className='productInfoContainer'>
+        <>
+            <Header className="productHeader" />
             <div className='productInfoContent'>
                 <div className='productBanner'>
                     <p>{productSelected}</p>
+                   
                 </div>
+                <Footer />
             </div>
-
-        </div>
+        </>
     )
 }
 
