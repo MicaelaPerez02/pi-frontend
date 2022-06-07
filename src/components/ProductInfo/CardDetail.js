@@ -41,7 +41,7 @@ function CardDetail(props) {
                 <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
             </div>
             <div className='detailFeatures'>
-                <h3 className='detailFeatures'>¿Qué ofrece este lugar?</h3>
+                <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?</h3>
                 <div className='detailFeaturesContainer'>
                     {props.features.map((feature) => (
                         <ul key={props.features.id}>

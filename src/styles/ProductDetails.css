@@ -137,3 +137,18 @@
   color: var(--complementary);
   cursor: pointer;
 }
+
+.detailFeatures {
+  background-color: var(--light);
+}
+
+.detailFeatureTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+
+  color: var(--color3);
+
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+}
