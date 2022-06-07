@@ -19,6 +19,15 @@ function ProductDetails(props) {
                     key={product.id}
                     categories={product.categories.title}
                     title={product.title}
+                    cities={product.cities.name}
+                    rating={product.rating}
+                    review={product.review}
+                    url={product.url}
+                    description={product.description}
+                    features={[{
+                        air_conditioning: product.features.air_conditioning,
+                        wifi: product.features.wifi,
+                    }]}
                 />
             )
         }
@@ -30,7 +39,6 @@ function ProductDetails(props) {
             <div className='productInfoContent'>
                 <div className='productBanner'>
                     <p>{productSelected}</p>
-                   
                 </div>
                 <Footer />
             </div>
