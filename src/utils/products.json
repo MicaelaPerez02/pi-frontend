@@ -1,84 +1,84 @@
 {
-    "products":[
-        {
-            "id": 1,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "Loft exclusivo",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176"
-        },
-        {
-            "id": 2,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "Luxor hotel",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500"
-        },
-        {
-            "id": 3,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "Kamui Hostel",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG9zdGVsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500"
-        },
-        {
-            "id": 4,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "The Forest",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVkJTIwJTI2JTIwYnJlYWtmYXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500"
-        },
-        {
-            "id": 5,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "Luminous",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://images.unsplash.com/photo-1592839656073-833413ae8874?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bG9mdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500"
-        },
-        {
-            "id": 6,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "Buenavista Park",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://images.unsplash.com/photo-1600665784732-4980583edb07?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGhvdGVsZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500"
-        },
-        {
-            "id": 7,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "Navi hostel",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://media.istockphoto.com/photos/youth-hostel-dorm-room-picture-id182498079?b=1&k=20&m=182498079&s=170667a&w=0&h=Atdn_7sfYF1rBo7JjGGHxUTysDq_lHnKLOVbWnXbLl0="
-        },
-        {
-            "id": 8,
-            "rating":5,
-            "review": 8,
-            "ubication": "A 940m del centro",
-            "watch": "MOSTRAR EN MAPA",
-            "title": "The Dreamer",
-            "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
-            "url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 940m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "Loft exclusivo",
+      "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires, con 2 impresionantes piscinas, una en la terraza y otra al aire libre; habitaciones privadas y",
+      "url": "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176"
+    },
+    {
+      "id": 2,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 350m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "Luxor hotel",
+      "description": "El Luxor Hotel es un moderno y elegante hotel de 4 estrellas, asomado al mar, ideal para unas vacaciones románticas y de gran encanto, en el mágico escenario de Taormina",
+      "url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500"
+    },
+    {
+      "id": 3,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 100m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "Kamui Hostel",
+      "description": "Ubicado en el corazón de Palermo, uno de los barrios más bellos de la ciudad. Vas a encontrar los mejores lugares para visitar en tu estadía ya que el hostel está rodeado de bares, restaurantes, centros culturales, discotecas y demás.",
+      "url": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG9zdGVsc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500"
+    },
+    {
+      "id": 4,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 1000m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "The Forest",
+      "description": "Paradisíaco sitio en pleno corazón del Parque Natural Islas del Rosario a solo. 45 minutos de Cartagena en donde vivirás el Lujo de disfrutar de la naturaleza.",
+      "url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVkJTIwJTI2JTIwYnJlYWtmYXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500"
+    },
+    {
+      "id": 5,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 530m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "Luminous",
+      "description": "Hotel con manejo sostenible, especialmente en el tema ambiental y cultural. Está construido con arquitectura Internacional, es decir con diseño de arquitectura de diferentes lugares del mundo, además de arquitectura colombiana y arquitectura indígena.",
+      "url": "https://images.unsplash.com/photo-1592839656073-833413ae8874?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bG9mdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500"
+    },
+    {
+      "id": 6,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 250m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "Buenavista Park",
+      "description": "El Buenavista Park ofrece alojamiento en Termas del Daymán y cuenta con WiFi gratuita y baño termal. También proporciona estacionamiento privado gratuito.",
+      "url": "https://images.unsplash.com/photo-1600665784732-4980583edb07?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGhvdGVsZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500"
+    },
+    {
+      "id": 7,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 200m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "Navi hostel",
+      "description": "Navi combina la calidez de una hostería sin dejar de brindar los servicios y comodidades de un hostel.",
+      "url": "https://media.istockphoto.com/photos/youth-hostel-dorm-room-picture-id182498079?b=1&k=20&m=182498079&s=170667a&w=0&h=Atdn_7sfYF1rBo7JjGGHxUTysDq_lHnKLOVbWnXbLl0="
+    },
+    {
+      "id": 8,
+      "rating": 5,
+      "review": 8,
+      "ubication": "A 100m del centro",
+      "watch": "MOSTRAR EN MAPA",
+      "title": "The Dreamer",
+      "description": "Departamento suite con un dormitorio, un baño, sala de estar con sofá cama tamaño queen, comedor y cocineta con impresionantes vistas al mar.",
+      "url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170"
+    }
+  ]
 }

@@ -1,0 +1,180 @@
+.body_container {
+  width: 100%;
+  height: 42%;
+  background-color: var(--color3);
+  padding: 0.5rem;
+  margin-top: 5rem;
+  padding-bottom: 1rem;
+}
+
+.body_title {
+  font-size: 1.5rem;
+  color: var(--light);
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: center;
+  margin: 1rem 1rem 0.5rem 1rem;
+}
+
+.body_input_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: var(--color3);
+}
+
+.calendar_desktop {
+  display: none !important;
+}
+
+.cards {
+  margin-bottom: 3rem;
+}
+
+/*********FORM SELEC STYLES*********/
+.form_InputSelect {
+  width: 95%;
+  border-radius: 2rem;
+
+  padding-bottom: 1rem;
+}
+
+.form_select {
+  width: 100%;
+  height: 37px;
+  position: relative;
+  top: 1px;
+  color: gray;
+  padding-left: 0.5rem;
+  border-radius: 4px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select.form_select {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.form_select:focus {
+  background-image: linear-gradient(
+      45deg,
+      var(--main-color) 50%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, transparent 50%, var(--main-color) 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: var(--main-color);
+  outline: 0;
+}
+
+.calendar_mobile,
+.calendar_desktop {
+  width: 95%;
+  height: 2.3rem;
+  border-radius: 4px;
+  margin: 0.3rem;
+  box-shadow: 0px 1px 5px 0px #00000026;
+}
+
+.body_button {
+  width: 95%;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  background-color: var(--main-color);
+  margin-top: 0.5rem;
+  
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+
+  transition: 0.5s;
+
+  margin-top: 1rem;
+}
+
+.body_button:hover,
+.body_button:focus {
+  box-shadow: left 11.25rem 0 0 0 var(--complementary);
+}
+
+.categories {
+  background-color: var(--light);
+}
+
+@media screen and (min-width: 768px) {
+  .body_container {
+    height: 8.7rem;
+  }
+
+  .body_title {
+    margin-top: 1.3rem;
+  }
+
+  .body_input_container {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    color: var(--color3);
+  }
+
+  .body_input,
+  .form_InputSelect {
+    width: 15.8rem;
+    height: 2.5rem;
+  }
+
+  .body_button {
+    width: 10.4rem;
+    height: 2.5rem;
+    margin-top: 0rem;
+    margin-left: 0.5rem;
+  }
+
+  .body_button:hover,
+  .body_button:focus {
+    box-shadow: inset 11.25rem 0 0 0 var(--complementary);
+  }
+
+  .calendar_mobile {
+    display: none !important;
+  }
+
+  .calendar_desktop {
+    display: block !important;
+    width: 15.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .body_container {
+    height: 8.2rem;
+  }
+
+  .body_input {
+    width: 24rem;
+  }
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import data from '../../utils/categories.json';
 import '../../styles/Categories.css';
 import useFetch from '../../hooks/useFetch';
 import CardCategory from './CardCategory';
@@ -7,7 +6,7 @@ import CardCategory from './CardCategory';
 function Categories(props) {
     const { data, isLoaded } = useFetch(`/categories/allCategories`);
 
-    const categoryList = data.map((category, index) => {
+    const categoryList = data.map((category) => {
         return (
             <CardCategory
                 key={category.id}
