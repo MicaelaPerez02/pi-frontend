@@ -43,7 +43,6 @@ function CardDetail(props) {
             <div className='detailFeatures'>
                 <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?</h3>
                 <div className='detailFeaturesContainer'>
-                            <li>{props.features.air_conditioning}</li>
                     {props.features.map((feature, index) => (
                         <ul className='detailFeature' key={index}>
                             <li>Wi-Fi: {feature.wi_fi}</li>
