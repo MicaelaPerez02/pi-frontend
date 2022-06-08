@@ -2,7 +2,10 @@ import React from 'react';
 import { GoChevronLeft } from "react-icons/go";
 import "../../styles/ProductDetails.css";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaHotjar, FaTemperatureHigh } from 'react-icons/fa';
+import { BiWifi } from 'react-icons/bi';
+import { RiParkingFill } from 'react-icons/ri';
+import { GiGymBag } from 'react-icons/gi';
 
 function CardDetail(props) {
     return (
@@ -44,12 +47,12 @@ function CardDetail(props) {
                 <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?</h3>
                 <div className='detailFeaturesContainer'>
                     {props.features.map((feature, index) => (
-                        <ul className='detailFeature' key={index}>
-                            <li>Wi-Fi: {feature.wi_fi}</li>
-                            <li>Estacionamiento: {feature.parking}</li> 
-                            <li>Aire Acondicionado: {feature.air_conditioning}</li>
-                            <li>Calefacción:{feature.heating}</li>
-                            <li>Gimnasio: {feature.gym}</li>
+                        <ul className='detailFeatureUl' key={index}>
+                            <li className='detailFeatureLi'><BiWifi className='detailFeatureIcon' /> Wi-Fi: {feature.wi_fi}</li>
+                            <li className='detailFeatureLi'><RiParkingFill className='detailFeatureIcon' /> Estacionamiento: {feature.parking}</li>
+                            <li className='detailFeatureLi'><FaTemperatureHigh className='detailFeatureIcon' /> Aire Acondicionado: {feature.air_conditioning}</li>
+                            <li className='detailFeatureLi'><FaHotjar className='detailFeatureIcon' />Calefacción: {feature.heating}</li>
+                            <li className='detailFeatureLi'><GiGymBag className='detailFeatureIcon' />Gimnasio: {feature.gym}</li>
                         </ul>
                     ))}
                 </div>

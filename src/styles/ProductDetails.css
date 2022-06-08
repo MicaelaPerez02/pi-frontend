@@ -7,7 +7,7 @@
 
 .productBanner {
   margin-top: 5rem;
-  background-color: var(--main-color);
+  background-color: var(--light);
 }
 
 .detailHeaderContainer {
@@ -16,6 +16,7 @@
   align-items: center;
 
   color: var(--light);
+  background-color: var(--main-color);
 }
 
 .detailHeader {
@@ -143,12 +144,36 @@
 }
 
 .detailFeatureTitle {
-  font-size: 24px;
+  font-size: 1.2rem;
   font-weight: 700;
   line-height: 28px;
 
   color: var(--color3);
 
-  padding-top: 1rem;
-  padding-left: 0.5rem;
+  padding: 1.5rem 0 0 1rem;
+}
+
+.detailFeatureUl {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  
+  padding: 0.5rem;
+
+  list-style: none;
+}
+
+.detailFeatureIcon {
+  color: var(--complementary);
+  margin-right: 0.5rem;
+
+  font-size: 1rem;
+}
+
+.detailFeatureLi {
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+
+  flex: 50%;
 }
