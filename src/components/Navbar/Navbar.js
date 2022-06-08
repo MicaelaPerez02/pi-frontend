@@ -3,6 +3,7 @@ import '../../styles/Navbar.css';
 import 'rsuite/dist/rsuite.min.css';
 import DateRangePicker from 'rsuite/DateRangePicker';
 import useFetch from '../../hooks/useFetch';
+import { useState } from 'react';
 
 function Navbar() {
     const { data, isLoaded } = useFetch(`/cities/allCities`);
@@ -14,9 +15,9 @@ function Navbar() {
                 <div className='body_input_container'>
                     <form className='form_InputSelect'>
                         <select id="city" name="city" className='form_select' defaultValue={'DEFAULT'}>
-                            <option className="form_option" value="DEFAULT" disabled hidden>Selecciona el destino</option>
+                            <option className="form_option" disabled hidden>Selecciona el destino</option>
                             {isLoaded ? data.map((item, index) => (
-                                <option key={item.id}>{item.name}, {item.country}</option>
+                                <option value={item.name} key={item.id}>{item.name}, {item.country}</option>
                             )) : <p>Cargando...</p>}
                         </select>
                     </form>

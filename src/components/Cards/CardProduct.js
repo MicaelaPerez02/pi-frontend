@@ -10,7 +10,7 @@ function CardProduct(props) {
             </div>
             <div className='flex_deskt'>
                 <div className='productRatingContainer'>
-                    <span className="productRatingFlex"><p className='productRating'> HOTEL </p>{
+                    <span className="productRatingFlex"><p className='productRating'> {props.categories} </p>{
                         Array(props.rating)
                             .fill()
                             .map((_) => (

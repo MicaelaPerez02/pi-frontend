@@ -3,6 +3,7 @@ import '../../styles/Categories.css';
 import useFetch from '../../hooks/useFetch';
 import CardCategory from './CardCategory';
 
+
 function Categories(props) {
     const { data, isLoaded } = useFetch(`/categories/allCategories`);
 
@@ -20,9 +21,9 @@ function Categories(props) {
     return (
         <div className='categoryContainer'>
             <p className='categoryP'>Buscar por tipo de alojamiento</p>
-            <div key={props.id} className="categoryItem">
+                <div key={props.id} className="categoryItem">
                     {isLoaded ? categoryList : <p>Cargando...</p>}
-            </div>
+                </div>
         </div>
     )
 }

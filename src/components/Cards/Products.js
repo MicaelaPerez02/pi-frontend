@@ -18,9 +18,10 @@ function Cards() {
                 watch={product.watch}
                 title={product.title}
                 description={product.description}
+                categories={product.categories.title}
             />
         )
-    })
+    });
 
     return (
         <div className='productContainer'>
