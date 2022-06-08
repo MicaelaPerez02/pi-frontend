@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import CardDetail from '../ProductInfo/CardDetail';
-import { GoChevronLeft } from "react-icons/go";
 import "../../styles/ProductDetails.css";
 
 function ProductDetails(props) {
@@ -24,10 +23,7 @@ function ProductDetails(props) {
                     review={product.review}
                     url={product.url}
                     description={product.description}
-                    features={[{
-                        air_conditioning: product.features.air_conditioning,
-                        wifi: product.features.wifi,
-                    }]}
+                    features={product.features}
                 />
             )
         }
@@ -38,7 +34,7 @@ function ProductDetails(props) {
             <Header className="productHeader" />
             <div className='productInfoContent'>
                 <div className='productBanner'>
-                    <p>{productSelected}</p>
+                    {isLoaded ? productSelected : <div>Cargando...</div>}
                 </div>
                 <Footer />
             </div>

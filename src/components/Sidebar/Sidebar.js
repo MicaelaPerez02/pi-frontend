@@ -27,7 +27,7 @@ function Sidebar(props) {
                     <li className="nav-text-menu">
                         <span>MENÚ</span>
                     </li>
-                    {props.buttonLogin != localStorage.getItem("email") ? (
+                    {props.buttonLogin !== localStorage.getItem("email") ? (
                         <>
                             <li className="nav-text">
                                 <Link to="/login" style={{ textDecoration: 'none' }}>
@@ -65,7 +65,7 @@ function Sidebar(props) {
                 <Link to="" className='menu-bars'>
                     <FaBars onClick={showSidebar} className='icon_menu' />
                 </Link>
-                {props.buttonLogin != localStorage.getItem("email") ? (
+                {props.buttonLogin !== localStorage.getItem("email") ? (
                     <>
                         <Link to="/login">
                             <button className='header_button'>

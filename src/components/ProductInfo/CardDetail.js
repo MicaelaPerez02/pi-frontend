@@ -26,7 +26,7 @@ function CardDetail(props) {
                             Array(props.rating)
                                 .fill()
                                 .map((_) => (
-                                    <p key={props.rating} className="detailStars">⭐</p>
+                                    <p key={props.id} className="detailStars">⭐</p>
                                 ))
                         }</span>
                         <p className='detailReview'>{props.review}</p>
@@ -43,13 +43,19 @@ function CardDetail(props) {
             <div className='detailFeatures'>
                 <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?</h3>
                 <div className='detailFeaturesContainer'>
-                    {props.features.map((feature) => (
-                        <ul key={props.features.id}>
                             <li>{props.features.air_conditioning}</li>
+                    {props.features.map((feature, index) => (
+                        <ul className='detailFeature' key={index}>
+                            <li>Wi-Fi: {feature.wi_fi}</li>
+                            <li>Estacionamiento: {feature.parking}</li> 
+                            <li>Aire Acondicionado: {feature.air_conditioning}</li>
+                            <li>Calefacción:{feature.heating}</li>
+                            <li>Gimnasio: {feature.gym}</li>
                         </ul>
                     ))}
                 </div>
             </div>
+            <br></br><br></br><br></br>
         </>
     )
 }
