@@ -12,13 +12,13 @@ function Header(props) {
                     <Link to='/'>
                         <img
                             className='header_logo'
-                            src="https://fv9-5.failiem.lv/thumb_show.php?i=p9ex3xf8c&download_checksum=3aecc5a468db23099426e4f52e8a9fce89571c3d&download_timestamp=1653513355"
+                            src="https://bucket-pig6.s3.us-east-2.amazonaws.com/Logos+Homu/Mesa+de+trabajo+9.png"
                             alt='Logo Empresa'
                         />
                     </Link>
                     <p className='header_motto'>Estas en el lugar correcto</p>
                 </div>
-                    <Sidebar buttonLogin={localStorage.getItem("email")? localStorage.getItem("email") :  "Iniciar Sesion"}/>
+                <Sidebar buttonLogin={localStorage.getItem("email") ? localStorage.getItem("email") : "Iniciar Sesion"} />
             </div>
         </div>
     )

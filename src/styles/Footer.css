@@ -11,6 +11,8 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: var(--light);
+
+    z-index: 100;
 }
 
 .footer_menu{

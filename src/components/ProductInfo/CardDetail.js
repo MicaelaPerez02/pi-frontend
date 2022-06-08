@@ -7,6 +7,9 @@ import { BiWifi } from 'react-icons/bi';
 import { RiParkingFill } from 'react-icons/ri';
 import { GiGymBag } from 'react-icons/gi';
 import CarrouselProduct from './CarrouselProduct';
+import CalendarDetail from './CalendarDetail';
+import MapDetail from './MapDetail';
+import RulesDetails from './RulesDetails';
 
 function CardDetail(props) {
     return (
@@ -76,9 +79,15 @@ function CardDetail(props) {
                 </div>
                 <div className='detailCalendar'>
                     <h3 className='detailCalendarTitle'>Fechas disponibles</h3>
-                    <p>CALENDAAR</p>
+                    <CalendarDetail className="detailCalendarDisplay"/>
                     <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
                     <button className="detailButtonReservation">Iniciar reserva</button>
+                </div>
+                <div className='detailMap'>
+                    <MapDetail cities={props.cities}/>
+                </div>
+                <div className='detailRules'>
+                    <RulesDetails />
                 </div>
             </div>
         </>

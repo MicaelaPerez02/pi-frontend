@@ -1,0 +1,24 @@
+.Calendar {
+  background-color: rgb(78, 78, 77);
+}
+
+.Calendar__day.-disabled {
+  color: var(--main-color) !important;
+}
+
+.Calendar__day {
+  color: var(--complementary);
+}
+
+.Calendar__day.-weekend:not(.-selected):not(.-blank):not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween) {
+  color: var(--complementary);
+}
+.Calendar__day.-today:not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween) {
+  color: var(--color3);
+}
+
+.Calendar__monthText,
+.Calendar__monthYear {
+  color: var(--color3);
+  font-weight: 700;
+}
