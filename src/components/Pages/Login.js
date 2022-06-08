@@ -21,13 +21,10 @@ function Login(props) {
     const [state, setState] = useState(false);
 
     const toggleBtn = (e) => {
-        {
-            setState(prevState => !prevState);
-            console.log(state);
-        }
+        setState(prevState => !prevState);
+        console.log(state);
         e.preventDefault();
     }
-
 
     return (
         <>

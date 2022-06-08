@@ -12,20 +12,15 @@ import HeaderRegister from "../Header/HeaderRegister";
 
 
 function Register() {
-
     const [state, setState] = useState(false);
     const toggleBtn = (e) => {
-        {
-            setState(prevState => !prevState);
-        }
+        setState(prevState => !prevState);
         e.preventDefault();
-
     }
+
     const [state1, setState1] = useState(false);
     const toggleBtn2 = (e) => {
-        {
-            setState1(prevState => !prevState);
-        }
+        setState1(prevState => !prevState);
         e.preventDefault();
     }
 

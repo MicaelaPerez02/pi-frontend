@@ -27,6 +27,9 @@ function ProductDetails() {
                 />
             )
         }
+        else {
+            return null;
+        }
     })
 
     return (
