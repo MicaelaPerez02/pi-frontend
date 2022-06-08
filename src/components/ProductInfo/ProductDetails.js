@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 import CardDetail from '../ProductInfo/CardDetail';
 import "../../styles/ProductDetails.css";
 
-function ProductDetails(props) {
+function ProductDetails() {
     const { productId } = useParams();
 
     const { data, isLoaded } = useFetch(`/products/allProducts`);

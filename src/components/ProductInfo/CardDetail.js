@@ -6,6 +6,7 @@ import { FaMapMarkerAlt, FaHotjar, FaTemperatureHigh } from 'react-icons/fa';
 import { BiWifi } from 'react-icons/bi';
 import { RiParkingFill } from 'react-icons/ri';
 import { GiGymBag } from 'react-icons/gi';
+import CarrouselProduct from './CarrouselProduct';
 
 function CardDetail(props) {
     return (
@@ -37,7 +38,7 @@ function CardDetail(props) {
                 </div>
             </div>
             <div className='detailCarrousel'>
-                <img className="detailImageCarrousel" src={props.url} alt={props.name} />
+                <CarrouselProduct />
             </div>
             <div className='detailDescription'>
                 <p className='detailDescriptionSlogan'>Slogan</p>
@@ -56,8 +57,13 @@ function CardDetail(props) {
                         </ul>
                     ))}
                 </div>
+                <div className='detailCalendar'>
+                    <h3 className='detailCalendarTitle'>Fechas disponibles</h3>
+                    <p>CALENDAAR</p>
+                    <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
+                    <button className="detailButtonReservation">Iniciar reserva</button>
+                </div>
             </div>
-            <br></br><br></br><br></br>
         </>
     )
 }

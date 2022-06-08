@@ -110,7 +110,7 @@ select.form_select:focus {
   text-align: center;
   cursor: pointer;
 
-  transition: 0.5s;
+  transition: 0.8s;
 
   margin-top: 1rem;
 }
