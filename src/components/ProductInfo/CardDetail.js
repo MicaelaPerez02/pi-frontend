@@ -37,8 +37,25 @@ function CardDetail(props) {
                     </div>
                 </div>
             </div>
-            <div className='detailCarrousel'>
-                <CarrouselProduct />
+            <div className='detailCarrouselContainer'>
+                <CarrouselProduct className='detailCarrousel'
+                    url={props.url}
+                />
+                <div className='detailImageGalery'>
+                    <div className='detailImageGaleryPrincipal'>
+                        <img className='detailImage' src={props.url} alt={props.title} />
+                        <div className='detailImageGaleryFlex'>
+                            <div className='detailImageGalerySecondary'>
+                                <img className='detailImageSecond' src={props.url} alt={props.title} />
+                                <img className='detailImageSecond' src={props.url} alt={props.title} />
+                            </div>
+                            <div className='detailImageGaleryThird'>
+                                <img className='detailImageThird' src={props.url} alt={props.title} />
+                                <img className="detailImageThird" src={props.url} alt={props.title} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className='detailDescription'>
                 <p className='detailDescriptionSlogan'>Slogan</p>

@@ -107,9 +107,15 @@
   color: var(--color3);
 }
 
-.detailCarrousel img {
-  width: 100%;
-  height: 18rem;
+.detailImageGalery{
+  display: none;
+}
+
+.rs-carousel-slider-item,
+.carrouselImages {
+  height: 100% !important;
+
+  object-fit: cover;
 }
 
 .detailDescription {
@@ -207,25 +213,57 @@
   border-radius: 0.2rem;
   background-color: var(--main-color);
   margin: 0.5rem 0 0 0.3rem;
-  
+
   color: var(--light);
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
-
 }
 
 @media screen and (min-width: 768px) {
-  .detailCarrousel img {
-    width: 100%;
-    height: 22rem;
-  }
 }
 
 @media screen and (min-width: 1024px) {
-  .detailCarrousel img {
-    width: 65%;
-    height: 24rem;
+  .custom-slider, 
+  .rs-carousel,
+  .rs-carousel-placement-bottom,
+  .rs-carousel-shape-dot,
+  .rs-carousel-content{
+    display: none !important;
+  }
+
+  .detailImageGalery{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+  }
+
+  .detailImageGaleryPrincipal{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .detailImage{
+    width: 50%;
+  }
+
+  .detailImageGaleryFlex{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detailImageGalerySecondary,
+  .detailImageGaleryThird{
+    display: flex;
+    width: 50%;
+  }
+
+  .detailImageSecond,
+  .detailImageThird{
+    width: 100%;
+    height: 100%;
   }
 }
