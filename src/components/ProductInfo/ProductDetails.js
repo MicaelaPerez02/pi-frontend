@@ -7,13 +7,12 @@ import CardDetail from '../ProductInfo/CardDetail';
 import "../../styles/ProductDetails.css";
 
 function ProductDetails() {
+    const { data, isLoaded } = useFetch(`/products/allProducts`);
+
     const { productId } = useParams();
 
-    const { data, isLoaded } = useFetch(`/products/allProducts`);
-    
-
     const productSelected = data.map((product) => {
-        if (product.id == productId) {
+        if (product.title == productId) {
             return (
                 <CardDetail
                     key={product.id}

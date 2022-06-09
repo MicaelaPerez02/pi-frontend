@@ -20,7 +20,7 @@ function CardDetail(props) {
                         <p className='detailCategories'>{props.categories}</p>
                         <strong className='detailTitle'>{props.title}</strong>
                     </div>
-                    <Link to="/" >
+                    <Link to="/">
                         <GoChevronLeft className='detailIcon' />
                     </Link>
                 </div>

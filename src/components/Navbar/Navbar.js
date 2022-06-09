@@ -1,11 +1,10 @@
 import React from 'react';
 import DateRangePicker from 'rsuite/DateRangePicker';
 import useFetch from '../../hooks/useFetch';
-import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/Navbar.css';
 import '../../styles/DatePickerLibrary.css';
 import 'rsuite/dist/rsuite.min.css';
-
 
 function Navbar(props) {
     const { data, isLoaded } = useFetch(`/cities/allCities`);
@@ -29,7 +28,7 @@ function Navbar(props) {
                     </form>
                     <DateRangePicker placeholder="Seleccione el rango de fechas" className='calendar_desktop' format='dd-MM-yyyy' />
                     <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='calendar_mobile' />
-                    <button className='body_button'>Buscar</button>
+                    <button className='body_button' onClick={<Link to={"/cities" + "/" + props.cities}></Link>}>Buscar</button>
                 </div>
             </div>
         </>

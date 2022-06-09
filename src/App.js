@@ -6,6 +6,7 @@ import Register from './components/Pages/Register';
 import './App.css';
 import ProductDetails from './components/ProductInfo/ProductDetails';
 import FilterCategory from './components/Cards/FilterCategory';
+import FilterCities from './components/Navbar/FilterCities';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/register" element={< Register />} />
           <Route path="/product/:productId" element={< ProductDetails />} />
           <Route path="/category/:categoryId" element={< FilterCategory />} />
+          <Route path="/cities/:citiesId" element={< FilterCities />} />
         </Routes>
       </BrowserRouter>
     );
