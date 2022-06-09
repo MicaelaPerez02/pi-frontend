@@ -24,7 +24,7 @@ function CalendarDetail() {
         <Calendar
             minimumDate={minimumDate}
             maximumDate={maximumDate}
-            onDisabledDayError={handleDisabledSelect} // handle error
+            onDisabledDayError={handleDisabledSelect}
             shouldHighlightWeekends
         />
     );

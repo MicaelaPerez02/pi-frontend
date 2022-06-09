@@ -36,9 +36,9 @@ function FilterCategory() {
 
     return (
         <>
-            <Header />
-            <Navbar />
-            <Categories />
+            <Header/>
+            <Navbar/>
+            <Categories/>
             <div className='productContainer' key={categoryId}>
                 <p className='productInfoTitle'>Recomendaciones</p>
                 <div className='productCardItems'>
@@ -47,7 +47,7 @@ function FilterCategory() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer/>
         </>
     )
 }

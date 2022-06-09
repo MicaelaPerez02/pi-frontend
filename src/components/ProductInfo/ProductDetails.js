@@ -10,6 +10,7 @@ function ProductDetails() {
     const { productId } = useParams();
 
     const { data, isLoaded } = useFetch(`/products/allProducts`);
+    
 
     const productSelected = data.map((product) => {
         if (product.id == productId) {
@@ -24,6 +25,8 @@ function ProductDetails() {
                     url={product.url}
                     description={product.description}
                     features={product.features}
+                    map_url={product.map_url}
+                    images={product.images.url}
                 />
             )
         }
@@ -36,10 +39,10 @@ function ProductDetails() {
         <>
             <Header className="productHeader" />
             <div className='productInfoContent'>
-                <div className='productBanner'>
+                <div className='productBanner' key={productId}>
                     {isLoaded ? productSelected : <div>Cargando...</div>}
                 </div>
-                <Footer />
+                <Footer/>
             </div>
         </>
     )

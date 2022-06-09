@@ -61,7 +61,7 @@ function CardDetail(props) {
                 </div>
             </div>
             <div className='detailDescription'>
-                <p className='detailDescriptionSlogan'>Slogan</p>
+                <p className='detailDescriptionSlogan'>{props.title}</p>
                 <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
             </div>
             <div className='detailFeatures'>
@@ -84,7 +84,8 @@ function CardDetail(props) {
                     <button className="detailButtonReservation">Iniciar reserva</button>
                 </div>
                 <div className='detailMap'>
-                    <MapDetail cities={props.cities}/>
+                    <MapDetail cities={props.cities}
+                     map_url={props.map_url}/>
                 </div>
                 <div className='detailRules'>
                     <RulesDetails />

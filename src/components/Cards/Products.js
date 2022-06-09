@@ -27,11 +27,10 @@ function Cards() {
         <div className='productContainer'>
             <p className='productInfoTitle'>Recomendaciones</p>
             <div className='productCardItems'>
-                <div className='productCardBox'>
+                <div className='productCardBox' key={productList.length++}>
                     {isLoaded ? productList : <p>Cargando...</p>}
                 </div>
             </div>
-            )
         </div>
     )
 }

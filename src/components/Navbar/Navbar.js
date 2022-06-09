@@ -5,7 +5,7 @@ import DateRangePicker from 'rsuite/DateRangePicker';
 import useFetch from '../../hooks/useFetch';
 import { useState } from 'react';
 
-function Navbar() {
+function Navbar(props) {
     const { data, isLoaded } = useFetch(`/cities/allCities`);
 
     return (
@@ -17,8 +17,12 @@ function Navbar() {
                         <select id="city" name="city" className='form_select' defaultValue={'DEFAULT'}>
                             <option className="form_option" disabled hidden>Selecciona el destino</option>
                             {isLoaded ? data.map((item, index) => (
-                                <option value={item.name} key={item.id}>{item.name}, {item.country}</option>
-                            )) : <p>Cargando...</p>}
+                                <option
+                                    value={item.name}
+                                    key={item.id}
+                                >{item.name}, {item.country}
+                                </option>
+                            )) : <option>Cargando...</option>}
                         </select>
                     </form>
                     <DateRangePicker placeholder="Seleccione el rango de fechas" className='calendar_desktop' format='dd-MM-yyyy' />
