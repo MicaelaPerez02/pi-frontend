@@ -25,7 +25,7 @@ function ProductDetails() {
                     description={product.description}
                     features={product.features}
                     map_url={product.map_url}
-                    images={product.images.url}
+                    images={product.images}
                 />
             )
         }
@@ -35,15 +35,15 @@ function ProductDetails() {
     })
 
     return (
-        <>
+        <div>
             <Header className="productHeader" />
             <div className='productInfoContent'>
                 <div className='productBanner' key={productId}>
                     {isLoaded ? productSelected : <div>Cargando...</div>}
                 </div>
-                <Footer/>
+                <Footer />
             </div>
-        </>
+        </div>
     )
 }
 

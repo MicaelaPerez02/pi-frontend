@@ -1,13 +1,24 @@
 import React from 'react';
 import DateRangePicker from 'rsuite/DateRangePicker';
 import useFetch from '../../hooks/useFetch';
-import { Link } from 'react-router-dom';
 import '../../styles/Navbar.css';
 import '../../styles/DatePickerLibrary.css';
 import 'rsuite/dist/rsuite.min.css';
+import { useParams } from 'react-router-dom';
+
 
 function Navbar(props) {
     const { data, isLoaded } = useFetch(`/cities/allCities`);
+
+    const cityList = data.map((city, index) => {
+        return (
+            <option
+                value={city.name}
+                key={index}
+            >{city.name}, {city.country}
+            </option>
+        )
+    });
 
     return (
         <>
@@ -17,18 +28,12 @@ function Navbar(props) {
                     <form className='form_InputSelect'>
                         <select id="city" name="city" className='form_select' defaultValue={'DEFAULT'}>
                             <option className="form_option" disabled hidden>Selecciona el destino</option>
-                            {isLoaded ? data.map((item, index) => (
-                                <option
-                                    value={item.name}
-                                    key={item.id}
-                                >{item.name}, {item.country}
-                                </option>
-                            )) : <option>Cargando...</option>}
+                            {isLoaded ? cityList : <option>Cargando...</option>}
                         </select>
                     </form>
                     <DateRangePicker placeholder="Seleccione el rango de fechas" className='calendar_desktop' format='dd-MM-yyyy' />
                     <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='calendar_mobile' />
-                    <button className='body_button' onClick={<Link to={"/cities" + "/" + props.cities}></Link>}>Buscar</button>
+                    <button className='body_button'>Buscar</button>
                 </div>
             </div>
         </>

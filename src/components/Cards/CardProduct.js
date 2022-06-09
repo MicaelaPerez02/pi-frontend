@@ -13,8 +13,8 @@ function CardProduct(props) {
                     <span className="productRatingFlex"><p className='productRating'> {props.categories} </p>{
                         Array(props.rating)
                             .fill()
-                            .map((_) => (
-                                <p key={props.rating}>⭐</p>
+                            .map((_, index) => (
+                                <p key={index}>⭐</p>
                             ))
                     }</span>
                     <p className="productReview">{props.review}</p>

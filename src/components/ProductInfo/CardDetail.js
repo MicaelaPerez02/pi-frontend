@@ -13,16 +13,16 @@ import RulesDetails from './RulesDetails';
 
 function CardDetail(props) {
     return (
-        <>
+        <div>
             <div className="detailContainer">
                 <div className="detailHeaderContainer">
                     <div className="detailHeader">
                         <p className='detailCategories'>{props.categories}</p>
                         <strong className='detailTitle'>{props.title}</strong>
                     </div>
-                    <Link to="/">
+                    <a href="/">
                         <GoChevronLeft className='detailIcon' />
-                    </Link>
+                    </a>
                 </div>
             </div>
             <div className="detailCityContent">
@@ -32,8 +32,8 @@ function CardDetail(props) {
                         <span className="detailRating">{
                             Array(props.rating)
                                 .fill()
-                                .map((_) => (
-                                    <p key={props.id} className="detailStars">⭐</p>
+                                .map((_, index) => (
+                                    <p key={index} className="detailStars">⭐</p>
                                 ))
                         }</span>
                         <p className='detailReview'>{props.review}</p>
@@ -98,7 +98,7 @@ function CardDetail(props) {
                     <RulesDetails />
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
