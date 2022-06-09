@@ -12,7 +12,7 @@ function Header(props) {
                     <Link to='/'>
                         <img
                             className='header_logo'
-                            src="https://bucket-pig6.s3.us-east-2.amazonaws.com/Logos+Homu/Mesa+de+trabajo+9.png"
+                            src="https://bucket-pig6.s3.us-east-2.amazonaws.com/Logos+Homu/Recurso+2finals.png"
                             alt='Logo Empresa'
                         />
                     </Link>

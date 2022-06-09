@@ -31,7 +31,7 @@
 
 .cards_body {
   margin-bottom: 3rem;
-  margin-top:1.5rem;
+  margin-top: 1.5rem;
 }
 
 /*********FORM SELEC STYLES*********/
@@ -104,7 +104,7 @@ select.form_select:focus {
   border-radius: 0.2rem;
   background-color: var(--main-color);
   margin-top: 0.5rem;
-  
+
   color: var(--light);
   font-size: 1rem;
   font-weight: 700;
@@ -137,7 +137,7 @@ select.form_select:focus {
   .body_input_container {
     flex-direction: row !important;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 1rem;
     padding-left: 1.4rem;
     color: var(--color3);
@@ -145,21 +145,21 @@ select.form_select:focus {
 
   .body_input,
   .form_InputSelect {
-    width: 15rem;
+    width: 30%;
     height: 2.5rem;
   }
 
   .rs-picker-toggle,
-  .rs-btn rs-btn-default{
-    width: 15rem !important;
-    margin-left: 0.5rem;
+  .rs-btn rs-btn-default {
+    width: 30%rem !important;
+    margin-left: 2%;
   }
 
   .body_button {
     width: 13rem;
     height: 2.5rem;
     margin-top: 0rem;
-    margin-left: 0.2rem;
+    margin-left: 2%;
   }
 
   .body_button:hover,
@@ -178,19 +178,23 @@ select.form_select:focus {
 }
 
 @media screen and (min-width: 1024px) {
+  .body_input_container {
+    justify-content: center;
+  }
+
   .body_container {
     height: 8.2rem;
   }
 
   .body_input,
   .form_InputSelect {
-    width: 22rem;
+    width: 27%;
     height: 2.5rem;
 
     margin-left: 1.5%;
   }
   .rs-picker-toggle,
-  .rs-btn rs-btn-default{
+  .rs-btn rs-btn-default {
     width: 22rem !important;
   }
 
@@ -205,11 +209,11 @@ select.form_select:focus {
     width: 22rem;
     height: 2rem;
 
-    margin-left: 17%;
     margin-bottom: 0.25rem;
   }
+
   .rs-picker-toggle,
-  .rs-btn rs-btn-default{
+  .rs-btn rs-btn-default {
     width: 22rem !important;
     height: 2.3rem;
 
