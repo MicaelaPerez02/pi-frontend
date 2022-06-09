@@ -47,9 +47,11 @@
   height: 37px;
   position: relative;
   top: 1px;
-  color: gray;
+  color: var(--main-color);
   padding-left: 0.5rem;
   border-radius: 4px;
+
+  cursor: pointer;
 }
 
 select {
@@ -64,29 +66,28 @@ select::-ms-expand {
 }
 
 select.form_select {
-  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%),
-    linear-gradient(to right, #ccc, #ccc);
+  background-image: linear-gradient(45deg, transparent 50%, var(--color4) 50%),
+    linear-gradient(135deg, var(--color4), 50%, transparent 50%),
+    linear-gradient(to right, var(--color4), var(--color4));
   background-position: calc(100% - 20px) calc(1em + 2px),
     calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
 }
 
-select.form_select:focus {
+select.form_select:hover {
   background-image: linear-gradient(
       45deg,
-      var(--main-color) 50%,
-      transparent 50%
+      transparent 50%,
+      var(--complementary) 50%
     ),
-    linear-gradient(135deg, transparent 50%, var(--main-color) 50%),
-    linear-gradient(to right, #ccc, #ccc);
-  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
-    calc(100% - 2.5em) 0.5em;
+    linear-gradient(135deg, var(--complementary) 50%, transparent 50%),
+    linear-gradient(to right, var(--complementary), var(--complementary));
+
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
-  border-color: var(--main-color);
-  outline: 0;
 }
 
 .calendar_mobile,
@@ -145,13 +146,13 @@ select.form_select:focus {
 
   .body_input,
   .form_InputSelect {
-    width: 30%;
+    width: 33%;
     height: 2.5rem;
   }
 
   .rs-picker-toggle,
   .rs-btn rs-btn-default {
-    width: 30%rem !important;
+    width: 100% !important;
     margin-left: 2%;
   }
 
@@ -190,8 +191,6 @@ select.form_select:focus {
   .form_InputSelect {
     width: 27%;
     height: 2.5rem;
-
-    margin-left: 1.5%;
   }
   .rs-picker-toggle,
   .rs-btn rs-btn-default {
@@ -199,7 +198,7 @@ select.form_select:focus {
   }
 
   .body_button {
-    margin-left: 12%;
+    margin-left: 9%;
   }
 }
 

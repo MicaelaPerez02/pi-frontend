@@ -78,7 +78,7 @@
     border: 1px solid #060607;
     color: var(--light);
 
-    transition: 0.5s;
+    transition: 0.8s;
   }
 
   .header_button:hover,

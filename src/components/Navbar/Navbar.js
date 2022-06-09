@@ -1,9 +1,11 @@
 import React from 'react';
-import '../../styles/Navbar.css';
-import 'rsuite/dist/rsuite.min.css';
 import DateRangePicker from 'rsuite/DateRangePicker';
 import useFetch from '../../hooks/useFetch';
 import { useState } from 'react';
+import '../../styles/Navbar.css';
+import '../../styles/DatePickerLibrary.css';
+import 'rsuite/dist/rsuite.min.css';
+
 
 function Navbar(props) {
     const { data, isLoaded } = useFetch(`/cities/allCities`);
