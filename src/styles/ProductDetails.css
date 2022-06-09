@@ -159,6 +159,12 @@
   padding: 1.5rem 0 0 1rem;
 }
 
+.hrFeatureDetail{
+  width: 15rem;
+  border-top: 1px solid var(--complementary);
+  margin: 1rem 0;
+}
+
 .detailFeatureUl {
   display: flex;
   flex-direction: row;
@@ -197,6 +203,7 @@
   align-items: center;
 }
 
+
 .detailCalendarTitle {
   font-size: 24px;
   font-weight: 700;
@@ -221,6 +228,17 @@
 
 .detailCalendarDisplay{
   padding: 0.5rem 0 1rem 0;
+}
+
+.detailCalendarDouble{
+  display: none;
+}
+
+.detailCalendarReservationContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .detailInfoReservation {
@@ -253,6 +271,28 @@
 
 
 @media screen and (min-width: 768px) {
+  .Calendar{
+    box-shadow: 0 0em 1em rgb(0 0 0 / 20%) !important;
+    margin-right: 0.0,5rem !important;
+  }
+  
+  .detailCalendarFlex{
+    display: flex;
+    box-shadow: 0 1em 4em rgb(0 0 0 / 20%);;
+  }
+
+  .detailCalendarDouble{
+    display: block;
+  }
+
+  .detailCalendarReservationContainer{
+    flex-direction: row;
+  }
+  
+  .detailInfoReservation{
+    margin: 1rem 6.5rem 0rem 0;
+  }
+
 }
 
 @media screen and (min-width: 1024px) {

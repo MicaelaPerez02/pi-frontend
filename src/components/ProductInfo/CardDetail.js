@@ -65,7 +65,7 @@ function CardDetail(props) {
                 <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
             </div>
             <div className='detailFeatures'>
-                <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?</h3>
+                <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?<hr className='hrFeatureDetail' /></h3>
                 <div className='detailFeaturesContainer'>
                     {props.features.map((feature, index) => (
                         <ul className='detailFeatureUl' key={index}>
@@ -79,9 +79,16 @@ function CardDetail(props) {
                 </div>
                 <div className='detailCalendar'>
                     <h3 className='detailCalendarTitle'>Fechas disponibles  <hr className='hrProdDetail'></hr></h3>
-                    <CalendarDetail className="detailCalendarDisplay" />
-                    <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
-                    <button className="detailButtonReservation">Iniciar reserva</button>
+                    <div className="detailCalendarFlex">
+                        <CalendarDetail className="detailCalendarDisplay" />
+                        <div className="detailCalendarDouble">
+                            <CalendarDetail className="detailCalendarDisplayDos" />
+                        </div>
+                    </div>
+                    <div className="detailCalendarReservationContainer">
+                        <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
+                        <button className="detailButtonReservation">Iniciar reserva</button>
+                    </div>
                 </div>
                 <div className='detailMap'>
                     <MapDetail cities={props.cities}

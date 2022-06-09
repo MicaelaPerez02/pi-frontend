@@ -15,7 +15,7 @@
 .hrRuleDetail {
   clear: both;
   display: block;
-  width: 60%;
+  width: 17rem;
   background-color: var(--complementary);
   height: 1px;
 
@@ -36,7 +36,7 @@
 
   color: var(--color3);
 
-  padding: 1rem 0 1rem 1rem;
+  padding: 1rem 0 1rem 0rem;
 }
 
 .rulesIconList {
@@ -50,7 +50,8 @@
   text-align: center;
 }
 
-.rulesDetailList p {
+.rulesDetailOne,
+.rulesDetailList {
   font-size: 1rem;
   margin-left: 1rem;
 }
@@ -72,3 +73,22 @@
   margin: 0.8rem 0rem 0 1rem;
 }
 
+@media screen and (min-width: 768px) {
+  .rulesDetailFlex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .rulesDetailOne{
+    flex: 10%;
+    align-self: flex-start;
+  }
+
+  .rulesDetailOne p{
+    width: 100%;
+  }
+}
