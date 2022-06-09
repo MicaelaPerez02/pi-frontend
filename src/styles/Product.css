@@ -100,8 +100,8 @@
   align-items: left;
 
   font-size: 14px;
-  font-weight: bold;
-  line-height: 16px;
+  font-weight: 700;
+  line-height: 1rem;
 }
 
 .productMap span {

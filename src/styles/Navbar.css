@@ -137,22 +137,29 @@ select.form_select:focus {
   .body_input_container {
     flex-direction: row !important;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 1rem;
+    padding-left: 1.4rem;
     color: var(--color3);
   }
 
   .body_input,
   .form_InputSelect {
-    width: 15.8rem;
+    width: 15rem;
     height: 2.5rem;
   }
 
+  .rs-picker-toggle,
+  .rs-btn rs-btn-default{
+    width: 15rem !important;
+    margin-left: 0.5rem;
+  }
+
   .body_button {
-    width: 10.4rem;
+    width: 13rem;
     height: 2.5rem;
     margin-top: 0rem;
-    margin-left: 0.5rem;
+    margin-left: 0.2rem;
   }
 
   .body_button:hover,
@@ -175,7 +182,43 @@ select.form_select:focus {
     height: 8.2rem;
   }
 
-  .body_input {
-    width: 24rem;
+  .body_input,
+  .form_InputSelect {
+    width: 22rem;
+    height: 2.5rem;
+
+    margin-left: 1.5%;
+  }
+  .rs-picker-toggle,
+  .rs-btn rs-btn-default{
+    width: 22rem !important;
+  }
+
+  .body_button {
+    margin-left: 12%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .body_input,
+  .form_InputSelect {
+    width: 22rem;
+    height: 2rem;
+
+    margin-left: 17%;
+    margin-bottom: 0.25rem;
+  }
+  .rs-picker-toggle,
+  .rs-btn rs-btn-default{
+    width: 22rem !important;
+    height: 2.3rem;
+
+    margin-top: 0.1rem;
+  }
+
+  .body_button {
+    margin-left: 8%;
+
+    margin-top: 0.1rem;
   }
 }
