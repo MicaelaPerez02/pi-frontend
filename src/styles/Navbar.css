@@ -119,7 +119,7 @@ select.form_select:hover {
 
 .body_button:hover,
 .body_button:focus {
-  box-shadow: left 11.25rem 0 0 0 var(--complementary);
+  background-color: var(--complementary);
 }
 
 .categories_body {
@@ -165,7 +165,7 @@ select.form_select:hover {
 
   .body_button:hover,
   .body_button:focus {
-    box-shadow: inset 11.25rem 0 0 0 var(--complementary);
+    box-shadow: inset 14rem 0 0 0 var(--complementary);
   }
 
   .calendar_mobile {
