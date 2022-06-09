@@ -8,6 +8,7 @@ import { RiParkingFill } from 'react-icons/ri';
 import { GiGymBag } from 'react-icons/gi';
 import CarrouselProduct from './CarrouselProduct';
 import CalendarDetail from './CalendarDetail';
+import CalendarDetailResponsive from './CalendarDetailResponsive';
 import MapDetail from './MapDetail';
 import RulesDetails from './RulesDetails';
 
@@ -82,7 +83,7 @@ function CardDetail(props) {
                     <div className="detailCalendarFlex">
                         <CalendarDetail className="detailCalendarDisplay" />
                         <div className="detailCalendarDouble">
-                            <CalendarDetail className="detailCalendarDisplayDos" />
+                            <CalendarDetailResponsive className="detailCalendarDisplayDos" />
                         </div>
                     </div>
                     <div className="detailCalendarReservationContainer">

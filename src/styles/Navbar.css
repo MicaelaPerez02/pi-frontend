@@ -4,7 +4,6 @@
   background-color: var(--color3);
   padding: 0.5rem;
   margin-top: 5rem;
-  padding-bottom: 1rem;
 }
 
 .body_title {
@@ -23,6 +22,7 @@
   justify-content: center;
   margin-top: 1rem;
   color: var(--color3);
+
 }
 
 .calendar_desktop {
@@ -43,13 +43,15 @@
 }
 
 .form_select {
-  width: 100%;
+  width: 95%;
   height: 37px;
   position: relative;
   top: 1px;
   color: var(--main-color);
   padding-left: 0.5rem;
   border-radius: 4px;
+
+  margin-bottom: 0.5rem;
 
   cursor: pointer;
 }
@@ -150,6 +152,12 @@ select.form_select:hover {
     height: 2.5rem;
   }
 
+  .form_select {
+    width: 40%;
+    margin-top: 0.4rem;
+    height: 2.3rem;
+  }
+
   .rs-picker-toggle,
   .rs-btn rs-btn-default {
     width: 100% !important;
@@ -179,6 +187,10 @@ select.form_select:hover {
 }
 
 @media screen and (min-width: 1024px) {
+  .body_container{
+    padding-bottom: 8rem;
+  }
+
   .body_input_container {
     justify-content: center;
   }
@@ -192,13 +204,21 @@ select.form_select:hover {
     width: 27%;
     height: 2.5rem;
   }
+
+  .form_select {
+    width: 35%;
+    margin-top: 0.4rem;
+    height: 2.3rem;
+  }
+
   .rs-picker-toggle,
   .rs-btn rs-btn-default {
-    width: 22rem !important;
+    width: 21rem !important;
+    margin-right: 3rem;
   }
 
   .body_button {
-    margin-left: 9%;
+    margin-left: 10%;
   }
 }
 
@@ -209,6 +229,12 @@ select.form_select:hover {
     height: 2rem;
 
     margin-bottom: 0.25rem;
+  }
+
+  .form_select {
+    width: 27%;
+    margin-top: 0.55rem;
+    height: 2.3rem;
   }
 
   .rs-picker-toggle,

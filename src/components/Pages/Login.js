@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import { FaWindowClose } from "react-icons/fa";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import "../../styles/Login.css";
-import HeaderRegister from "../Header/HeaderRegister";
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -37,16 +37,17 @@ function Login(props) {
                 {email.length < 100 ? <HeaderLogin /> : <Header />}
             </div>
             <div className="login">
-                <form className="form_container" >
+                <form className="form_container">
+                    <Link to={'/'} style={{textDecoration:"none"}}>
+                        <FaWindowClose className="iconCloseLogin" />
+                    </Link>
                     <h1 className="title">Iniciar sesión</h1>
-
                     <div className="input1">
                         <h5>Correo electrónico</h5>
                         <input type="email" name="email" placeholder="Ingrese su correo electrónico" className="input" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="input2">
                         <h5>Contraseña</h5>
-
                         <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" className="input" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <button className="btn-icon" onClick={toggleBtn}>
                             {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}

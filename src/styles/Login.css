@@ -1,4 +1,4 @@
-.headerLog{
+.headerLog {
   display: none;
 }
 
@@ -26,7 +26,7 @@
   padding-top: 1rem;
 }
 
-.input1{
+.input1 {
   padding-top: 1rem;
 }
 
@@ -39,20 +39,16 @@
   font-weight: 500;
   line-height: 14px;
   letter-spacing: 0em;
-  
+
   color: var(--color2);
 }
 
 .input {
   height: 40px;
   width: 300px;
-  border-radius: 5px;
 }
 
-
-input.input{
-  border: 1px solid var(--color2);
-  border-radius: 5px;
+input.input {
   padding-left: 1rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
@@ -78,35 +74,58 @@ input.input{
 
   height: 40px;
   width: 300px;
-  
-  border-radius: 5px;
 
-  background-color: var(--main-color);
+  border-radius: 5px;
+  background-color: var(--complementary);
+  color: var(--color3);
 }
 
 .btn_singIn {
-  background-color: var(--main-color);
-  color: var(--light);
+  background-color: var(--complementary);
+  color: var(--color3);
 
   font-size: 16px;
-  font-weight: 700;
   line-height: 19px;
   letter-spacing: 0em;
   text-align: center;
 }
 
+.text_register_register {
+  font-size: 1rem;
+  color: var(--color3);
+}
+
+.iconCloseLogin{
+  position: absolute;
+  top: 6rem;
+  left: 90%;
+  cursor: pointer;
+
+  font-size: 1.5rem;
+
+  background-color: var(--light);
+  color: var(--complementary);
+}
+
+@media screen and (min-width: 768px) {
+  .iconCloseLogin{
+    top: 6rem;
+    left: 95%;
+  }
+}
 @media screen and (min-width: 1024px) {
   input {
     height: 40px;
     width: 448px;
-    border-radius: 5px;
   }
 
   .btn_singIn {
     height: 40px;
     width: 206px;
-    left: 0px;
-    top: 0px;
-    border-radius: 5px;
+  }
+
+  .iconCloseLogin{
+    top: 6rem;
+    left: 97%;
   }
 }

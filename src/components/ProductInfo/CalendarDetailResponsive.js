@@ -6,13 +6,13 @@ import "../../styles/CalendarDetail.css";
 function CalendarDetail() {
     const minimumDate = {
         year: 2022,
-        month: 6,
+        month: 7,
         day: 8
     };
 
     const maximumDate = {
         year: 2022,
-        month: 7,
+        month: 8,
         day: 22
     }
 

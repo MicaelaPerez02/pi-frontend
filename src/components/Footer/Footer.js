@@ -10,16 +10,16 @@ function Footer() {
                 <span>HOMU</span>
             </div>
             <div className='footer_menu'>
-                <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
+                <a href='http://www.facebook.com/' rel="noopener noreferrer" target="_blank" className='footer_icon' style={{textDecoration:"none"}}>
                     <FaFacebook/>
                 </a>
-                <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
+                <a href='http://www.linkedin.com/' rel="noopener noreferrer" target="_blank" className='footer_icon' style={{textDecoration:"none"}}>
                     <FaLinkedin/>
                 </a>
-                <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
+                <a href='http://www.twitter.com/' rel="noopener noreferrer" target="_blank" className='footer_icon' style={{textDecoration:"none"}}>
                     <FaTwitterSquare/>
                 </a>
-                <a href='https://www.instagram.com/homuproyect/' rel="noopener noreferrer" target="_blank" className='footer_icon'>
+                <a href='https://www.instagram.com/homuproyect/' rel="noopener noreferrer" target="_blank" className='footer_icon' style={{textDecoration:"none"}}>
                     <FaInstagramSquare/>
                 </a>
             </div>

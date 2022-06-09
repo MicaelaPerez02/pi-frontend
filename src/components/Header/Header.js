@@ -9,7 +9,7 @@ function Header(props) {
         <div className='header'>
             <div className='header_container'>
                 <div className="header_logo_motto">
-                    <Link to='/'>
+                    <Link to='/' style={{textDecoration: 'none'}}>
                         <img
                             className='header_logo'
                             src="https://bucket-pig6.s3.us-east-2.amazonaws.com/Logos+Homu/Recurso+2finals.png"

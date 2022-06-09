@@ -31,7 +31,7 @@ function Sidebar(props) {
                         <>
                             <li className="nav-text">
                                 <Link to="/login" style={{ textDecoration: 'none' }}>
-                                    <p>Iniciar Sesión</p>
+                                    <span>Iniciar Sesión</span>
                                 </Link>
                             </li>
                             <li className="nav-text">
@@ -49,7 +49,6 @@ function Sidebar(props) {
                                 </div>
                                 <button className='button_close_sesion'> Cerrar Sesión <FaWindowClose className='icon_close_sesion' /> </button>
                             </li>)
-
                     }
                 </ul>
 

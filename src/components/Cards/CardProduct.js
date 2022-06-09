@@ -29,7 +29,7 @@ function CardProduct(props) {
                 <div className='productDescription'>
                     <p>{props.description}<span className='productMoreInfo'>...continuar leyendo</span></p>
                 </div>
-                <Link to={"/product" + "/" + props.title}>
+                <Link to={"/product" + "/" + props.title} style={{textDecoration: "none"}}>
                     <div className='productButton'>
                         <button>Ver más</button>
                     </div>

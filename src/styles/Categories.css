@@ -1,3 +1,7 @@
+.Calendar{
+  z-index: 0!important;
+}
+
 .categoryContainer {
   display: flex;
   flex-direction: column;

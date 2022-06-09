@@ -78,7 +78,7 @@
     border: 1px solid #060607;
     color: var(--light);
 
-    transition: 0.8s;
+    transition: 0.5s;
   }
 
   .header_button:hover,
@@ -90,8 +90,8 @@
 @media (min-width: 1024px) {
   .header_motto {
     display: inline;
-    margin-left: 2rem;
-    margin-top: 0.4rem;
+    margin-left: 1.2rem;
+    margin-top: 0.8rem;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 200;

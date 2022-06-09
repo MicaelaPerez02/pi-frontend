@@ -107,7 +107,7 @@
   color: var(--color3);
 }
 
-.detailImageGalery{
+.detailImageGalery {
   display: none;
 }
 
@@ -159,7 +159,7 @@
   padding: 1.5rem 0 0 1rem;
 }
 
-.hrFeatureDetail{
+.hrFeatureDetail {
   width: 15rem;
   border-top: 1px solid var(--complementary);
   margin: 1rem 0;
@@ -203,7 +203,6 @@
   align-items: center;
 }
 
-
 .detailCalendarTitle {
   font-size: 24px;
   font-weight: 700;
@@ -216,25 +215,25 @@
 }
 
 .hrProdDetail {
-  clear:both;
-  display:block;
-  width: 105%;               
-  background-color:var(--complementary);
+  clear: both;
+  display: block;
+  width: 105%;
+  background-color: var(--complementary);
   height: 1px;
 
   margin: 0.5rem 0 0 0;
   padding: 0;
 }
 
-.detailCalendarDisplay{
+.detailCalendarDisplay {
   padding: 0.5rem 0 1rem 0;
 }
 
-.detailCalendarDouble{
+.detailCalendarDouble {
   display: none;
 }
 
-.detailCalendarReservationContainer{
+.detailCalendarReservationContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -265,75 +264,79 @@
   transition: 0.8s;
 }
 
-.detailButtonReservation:hover{
+.detailButtonReservation:hover {
   background-color: var(--complementary);
 }
 
-
 @media screen and (min-width: 768px) {
-  .Calendar{
+  .Calendar {
     box-shadow: 0 0em 1em rgb(0 0 0 / 20%) !important;
-    margin-right: 0.0,5rem !important;
-  }
-  
-  .detailCalendarFlex{
-    display: flex;
-    box-shadow: 0 1em 4em rgb(0 0 0 / 20%);;
+    margin-right: 0, 5rem !important;
   }
 
-  .detailCalendarDouble{
+  .detailCalendarFlex {
+    display: flex;
+    box-shadow: 0 1em 4em rgb(0 0 0 / 20%);
+  }
+
+  .detailCalendarDouble {
     display: block;
   }
 
-  .detailCalendarReservationContainer{
+  .detailCalendarReservationContainer {
     flex-direction: row;
   }
-  
-  .detailInfoReservation{
+
+  .detailInfoReservation {
     margin: 1rem 6.5rem 0rem 0;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
-  .custom-slider, 
+  .custom-slider,
   .rs-carousel,
   .rs-carousel-placement-bottom,
   .rs-carousel-shape-dot,
-  .rs-carousel-content{
+  .rs-carousel-content {
     display: none !important;
   }
 
-  .detailImageGalery{
+  .detailCarrouselContainer{
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 20%);
+  }
+
+  .detailImageGalery {
     display: flex;
     flex-direction: row;
 
     width: 100%;
+
   }
 
-  .detailImageGaleryPrincipal{
+  .detailImageGaleryPrincipal {
     display: flex;
-    width: 100%;
-    height: 100%;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 20%);
+
+    margin-bottom: 0.5rem;
   }
 
-  .detailImage{
+  .detailImage {
     width: 50%;
   }
 
-  .detailImageGaleryFlex{
+  .detailImageGaleryFlex {
     display: flex;
     flex-direction: column;
   }
 
   .detailImageGalerySecondary,
-  .detailImageGaleryThird{
+  .detailImageGaleryThird {
     display: flex;
     width: 50%;
   }
 
   .detailImageSecond,
-  .detailImageThird{
+  .detailImageThird {
     width: 100%;
     height: 100%;
   }

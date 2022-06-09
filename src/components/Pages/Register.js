@@ -6,6 +6,7 @@ import "../../styles/Header.css";
 import Footer from "../Footer/Footer";
 import "../../styles/Footer.css";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
+import { FaWindowClose } from "react-icons/fa";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import HeaderRegister from "../Header/HeaderRegister";
@@ -35,6 +36,9 @@ function Register() {
             <HeaderRegister />
             <div className="register_container">
                 <form className="form_register" onSubmit={handleSubmit(onSubmit)} >
+                    <Link to={'/'} style={{ textDecoration: "none" }}>
+                        <FaWindowClose className="iconCloseLogin" />
+                    </Link>
                     <h1 className="form_title">Crear Cuenta</h1>
                     <form className="form_register">
                         <div className="container-fullName">
@@ -116,7 +120,7 @@ function Register() {
                     <div className="btn_register">
                         <input type="submit" value="Crear Cuenta" />
                     </div>
-                    <p className="text_register">
+                    <p className="text_register_register">
                         ¿Ya tienes cuenta?{" "}
                         <Link to="/login" className="btn_register_link">
                             Inicia Sesión
