@@ -12,6 +12,9 @@
   --color3: #202026;
   --color3-gradient: #383939;
   --color4: #d0d0d0;
+  --color5: #f2eee9;
+  --color-disabled: #dcd8d8;
   --light: white;
   --complementary: #f99a01;
+  --selected-day-color:rgb(255, 73, 7);
   }

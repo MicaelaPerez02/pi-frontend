@@ -184,10 +184,12 @@
 }
 
 .detailCalendar {
-  background-color: var(--color4);
+  background-color: var(--color5);
   padding-bottom: 2rem;
 
   padding-left: 1rem;
+
+  padding: 0 0 2rem 1rem;
 
   display: flex;
   flex-direction: column;
@@ -202,8 +204,19 @@
 
   color: var(--color3);
 
-  padding: 1rem 0 1rem 0rem;
+  padding: 1rem 0 2rem 0rem;
   align-self: flex-start;
+}
+
+.hrProdDetail {
+  clear:both;
+  display:block;
+  width: 105%;               
+  background-color:var(--complementary);
+  height: 1px;
+
+  margin: 0.5rem 0 0 0;
+  padding: 0;
 }
 
 .detailCalendarDisplay{
@@ -213,23 +226,31 @@
 .detailInfoReservation {
   color: var(--color3);
   font-weight: 700;
+  font-size: 0.74rem;
 
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .detailButtonReservation {
-  width: 95%;
+  width: 55%;
   height: 2.5rem;
   border-radius: 0.2rem;
   background-color: var(--main-color);
-  margin: 0.5rem 0 0 0.3rem;
+  margin: 1rem 0 0 0.3rem;
 
   color: var(--light);
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
+
+  transition: 0.8s;
 }
+
+.detailButtonReservation:hover{
+  background-color: var(--complementary);
+}
+
 
 @media screen and (min-width: 768px) {
 }

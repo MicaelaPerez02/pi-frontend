@@ -78,14 +78,14 @@ function CardDetail(props) {
                     ))}
                 </div>
                 <div className='detailCalendar'>
-                    <h3 className='detailCalendarTitle'>Fechas disponibles</h3>
-                    <CalendarDetail className="detailCalendarDisplay"/>
+                    <h3 className='detailCalendarTitle'>Fechas disponibles  <hr className='hrProdDetail'></hr></h3>
+                    <CalendarDetail className="detailCalendarDisplay" />
                     <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
                     <button className="detailButtonReservation">Iniciar reserva</button>
                 </div>
                 <div className='detailMap'>
                     <MapDetail cities={props.cities}
-                     map_url={props.map_url}/>
+                        map_url={props.map_url} />
                 </div>
                 <div className='detailRules'>
                     <RulesDetails />

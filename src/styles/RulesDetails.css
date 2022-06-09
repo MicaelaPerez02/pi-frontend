@@ -1,3 +1,7 @@
+.rulesDetailsContainer {
+  margin-bottom: 5rem;
+}
+
 .rulesDetailTitle {
   font-size: 24px;
   font-weight: 700;
@@ -8,6 +12,23 @@
   padding: 0.5rem 1rem 0rem 1.1rem;
 }
 
+.hrRuleDetail {
+  clear: both;
+  display: block;
+  width: 60%;
+  background-color: var(--complementary);
+  height: 1px;
+
+  margin: 0.8rem 0 0 0;
+}
+
+.rulesIcon {
+  color: var(--complementary);
+  margin: 0.5rem 0.5rem 0 0;
+
+  font-size: 1.2rem;
+}
+
 .rulesDetailSubtitle {
   font-size: 1.2rem;
   font-weight: 700;
@@ -15,9 +36,39 @@
 
   color: var(--color3);
 
-  padding: 1rem 0 0.5rem 1rem;
+  padding: 1rem 0 1rem 1rem;
 }
 
-.rulesDetailsContainer p{
-    margin-left: 1rem;
+.rulesIconList {
+  font-size: 0.8rem;
+
+  color: var(--color3);
+  align-items: center;
+
+  margin-right: 0.5rem;
+
+  text-align: center;
 }
+
+.rulesDetailList p {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.rulesDetailThree p{
+  font-size: 1rem;
+  font-weight: 700;
+
+  margin: 0.5rem 0 0 1rem;
+}
+
+.hrRuleDetailFinal{
+  clear: both;
+  display: block;
+  width: 90%;
+  background-color: var(--complementary);
+  height: 0.6px;
+
+  margin: 0.8rem 0rem 0 1rem;
+}
+

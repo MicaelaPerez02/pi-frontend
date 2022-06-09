@@ -1,9 +1,11 @@
 .Calendar {
-  background-color: rgb(78, 78, 77);
+  background-color: var(--light);
+  border-radius: 0rem !important;
+  box-shadow: 0 1em 4em rgb(0 0 0 / 20%);
 }
 
-.Calendar__day.-disabled {
-  color: var(--main-color) !important;
+.Calendar__weekDays {
+  color: var(--color3);
 }
 
 .Calendar__day {
@@ -17,8 +19,21 @@
   color: var(--color3);
 }
 
+.Calendar__monthSelectorItem.-active .Calendar__monthSelectorItemText,
+.Calendar__yearSelectorItem.-active .Calendar__yearSelectorText {
+  background-color: var(--complementary);
+}
+
+.Calendar__monthYear.-shown > *:hover,
+.Calendar:not(.-noFocusOutline) .Calendar__monthYear.-shown > *:focus,
+.Calendar__monthYear > *.-activeBackground {
+  background: var(--color5);
+}
+
 .Calendar__monthText,
 .Calendar__monthYear {
   color: var(--color3);
   font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
