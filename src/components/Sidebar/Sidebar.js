@@ -31,7 +31,7 @@ function Sidebar(props) {
                         <>
                             <li className="nav-text">
                                 <Link to="/login" style={{ textDecoration: 'none' }}>
-                                    <span>Iniciar Sesión</span>
+                                    <p>Iniciar Sesión</p>
                                 </Link>
                             </li>
                             <li className="nav-text">

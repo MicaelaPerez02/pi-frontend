@@ -4,7 +4,9 @@ import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import HeaderLogin from "../Header/HeaderLogin";
 import "../../styles/Login.css";
+import HeaderRegister from "../Header/HeaderRegister";
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -28,10 +30,13 @@ function Login(props) {
 
     return (
         <>
-            <Header email={email} />
-
+            <div className="headerLog">
+                <Header email={email} />
+            </div>
+            <div className="headerLog2">
+                {email.length < 100 ? <HeaderLogin /> : <Header />}
+            </div>
             <div className="login">
-
                 <form className="form_container" >
                     <h1 className="title">Iniciar sesión</h1>
 

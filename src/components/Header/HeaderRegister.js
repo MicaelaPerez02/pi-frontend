@@ -17,10 +17,10 @@ function HeaderRegister() {
                     <div className="header_logo_motto">
                         <img
                             className='header_logo'
-                            src="https://fv9-5.failiem.lv/thumb_show.php?i=p9ex3xf8c&download_checksum=3aecc5a468db23099426e4f52e8a9fce89571c3d&download_timestamp=1653513355"
+                            src="https://bucket-pig6.s3.us-east-2.amazonaws.com/Logos+Homu/Recurso+2finals.png"
                             alt='Logo Empresa'
                         />
-                        <p className='header_motto'>You are in the right place</p>
+                        <p className='header_motto'>Estás en el lugar correcto</p>
                     </div>
                 </Link>
                 <div className="navbar">
@@ -29,7 +29,7 @@ function HeaderRegister() {
                     </Link>
                     <Link to="/login">
                         <button className='header_button'>Inicia Sesion</button>
-                    </Link >
+                    </Link>
 
                 </div>
             </div>

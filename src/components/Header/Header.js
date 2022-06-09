@@ -16,7 +16,7 @@ function Header(props) {
                             alt='Logo Empresa'
                         />
                     </Link>
-                    <p className='header_motto'>Estas en el lugar correcto</p>
+                    <p className='header_motto'>Estás en el lugar correcto</p>
                 </div>
                 <Sidebar buttonLogin={localStorage.getItem("email") ? localStorage.getItem("email") : "Iniciar Sesion"} />
             </div>
