@@ -4,6 +4,7 @@ import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import '../../styles/Header.css';
 import "../../styles/Sidebar.css";
+import HeaderLogoMotto from './HeaderLogoMotto';
 
 
 function HeaderLogin(props) {
@@ -13,16 +14,7 @@ function HeaderLogin(props) {
     return (
         <div className='header'>
             <div className='header_container'>
-                <Link to="/" style={{textDecoration:"none"}}>
-                    <div className="header_logo_motto">
-                        <img
-                            className='header_logo'
-                            src="https://bucket-pig6.s3.us-east-2.amazonaws.com/Logos+Homu/Recurso+2finals.png"
-                            alt='Logo Empresa'
-                        />
-                        <p className='header_motto'>Estás en el lugar correcto</p>
-                    </div>
-                </Link>
+                <HeaderLogoMotto />
                 <div className="navbar">
                     <Link to="" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />

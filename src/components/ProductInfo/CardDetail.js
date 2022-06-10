@@ -2,15 +2,16 @@ import React from 'react';
 import { GoChevronLeft } from "react-icons/go";
 import "../../styles/ProductDetails.css";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaHotjar, FaTemperatureHigh } from 'react-icons/fa';
-import { BiWifi } from 'react-icons/bi';
-import { RiParkingFill } from 'react-icons/ri';
-import { GiGymBag } from 'react-icons/gi';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+
 import CarrouselProduct from './CarrouselProduct';
 import CalendarDetail from './CalendarDetail';
 import CalendarDetailResponsive from './CalendarDetailResponsive';
 import MapDetail from './MapDetail';
 import RulesDetails from './RulesDetails';
+import ImageGaleryDetail from './ImageGaleryDetail';
+import FeaturesDetail from './FeaturesDetail';
+import Images from './Images';
 
 function CardDetail(props) {
     return (
@@ -46,19 +47,11 @@ function CardDetail(props) {
                     url={props.url}
                 />
                 <div className='detailImageGalery'>
-                    <div className='detailImageGaleryPrincipal'>
-                        <img className='detailImage' src={props.url} alt={props.title} />
-                        <div className='detailImageGaleryFlex'>
-                            <div className='detailImageGalerySecondary'>
-                                <img className='detailImageSecond' src={props.url} alt={props.title} />
-                                <img className='detailImageSecond' src={props.url} alt={props.title} />
-                            </div>
-                            <div className='detailImageGaleryThird'>
-                                <img className='detailImageThird' src={props.url} alt={props.title} />
-                                <img className="detailImageThird" src={props.url} alt={props.title} />
-                            </div>
-                        </div>
-                    </div>
+                    <Images 
+                        url={props.url}
+                        title={props.title}
+                        products={props.products}
+                    />
                 </div>
             </div>
             <div className='detailDescription'>
@@ -66,38 +59,29 @@ function CardDetail(props) {
                 <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
             </div>
             <div className='detailFeatures'>
-                <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?<hr className='hrFeatureDetail' /></h3>
-                <div className='detailFeaturesContainer'>
-                    {props.features.map((feature, index) => (
-                        <ul className='detailFeatureUl' key={index}>
-                            <li className='detailFeatureLi'><BiWifi className='detailFeatureIcon' /> Wi-Fi: {feature.wi_fi}</li>
-                            <li className='detailFeatureLi'><RiParkingFill className='detailFeatureIcon' /> Estacionamiento: {feature.parking}</li>
-                            <li className='detailFeatureLi'><FaTemperatureHigh className='detailFeatureIcon' /> Aire Acondicionado: {feature.air_conditioning}</li>
-                            <li className='detailFeatureLi'><FaHotjar className='detailFeatureIcon' />Calefacción: {feature.heating}</li>
-                            <li className='detailFeatureLi'><GiGymBag className='detailFeatureIcon' />Gimnasio: {feature.gym}</li>
-                        </ul>
-                    ))}
-                </div>
-                <div className='detailCalendar'>
-                    <h3 className='detailCalendarTitle'>Fechas disponibles  <hr className='hrProdDetail'></hr></h3>
-                    <div className="detailCalendarFlex">
-                        <CalendarDetail className="detailCalendarDisplay" />
-                        <div className="detailCalendarDouble">
-                            <CalendarDetailResponsive className="detailCalendarDisplayDos" />
-                        </div>
-                    </div>
-                    <div className="detailCalendarReservationContainer">
-                        <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
-                        <button className="detailButtonReservation">Iniciar reserva</button>
+                <FeaturesDetail 
+                    features={props.features}
+                />
+            </div>
+            <div className='detailCalendar'>
+                <h3 className='detailCalendarTitle'>Fechas disponibles <hr className='hrProdDetail'></hr></h3>
+                <div className="detailCalendarFlex">
+                    <CalendarDetail className="detailCalendarDisplay" />
+                    <div className="detailCalendarDouble">
+                        <CalendarDetailResponsive className="detailCalendarDisplayDos" />
                     </div>
                 </div>
-                <div className='detailMap'>
-                    <MapDetail cities={props.cities}
-                        map_url={props.map_url} />
+                <div className="detailCalendarReservationContainer">
+                    <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
+                    <button className="detailButtonReservation">Iniciar reserva</button>
                 </div>
-                <div className='detailRules'>
-                    <RulesDetails />
-                </div>
+            </div>
+            <div className='detailMap'>
+                <MapDetail cities={props.cities}
+                    map_url={props.map_url} />
+            </div>
+            <div className='detailRules'>
+                <RulesDetails />
             </div>
         </div>
     )

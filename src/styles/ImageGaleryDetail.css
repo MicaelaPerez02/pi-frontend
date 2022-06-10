@@ -1,0 +1,9 @@
+.detailImageGalery{
+    display: flex;
+    
+}
+
+.imageDetail {
+    width: 5rem;
+    height: 5rem;
+}

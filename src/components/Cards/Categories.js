@@ -2,7 +2,6 @@ import React from 'react';
 import '../../styles/Categories.css';
 import useFetch from '../../hooks/useFetch';
 import CardCategory from './CardCategory';
-import CardProduct from './CardProduct';
 
 function Categories(props) {
     const { data, isLoaded } = useFetch(`/categories/allCategories`);

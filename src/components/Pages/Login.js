@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import "../../styles/Login.css";
 
-function Login(props) {
+function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -30,11 +30,8 @@ function Login(props) {
 
     return (
         <>
-            <div className="headerLog">
-                <Header email={email} />
-            </div>
             <div className="headerLog2">
-                {email.length < 100 ? <HeaderLogin /> : <Header />}
+                {email.length < 500 ? <HeaderLogin /> : <Header email={email}/>}
             </div>
             <div className="login">
                 <form className="form_container">
@@ -59,7 +56,6 @@ function Login(props) {
                             <button className="btn_singIn" onClick={singup}>Ingresar</button>
                         </Link>
                     </div>
-
                     <p className="text_register">
                         ¿Aún no tenes cuenta?{" "}
                         <Link to="/register" className="btn_register_link">
