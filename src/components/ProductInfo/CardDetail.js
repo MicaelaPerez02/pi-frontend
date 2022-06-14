@@ -48,9 +48,10 @@ function CardDetail(props) {
                 />
                 <div className='detailImageGalery'>
                     <Images 
+                        key={props.id}
                         url={props.url}
                         title={props.title}
-                        products={props.products}
+                        id={props.id}
                     />
                 </div>
             </div>

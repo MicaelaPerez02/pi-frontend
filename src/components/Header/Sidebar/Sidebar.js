@@ -9,8 +9,6 @@ import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
 import "../../../styles/Header.css";
 import "../../../styles/Sidebar.css";
-import { Hidden } from '@mui/material';
-import { display } from '@mui/system';
 
 function Sidebar(props) {
     const [sidebar, setSidebar] = useState(false);

@@ -19,8 +19,6 @@ function Navbar(props) {
                     <CardCities 
                         name={props.name}
                     />
-                    {console.log(props.name)}
-                    {console.log(citiesId)}
                     <DateRangePicker placeholder="Seleccione el rango de fechas" className='calendar_desktop' format='dd-MM-yyyy' />
                     <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='calendar_mobile' />
                     <button className='body_button'>Buscar</button>
