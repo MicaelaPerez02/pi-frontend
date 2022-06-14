@@ -1,4 +1,5 @@
 @media screen and (min-width: 1024px) {
+
   .detailImageGalery {
     --gap: 1rem;
     --num-cols: 2;
@@ -12,6 +13,8 @@
     grid-auto-rows: var(--row-height);
 
     gap: var(--gap);
+
+    background-color: var(--color5);
   }
 
   .detailImage > img {
