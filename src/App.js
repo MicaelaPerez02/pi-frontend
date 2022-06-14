@@ -7,9 +7,25 @@ import ProductDetails from './components/ProductInfo/ProductDetails';
 import FilterCategory from './components/Cards/FilterCategory';
 import FilterCities from './components/Navbar/FilterCities';
 import Reservation from './components/Reservation/Reservation';
+import ProgressBar from "@badrap/bar-of-progress";
+
+
 import './App.css';
 
 function App() {
+  const progress = new ProgressBar({
+    size: 3,
+    color: "var(--complementary)",
+    className: "progressBar",
+    delay: 100,
+  });
+
+  progress.start();
+
+  setTimeout(() => {
+    progress.finish();
+  }, 500);
+
     return (
       <BrowserRouter>
         <Routes>

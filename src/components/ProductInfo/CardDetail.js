@@ -3,13 +3,11 @@ import { GoChevronLeft } from "react-icons/go";
 import "../../styles/ProductDetails.css";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt } from 'react-icons/fa';
-
 import CarrouselProduct from './CarrouselProduct';
 import CalendarDetail from './CalendarDetail';
 import CalendarDetailResponsive from './CalendarDetailResponsive';
 import MapDetail from './MapDetail';
 import RulesDetails from './RulesDetails';
-import ImageGaleryDetail from './ImageGaleryDetail';
 import FeaturesDetail from './FeaturesDetail';
 import Images from './Images';
 

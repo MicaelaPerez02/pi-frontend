@@ -6,8 +6,10 @@ import Categories from '../Cards/Categories';
 import Products from '../Cards/Products';
 import '../../styles/Navbar.css';
 import '../../styles/Home.css';
+import ProgressBar from '@badrap/bar-of-progress';
 
 function Home() {
+
     return (
         <div className='home_container'>
             <div className='home_header'>
