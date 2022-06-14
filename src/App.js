@@ -3,10 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Pages/Home';
 import Login from './components/Pages/Login';
 import Register from './components/Pages/Register';
-import './App.css';
 import ProductDetails from './components/ProductInfo/ProductDetails';
 import FilterCategory from './components/Cards/FilterCategory';
 import FilterCities from './components/Navbar/FilterCities';
+import Reservation from './components/Reservation/Reservation';
+import './App.css';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/product/:productId" element={< ProductDetails />} />
           <Route path="/category/:categoryId" element={< FilterCategory />} />
           <Route path="/cities/:citiesId" element={< FilterCities />} />
+          <Route path="/product/:productId/reservation" element={< Reservation />} />
         </Routes>
       </BrowserRouter>
     );

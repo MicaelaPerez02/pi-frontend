@@ -74,7 +74,9 @@ function CardDetail(props) {
                 </div>
                 <div className="detailCalendarReservationContainer">
                     <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
+                    <Link to={"/product" + "/" + props.title + "/reservation" } style={{textDecoration: "none"}}>
                     <button className="detailButtonReservation">Iniciar reserva</button>
+                    </Link>
                 </div>
             </div>
             <div className='detailMap'>
@@ -84,7 +86,7 @@ function CardDetail(props) {
             <div className='detailRules'>
                 <RulesDetails />
             </div>
-        </div>
+        </div >
     )
 }
 
