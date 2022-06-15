@@ -236,8 +236,8 @@
 .detailCalendarReservationContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
 .detailInfoReservation {
@@ -245,11 +245,16 @@
   font-weight: 700;
   font-size: 0.74rem;
 
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.detailButtonReservationDiv{
+  width: 150%;
+  margin: 0 -65%;
 }
 
 .detailButtonReservation {
-  width: 55%;
+  width: 150%;
   height: 2.5rem;
   border-radius: 0.2rem;
   background-color: var(--main-color);
@@ -283,7 +288,9 @@
   }
 
   .detailCalendarReservationContainer {
+    width: 100%;
     flex-direction: row;
+    padding-right: 4rem;
   }
 
   .detailInfoReservation {
@@ -304,4 +311,18 @@
     box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 20%);
   }
 
+  .detailCalendarFlexDesktop{
+    display: flex;
+  }
+
+  .detailCalendarReservationContainer{
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .detailInfoReservation{
+    padding-left: 34%;
+    height: 10%;
+    width: 90%;
+  }
 }
