@@ -49,7 +49,6 @@ function Login() {
                         <button className="btn-icon" onClick={toggleBtn}>
                             {state ? <AiOutlineEye className="icon-eyeBlind" /> : <AiOutlineEyeInvisible className="icon-eyeBlind" />}
                         </button>
-
                     </div>
                     <div className="btn-container">
                         <Link to="/">

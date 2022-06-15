@@ -1,6 +1,5 @@
 import React from 'react'
 import ImageGaleryDetail from './ImageGaleryDetail';
-import CarrouselProduct from './CarrouselProduct';
 import useFetch from '../../hooks/useFetch';
 import "../../styles/ImageGaleryDetail.css";
 import { useParams } from 'react-router-dom';

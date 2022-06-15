@@ -274,9 +274,8 @@
     margin-right: 0, 5rem !important;
   }
 
-  .detailCalendarFlex {
-    display: flex;
-    box-shadow: 0 1em 4em rgb(0 0 0 / 20%);
+  .detailCalendarFlex{
+    display: none;
   }
 
   .detailCalendarDouble {

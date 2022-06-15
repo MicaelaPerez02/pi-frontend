@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CardProduct(props) {
     return (
@@ -29,11 +29,11 @@ function CardProduct(props) {
                 <div className='productDescription'>
                     <p>{props.description}<span className='productMoreInfo'>...continuar leyendo</span></p>
                 </div>
-                <Link to={"/product" + "/" + props.title} style={{textDecoration: "none"}}>
-                    <div className='productButton'>
+                <div className='productButton'>
+                    <Link to={"/product/" + props.title} style={{ textDecoration: "none" }}>
                         <button>Ver más</button>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </div>
         </div>
     )

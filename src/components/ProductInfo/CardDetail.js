@@ -20,9 +20,11 @@ function CardDetail(props) {
                         <p className='detailCategories'>{props.categories}</p>
                         <strong className='detailTitle'>{props.title}</strong>
                     </div>
-                    <a href="/">
-                        <GoChevronLeft className='detailIcon' />
-                    </a>
+                    <Link to="/">
+                        <div className='detailIconContainer'>
+                            <GoChevronLeft className='detailIcon' />
+                        </div>
+                    </Link>
                 </div>
             </div>
             <div className="detailCityContent">
@@ -45,7 +47,7 @@ function CardDetail(props) {
                     url={props.url}
                 />
                 <div className='detailImageGalery'>
-                    <Images 
+                    <Images
                         key={props.id}
                         url={props.url}
                         title={props.title}
@@ -58,7 +60,7 @@ function CardDetail(props) {
                 <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
             </div>
             <div className='detailFeatures'>
-                <FeaturesDetail 
+                <FeaturesDetail
                     features={props.features}
                 />
             </div>
@@ -66,14 +68,16 @@ function CardDetail(props) {
                 <h3 className='detailCalendarTitle'>Fechas disponibles <hr className='hrProdDetail'></hr></h3>
                 <div className="detailCalendarFlex">
                     <CalendarDetail className="detailCalendarDisplay" />
-                    <div className="detailCalendarDouble">
-                        <CalendarDetailResponsive className="detailCalendarDisplayDos" />
-                    </div>
+                </div>
+                <div className="detailCalendarDouble">
+                    <CalendarDetailResponsive className="detailCalendarDisplayDos" />
                 </div>
                 <div className="detailCalendarReservationContainer">
                     <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
-                    <Link to={"/product" + "/" + props.title + "/reservation" } style={{textDecoration: "none"}}>
-                    <button className="detailButtonReservation">Iniciar reserva</button>
+                    <Link to={"/product/" + props.title + "/reservation"} style={{ textDecoration: "none" }}>
+                        <div className='detailButtonReservationDiv'>
+                            <button className="detailButtonReservation">Iniciar reserva</button>
+                        </div>
                     </Link>
                 </div>
             </div>
@@ -84,7 +88,7 @@ function CardDetail(props) {
             <div className='detailRules'>
                 <RulesDetails />
             </div>
-        </div >
+        </div>
     )
 }
 

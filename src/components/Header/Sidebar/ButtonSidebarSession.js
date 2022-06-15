@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBars, FaWindowClose } from 'react-icons/fa';
+import { FaWindowClose } from 'react-icons/fa';
 
 function ButtonSidebarSession() {
     const icon_close = () => {

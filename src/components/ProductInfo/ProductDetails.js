@@ -29,16 +29,13 @@ function ProductDetails() {
                 />
             )
         }
-        else {
-            return null;
-        }
     })
 
     return (
         <div>
             <Header className="productHeader" />
             <div className='productInfoContent'>
-                <div className='productBanner' key={productId}>
+                <div className='productBanner'>
                     {isLoaded ? productSelected : <div>Cargando...</div>}
                 </div>
                 <Footer />

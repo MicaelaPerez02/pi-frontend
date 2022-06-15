@@ -1,0 +1,63 @@
+.reservationPage{
+    background-color: var(--color5);
+}
+
+.reservationContainer{
+    padding-top: 5rem;
+    background-color: var(--main-color);
+}
+
+.reservationFormContainer{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.reservationForm{
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--light);
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.reservationInputTitle{
+    font-size: 0.8rem;
+}
+
+.reservationTitle{
+    padding-bottom: 0.5rem;
+}
+
+.reservationInput{    
+    font-size: 0.8rem;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.reservationCalendar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem 0 6rem 0;
+}
+
+.reservationTitleCalendar{
+    align-self: flex-start;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+}
+
+.Calendar{
+    width: 85%;
+}

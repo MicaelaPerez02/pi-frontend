@@ -8,9 +8,6 @@ import { useParams } from 'react-router-dom';
 import CardCities from './CardCities';
 
 function Navbar(props) {
-    const { data, isLoaded } = useFetch(`/cities/allCities`);
-    const { citiesId } = useParams();
-
     return (
         <>
             <div className='body_container'>

@@ -6,7 +6,7 @@ import Register from './components/Pages/Register';
 import ProductDetails from './components/ProductInfo/ProductDetails';
 import FilterCategory from './components/Cards/FilterCategory';
 import FilterCities from './components/Navbar/FilterCities';
-import Reservation from './components/Reservation/Reservation';
+import Reservation from './components/Pages/ReservationPage/Reservation';
 import ProgressBar from "@badrap/bar-of-progress";
 
 
@@ -29,7 +29,7 @@ function App() {
     return (
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={< Home />} />
+          <Route path="/" element={< Home />} />
           <Route path="/login" element={< Login />} />
           <Route path="/register" element={< Register />} />
           <Route path="/product/:productId" element={< ProductDetails />} />

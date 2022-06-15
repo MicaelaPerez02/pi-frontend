@@ -22,4 +22,8 @@ In the project directory, you can run:
 
 ## Datepicker
 
-### 'npm install react-modern-calendar-datepicker'
+### `npm i react-calendar`
+
+### `npm i @badrap/bar-of-progress`
+
+

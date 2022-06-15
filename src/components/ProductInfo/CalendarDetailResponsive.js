@@ -1,6 +1,6 @@
 import React from 'react'
-import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-import { Calendar } from "react-modern-calendar-datepicker";
+import 'react-calendar/dist/Calendar.css';
+import Calendar from 'react-calendar';
 import "../../styles/CalendarDetail.css";
 
 function CalendarDetail() {
@@ -16,16 +16,12 @@ function CalendarDetail() {
         day: 22
     }
 
-    const handleDisabledSelect = disabledDay => {
-        console.log('Tried selecting a disabled day', disabledDay);
-    };
-
     return (
         <Calendar
             minimumDate={minimumDate}
             maximumDate={maximumDate}
-            onDisabledDayError={handleDisabledSelect}
-            shouldHighlightWeekends
+            showDoubleView={true}
+            selectRange={true}
         />
     );
 };
