@@ -53,6 +53,9 @@ function CardDetail(props) {
                         title={props.title}
                         id={props.id}
                     />
+                    <div className='detailImageVerMas'>
+                        <p>VER MÁS</p>
+                    </div>
                 </div>
             </div>
             <div className='detailDescription'>

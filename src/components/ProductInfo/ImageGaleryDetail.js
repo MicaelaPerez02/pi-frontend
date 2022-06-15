@@ -4,7 +4,7 @@ import "../../styles/ImageGaleryDetail.css";
 function ImageGaleryDetail(props) {
   return (
     <div className='detailImage'> 
-      <img className={props.title} src={props.url} alt={props.title} />
+      <img className={props.title} src={props.url} alt={props.title} /> 
     </div>
   )
 }

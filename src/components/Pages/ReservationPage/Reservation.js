@@ -19,6 +19,10 @@ function Reservation() {
                     key={product.id}
                     categories={product.categories.title}
                     title={product.title}
+                    rating={product.rating}
+                    cities={product.cities.name}
+                    images={product.url}
+
                 />
             )
         }

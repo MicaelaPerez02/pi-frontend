@@ -26,4 +26,7 @@ In the project directory, you can run:
 
 ### `npm i @badrap/bar-of-progress`
 
+### `npm install --save react-dropdown-select`
+
+
 

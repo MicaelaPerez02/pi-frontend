@@ -1,63 +1,130 @@
-.reservationPage{
-    background-color: var(--color5);
+.reservationPage {
+  background-color: var(--color5);
 }
 
-.reservationContainer{
-    padding-top: 5rem;
-    background-color: var(--main-color);
+.reservationContainer {
+  padding-top: 5rem;
+  background-color: var(--main-color);
 }
 
-.reservationFormContainer{
-    display: flex;
-    justify-content: center;
-    padding-top: 1rem;
+.reservationFormContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
-.reservationForm{
-    display: flex;
-    flex-direction: column;
+.reservationForm {
+  display: flex;
+  flex-direction: column;
 
-    background-color: var(--light);
-    justify-content: center;
-    align-items: center;
-    width: 85%;
-    
-    padding: 1rem 2rem 1rem 2rem;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  background-color: var(--light);
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.reservationInputTitle{
-    font-size: 0.8rem;
+.reservationInputTitle {
+  font-size: 0.8rem;
 }
 
-.reservationTitle{
-    padding-bottom: 0.5rem;
+.reservationTitle {
+  padding-bottom: 0.5rem;
 }
 
-.reservationInput{    
-    font-size: 0.8rem;
+.reservationInput {
+  font-size: 0.8rem;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.reservationCalendar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.reservationCalendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    padding: 2rem 0 6rem 0;
+  padding: 2rem 0 0 0;
+  margin-bottom: 2rem;
 }
 
-.reservationTitleCalendar{
-    align-self: flex-start;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    margin-left: 2rem;
+.reservationCalendarComponentDouble {
+  display: none;
 }
 
-.Calendar{
-    width: 85%;
+.reservationTitleCalendar {
+  align-self: flex-start;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+
+.reservationCheckHour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 15rem;
+}
+
+.reservationCheckHourBox {
+  background-color: var(--light);
+  width: 85%;
+
+  padding: 1rem 1rem 2rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.reservationCheckHourTitle {
+  align-self: flex-start;
+  font-size: 1.2rem;
+  margin-left: 2.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reservationCheckInfo {
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+.reservationIconCheck {
+  color: var(--complementary);
+  font-size: 2rem;
+  margin-top: 0.2rem;
+}
+
+.reservationCheckInfo {
+  margin-left: 1rem;
+  width: 90%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.reservationCheckEstimated{
+  margin: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.ReservationDropdownHour {
+  width: 90%;
+  margin-left: 1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+  .reservationCalendarOne {
+    display: none;
+  }
+
+  .reservationCalendarComponentDouble {
+    display: block;
+  }
 }

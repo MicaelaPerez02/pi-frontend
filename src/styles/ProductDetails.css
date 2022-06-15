@@ -326,3 +326,9 @@
     width: 90%;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .detailInfoReservation{
+    padding-left: 30%;
+  }
+}
