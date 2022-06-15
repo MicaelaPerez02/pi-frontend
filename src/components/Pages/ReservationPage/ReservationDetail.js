@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GoChevronLeft } from 'react-icons/go';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 import CalendarDetail from '../../ProductInfo/CalendarDetail';
 import CalendarDetailResponsive from '../../ProductInfo/CalendarDetailResponsive';
 import DropdownHours from './DropdownHours';
 import hours from '../../../utils/hours';
+import RulesDetails from '../../ProductInfo/RulesDetails';
 
 function ReservationDetail(props) {
     const [value, setValue] = useState(null);
@@ -77,14 +79,32 @@ function ReservationDetail(props) {
                 <p className="reservationCardTitle">Detalle de la reserva</p>
                 <div className='reservationCardInfo'>
                     <img src={props.images} alt={props.title} className='reservationCardImage' />
-                    <p>{props.categories}</p>
-                    <p>{props.title}</p>
-                    <p>{props.rating}</p>
-                    <p>{props.cities}</p>
-                    <p>Check in <span>*props reserva*</span></p>
-                    <p>Check out <span>*props reserva*</span></p>
-                    <button>Confirmar reserva</button>
+                    <p className='reservationCardCategory'>{props.categories}</p>
+                    <p className='reservationCardName'>{props.title}</p>
+                    <span className="reservationRating">{
+                        Array(props.rating)
+                            .fill()
+                            .map((_, index) => (
+                                <p key={index} className="reservationStars">⭐</p>
+                            ))
+                    }</span>
+                    <p className='reservationCities'><FaMapMarkerAlt className='productIconMap' />{props.cities}</p>
+                    <hr className='hrReservation'></hr>
+                    <div className='reservationCheckInOutContainer'>
+                        <p className='reservationCheckInOut'>Check in </p>
+                        <span>*props reserva*</span>
+                    </div>
+                    <hr className='hrReservation'></hr>
+                    <div className='reservationCheckInOutContainer'>
+                        <p className='reservationCheckInOut'>Check out </p>
+                        <span>*props reserva*</span>
+                    </div>
+                    <hr className='hrReservation'></hr>
+                    <button className='reservationButtonConfirm'>Confirmar reserva</button>
                 </div>
+            </div>
+            <div className='reservationRules'>
+                <RulesDetails />
             </div>
         </div>
     )
