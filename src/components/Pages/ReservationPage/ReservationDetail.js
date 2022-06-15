@@ -72,14 +72,18 @@ function ReservationDetail(props) {
                         />
                     </div>
                 </div>
-                <div className='reservationCardHotel'>
-                    <p>Detalle de la reserva</p>
-                    <div className='reservationCardInfo'>
+            </div>
+            <div className='reservationCardHotel'>
+                <p className="reservationCardTitle">Detalle de la reserva</p>
+                <div className='reservationCardInfo'>
+                    <img src={props.images} alt={props.title} className='reservationCardImage' />
                     <p>{props.categories}</p>
                     <p>{props.title}</p>
                     <p>{props.rating}</p>
                     <p>{props.cities}</p>
-                    </div>
+                    <p>Check in <span>*props reserva*</span></p>
+                    <p>Check out <span>*props reserva*</span></p>
+                    <button>Confirmar reserva</button>
                 </div>
             </div>
         </div>
