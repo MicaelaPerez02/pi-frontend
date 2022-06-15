@@ -299,11 +299,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .custom-slider,
-  .rs-carousel,
-  .rs-carousel-placement-bottom,
-  .rs-carousel-shape-dot,
-  .rs-carousel-content {
+  .carousel-root {
     display: none;
   }
 

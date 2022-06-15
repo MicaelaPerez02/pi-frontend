@@ -11,9 +11,6 @@ In the project directory, you can run:
 ### `npm install react-icons`
 
 ### `npm install react-hook-form`
-
-### `npm start`
-
 ## Testing
 
 ### `npm install --save -dev @testing-library/react @testing-library/jest-dom`
@@ -28,5 +25,6 @@ In the project directory, you can run:
 
 ### `npm install --save react-dropdown-select`
 
+### `npm i rs-carousel`
 
-
+### `npm start`

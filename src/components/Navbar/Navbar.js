@@ -13,7 +13,7 @@ function Navbar(props) {
             <div className='body_container'>
                 <p className='body_title'>Buscar ofertas en hoteles, casas y mucho más</p>
                 <div className='body_input_container'>
-                    <CardCities 
+                    <CardCities
                         name={props.name}
                     />
                     <DateRangePicker placeholder="Seleccione el rango de fechas" className='calendar_desktop' format='dd-MM-yyyy' />

@@ -1,11 +1,8 @@
 import React from 'react';
-import { Carousel } from 'rsuite';
-import 'rsuite/dist/rsuite.min.css';
-import useFetch from '../../hooks/useFetch';
-import { useParams } from 'react-router-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 function CarrouselProduct(props) {
-
     return (
         <Carousel>
             <img className={props.url} src={props.url} alt={props.title} />

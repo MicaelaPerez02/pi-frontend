@@ -22,7 +22,6 @@ function Reservation() {
                     rating={product.rating}
                     cities={product.cities.name}
                     images={product.url}
-
                 />
             )
         }
