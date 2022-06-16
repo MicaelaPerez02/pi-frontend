@@ -6,11 +6,16 @@ import { FaWindowClose } from "react-icons/fa";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
+import LoginError from "./LoginError";
 import "../../styles/Login.css";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const clearButtonClick = () => {
+        localStorage.removeItem("buttonReservationClick");
+    }
 
     const singup = () => {
         localStorage.setItem("email", JSON.stringify(email));
@@ -18,6 +23,8 @@ function Login() {
 
         localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
         console.log(localStorage.getItem("avatar"));
+
+        localStorage.removeItem("buttonReservationClick");
     }
 
     const [state, setState] = useState(false);
@@ -31,13 +38,15 @@ function Login() {
     return (
         <>
             <div className="headerLog2">
-                {email.length < 500 ? <HeaderLogin /> : <Header email={email}/>}
+                {email.length < 500 ? <HeaderLogin /> : <Header email={email} />}
             </div>
             <div className="login">
                 <form className="form_container">
-                    <Link to={'/'} style={{textDecoration:"none"}}>
-                        <FaWindowClose className="iconCloseLogin" />
+                    <Link to={'/'} style={{ textDecoration: "none" }}>
+                        <FaWindowClose onClick={clearButtonClick} className="iconCloseLogin" />
                     </Link>
+                    {localStorage.getItem("buttonReservationClick") == "true" ?
+                        <LoginError /> : ""}
                     <h1 className="title">Iniciar sesión</h1>
                     <div className="input1">
                         <h5>Correo electrónico</h5>

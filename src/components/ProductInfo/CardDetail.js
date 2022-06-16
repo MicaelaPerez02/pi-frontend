@@ -12,6 +12,11 @@ import FeaturesDetail from './FeaturesDetail';
 import Images from './Images';
 
 function CardDetail(props) {
+    const handleClick = () => {
+        localStorage.setItem("buttonReservationClick", true);
+        console.log(localStorage.getItem("buttonReservationClick"));
+    }
+
     return (
         <div>
             <div className="detailContainer">
@@ -79,11 +84,14 @@ function CardDetail(props) {
                     <div className="detailCalendarReservationContainer">
                         <div className='detailCalendarReservationFlex'>
                             <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
-                            <Link to={"/product/" + props.title + "/reservation"} style={{ textDecoration: "none" }}>
-                                <div className='detailButtonReservationDiv'>
-                                    <button className="detailButtonReservation">Iniciar reserva</button>
-                                </div>
-                            </Link>
+                            <div className='detailButtonReservationDiv'>
+                                {localStorage.getItem("email") == null ? <Link to="/login">
+                                    <button className="detailButtonReservation" onClick={handleClick}> Iniciar reserva</button> </Link> :
+                                    <Link to={"/product/" + props.title + "/reservation"}>
+                                        <button className="detailButtonReservation"> Iniciar reserva</button>
+                                    </Link>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
