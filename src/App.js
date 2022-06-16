@@ -7,6 +7,7 @@ import ProductDetails from './components/ProductInfo/ProductDetails';
 import FilterCategory from './components/Cards/FilterCategory';
 import FilterCities from './components/Navbar/FilterCities';
 import Reservation from './components/Pages/ReservationPage/Reservation';
+import ReservationSuccess from './components/Pages/ReservationPage/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
 
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/category/:categoryId" element={< FilterCategory />} />
           <Route path="/cities/:citiesId" element={< FilterCities />} />
           <Route path="/product/:productId/reservation" element={< Reservation />} />
+          <Route path='/product/:productId/reservation/success' element={< ReservationSuccess />} />
         </Routes>
       </BrowserRouter>
     );

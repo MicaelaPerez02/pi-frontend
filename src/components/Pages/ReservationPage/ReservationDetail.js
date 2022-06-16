@@ -110,7 +110,9 @@ function ReservationDetail(props) {
                                 <span>*props reserva*</span>
                             </div>
                             <hr className='hrReservation'></hr>
-                            <button className='reservationButtonConfirm'>Confirmar reserva</button>
+                            <Link to={"/product/" + props.title + "/reservation/success"}>
+                                <button className='reservationButtonConfirm'>Confirmar reserva</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
