@@ -77,12 +77,14 @@ function CardDetail(props) {
                         <CalendarDetailResponsive className="detailCalendarDisplayDos" />
                     </div>
                     <div className="detailCalendarReservationContainer">
-                        <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
-                        <Link to={"/product/" + props.title + "/reservation"} style={{ textDecoration: "none" }}>
-                            <div className='detailButtonReservationDiv'>
-                                <button className="detailButtonReservation">Iniciar reserva</button>
-                            </div>
-                        </Link>
+                        <div className='detailCalendarReservationFlex'>
+                            <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
+                            <Link to={"/product/" + props.title + "/reservation"} style={{ textDecoration: "none" }}>
+                                <div className='detailButtonReservationDiv'>
+                                    <button className="detailButtonReservation">Iniciar reserva</button>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

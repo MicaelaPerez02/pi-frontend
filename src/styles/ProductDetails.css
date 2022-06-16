@@ -192,11 +192,6 @@
 .detailCalendar {
   background-color: var(--color5);
   padding-bottom: 2rem;
-
-  padding-left: 1rem;
-
-  padding: 0 0 2rem 1rem;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -211,6 +206,7 @@
   color: var(--color3);
 
   padding: 1rem 0 2rem 0rem;
+  padding-left: 1.5rem;
   align-self: flex-start;
 }
 
@@ -245,12 +241,11 @@
   font-weight: 700;
   font-size: 0.74rem;
 
-  margin: 1rem 0 0.5rem 0;
+  margin: 1rem 0 0rem 0;
 }
 
-.detailButtonReservationDiv{
-  width: 150%;
-  margin: 0 -65%;
+.detailButtonReservationDiv {
+  width: 65%;
 }
 
 .detailButtonReservation {
@@ -279,7 +274,7 @@
     margin-right: 0, 5rem !important;
   }
 
-  .detailCalendarFlex{
+  .detailCalendarFlex {
     display: none;
   }
 
@@ -290,11 +285,10 @@
   .detailCalendarReservationContainer {
     width: 100%;
     flex-direction: row;
-    padding-right: 4rem;
   }
 
   .detailInfoReservation {
-    margin: 1rem 6.5rem 0rem 0;
+    margin: 1rem 0rem 0rem 0;
   }
 }
 
@@ -303,28 +297,39 @@
     display: none;
   }
 
-  .detailCarrouselContainer{
+  .detailCarrouselContainer {
     box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 20%);
   }
 
-  .detailCalendarFlexDesktop{
+  .detailCalendarFlexDesktop {
     display: flex;
   }
 
-  .detailCalendarReservationContainer{
+  .detailCalendarReservationContainer {
     flex-direction: column;
-    padding: 0;
+    padding: 0 1rem 0 0;
   }
 
-  .detailInfoReservation{
-    padding-left: 34%;
+  .detailCalendarReservationFlex {
+    background-color: var(--light);
+    border-radius: 1rem;
+    box-shadow: 0 0em 1em rgb(0 0 0 / 20%);
+  }
+
+  .detailButtonReservationDiv{
+    padding-top: 2rem;
+    width: 50%;
+    margin-left: 12%;
+  }
+
+  .detailInfoReservation {
     height: 10%;
     width: 90%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .detailInfoReservation{
-    padding-left: 30%;
+  .detailInfoReservation {
+    padding-left: 15%;
   }
 }
