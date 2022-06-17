@@ -11,8 +11,24 @@ import RulesDetails from "../../ProductInfo/RulesDetails";
 
 function ReservationDetail(props) {
   const [value, setValue] = useState(null);
+
+  const [date, setDate] = useState("");
+
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");
+
+  const clickCalendar = (e) => {
+    setDate(prevState => !prevState);
+    console.log(date);
+    e.preventDefault();
+  }
+  const removeDates = (e) => {
+    localStorage.removeItem("date");
+    localStorage.removeItem("date2");
+    setDate(prevState => !prevState);
+    console.log(date);
+    e.preventDefault();
+  }
 
   return (
     <div className="reservationPage">
@@ -80,7 +96,9 @@ function ReservationDetail(props) {
               <CalendarDetail className="reservationCalendarComponent" />
             </div>
             <div className="reservationCalendarComponentDouble">
-              <CalendarDetailResponsive onClick={window.location.reload} />
+              <CalendarDetailResponsive />
+              <button onClick={clickCalendar}>SELECCIONAR FECHAAA</button>
+              <button onClick={removeDates}>REMOVER FECHA</button>
             </div>
           </div>
           <div className="reservationCheckHour">
@@ -137,14 +155,17 @@ function ReservationDetail(props) {
               <hr className="hrReservation"></hr>
               <div className="reservationCheckInOutContainer">
                 <p className="reservationCheckInOut">Check in </p>
-                <span>{checkIn}</span>
+                {checkIn == null ? (
+                  <span>Selecciona tu fecha</span>) : (
+                  <span>{checkIn}</span>
+                )}
               </div>
               <hr className="hrReservation"></hr>
               <div className="reservationCheckInOutContainer">
                 <p className="reservationCheckInOut">Check out </p>
-                <span>{checkOut}</span>
-
-                
+                {checkIn == null ? (
+                  <span>Selecciona tu fecha</span>) : (
+                  <span>{checkOut}</span>)}
               </div>
               <hr className="hrReservation"></hr>
               <Link to={"/product/" + props.title + "/reservation/success"}>
@@ -159,7 +180,7 @@ function ReservationDetail(props) {
       <div className="reservationRules">
         <RulesDetails />
       </div>
-    </div>
+    </div >
   );
 }
 

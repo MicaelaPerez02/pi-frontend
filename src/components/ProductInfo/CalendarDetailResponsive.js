@@ -16,10 +16,7 @@ function CalendarDetail() {
             onChange={(date) => { 
                 localStorage.setItem('date', JSON.stringify((date[0])));
                 localStorage.setItem('date2', JSON.stringify((date[1])))
-                
-            
-            }  }
-
+            }}
         />
       
     );
