@@ -7,6 +7,12 @@ function CalendarDetail() {
     return (
         <Calendar
             selectRange={true}
+            minDate={new Date()}
+            maxDate={new Date(2023, 11, 16)}
+            onChange={(date) => {
+                localStorage.setItem('date', JSON.stringify((date[0])));
+                localStorage.setItem('date2', JSON.stringify((date[1])))
+            }}
         />
     );
 };

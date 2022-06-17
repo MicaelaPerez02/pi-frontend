@@ -94,11 +94,17 @@ function ReservationDetail(props) {
             </h4>
             <div className="reservationCalendarOne">
               <CalendarDetail className="reservationCalendarComponent" />
+              <div className="reservationCalendarButton">
+                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
+              </div>
             </div>
             <div className="reservationCalendarComponentDouble">
               <CalendarDetailResponsive />
-              <button onClick={clickCalendar}>SELECCIONAR FECHAAA</button>
-              <button onClick={removeDates}>REMOVER FECHA</button>
+              <div className="reservationCalendarButton">
+                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
+              </div>
             </div>
           </div>
           <div className="reservationCheckHour">
@@ -157,7 +163,7 @@ function ReservationDetail(props) {
                 <p className="reservationCheckInOut">Check in </p>
                 {checkIn == null ? (
                   <span>Selecciona tu fecha</span>) : (
-                  <span>{checkIn}</span>
+                  <span>{checkIn.substring(1, 11)}</span>
                 )}
               </div>
               <hr className="hrReservation"></hr>
@@ -165,7 +171,7 @@ function ReservationDetail(props) {
                 <p className="reservationCheckInOut">Check out </p>
                 {checkIn == null ? (
                   <span>Selecciona tu fecha</span>) : (
-                  <span>{checkOut}</span>)}
+                  <span>{checkOut.substring(1, 11)}</span>)}
               </div>
               <hr className="hrReservation"></hr>
               <Link to={"/product/" + props.title + "/reservation/success"}>
