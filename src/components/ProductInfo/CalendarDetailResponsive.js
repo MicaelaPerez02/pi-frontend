@@ -5,15 +5,21 @@ import { useState } from 'react';
 import "../../styles/CalendarDetail.css";
 
 function CalendarDetail() {
+    
     return (
         <Calendar
             showDoubleView={true}
             selectRange={true}
             minDate={new Date()}
             maxDate={new Date(2023, 11, 16)}
-            returnValue="range"
+            onChange={(date) => { console.log(date) }}
+            
+            
+            
         />
+      
     );
+
 };
 
 export default CalendarDetail;
