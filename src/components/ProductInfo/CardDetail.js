@@ -51,16 +51,16 @@ function CardDetail(props) {
                 <CarrouselProduct className='detailCarrousel'
                     url={props.url}
                 />
-                <div className='detailImageGalery'>
-                    <Images
-                        key={props.id}
-                        url={props.url}
-                        title={props.title}
-                        id={props.id}
-                    />
-                    <div className='detailImageVerMas'>
-                        <p>VER MÁS</p>
-                    </div>
+            </div>
+            <div className='detailImageGalery'>
+                <Images
+                    key={props.id}
+                    url={props.url}
+                    title={props.title}
+                    id={props.id}
+                />
+                <div className='detailImageVerMas'>
+                    <p>VER MÁS</p>
                 </div>
             </div>
             <div className='detailDescription'>

@@ -111,13 +111,6 @@
   display: none;
 }
 
-.rs-carousel-slider-item,
-.carrouselImages {
-  height: 100% !important;
-
-  object-fit: cover;
-}
-
 .detailDescription {
   background-color: var(--light);
   padding-top: 1rem;
@@ -290,15 +283,12 @@
   .detailInfoReservation {
     margin: 1rem 0rem 0rem 0;
   }
+
 }
 
 @media screen and (min-width: 1024px) {
-  .carousel-root {
-    display: none;
-  }
-
   .detailCarrouselContainer {
-    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgb(0 0 0 / 20%);
+    display: none;
   }
 
   .detailCalendarFlexDesktop {
