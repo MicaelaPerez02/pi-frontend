@@ -9,8 +9,6 @@ import FilterCities from './components/Navbar/FilterCities';
 import Reservation from './components/Pages/ReservationPage/Reservation';
 import ReservationSuccess from './components/Pages/ReservationPage/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
-
-
 import './App.css';
 
 function App() {
