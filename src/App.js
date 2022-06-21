@@ -10,6 +10,7 @@ import Reservation from './components/Pages/ReservationPage/Reservation';
 import ReservationSuccess from './components/Pages/ReservationPage/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
 import './App.css';
+import {UserContextProvider } from "../src/components/services/userContext"
 
 function App() {
   const progress = new ProgressBar({
@@ -26,6 +27,7 @@ function App() {
   }, 500);
 
     return (
+      <UserContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={< Home />} />
@@ -38,6 +40,7 @@ function App() {
           <Route path='/product/:productId/reservation/success' element={< ReservationSuccess />} />
         </Routes>
       </BrowserRouter>
+      </UserContextProvider>
     );
   };
 
