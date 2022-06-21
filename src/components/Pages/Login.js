@@ -9,23 +9,19 @@ import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import "../../styles/Login.css";
 
+import {useLocation} from 'wouter'
+import useUser from "../../hooks/useUser";
 function Login() {
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [, navigate] = useLocation();
+    const {login, isLoged} = useUser()
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
     }
 
-    const singup = () => {
-        localStorage.setItem("email", JSON.stringify(email));
-        console.log(localStorage.getItem("email"));
-
-        localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
-        console.log(localStorage.getItem("avatar"));
-
-        localStorage.removeItem("buttonReservationClick");
-    }
+  
 
     const [state, setState] = useState(false);
 
@@ -33,15 +29,36 @@ function Login() {
         setState(prevState => !prevState);
         console.log(state);
         e.preventDefault();
+
     }
+
+
+const handleLogin =  (e) => {
+e.preventDefault()
+login({username, password})
+
+localStorage.setItem("username", JSON.stringify(username));
+        console.log(localStorage.getItem("username"));
+
+        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+        console.log(localStorage.getItem("avatar"));
+
+        localStorage.removeItem("buttonReservationClick");
+
+        navigate("/home")
+
+  
+
+};
+    
 
     return (
         <>
             <div className="headerLog2">
-                {email.length < 500 ? <HeaderLogin /> : <Header email={email} />}
+                {username.length < 500 ? <HeaderLogin /> : <Header username={username} />}
             </div>
             <div className="login">
-                <form className="form_container">
+                <form className="form_container" onSubmit={handleLogin}>
                     <Link to={'/'} style={{ textDecoration: "none" }}>
                         <FaWindowClose onClick={clearButtonClick} className="iconCloseLogin" />
                     </Link>
@@ -49,8 +66,8 @@ function Login() {
                         <LoginError /> : ""}
                     <h1 className="title">Iniciar sesión</h1>
                     <div className="input1">
-                        <h5>Correo electrónico</h5>
-                        <input type="email" name="email" placeholder="Ingrese su correo electrónico" className="input" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <h5>Nombre de Usuario</h5>
+                        <input type="text" name="userName" placeholder="Ingrese su Nombre de Usuario" className="input" value={username} onChange={(e) => setUsername(e.target.value)} />
                     </div>
                     <div className="input2">
                         <h5>Contraseña</h5>
@@ -60,9 +77,9 @@ function Login() {
                         </button>
                     </div>
                     <div className="btn-container">
-                        <Link to="/">
-                            <button className="btn_singIn" onClick={singup}>Ingresar</button>
-                        </Link>
+                        
+                            <button className="btn_singIn">Ingresar</button>
+                       
                     </div>
                     <p className="text_register">
                         ¿Aún no tenes cuenta?{" "}

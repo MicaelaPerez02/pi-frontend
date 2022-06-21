@@ -9,7 +9,7 @@ function Header() {
         <div className='header'>
             <div className='header_container'>
                 <HeaderLogoMotto />
-                <Sidebar buttonLogin={localStorage.getItem("email") ? localStorage.getItem("email") : "Iniciar Sesion"} />
+                <Sidebar buttonLogin={localStorage.getItem("username") ? localStorage.getItem("username") : "Iniciar Sesion"} />
             </div>
         </div>
     )
