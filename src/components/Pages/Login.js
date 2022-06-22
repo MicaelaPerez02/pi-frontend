@@ -29,21 +29,18 @@ function Login() {
 
     const handleLogin = (e) => {
         e.preventDefault();
+
         login({ username, password });
 
-        if (localStorage.getItem("user")) {
-            localStorage.setItem("username", JSON.stringify(username));
-            console.log(localStorage.getItem("username"));
 
-            localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
-            console.log(localStorage.getItem("avatar"));
+        localStorage.setItem("username", JSON.stringify(username));
+        console.log(localStorage.getItem("username"));
 
-            localStorage.removeItem("buttonReservationClick");
-        } else {
-            console.log("NOP");
-        }
+        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+        console.log(localStorage.getItem("avatar"));
+
+        localStorage.removeItem("buttonReservationClick");
     };
-
 
     return (
         <>
@@ -70,9 +67,12 @@ function Login() {
                         </button>
                     </div>
                     <div className="btn-container">
-
-                        <button className="btn_singIn">Ingresar</button>
-
+                        {localStorage.getItem("username") ?
+                            <Link to="/">
+                                <button className="btn_singIn">Ingresar</button>
+                            </Link> :
+                            <button className="btn_singIn">Ingresar</button>
+                        }
                     </div>
                     <p className="text_register">
                         ¿Aún no tenes cuenta?{" "}
