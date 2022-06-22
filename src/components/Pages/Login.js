@@ -9,19 +9,15 @@ import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import "../../styles/Login.css";
 
-import {useLocation} from 'wouter'
 import useUser from "../../hooks/useUser";
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [, navigate] = useLocation();
-    const {login, isLogged} = useUser()
+    const { login, isLogged } = useUser()
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
     }
-
-  
 
     const [state, setState] = useState(false);
 
@@ -31,31 +27,29 @@ function Login() {
         e.preventDefault();
 
     }
-  
 
+    const handleLogin = (e) => {
+        e.preventDefault()
+        login({ username, password })
 
-const handleLogin =  (e) => {
-e.preventDefault()
-login({username, password})
+        if (localStorage.getItem("user")) {
+            localStorage.setItem("username", JSON.stringify(username));
+            console.log(localStorage.getItem("username"));
 
-if (localStorage.getItem("user")) {
-    localStorage.setItem("username", JSON.stringify(username));
-        console.log(localStorage.getItem("username"));
+            localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+            console.log(localStorage.getItem("avatar"));
 
-        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
-        console.log(localStorage.getItem("avatar"));
+            localStorage.removeItem("buttonReservationClick");
 
-        localStorage.removeItem("buttonReservationClick");
-    
-}else{
-    console.log("F");
-}
+        } else {
+            console.log("F");
+        }
 
 
 
 
-};
-    
+    };
+
 
     return (
         <>
@@ -82,9 +76,9 @@ if (localStorage.getItem("user")) {
                         </button>
                     </div>
                     <div className="btn-container">
-                        
-                            <button className="btn_singIn">Ingresar</button>
-                       
+
+                        <button className="btn_singIn">Ingresar</button>
+
                     </div>
                     <p className="text_register">
                         ¿Aún no tenes cuenta?{" "}

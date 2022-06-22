@@ -13,7 +13,7 @@ function FilterCities() {
     const { citiesId } = useParams();
 
     const citySelected = data.map((products, index) => {
-        if (products.cities.name == citiesId) {
+        if (products.cities.id == citiesId) {
             return (
                 <CardProduct
                     key={index}

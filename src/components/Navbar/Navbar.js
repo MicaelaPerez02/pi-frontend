@@ -14,7 +14,6 @@ function Navbar(props) {
                 <p className='body_title'>Buscar ofertas en hoteles, casas y mucho más</p>
                 <div className='body_input_container'>
                     <CardCities
-                        name={props.name}
                     />
                     <DateRangePicker placeholder="Seleccione el rango de fechas" className='calendar_desktop' format='dd-MM-yyyy' />
                     <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='calendar_mobile' />

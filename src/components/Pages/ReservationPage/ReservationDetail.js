@@ -22,6 +22,7 @@ function ReservationDetail(props) {
     console.log(date);
     e.preventDefault();
   }
+  
   const removeDates = (e) => {
     localStorage.removeItem("date");
     localStorage.removeItem("date2");
