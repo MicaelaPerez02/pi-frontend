@@ -38,15 +38,20 @@ const handleLogin =  (e) => {
 e.preventDefault()
 login({username, password})
 
-
-
-localStorage.setItem("username", JSON.stringify(username));
+if (localStorage.getItem("user")) {
+    localStorage.setItem("username", JSON.stringify(username));
         console.log(localStorage.getItem("username"));
 
         localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
         console.log(localStorage.getItem("avatar"));
 
         localStorage.removeItem("buttonReservationClick");
+    
+}else{
+    console.log("F");
+}
+
+
 
 
 };
