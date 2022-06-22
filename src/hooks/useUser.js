@@ -9,6 +9,7 @@ export default function useUser(){
         LoginAuth({username, password})
         .then (jwt => {
             console.log(jwt);
+            localStorage.setItem("user", JSON.stringify(jwt))
             setJWT(jwt)
         })
         .catch(err => {
@@ -21,7 +22,7 @@ export default function useUser(){
     }, [setJWT])
 
     return {
-        isLogged: Boolean(jwt),
+        isLoggedIn: Boolean(jwt),
         login,
         logOut
 

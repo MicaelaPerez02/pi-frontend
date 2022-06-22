@@ -12,7 +12,7 @@ function ButtonsHeaderSession() {
             <button className="button_session" onClick={() => { icon_close(); window.location.reload(); }}>
                 <div className='nav-text-user'>
                     <Link to="/"><p><FaWindowClose className='icon_close_sesion' /> </p></Link>
-                    <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("email"))}! </p>
+                    <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("username"))}! </p>
                 </div>
             </button>
             <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
@@ -15,7 +15,7 @@ function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [, navigate] = useLocation();
-    const {login, isLoged} = useUser()
+    const {login, isLogged} = useUser()
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
@@ -31,11 +31,14 @@ function Login() {
         e.preventDefault();
 
     }
+  
 
 
 const handleLogin =  (e) => {
 e.preventDefault()
 login({username, password})
+
+
 
 localStorage.setItem("username", JSON.stringify(username));
         console.log(localStorage.getItem("username"));
@@ -45,9 +48,6 @@ localStorage.setItem("username", JSON.stringify(username));
 
         localStorage.removeItem("buttonReservationClick");
 
-        navigate("/home")
-
-  
 
 };
     
