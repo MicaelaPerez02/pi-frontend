@@ -3,9 +3,9 @@ import React from 'react';
 import { FaWindowClose } from 'react-icons/fa';
 import useUser from '../../../hooks/useUser';
 function ButtonSidebarSession() {
-    const { logOut, isLogged } = useUser()
+    const { logOut, isLogged } = useUser();
     const icon_close = () => {
-      logOut();
+        logOut();
         localStorage.clear();
     }
 

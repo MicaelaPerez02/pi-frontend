@@ -40,10 +40,6 @@ function Register() {
     const handleSignUp = (e) => {
         e.preventDefault()
         SignUp({ name, surname, username, email, password, city })
-        localStorage.setItem("city", city)
-        localStorage.setItem("email", email)
-        localStorage.setItem("name", name)
-        localStorage.setItem("surname", surname)
     }
 
     return (
@@ -67,8 +63,6 @@ function Register() {
                             <input value={surname} onChange={(e) => setSurname(e.target.value)} className="input_f" type="text" placeholder="Apellido" />
                             {errors.apellido && <span className="errors">{errors.apellido.message}</span>}
                         </div>
-
-
                     </div>
                     <div className="container-fullName">
                         <div>

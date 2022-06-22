@@ -1,5 +1,5 @@
 const API_URL = "http://localhost:8080";
-export default function RegisterUser({ name, surname, username, email, password, city, role }) {
+export default function RegisterUser({ name, surname, username, email, password, city, roles }) {
   return fetch(`${API_URL}/users/register`, {
     method: "POST",
     headers: {
@@ -12,7 +12,7 @@ export default function RegisterUser({ name, surname, username, email, password,
       email,
       password,
       city,
-      role
+      roles
     }
     )
 

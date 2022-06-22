@@ -25,6 +25,5 @@ export default function useUser(){
         isLoggedIn: Boolean(jwt),
         login,
         logOut
-
     }
 }

@@ -10,7 +10,7 @@ import "../../styles/Product.css";
 
 function FilterCategory() {
     const { categoryId } = useParams();
-    const { data, isLoaded } = useFetch(`/products/findAllProductsByCategoriesTitle/${categoryId}`);
+    const { data, isLoaded } = useFetch(`/products/categories/${categoryId}`);
 
     const categorySelected = data.map((products, index) => {
         return (

@@ -11,8 +11,7 @@ export default function LoginAuth({ username, password }) {
       password
     })
   }).then(res => {
-    if (res.status !== 201) throw new Error("Lamentablemente no ha podido iniciar sesión. Por favor intente más tarde");
-    console.log(res.status);
+    if (!res.ok) throw new Error("Response is not ok");
     return res.json();
   }).then(res => {
     const { jwt } = res;

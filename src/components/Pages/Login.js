@@ -25,12 +25,11 @@ function Login() {
         setState(prevState => !prevState);
         console.log(state);
         e.preventDefault();
-
     }
 
     const handleLogin = (e) => {
-        e.preventDefault()
-        login({ username, password })
+        e.preventDefault();
+        login({ username, password });
 
         if (localStorage.getItem("user")) {
             localStorage.setItem("username", JSON.stringify(username));
@@ -40,14 +39,9 @@ function Login() {
             console.log(localStorage.getItem("avatar"));
 
             localStorage.removeItem("buttonReservationClick");
-
         } else {
-            console.log("F");
+            console.log("NOP");
         }
-
-
-
-
     };
 
 

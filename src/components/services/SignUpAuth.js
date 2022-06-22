@@ -13,12 +13,15 @@ export default function SignUpAuth({ name, surname, username, email, password, c
       email,
       password,
       city,
-      role: "USER"
+      roles: {
+        id:2,
+        name:"USER"
+      }
     }
     )
 
   }).then(res => {
-    if (!res.ok) throw new Error("Response is not ok")
+    if (res.status!== 201) throw new Error("ERROOORRR")
     return res.json()
 
 

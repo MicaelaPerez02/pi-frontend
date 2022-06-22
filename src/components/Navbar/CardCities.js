@@ -1,11 +1,10 @@
 import React from 'react';
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useFetch from '../../hooks/useFetch';
 import { Link } from 'react-router-dom';
 
 function CardCities(props) {
     const { data, isLoaded } = useFetch(`/cities/allCities`);
-    let history = useNavigate();
 
     function handleChange(event) {
         console.log(localStorage.setItem('cities', event.target.value));
