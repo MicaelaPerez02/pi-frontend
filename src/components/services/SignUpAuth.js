@@ -1,5 +1,6 @@
 const API_URL = "http://localhost:8080";
-export default function RegisterUser({ name, surname, username, email, password, city, role }) {
+
+export default function SignUpAuth({ name, surname, username, email, password, city }) {
   return fetch(`${API_URL}/users/register`, {
     method: "POST",
     headers: {
@@ -12,15 +13,14 @@ export default function RegisterUser({ name, surname, username, email, password,
       email,
       password,
       city,
-      role
+      role: "USER"
     }
     )
 
   }).then(res => {
-    if (res.status !== 201) throw new Error("Lamentablemente no ha podido registrarse. Por favor intente más tarde");
+    if (!res.ok) throw new Error("Response is not ok")
     return res.json()
-  }).then(res => {
-    const { jwt } = res
-    return jwt
-  })
+
+
+  }).then(res => console.log(res));
 }

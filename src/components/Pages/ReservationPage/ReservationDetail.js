@@ -8,11 +8,29 @@ import CalendarDetailResponsive from "../../ProductInfo/CalendarDetailResponsive
 import DropdownHours from "./DropdownHours";
 import hours from "../../../utils/hours";
 import RulesDetails from "../../ProductInfo/RulesDetails";
+import useReservation from "../../../hooks/useReservation";
+import ReservationPost from "./ReservationPost";
 
 function ReservationDetail(props) {
   const [value, setValue] = useState(null);
-
   const [date, setDate] = useState("");
+  const [start_time, setStartTime] = useState("");
+  const [start_date, setStartDate] = useState("");
+  const [finish_date, setFinishDate] = useState("");
+  const [users, setUsers] = useState("");
+
+  const { postReservation, isReserved } = useReservation();
+
+  const handleReservation = (e) => {
+    e.preventDefault()
+    ReservationPost({
+      start_time,
+      start_date,
+      finish_date,
+      users
+    })
+  }
+
 
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");
@@ -22,7 +40,7 @@ function ReservationDetail(props) {
     console.log(date);
     e.preventDefault();
   }
-  
+
   const removeDates = (e) => {
     localStorage.removeItem("date");
     localStorage.removeItem("date2");
@@ -50,7 +68,7 @@ function ReservationDetail(props) {
         <div className="reservationContainerFlex">
           <div className="reservationFormContainer">
             <form className="reservationForm">
-              <h4 className="reservationTitle">Completá tus datos</h4>
+              <h4 className="reservationTitle">Tus datos</h4>
               <div className="reservationNameLastName">
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Nombre</h5>
@@ -58,6 +76,7 @@ function ReservationDetail(props) {
                     type="text"
                     placeholder="Ingrese su nombre"
                     className="inputRes"
+                    value={localStorage.getItem('name')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -66,6 +85,7 @@ function ReservationDetail(props) {
                     name="text"
                     placeholder="Ingrese su apellido"
                     className="inputRes"
+                    value={localStorage.getItem('surname')}
                   />
                 </div>
               </div>
@@ -76,6 +96,7 @@ function ReservationDetail(props) {
                     type="email"
                     placeholder="Ingrese su correo electrónico"
                     className="inputRes"
+                    value={localStorage.getItem('email')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -84,6 +105,7 @@ function ReservationDetail(props) {
                     type="city"
                     placeholder="Ingrese su ciudad"
                     className="inputRes"
+                    value={localStorage.getItem('city')}
                   />
                 </div>
               </div>
@@ -176,7 +198,7 @@ function ReservationDetail(props) {
               </div>
               <hr className="hrReservation"></hr>
               <Link to={"/product/" + props.title + "/reservation/success"}>
-                <button className="reservationButtonConfirm">
+                <button className="reservationButtonConfirm" onClick={handleReservation}>
                   Confirmar reserva
                 </button>
               </Link>

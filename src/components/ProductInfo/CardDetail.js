@@ -85,7 +85,7 @@ function CardDetail(props) {
                         <div className='detailCalendarReservationFlex'>
                             <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
                             <div className='detailButtonReservationDiv'>
-                                {localStorage.getItem("email") == null ? <Link to="/login">
+                                {localStorage.getItem("username") == null ? <Link to="/login">
                                     <button className="detailButtonReservation" onClick={handleClick}> Iniciar reserva</button> </Link> :
                                     <Link to={"/product/" + props.title + "/reservation"}>
                                         <button className="detailButtonReservation"> Iniciar reserva</button>
