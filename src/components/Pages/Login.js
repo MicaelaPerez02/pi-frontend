@@ -13,7 +13,7 @@ import useUser from "../../hooks/useUser";
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { login, isLogged } = useUser()
+    const { login, isLogged } = useUser();
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
@@ -25,7 +25,6 @@ function Login() {
         setState(prevState => !prevState);
         console.log(state);
         e.preventDefault();
-
     }
 
     const handleLogin = (e) => {
@@ -44,12 +43,7 @@ function Login() {
         } else {
             console.log("F");
         }
-
-
-
-
     };
-
 
     return (
         <>
