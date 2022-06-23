@@ -66,7 +66,7 @@ function Login() {
                         </button>
                     </div>
                     <div className="btn-container">
-                        {localStorage.getItem("username") ?
+                        {localStorage.getItem("user") ?
                             <Link to="/">
                                 <button className="btn_singIn">Ingresar</button>
                             </Link> :

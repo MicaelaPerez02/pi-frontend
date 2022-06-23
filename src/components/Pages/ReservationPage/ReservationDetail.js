@@ -13,6 +13,7 @@ import BookingService from "./BookingService";
 function ReservationDetail(props) {
   const [value, setValue] = useState(null);
   const [date, setDate] = useState("");
+
   const jwt = JSON.parse(window.localStorage.getItem("user"));
 
   const handleReserva = async () => {
@@ -31,10 +32,10 @@ function ReservationDetail(props) {
     } else {
       console.log("Error: " + response.status);
     }
-  }
 
-  const checkIn = localStorage.getItem("start_date");
-  const checkOut = localStorage.getItem("finish_date");
+
+  const checkIn = localStorage.getItem("date");
+  const checkOut = localStorage.getItem("date2");
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
@@ -43,8 +44,8 @@ function ReservationDetail(props) {
   }
 
   const removeDates = (e) => {
-    localStorage.removeItem("start_date");
-    localStorage.removeItem("finish_date");
+    localStorage.removeItem("date");
+    localStorage.removeItem("date2");
     setDate(prevState => !prevState);
     console.log(date);
     e.preventDefault();
