@@ -19,9 +19,7 @@ function Cities(props) {
 
     return (
         <form className='form_InputSelect'>
-                {isLoaded ? cityList : <option>Cargando...</option>}{
-                    console.log(props.name)
-                }
+                {isLoaded ? cityList : <option>Cargando...</option>}
         </form>
     )
 }

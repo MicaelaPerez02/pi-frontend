@@ -8,32 +8,33 @@ import CalendarDetailResponsive from "../../ProductInfo/CalendarDetailResponsive
 import DropdownHours from "./DropdownHours";
 import hours from "../../../utils/hours";
 import RulesDetails from "../../ProductInfo/RulesDetails";
-import useReservation from "../../../hooks/useReservation";
-import ReservationPost from "./ReservationPost";
+import BookingService from "./BookingService";
 
 function ReservationDetail(props) {
   const [value, setValue] = useState(null);
   const [date, setDate] = useState("");
-  const [start_time, setStartTime] = useState("");
-  const [start_date, setStartDate] = useState("");
-  const [finish_date, setFinishDate] = useState("");
-  const [users, setUsers] = useState("");
+  const jwt = JSON.parse(window.localStorage.getItem("user"));
 
-  const { postReservation, isReserved } = useReservation();
-
-  const handleReservation = (e) => {
-    e.preventDefault()
-    ReservationPost({
-      start_time,
-      start_date,
-      finish_date,
-      users
-    })
+  const handleReserva = async () => {
+    // POST RESERVA
+    const body = {
+      start_time: "10:00:00",
+      start_date: "2022-06-18 10:00:00",
+      finish_date: "2022-06-20 10:00:00",
+      users: {
+        id: 28
+      }
+    }
+    const { response, booking } = await BookingService(body, jwt.jwt)
+    if (response.status === 200) {
+      console.log("OAA ");
+    } else {
+      console.log("Error: " + response.status);
+    }
   }
 
-
-  const checkIn = localStorage.getItem("date");
-  const checkOut = localStorage.getItem("date2");
+  const checkIn = localStorage.getItem("start_date");
+  const checkOut = localStorage.getItem("finish_date");
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
@@ -42,8 +43,8 @@ function ReservationDetail(props) {
   }
 
   const removeDates = (e) => {
-    localStorage.removeItem("date");
-    localStorage.removeItem("date2");
+    localStorage.removeItem("start_date");
+    localStorage.removeItem("finish_date");
     setDate(prevState => !prevState);
     console.log(date);
     e.preventDefault();
@@ -198,7 +199,7 @@ function ReservationDetail(props) {
               </div>
               <hr className="hrReservation"></hr>
               <Link to={"/product/" + props.title + "/reservation/success"}>
-                <button className="reservationButtonConfirm" onClick={handleReservation}>
+                <button className="reservationButtonConfirm" onClick={handleReserva}>
                   Confirmar reserva
                 </button>
               </Link>

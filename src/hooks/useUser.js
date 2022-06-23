@@ -3,7 +3,7 @@ import Context from "../components/services/userContext";
 import LoginAuth from "../components/services/LoginAuth";
 
 export default function useUser(){
-    const {jwt, setJWT } = useContext(Context)
+    const {jwt, setJWT } = useContext(Context);
 
     const login = useCallback(({username, password} ) => {
         LoginAuth({username, password})
