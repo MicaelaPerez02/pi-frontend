@@ -9,6 +9,7 @@ import DropdownHours from "./DropdownHours";
 import hours from "../../../utils/hours";
 import RulesDetails from "../../ProductInfo/RulesDetails";
 import useReservation from "../../../hooks/useReservation";
+import ReservationPost from "./ReservationPost";
 
 function ReservationDetail(props) {
   const [value, setValue] = useState(null);
@@ -28,7 +29,13 @@ function ReservationDetail(props) {
       finish_date,
     
     })
+   
   }
+  
+
+ 
+
+
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);

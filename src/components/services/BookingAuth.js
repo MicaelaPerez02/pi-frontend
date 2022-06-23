@@ -27,7 +27,7 @@ export default function RegisterUser({ start_time, start_date, finish_date, prod
     )
 
   }).then(res => {
-    if (!res.ok) throw new Error("Lamentablemente no ha podido registrarse. Por favor intente más tarde");
+    if (!res.ok) throw new Error("Lamentablemente no ha podido reservarse. Por favor intente más tarde");
     return res.json()
   }).then(res => {
     console.log(res);
