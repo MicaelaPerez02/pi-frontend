@@ -8,34 +8,27 @@ import CalendarDetailResponsive from "../../ProductInfo/CalendarDetailResponsive
 import DropdownHours from "./DropdownHours";
 import hours from "../../../utils/hours";
 import RulesDetails from "../../ProductInfo/RulesDetails";
-import BookingService from "./BookingService";
+import useReservation from "../../../hooks/useReservation";
 
 function ReservationDetail(props) {
   const [value, setValue] = useState(null);
   const [date, setDate] = useState("");
-
-  const jwt = JSON.parse(window.localStorage.getItem("user"));
-
-  const handleReserva = async () => {
-    // POST RESERVA
-    const body = {
-      start_time: "10:00:00",
-      start_date: "2022-06-18 10:00:00",
-      finish_date: "2022-06-20 10:00:00",
-      users: {
-        id: 28
-      }
-    }
-    const { response, booking } = await BookingService(body, jwt.jwt)
-    if (response.status === 200) {
-      console.log("OAA ");
-    } else {
-      console.log("Error: " + response.status);
-    }
-
-
+  const [start_time, setStartTime] = useState("10:00:00");
+  const [start_date, setStartDate] = useState("2022-06-23 10:00:00");
+  const [finish_date, setFinishDate] = useState("2022-06-26 10:00:00");
+ 
+  const { postReservation, isReserved } = useReservation();
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");
+  const handleReservation = (e) => {
+    e.preventDefault()
+    postReservation({
+      start_time,
+      start_date,
+      finish_date,
+    
+    })
+  }
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
@@ -200,7 +193,7 @@ function ReservationDetail(props) {
               </div>
               <hr className="hrReservation"></hr>
               <Link to={"/product/" + props.title + "/reservation/success"}>
-                <button className="reservationButtonConfirm" onClick={handleReserva}>
+                <button className="reservationButtonConfirm" onClick={handleReservation}>
                   Confirmar reserva
                 </button>
               </Link>

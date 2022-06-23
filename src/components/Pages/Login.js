@@ -13,7 +13,7 @@ import useUser from "../../hooks/useUser";
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { login, isLogged } = useUser();
+    const { login, isLogged } = useUser()
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
@@ -32,13 +32,16 @@ function Login() {
 
         login({ username, password });
 
-        localStorage.setItem("username", JSON.stringify(username));
-        console.log(localStorage.getItem("username"));
 
-        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
-        console.log(localStorage.getItem("avatar"));
+    localStorage.setItem("username", JSON.stringify(username));
+    console.log(localStorage.getItem("username"));
 
-        localStorage.removeItem("buttonReservationClick");
+    localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+    console.log(localStorage.getItem("avatar"));
+
+    localStorage.removeItem("buttonReservationClick");
+
+
     };
 
     return (
