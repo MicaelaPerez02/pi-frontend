@@ -14,26 +14,28 @@ import ReservationPost from "./ReservationPost";
 function ReservationDetail(props) {
   const [value, setValue] = useState(null);
   const [date, setDate] = useState("");
-  const [start_time, setStartTime] = useState("");
-  const [start_date, setStartDate] = useState("");
-  const [finish_date, setFinishDate] = useState("");
-  const [users, setUsers] = useState("");
-
+  const [start_time, setStartTime] = useState("10:00:00");
+  const [start_date, setStartDate] = useState("2022-06-23 10:00:00");
+  const [finish_date, setFinishDate] = useState("2022-06-26 10:00:00");
+ 
   const { postReservation, isReserved } = useReservation();
-
+  const checkIn = localStorage.getItem("date");
+  const checkOut = localStorage.getItem("date2");
   const handleReservation = (e) => {
     e.preventDefault()
-    ReservationPost({
+    postReservation({
       start_time,
       start_date,
       finish_date,
-      users
+    
     })
+   
   }
+  
+
+ 
 
 
-  const checkIn = localStorage.getItem("date");
-  const checkOut = localStorage.getItem("date2");
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);

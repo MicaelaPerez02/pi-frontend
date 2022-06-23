@@ -33,13 +33,15 @@ function Login() {
         login({ username, password });
 
 
-        localStorage.setItem("username", JSON.stringify(username));
-        console.log(localStorage.getItem("username"));
+    localStorage.setItem("username", JSON.stringify(username));
+    console.log(localStorage.getItem("username"));
 
-        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
-        console.log(localStorage.getItem("avatar"));
+    localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+    console.log(localStorage.getItem("avatar"));
 
-        localStorage.removeItem("buttonReservationClick");
+    localStorage.removeItem("buttonReservationClick");
+
+
     };
 
     return (
@@ -67,7 +69,7 @@ function Login() {
                         </button>
                     </div>
                     <div className="btn-container">
-                        {localStorage.getItem("username") ?
+                        {localStorage.getItem("user") ?
                             <Link to="/">
                                 <button className="btn_singIn">Ingresar</button>
                             </Link> :
