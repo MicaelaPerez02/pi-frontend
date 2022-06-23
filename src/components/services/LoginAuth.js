@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:8080";
+const API_URL = "http://3.133.114.51:8086";
 export default function LoginAuth({ username, password }) {
   return fetch(`${API_URL}/authenticate`, {
     method: "POST",
