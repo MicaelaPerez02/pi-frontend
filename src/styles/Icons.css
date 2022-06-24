@@ -16,6 +16,12 @@
   right: 10%;
 }
 
+.warningIcon {
+  color: var(--complementary);
+  font-size: 3rem;
+  margin: 0.5rem 0.5rem 0 0;
+}
+
 @media screen and (min-width: 768px) {
   .iconClose {
     left: 95%;

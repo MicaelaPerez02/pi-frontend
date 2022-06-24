@@ -1,9 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { FaWindowClose } from "react-icons/fa";
-import Context from "../services/userContext";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
@@ -20,7 +19,6 @@ function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const { login, isLogged } = useUser();
-    const { jwt, setJWT } = useContext(Context);
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
