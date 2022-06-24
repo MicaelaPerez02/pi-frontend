@@ -1,9 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { FaWindowClose } from "react-icons/fa";
-import { useState } from "react";
 import HeaderRegister from "../Header/HeaderRegister";
 import useUserSignUp from "../../hooks/useUserSignUp";
 import "../../styles/Register.css";
@@ -13,6 +12,7 @@ import "../../styles/Elements.css";
 import "../../styles/Buttons.css";
 
 function Register() {
+    let navigate = useNavigate();
     const [state, setState] = useState(false);
     const [state1, setState1] = useState(false);
     const [name, setName] = useState("");
@@ -21,6 +21,8 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [city, setCity] = useState("");
+
+    const { SignUp, isSigned } = useUserSignUp();
 
     const toggleBtn = (e) => {
         setState(prevState => !prevState);
@@ -32,11 +34,72 @@ function Register() {
         e.preventDefault();
     }
 
-    const { SignUp, isSigned } = useUserSignUp();
+    const onChangeName = (e) => {
+        setName(e.target.value);
+        if (name.length < 2) {
+            localStorage.setItem("shortName", true);
+        } else {
+            localStorage.setItem("shortName", false);
+        };
+    }
+
+    const onChangeSurname = (e) => {
+        setSurname(e.target.value);
+        if (surname.length < 2) {
+            localStorage.setItem("shortSurname", true);
+        } else {
+            localStorage.setItem("shortSurname", false);
+        };
+    }
+
+    const onChangeUsername = (e) => {
+        setUsername(e.target.value);
+        if (username.length < 2) {
+            localStorage.setItem("shortUsername", true);
+        } else {
+            localStorage.setItem("shortUsername", false);
+        };
+    }
+    const onChangeCity = (e) => {
+        setCity(e.target.value);
+        if (city.length < 2) {
+            localStorage.setItem("shortCity", true);
+        } else {
+            localStorage.setItem("shortCity", false);
+        };
+    }
+
+    const onChangeEmail = (e) => {
+        setEmail(e.target.value);
+        if (email.length < 3) {
+            localStorage.setItem("shortEmail", true);
+        } else {
+            localStorage.setItem("shortEmail", false);
+        };
+    }
+
+    const onChangePassword = (e) => {
+        setPassword(e.target.value);
+        if (password.length < 3) {
+            localStorage.setItem("shortPassword", true);
+        } else {
+            localStorage.setItem("shortPassword", false);
+        };
+    }
+
 
     const handleSignUp = (e) => {
         e.preventDefault();
-        SignUp({ name, surname, username, email, password, city })
+
+        localStorage.setItem("password", JSON.stringify(password));
+        console.log(localStorage.getItem("password"));
+
+        if ((name && surname && username && email && password && city) !== "") {
+            SignUp({ name, surname, username, email, password, city });
+            navigate("/login");
+        } else {
+            alert("Por favor, complete todos los campos.")
+        }
     }
 
     return (
@@ -51,34 +114,52 @@ function Register() {
                     <div className="sectionFormContainer">
                         <section>
                             <h5>Nombre</h5>
-                            <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Ingrese su nombre" />
+                            <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" />
+                            {localStorage.getItem('shortName') === 'true' ?
+                                <p className="validationError">El nombre debe tener mínimo 3 caracteres</p> : <p></p>
+                            }
                         </section>
                         <section>
                             <h5>Apellido</h5>
-                            <input value={surname} onChange={(e) => setSurname(e.target.value)} type="text" placeholder="Ingrese su apellido" />
+                            <input value={surname} onChange={onChangeSurname} type="text" placeholder="Ingrese su apellido" required />
+                            {localStorage.getItem('shortSurname') === 'true' ?
+                                <p className="validationError">El apellido debe tener mínimo 3 caracteres</p> : <p></p>
+                            }
                         </section>
                     </div>
                     <div className="sectionFormContainer">
                         <section>
                             <h5>Nombre de usuario</h5>
-                            <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Ingrese un nombre de usuario" />
+                            <input value={username} onChange={onChangeUsername} type="text" placeholder="Ingrese un nombre de usuario" />
+                            {localStorage.getItem('shortUsername') === 'true' ?
+                                <p className="validationError">El usuario debe tener mínimo 3 caracteres</p> : <p></p>
+                            }
                         </section>
                         <section>
                             <h5>Ciudad</h5>
-                            <input value={city} onChange={(e) => setCity(e.target.value)} type="text" placeholder="Ingrese su ciudad" />
+                            <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" />
+                            {localStorage.getItem('shortCity') === 'true' ?
+                                <p className="validationError">Ingrese una ciudad válida</p> : <p></p>
+                            }
                         </section>
                     </div>
                     <div className="sectionFormContainerTwo">
                         <section>
                             <h5>Email</h5>
-                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Ingrese su email" />
+                            <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" />
+                            {localStorage.getItem('shortEmail') === 'true' ?
+                                <p className="validationError">Ingrese un email válido</p> : <p></p>
+                            }
                         </section>
                         <section>
                             <h5>Contraseña</h5>
-                            <input type={state ? "text" : "password"} name="password" placeholder="Ingrese una contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <input type={state ? "text" : "password"} name="password" placeholder="Ingrese una contraseña" value={password} onChange={onChangePassword} />
                             <button className="buttonForm" onClick={toggleBtn}>
                                 {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                             </button>
+                            {localStorage.getItem('shortPassword') === 'true' ?
+                                <p className="validationError">La contraseña debe tener más de 5 caracteres</p> : <p></p>
+                            }
                         </section>
                         <section>
                             <h5>Confirmar contraseña </h5>

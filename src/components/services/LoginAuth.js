@@ -1,4 +1,3 @@
-
 const API_URL = "http://localhost:8080";
 export default function LoginAuth({ username, password }) {
   return fetch(`${API_URL}/authenticate`, {
@@ -11,7 +10,9 @@ export default function LoginAuth({ username, password }) {
       password
     })
   }).then(res => {
-    if (!res.ok) throw new Error("Response is not ok");
+    if (res.status !== 200) { 
+      throw new Error("Lo sentimos, no pudimos iniciar sesión. Intentelo más tarde");
+    }
     return res.json();
   }).then(res => {
     const { jwt } = res;

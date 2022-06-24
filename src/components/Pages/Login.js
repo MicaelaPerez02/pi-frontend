@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { FaWindowClose } from "react-icons/fa";
+import Context from "../services/userContext";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
@@ -15,9 +16,11 @@ import "../../styles/Elements.css";
 import "../../styles/Buttons.css";
 
 function Login() {
+    let navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const { login, isLogged } = useUser();
+    const { jwt, setJWT } = useContext(Context);
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
@@ -31,16 +34,23 @@ function Login() {
         e.preventDefault();
     }
 
+    const validationLogin = () => {
+        if (jwt.length > 10) {
+            localStorage.setItem("username", JSON.stringify(username));
+            console.log(localStorage.getItem("username"));
+
+            localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+            console.log(localStorage.getItem("avatar"));
+            navigate("/");
+        } else {
+            alert("Contraseña o usuario invalido");
+        }
+    }
+
     const handleLogin = (e) => {
         e.preventDefault();
 
         login({ username, password });
-
-        localStorage.setItem("username", JSON.stringify(username));
-        console.log(localStorage.getItem("username"));
-
-        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
-        console.log(localStorage.getItem("avatar"));
 
         localStorage.removeItem("buttonReservationClick");
     };
@@ -50,7 +60,7 @@ function Login() {
             {username.length < 500 ? <HeaderLogin /> : <Header username={username} />}
             <div className="componentContainer">
                 <h1 className='titleForm'>Iniciar sesión</h1>
-                <form className="formContainer">
+                <form className="formContainer" onSubmit={handleLogin}>
                     <Link to={'/'}>
                         <FaWindowClose onClick={clearButtonClick} className="iconClose" />
                     </Link>
@@ -67,15 +77,10 @@ function Login() {
                             {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                         </button>
                     </section>
+                    <section className="buttonContainer">
+                        <button className="buttonSubmit" onClick={validationLogin}>Ingresar</button>
+                    </section>
                 </form>
-                <section className="buttonContainer">
-                    {localStorage.getItem("user") ?
-                        <Link to="/">
-                            <button className="buttonSubmit" onClick={handleLogin}>Ingresar</button>
-                        </Link> :
-                        <button className="buttonSubmit" onClick={handleLogin}>Ingresar</button>
-                    }
-                </section>
                 <section className="createAcountContainer">
                     <p> ¿Aún no tienes cuenta? </p>
                     <Link to="/register">

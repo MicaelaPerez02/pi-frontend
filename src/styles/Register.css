@@ -11,11 +11,13 @@ section {
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 768px){
-  .titleForm {
-    padding-bottom: 0;
-  }
+.validationError {
+  font-size: 0.8rem;
+  margin: 0.2rem 0 0 0.2rem;
+  color: rgb(224, 48, 48);
+}
 
+@media screen and (min-width: 768px){
   .buttonContainer {
     margin-top: 2rem;
   }

@@ -14,16 +14,14 @@ export default function SignUpAuth({ name, surname, username, email, password, c
       password,
       city,
       roles: {
-        id:2,
-        name:"USER"
+        id: 2,
+        name: "USER"
       }
     }
     )
 
   }).then(res => {
-    if (res.status!== 201) throw new Error("ERROOORRR")
-    return res.json()
-
-
+    if (res.status !== 201) throw new Error("Lo sentimos, el usuario no pudo ser registrado. Intentelo más tarde");
+    return res.json();
   }).then(res => console.log(res));
 }
