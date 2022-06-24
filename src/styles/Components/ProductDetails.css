@@ -36,6 +36,24 @@
   line-height: 28px;
 }
 
+.detailIcon {
+  float: right;
+  font-size: 2rem;
+  cursor: pointer;
+
+  margin-right: 0.8rem;
+
+  transition: 0.3s;
+
+  text-decoration: "none" !important;
+
+  color: var(--light);
+}
+
+.detailIcon:hover {
+  color: var(--complementary);
+}
+
 .detailCityContent {
   background-color: var(--color4);
 }
@@ -265,7 +283,6 @@
   .detailInfoReservation {
     margin: 1rem 0rem 0rem 0;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -288,7 +305,7 @@
     box-shadow: 0 0em 1em rgb(0 0 0 / 20%);
   }
 
-  .detailButtonReservationDiv{
+  .detailButtonReservationDiv {
     padding-top: 2rem;
     width: 50%;
     margin-left: 12%;

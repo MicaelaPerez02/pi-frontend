@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { FaWindowClose } from "react-icons/fa";
 import HeaderRegister from "../Header/HeaderRegister";
-import useUserSignUp from "../../hooks/useUserSignUp";
-import "../../styles/Register.css";
-import "../../styles/Forms.css";
-import "../../styles/Icons.css";
-import "../../styles/Elements.css";
-import "../../styles/Buttons.css";
+import "../../styles/Components/Register.css";
+import "../../styles/General/Forms.css";
+import "../../styles/General/Icons.css";
+import "../../styles/General/Elements.css";
+import "../../styles/General/Buttons.css";
+import useUserSingnUp from "../../hooks/useUserSignUp";
 
 function Register() {
     let navigate = useNavigate();
@@ -22,7 +22,7 @@ function Register() {
     const [password, setPassword] = useState("");
     const [city, setCity] = useState("");
 
-    const { SignUp, isSigned } = useUserSignUp();
+    const { SignUp, isSigned } = useUserSingnUp();
 
     const toggleBtn = (e) => {
         setState(prevState => !prevState);

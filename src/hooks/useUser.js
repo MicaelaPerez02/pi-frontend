@@ -1,12 +1,12 @@
 import { useCallback, useContext } from "react";
 import Context from "../components/services/userContext";
-import LoginAuth from "../components/services/LoginAuth";
+import LoginAuthService from "../components/services/LoginAuthService";
 
 export default function useUser(){
     const {jwt, setJWT } = useContext(Context);
 
     const login = useCallback(({username, password} ) => {
-        LoginAuth({username, password})
+        LoginAuthService({username, password})
         .then (jwt => {
             console.log(jwt);
             localStorage.setItem("user", JSON.stringify(jwt));

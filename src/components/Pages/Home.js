@@ -4,8 +4,7 @@ import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
 import Categories from '../Cards/Categories';
 import Products from '../Cards/Products';
-import '../../styles/Navbar.css';
-import '../../styles/Home.css';
+import '../../styles/Components/Home.css';
 
 function Home() {
     return (

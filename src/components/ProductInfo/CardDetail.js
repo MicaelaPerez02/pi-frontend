@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoChevronLeft } from "react-icons/go";
-import "../../styles/ProductDetails.css";
+import "../../styles/Components/ProductDetails.css";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import CarrouselProduct from './CarrouselProduct';

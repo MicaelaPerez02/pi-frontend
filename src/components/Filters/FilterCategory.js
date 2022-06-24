@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import CardProduct from './CardProduct';
+import CardProduct from '../Cards/CardProduct';
 import useFetch from '../../hooks/useFetch';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import Categories from './Categories';
-import "../../styles/Product.css";
+import Categories from '../Cards/Categories';
+import "../../styles/Components/Product.css";
 
 function FilterCategory() {
     const { categoryId } = useParams();

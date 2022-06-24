@@ -3,21 +3,20 @@ import { Link } from "react-router-dom";
 import { GoChevronLeft } from "react-icons/go";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import CalendarDetail from "../../ProductInfo/CalendarDetail";
-import CalendarDetailResponsive from "../../ProductInfo/CalendarDetailResponsive";
-import DropdownHours from "./DropdownHours";
-import hours from "../../../utils/hours";
-import RulesDetails from "../../ProductInfo/RulesDetails";
-import useReservation from "../../../hooks/useReservation";
-import ReservationPost from "./ReservationPost";
+import CalendarDetail from "../ProductInfo/CalendarDetail";
+import CalendarDetailResponsive from "../ProductInfo/CalendarDetailResponsive";
+import DropdownHours from "./ReservationPage/DropdownHours";
+import RulesDetails from "../ProductInfo/RulesDetails";
+import hours from "../../utils/hours.json";
+import useReservation from "../../hooks/useReservation";
 
-function ReservationDetail(props) {
+function CardReservation(props) {
   const [value, setValue] = useState(null);
   const [date, setDate] = useState("");
   const [start_time, setStartTime] = useState("10:00:00");
   const [start_date, setStartDate] = useState("2022-06-23 10:00:00");
   const [finish_date, setFinishDate] = useState("2022-06-26 10:00:00");
- 
+
   const { postReservation, isReserved } = useReservation();
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");
@@ -27,15 +26,8 @@ function ReservationDetail(props) {
       start_time,
       start_date,
       finish_date,
-    
     })
-   
   }
-  
-
- 
-
-
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
@@ -77,6 +69,8 @@ function ReservationDetail(props) {
                   <input
                     type="text"
                     placeholder="Ingrese su nombre"
+                    className="inputRes"
+                    value={localStorage.getItem('name')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -84,6 +78,8 @@ function ReservationDetail(props) {
                   <input
                     name="text"
                     placeholder="Ingrese su apellido"
+                    className="inputRes"
+                    value={localStorage.getItem('surname')}
                   />
                 </div>
               </div>
@@ -93,6 +89,8 @@ function ReservationDetail(props) {
                   <input
                     type="email"
                     placeholder="Ingrese su correo electrónico"
+                    className="inputRes"
+                    value={localStorage.getItem('email')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -100,6 +98,8 @@ function ReservationDetail(props) {
                   <input
                     type="city"
                     placeholder="Ingrese su ciudad"
+                    className="inputRes"
+                    value={localStorage.getItem('city')}
                   />
                 </div>
               </div>
@@ -112,15 +112,15 @@ function ReservationDetail(props) {
             <div className="reservationCalendarOne">
               <CalendarDetail className="reservationCalendarComponent" />
               <div className="reservationCalendarButton">
-                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
-                <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
+                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
             <div className="reservationCalendarComponentDouble">
               <CalendarDetailResponsive />
               <div className="reservationCalendarButton">
-                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
-                <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
+                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
           </div>
@@ -207,4 +207,4 @@ function ReservationDetail(props) {
   );
 }
 
-export default ReservationDetail;
+export default CardReservation;

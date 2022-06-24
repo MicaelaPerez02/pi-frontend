@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../../Header/Header';
-import Footer from '../../Footer/Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import {IoIosCheckmarkCircle} from 'react-icons/io';
-import "../../../styles/ReservationSuccess.css";
+import "../../styles/Components/ReservationSuccess.css";
 
 function ReservationSuccess() {
     return (

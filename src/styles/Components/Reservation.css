@@ -40,11 +40,11 @@
 
   align-items: center;
   justify-content: center;
-
-  margin: 1rem 0;
 }
 
 .inputRes {
+  margin-bottom: 1rem;
+
   padding-left: 1rem;
   height: 40px;
   width: 300px;
@@ -54,7 +54,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 .reservationCheckHour {
   display: flex;
@@ -284,7 +283,7 @@
     width: 15.3rem;
   }
 
-  .reservationCardHotel{
+  .reservationCardHotel {
     margin-top: 2rem;
     margin-right: 2rem;
     margin-left: 1rem;

@@ -8,11 +8,12 @@ import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import useUser from "../../hooks/useUser";
-import "../../styles/Login.css";
-import "../../styles/Forms.css";
-import "../../styles/Icons.css";
-import "../../styles/Elements.css";
-import "../../styles/Buttons.css";
+import "../../styles/Components/Login.css";
+import "../../styles/Components/Register.css";
+import "../../styles/General/Forms.css";
+import "../../styles/General/Icons.css";
+import "../../styles/General/Elements.css";
+import "../../styles/General/Buttons.css";
 
 function Login() {
     let navigate = useNavigate();

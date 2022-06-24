@@ -4,13 +4,13 @@ import Home from './components/Pages/Home';
 import Login from './components/Pages/Login';
 import Register from './components/Pages/Register';
 import ProductDetails from './components/ProductInfo/ProductDetails';
-import FilterCategory from './components/Cards/FilterCategory';
-import FilterCities from './components/Navbar/FilterCities';
-import Reservation from './components/Pages/ReservationPage/Reservation';
-import ReservationSuccess from './components/Pages/ReservationPage/ReservationSuccess';
+import FilterCategory from './components/Filters/FilterCategory';
+import FilterCities from './components/Filters/FilterCities';
+import Reservation from './components/Cards/Reservation';
+import ReservationSuccess from './components/Cards/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
 import './App.css';
-import {UserContextProvider } from "../src/components/services/userContext"
+import {UserContextProvider } from "../src/components/services/userContext";
 
 function App() {
   const progress = new ProgressBar({

@@ -5,7 +5,7 @@ import { GiHealthNormal, GiSmokeBomb } from 'react-icons/gi';
 import { FaMoneyCheck } from 'react-icons/fa';
 import { MdHealthAndSafety } from 'react-icons/md';
 import { MdCancel } from 'react-icons/md';
-import "../../styles/RulesDetails.css";
+import "../../styles/Accesories/RulesDetails.css";
 
 function RulesDetails() {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiErrorWarningFill } from 'react-icons/ri';
-import "../../styles/Login.css";
-import "../../styles/Icons.css";
+import "../../styles/Components/Login.css";
+import "../../styles/General/Icons.css";
 
 function LoginError() {
     return (

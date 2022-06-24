@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import CardDetail from '../ProductInfo/CardDetail';
-import "../../styles/ProductDetails.css";
+import "../../styles/Components/ProductDetails.css";
 
 function ProductDetails() {
     const { data, isLoaded } = useFetch(`/products/allProducts`);

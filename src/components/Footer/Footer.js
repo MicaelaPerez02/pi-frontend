@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaRegCopyright } from 'react-icons/fa';
 import FooterSocialMedia from '../Header/Sidebar/FooterSocialMedia';
-import '../../styles/Footer.css';
+import '../../styles/Components/Footer.css';
 
 function Footer() {
     return (

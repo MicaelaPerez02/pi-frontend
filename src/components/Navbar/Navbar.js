@@ -1,11 +1,9 @@
 import React from 'react';
 import DateRangePicker from 'rsuite/DateRangePicker';
-import useFetch from '../../hooks/useFetch';
-import '../../styles/Navbar.css';
-import '../../styles/DatePickerLibrary.css';
+import "../../styles/Components/Navbar.css";
+import '../../styles/Accesories/DatePickerLibrary.css';
 import 'rsuite/dist/rsuite.min.css';
-import { useParams } from 'react-router-dom';
-import CardCities from './CardCities';
+import CardCities from '../Cards/CardCities';
 
 function Navbar(props) {
     return (

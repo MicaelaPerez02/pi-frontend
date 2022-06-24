@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../styles/ImageGaleryDetail.css";
+import "../../styles/Accesories/ImageGaleryDetail.css";
 
 function ImageGaleryDetail(props) {
   return (

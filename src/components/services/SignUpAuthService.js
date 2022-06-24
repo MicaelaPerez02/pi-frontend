@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080";
 
-export default function SignUpAuth({ name, surname, username, email, password, city, roles }) {
+export default function SignUpAuthService({ name, surname, username, email, password, city, roles }) {
   return fetch(`${API_URL}/users/register`, {
     method: "POST",
     headers: {

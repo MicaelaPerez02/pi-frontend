@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Categories.css';
+import '../../styles/Components/Categories.css';
 import useFetch from '../../hooks/useFetch';
 import CardCategory from './CardCategory';
 

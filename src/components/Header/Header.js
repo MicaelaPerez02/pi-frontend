@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from './Sidebar/Sidebar';
-import '../../styles/Header.css';
+import '../../styles/Components/Header.css';
 import HeaderLogoMotto from './HeaderLogoMotto';
 
 function Header() {

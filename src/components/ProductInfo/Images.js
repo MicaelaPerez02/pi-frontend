@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageGaleryDetail from './ImageGaleryDetail';
 import useFetch from '../../hooks/useFetch';
-import "../../styles/ImageGaleryDetail.css";
+import "../../styles/Accesories/ImageGaleryDetail.css";
 import { useParams } from 'react-router-dom';
 
 function Images() {

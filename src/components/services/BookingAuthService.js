@@ -1,8 +1,7 @@
-
 const API_URL = "http://localhost:8080";
 
 const jwt= "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIiwiZXhwIjoxNjU2MDAyMzg5LCJpYXQiOjE2NTYwMDE3ODl9.thHYB3RBI_68_kdOHv0vzBLyJJJ9Y3YPo6hfu2RCc8o"
-export default function RegisterUser({ start_time, start_date, finish_date, products, users }) {
+export default function BookingAuthService({ start_time, start_date, finish_date, products, users }) {
   return fetch(`${API_URL}/bookings/addBooking`,{
     method: "POST",
     headers: {

@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
-import '../../styles/Header.css';
-import "../../styles/Sidebar.css";
+import '../../styles/Components/Header.css';
+import "../../styles/Components/Sidebar.css";
 import HeaderLogoMotto from './HeaderLogoMotto';
-
 
 function HeaderLogin(props) {
     const [sidebar, setSidebar] = useState(false);

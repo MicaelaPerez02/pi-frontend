@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaMapMarkedAlt } from 'react-icons/fa';
-import "../../styles/MapDetail.css";
+import "../../styles/Accesories/MapDetail.css";
 
 function MapDetail(props) {
     return (

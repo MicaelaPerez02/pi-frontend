@@ -1,7 +1,7 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import CardProduct from './CardProduct';
-import '../../styles/Product.css';
+import '../../styles/Components/Product.css';
 
 function Cards() {
     const { data, isLoaded } = useFetch(`/products/allProducts`);

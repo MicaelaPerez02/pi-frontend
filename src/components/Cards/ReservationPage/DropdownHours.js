@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
-import "./DropdownHours.css";
+import "../../../styles/Accesories/DropdownHours.css";
 
 function DropdownHours({ options, prompt, value, onChange }) {
 

@@ -1,13 +1,13 @@
 import { useCallback } from "react";
-import SignUpAuth from "../components/services/SignUpAuth";
+import SignUpAuthService from "../components/services/SignUpAuthService";
 
 export default function useUserSingnUp() {
     const SignUp = useCallback(({ name, surname, username, email, password, city, roles }) => {
-        SignUpAuth({ name, surname, username, email, password, city, roles })
+        SignUpAuthService({ name, surname, username, email, password, city, roles })
             .then(() => {
             })
             .catch(err => {
-                console.error(err)
+                console.error(err);
             })
     }, [])
 
