@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import ReservationPost from "../components/Pages/ReservationPage/ReservationPost";
-import SignUpAuth from "../components/services/SignUpAuth";
 
 export default function useReservation() {
     const postReservation = useCallback(({ start_time,

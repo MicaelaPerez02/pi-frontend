@@ -1,131 +1,27 @@
-.headerLog {
-  display: none;
-}
-
-.form_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10rem;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: center;
-
-  color: var(--main-color);
-}
-
-.input2 {
+.passwordSection {
+  padding-top: 1.5rem;
   padding-left: 1.5rem;
-  padding-bottom: 2rem;
-  padding-top: 1rem;
 }
 
-.input1 {
-  padding-top: 1rem;
+.buttonContainer {
+  margin-top: 3rem;
 }
 
-.input2 label,
-.input1 label {
-  height: 21px;
-  width: 218px;
-
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 14px;
-  letter-spacing: 0em;
-
-  color: var(--color2);
-}
-
-.input {
-  height: 40px;
-  width: 300px;
-}
-
-input.input {
-  padding-left: 1rem;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
-
-.btn-icon {
-  background-color: transparent;
-  position: relative;
-  top: 0.2rem;
-  right: 10%;
-}
-
-.icon-eyeBlind {
-  height: 18px;
-  width: 24px;
-  border-radius: 0px;
-}
-
-.btn-container {
+.createAcountContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  height: 40px;
-  width: 300px;
-
-  border-radius: 5px;
-  background-color: var(--complementary);
-  color: var(--color3);
+  padding-top: 0.5rem;
 }
 
-.btn_singIn {
-  background-color: var(--complementary);
-  color: var(--color3);
-
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: 0em;
-  text-align: center;
-}
-
-.text_register_register {
-  font-size: 1rem;
-  color: var(--color3);
-}
-
-.iconCloseLogin{
-  position: absolute;
-  top: 6rem;
-  left: 90%;
-  cursor: pointer;
-
-  font-size: 1.5rem;
-
-  background-color: var(--light);
-  color: var(--complementary);
+.footerContainer {
+  background-color: var(--color5);
+  padding-top: 9.5rem;
 }
 
 @media screen and (min-width: 768px) {
-  .iconCloseLogin{
-    top: 6rem;
-    left: 95%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  input {
-    height: 40px;
-    width: 448px;
-  }
-
-  .btn_singIn {
-    height: 40px;
-    width: 206px;
-  }
-
-  .iconCloseLogin{
-    top: 6rem;
-    left: 97%;
+  .footerContainer {
+    padding-top: 11.5rem;
   }
 }

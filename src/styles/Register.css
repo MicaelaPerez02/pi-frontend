@@ -1,142 +1,22 @@
-.register_container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 6rem;
+.registerContainer {
+  background-color: var(--color5);
+  padding-bottom: 6rem;
 }
 
-.form_title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: center;
-
-  color: var(--color3);
-
-  margin: 1rem;
+.sectionFormContainerTwo {
+  padding-left: 1.5rem;
 }
 
-
-.input,
-.input_f {
+section {
   margin-bottom: 1rem;
-
-
-  padding-left: 1rem;
-  height: 40px;
-  width: 300px;
-  left: 0px;
-  top: 0px;
-
-  align-items: center;
-  justify-content: center;
 }
 
-.inputFullName,
-.input_text {
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 14px;
-  letter-spacing: 0em;
-  text-align: left;
-
-  color: var(--color2);
-}
-
-.btn_register {
-  padding: 0.5rem 0 0.5rem 0;
-}
-
-.btn_register input {
-  background-color: var(--complementary);
-  color: var(--color3);
-  height: 40px;
-  width: 300px;
-  left: 0px;
-  top: 0px;
-  border-radius: 5px;
-}
-
-.text_register{
-  font-size: 1rem;
-  color: var(--color3);
-}
-
-.btn_register_link {
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 14px;
-  text-align: center;
-
-  padding-bottom: 5rem;
-}
-
-.btn_register_link {
-  color: var(--complementary);
-}
-
-.btn-icon-reg {
-  background-color: transparent;
-  position: relative;
-  top: 0.3rem;
-  right: 10%;
-}
-
-.icon-eyeBlind-reg {
-  height: 18px;
-  width: 24px;
-  border-radius: 0px;
-}
-
-.errors {
-  display: block;
-  color: red;
-}
-
-@media screen and (min-width: 1024px) {
-  .register_container{
-    padding-top: 4rem;
+@media screen and (min-width: 768px){
+  .titleForm {
+    padding-bottom: 0;
   }
 
-  .text_register {
-    margin-top:1rem;
-  }
-
-  .text_register_register{
-    margin-left: 13rem;
-  }
-
-  .btn_register_link_register{
-    margin:5rem;
-    margin-top:1rem;
-  }
-
-  .container-fullName {
-    display: flex;
-  }
-
-  .input_f {
-    margin-right: 1rem;
-  }
-
-  .input {
-    width: 38.5rem;
-  }
-
-  .btn_register {
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .btn_register input {
-    height: 40px;
-  }
-
-  .btn-icon-reg {
-    right: 6%;
+  .buttonContainer {
+    margin-top: 2rem;
   }
 }
