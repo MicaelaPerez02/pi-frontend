@@ -30,9 +30,7 @@ function Reservation() {
     return (
         <>
             <Header />
-            <div className='reservationBody'>
-                {isLoaded ? reservationProduct : <div>Cargando...</div>}
-            </div>
+            {isLoaded ? reservationProduct : <div>Cargando...</div>}
             <Footer />
         </>
     )

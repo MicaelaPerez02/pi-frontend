@@ -77,8 +77,6 @@ function ReservationDetail(props) {
                   <input
                     type="text"
                     placeholder="Ingrese su nombre"
-                    className="inputRes"
-                    value={localStorage.getItem('name')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -86,8 +84,6 @@ function ReservationDetail(props) {
                   <input
                     name="text"
                     placeholder="Ingrese su apellido"
-                    className="inputRes"
-                    value={localStorage.getItem('surname')}
                   />
                 </div>
               </div>
@@ -97,8 +93,6 @@ function ReservationDetail(props) {
                   <input
                     type="email"
                     placeholder="Ingrese su correo electrónico"
-                    className="inputRes"
-                    value={localStorage.getItem('email')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -106,8 +100,6 @@ function ReservationDetail(props) {
                   <input
                     type="city"
                     placeholder="Ingrese su ciudad"
-                    className="inputRes"
-                    value={localStorage.getItem('city')}
                   />
                 </div>
               </div>
@@ -120,15 +112,15 @@ function ReservationDetail(props) {
             <div className="reservationCalendarOne">
               <CalendarDetail className="reservationCalendarComponent" />
               <div className="reservationCalendarButton">
-                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
-                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
+                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
             <div className="reservationCalendarComponentDouble">
               <CalendarDetailResponsive />
               <div className="reservationCalendarButton">
-                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
-                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
+                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
           </div>

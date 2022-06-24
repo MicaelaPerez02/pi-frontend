@@ -35,12 +35,12 @@
   margin-bottom: 2rem;
 }
 
-.reservationCalendarOne{
+.reservationCalendarOne {
   display: flex;
   flex-direction: column;
 }
 
-.reservationCalendarButton{
+.reservationCalendarButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,27 +57,6 @@
   margin-left: 2rem;
 }
 
-.buttonSelectDay,
-.buttonRemoveDay {
-  width: 40%;
-  height: 2.5rem;
-  border-radius: 0.2rem;
-  background-color: var(--main-color);
-  margin: 1rem 1rem 0 0.3rem;
-  color: var(--light);
-  font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
-
-  transition: 0.8s;
-}
-
-
-.buttonSelectDay:hover,
-.buttonRemoveDay:hover {
-  background-color: var(--complementary);
-}
 
 
 @media screen and (min-width: 768px) {
