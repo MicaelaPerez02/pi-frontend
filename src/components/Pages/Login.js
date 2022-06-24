@@ -34,33 +34,40 @@ function Login() {
         e.preventDefault();
     }
 
-    const validationLogin = () => {
-        if (jwt.length > 10) {
-            localStorage.setItem("username", JSON.stringify(username));
-            console.log(localStorage.getItem("username"));
+    const validationLogin = (e) => {
+        e.preventDefault();
 
-            localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
-            console.log(localStorage.getItem("avatar"));
+        login({ username, password });
+
+        localStorage.setItem("username", JSON.stringify(username));
+        console.log(localStorage.getItem("username"));
+
+        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+        console.log(localStorage.getItem("avatar"));
+
+        localStorage.removeItem("buttonReservationClick");
+        if (localStorage.getItem("user").length > 5) {
             navigate("/");
         } else {
             alert("Contraseña o usuario invalido");
         }
     }
 
-    const handleLogin = (e) => {
-        e.preventDefault();
+    const onChangeUsername = (e) => {
+        setUsername(e.target.value);
 
-        login({ username, password });
+    }
 
-        localStorage.removeItem("buttonReservationClick");
-    };
+    const onChangePassword = (e) => {
+        setPassword(e.target.value);
+    }
 
     return (
         <div>
             {username.length < 500 ? <HeaderLogin /> : <Header username={username} />}
             <div className="componentContainer">
                 <h1 className='titleForm'>Iniciar sesión</h1>
-                <form className="formContainer" onSubmit={handleLogin}>
+                <form className="formContainer" onSubmit={validationLogin}>
                     <Link to={'/'}>
                         <FaWindowClose onClick={clearButtonClick} className="iconClose" />
                     </Link>
@@ -68,17 +75,17 @@ function Login() {
                         <LoginError /> : ""}
                     <section>
                         <h5>Usuario</h5>
-                        <input type="text" placeholder="Ingrese su usuario" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input type="text" placeholder="Ingrese su usuario" value={username} onChange={onChangeUsername} />
                     </section>
                     <section className="passwordSection">
                         <h5>Contraseña</h5>
-                        <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={onChangePassword} />
                         <button className="buttonForm" onClick={toggleBtn}>
                             {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                         </button>
                     </section>
                     <section className="buttonContainer">
-                        <button className="buttonSubmit" onClick={validationLogin}>Ingresar</button>
+                        <button className="buttonSubmit">Ingresar</button>
                     </section>
                 </form>
                 <section className="createAcountContainer">

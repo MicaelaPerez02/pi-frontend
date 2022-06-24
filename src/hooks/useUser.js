@@ -9,7 +9,7 @@ export default function useUser(){
         LoginAuth({username, password})
         .then (jwt => {
             console.log(jwt);
-            localStorage.setItem("user", JSON.stringify(jwt))
+            localStorage.setItem("user", JSON.stringify(jwt));
             setJWT(jwt);
         })
         .catch(err => {
