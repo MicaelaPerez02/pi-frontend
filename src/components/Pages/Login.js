@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import useUser from "../../hooks/useUser";
+import { setAuthToken } from "../Cards/ReservationPage/setAuthToken";
 import "../../styles/Components/Login.css";
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
@@ -43,6 +44,11 @@ function Login() {
 
         localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
         console.log(localStorage.getItem("avatar"));
+
+       /* const token = localStorage.getItem("token");
+        if (token) {
+            setAuthToken(token);
+        }*/
 
         localStorage.removeItem("buttonReservationClick");
         if (localStorage.getItem("user").length > 5) {

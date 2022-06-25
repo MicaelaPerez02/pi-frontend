@@ -87,7 +87,6 @@ function Register() {
         };
     }
 
-
     const handleSignUp = (e) => {
         e.preventDefault();
 
