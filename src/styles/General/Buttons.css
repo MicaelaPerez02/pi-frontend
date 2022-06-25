@@ -2,7 +2,7 @@
   height: 40px;
   width: 300px;
 
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: var(--complementary);
   color: var(--light);
 
@@ -13,10 +13,32 @@
   cursor: pointer;
 }
 
+.navbarButton {
+  width: 95%;
+  height: 2.5rem;
+  border-radius: 4px;
+  background-color: var(--main-color);
+  margin: 0.8rem 0 0.5rem 0.8rem;
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+
+  transition: 0.8s;
+
+  margin-top: 1rem;
+}
+
+.navbarButton:hover,
+.navbarButton:focus {
+  background-color: var(--complementary);
+}
+
 .buttonDay {
   width: 40%;
   height: 2.5rem;
-  border-radius: 0.2rem;
+  border-radius: 4px;
   background-color: var(--main-color);
   margin: 1rem 1rem 0 0.3rem;
   color: var(--light);
@@ -31,4 +53,17 @@
 .buttonDay:hover,
 .buttonDay:hover {
   background-color: var(--complementary);
+}
+
+@media screen and (min-width: 768px) {
+  .navbarButton {
+    width: 13rem;
+    height: 2.5rem;
+    margin: 0 0 0 2%;
+  }
+
+  .navbarButton:hover,
+  .navbarButton:focus {
+    box-shadow: inset 14rem 0 0 0 var(--complementary);
+  }
 }

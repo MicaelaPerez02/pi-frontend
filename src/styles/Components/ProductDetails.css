@@ -84,7 +84,7 @@
   margin: 1rem 1rem 0 1rem;
 
   background-color: var(--complementary);
-  border-radius: 0.6rem;
+  border-radius: 4px;
   font-weight: 700;
   color: var(--light);
 
@@ -244,7 +244,7 @@
 .detailButtonReservation {
   width: 150%;
   height: 2.5rem;
-  border-radius: 0.2rem;
+  border-radius: 4px;
   background-color: var(--main-color);
   margin: 1rem 0 0 0.3rem;
 
@@ -301,7 +301,7 @@
 
   .detailCalendarReservationFlex {
     background-color: var(--light);
-    border-radius: 1rem;
+    border-radius: 4px;
     box-shadow: 0 0em 1em rgb(0 0 0 / 20%);
   }
 

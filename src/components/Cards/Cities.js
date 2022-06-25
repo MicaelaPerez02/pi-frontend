@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import CardCities from './CardCities';
 
-function Cities(props) {
+function Cities() {
     const { data, isLoaded } = useFetch(`/cities/allCities`);
 
-    const cityList = data.map((city) => {
+    const cityList = data.map((city, index) => {
         return (
             <CardCities
-                key={city.id}
+                key={index}
                 name={city.name}
                 country={city.country}
                 id={city.id}
@@ -18,12 +18,10 @@ function Cities(props) {
     })
 
     return (
-        <form className='form_InputSelect'>
-                {isLoaded ? cityList : <option>Cargando...</option>}{
-                    console.log(props.name)
-                }
-        </form>
+        <>
+            {isLoaded ? cityList : <option>Cargando...</option>}
+        </>
     )
 }
 
-export default Cities
+export default Cities;

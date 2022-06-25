@@ -74,3 +74,19 @@
   .rs-calendar-table-cell-content {
   color: var(--light) !important;
 }
+
+@media screen and (min-width: 768px) {
+  .rs-picker-toggle,
+  .rs-btn rs-btn-default {
+    width: 100% !important;
+    margin-left: 2%;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .rs-picker-toggle,
+  .rs-btn rs-btn-default {
+    width: 21rem !important;
+    margin-right: 3rem;
+  }
+}

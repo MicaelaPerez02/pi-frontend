@@ -67,8 +67,6 @@
 }
 
 .nav-text span {
-  text-decoration: none;
-
   color: var(--color2);
   font-size: 1.2rem;
   width: 95%;
