@@ -55,6 +55,17 @@
   background-color: var(--complementary);
 }
 
+.buttonFilter {
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.filterByCategory{
+  width: 20rem;
+  height: 5rem;
+}
+
+
 @media screen and (min-width: 768px) {
   .navbarButton {
     width: 13rem;

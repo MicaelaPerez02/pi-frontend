@@ -233,6 +233,17 @@ button.button_close_sesion {
     margin-top: 0.5rem;
   }
 
+  .buttonHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .userOptions {
+    display: flex;
+    flex-direction: column;
+  }
+
   p.avatar_user {
     color: var(--light) !important;
     background-color: var(--main-color) !important;
@@ -253,11 +264,20 @@ button.button_close_sesion {
     height: 3rem !important;
 
     margin-right: 1rem;
+    margin-bottom: 1rem;
   }
 
   .name_user {
     color: var(--light);
     margin-left: 1rem;
+  }
+
+  .perfilUser{
+    font-size: 0.7rem;
+    margin-left: 2.5rem;
+
+    color: var(--color4);
+   
   }
 
   .icon_menu {
@@ -282,6 +302,6 @@ button.button_close_sesion {
   }
 
   .icon_close_sesion {
-    margin-top: 1.4rem;
+    margin-top: 1rem;
   }
 }

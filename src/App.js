@@ -11,6 +11,7 @@ import ReservationSuccess from './components/Cards/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
 import './App.css';
 import {UserContextProvider } from "../src/components/services/userContext";
+import Profile from './components/User/Profile';
 
 function App() {
   const progress = new ProgressBar({
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={< Home />} />
           <Route path="/login" element={< Login />} />
           <Route path="/register" element={< Register />} />
+          <Route path='/profile' element={< Profile />} />
           <Route path="/product/:productId" element={< ProductDetails />} />
           <Route path="/category/:categoryId" element={< FilterCategory />} />
           <Route path="/cities/:citiesId" element={< FilterCities />} />
