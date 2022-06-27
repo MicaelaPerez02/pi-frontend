@@ -11,6 +11,7 @@ In the project directory, you can run:
 ### `npm install react-icons`
 
 ### `npm install react-hook-form`
+
 ## Testing
 
 ### `npm install --save -dev @testing-library/react @testing-library/jest-dom`
@@ -28,3 +29,5 @@ In the project directory, you can run:
 ### `npm i rs-carousel`
 
 ### `npm start`
+
+### `npm install react-time-picker`

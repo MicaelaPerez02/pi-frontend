@@ -13,6 +13,7 @@ function ProductDetails() {
 
     const productSelected = data.map((product) => {
         if (product.title == productId) {
+            localStorage.setItem('idProduct', product.id);
             return (
                 <CardDetail
                     key={product.id}

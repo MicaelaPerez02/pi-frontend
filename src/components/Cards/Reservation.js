@@ -9,7 +9,6 @@ import "../../styles/Components/Reservation.css";
 
 function Reservation() {
     const { data, isLoaded } = useFetch(`/products/allProducts`);
-    const [fecha, setFecha] = useState([]);
 
     const { productId } = useParams();
 
@@ -18,6 +17,7 @@ function Reservation() {
             return (
                 <CardReservation
                     key={product.id}
+                    id={product.id}
                     categories={product.categories.title}
                     title={product.title}
                     rating={product.rating}

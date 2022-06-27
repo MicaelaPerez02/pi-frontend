@@ -1,7 +1,3 @@
-import {
-    useContext
-} from "react";
-import Context from "./userContext";
 const API_URL = "http://localhost:8080";
 
 export default function ReservationPost({
@@ -19,14 +15,11 @@ export default function ReservationPost({
             Authorization: `Bearer ${authToken}`,
             "content-type": "application/json",
         },
-
         body: JSON.stringify({
             start_time,
             start_date,
             finish_date,
-            products: {
-                id: 2,
-            },
+            products,
             users: {
                 id: 2,
             },

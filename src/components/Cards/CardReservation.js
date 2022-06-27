@@ -9,24 +9,30 @@ import DropdownHours from "./ReservationPage/DropdownHours";
 import RulesDetails from "../ProductInfo/RulesDetails";
 import hours from "../../utils/hours.json";
 import useReservation from "../../hooks/useReservation";
+import TimePicker from 'react-time-picker';
 
 function CardReservation(props) {
-  const [value, setValue] = useState(null);
   const [date, setDate] = useState("");
-  /*const [start_time, setStartTime] = useState("");
-  const [start_date, setStartDate] = useState("");
-  const [finish_date, setFinishDate] = useState("");*/
   let navigate = useNavigate();
 
-  const [start_time, SetStartTime] = useState("10:00:00");
+  const [start_time, setStartTime] = useState("");
   const [start_date, setStartDate] = useState("");
   const [finish_date, setFinishDate] = useState("");
-  const jwt = localStorage.getItem("user");
+  const [products, setProducts] = useState(localStorage.getItem('idProduct'));
+
   const { Reservation } = useReservation();
 
   const handleReservation = () => {
-    Reservation({ start_time, start_date, finish_date });
+    Reservation({
+      start_time,
+      start_date,
+      finish_date,
+      products: {
+        id: products
+      }
+    });
   }
+
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");
 
@@ -34,8 +40,8 @@ function CardReservation(props) {
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
     setStartDate(checkIn);
-    setFinishDate(checkOut)
-    console.log(date);
+    setFinishDate(checkOut);
+    console.log(products);
     e.preventDefault();
   }
 
@@ -43,7 +49,6 @@ function CardReservation(props) {
     localStorage.removeItem("date");
     localStorage.removeItem("date2");
     setDate(prevState => !prevState);
-    console.log(date);
     e.preventDefault();
   }
 
@@ -74,7 +79,6 @@ function CardReservation(props) {
                     type="text"
                     placeholder="Ingrese su nombre"
                     className="inputRes"
-                    value={localStorage.getItem('name')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -83,7 +87,6 @@ function CardReservation(props) {
                     name="text"
                     placeholder="Ingrese su apellido"
                     className="inputRes"
-                    value={localStorage.getItem('surname')}
                   />
                 </div>
               </div>
@@ -94,7 +97,6 @@ function CardReservation(props) {
                     type="email"
                     placeholder="Ingrese su correo electrónico"
                     className="inputRes"
-                    value={localStorage.getItem('email')}
                   />
                 </div>
                 <div className="reservationInput">
@@ -103,7 +105,6 @@ function CardReservation(props) {
                     type="city"
                     placeholder="Ingrese su ciudad"
                     className="inputRes"
-                    value={localStorage.getItem('city')}
                   />
                 </div>
               </div>
@@ -121,7 +122,8 @@ function CardReservation(props) {
               </div>
             </div>
             <div className="reservationCalendarComponentDouble">
-              <CalendarDetailResponsive />
+              <CalendarDetailResponsive onChange={setStartDate} value={start_date} />
+              {console.log(start_date)}
               <div className="reservationCalendarButton">
                 <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
                 <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
@@ -136,19 +138,14 @@ function CardReservation(props) {
                 <p className="reservationCheckInfo">
                   {" "}
                   Tu habitación va a estar lista para el check-in entre las
-                  *props* y *props*
+                  10 y las 11 PM
                 </p>
               </div>
               <p className="reservationCheckEstimated">
                 Indicá tu horario estimado de llegada
               </p>
               <div className="ReservationDropdownHour">
-                <DropdownHours
-                  options={hours}
-                  prompt="Seleccioná tu horario"
-                  value={value}
-                  onChange={(val) => setValue(val)}
-                />
+                <TimePicker onChange={setStartTime} value={start_time} />
               </div>
             </div>
           </div>
