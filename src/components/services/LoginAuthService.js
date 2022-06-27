@@ -10,7 +10,7 @@ export default function LoginAuthService({ username, password }) {
       password
     })
   }).then(res => {
-    if (res.status !== 200) { 
+    if (res.status !== 200) {
       throw new Error("Lo sentimos, no pudimos iniciar sesión. Intentelo más tarde");
     }
     return res.json();

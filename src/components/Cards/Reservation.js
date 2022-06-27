@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import CardReservation from './CardReservation';
 import useFetch from '../../hooks/useFetch';
 import { useParams } from "react-router-dom";
-import crearReserva from './ReservationPage/crearReserva';
 import "../../styles/Components/ProductDetails.css";
 import "../../styles/Components/Reservation.css";
 

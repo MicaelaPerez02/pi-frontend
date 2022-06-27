@@ -1,4 +1,4 @@
-const API_URL = "http://3.133.114.51:8086";
+const API_URL = "http://localhost:8080";
 
 export default function SignUpAuthService({ name, surname, username, email, password, city, roles }) {
   return fetch(`${API_URL}/users/register`, {
