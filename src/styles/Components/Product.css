@@ -38,6 +38,13 @@
   border: 1px solid #f3f1ed;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+
+  transition: 0.3s;
+}
+
+.productInfoContainer:hover {
+  transform: scale(1.02, 1.02);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .productImageContainer img {
