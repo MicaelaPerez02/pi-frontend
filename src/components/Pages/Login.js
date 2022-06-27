@@ -38,17 +38,14 @@ function Login() {
 
         login({ username, password });
 
-        localStorage.setItem("username", JSON.stringify(username));
-        console.log(localStorage.getItem("username"));
-
-        localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
-        console.log(localStorage.getItem("avatar"));
-
         localStorage.removeItem("buttonReservationClick");
         if (localStorage.getItem("user").length > 5) {
+            localStorage.setItem("username", JSON.stringify(username));
+            console.log(localStorage.getItem("username"));
+
+            localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+            console.log(localStorage.getItem("avatar"));
             navigate("/");
-        } else {
-            alert("Contraseña o usuario invalido");
         }
     }
 
