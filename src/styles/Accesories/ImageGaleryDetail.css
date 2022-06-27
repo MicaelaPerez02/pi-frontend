@@ -11,9 +11,14 @@
     padding: 1rem 0;
   }
 
+  .imageFront{
+    width: 50%;
+    padding: 0.5rem 0;
+  }
+
   .imageFront img {
     width: 100%;
-    height: 97%;
+    height: 100%;
     object-fit: cover;
     
     border-radius: 4px;
@@ -23,22 +28,29 @@
 
   .imagesContainerGrid {
     --num-cols: 2;
-    --row-height: 250px;
+    --row-height: 200px;
 
     box-sizing: border-box;
 
     display: grid;
     grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
 
     background-color: var(--color5);
     margin-left : 3rem;
+    margin-right: 1.5rem;
+
+    
   }
 
+
+
   .detailImage > img {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 
-    border-radius: 4px;
+    padding: 0.5rem;
+    border-radius: 10px;
   }
 }
