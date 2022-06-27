@@ -52,16 +52,14 @@ function CardDetail(props) {
                     url={props.url}
                 />
             </div>
-            <div className='detailImageGalery'>
+            <div>
                 <Images
                     key={props.id}
                     url={props.url}
                     title={props.title}
                     id={props.id}
                 />
-                <div className='detailImageVerMas'>
-                    <p>VER MÁS</p>
-                </div>
+             
             </div>
             <div className='detailDescription'>
                 <p className='detailDescriptionSlogan'>{props.title}</p>
