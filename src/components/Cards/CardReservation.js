@@ -10,9 +10,7 @@ import RulesDetails from "../ProductInfo/RulesDetails";
 import hours from "../../utils/hours.json";
 import useReservation from "../../hooks/useReservation";
 import { setAuthToken } from "./ReservationPage/setAuthToken";
-import axios from "axios";
-import { reservationService } from "./ReservationPage/crearReserva";
-import crearReserva from "./ReservationPage/crearReserva";
+
 
 function CardReservation(props) {
   const [value, setValue] = useState(null);
@@ -22,115 +20,29 @@ function CardReservation(props) {
   const [finish_date, setFinishDate] = useState("");*/
   let navigate = useNavigate();
 
-  const [start_time, SetStartTime] = useState("10:00:30");
-  const [start_date, setStartDate] = useState("probandoooo");
-  const [finish_date, setFinishDate] = useState("uno doss");
+  const [start_time, SetStartTime] = useState("10:00:00");
+  const [start_date, setStartDate] = useState("");
+  const [finish_date, setFinishDate] = useState("");
   const jwt = localStorage.getItem("user");
+  const {Reservation} = useReservation();
 
-
- /* const handleReserva = async () => {
-    if (start_time && start_date && finish_date !== "Default") {
-      // POST RESERVA
-      const body = {
-        start_time: start_time,
-        start_date: start_date,
-        finish_date: finish_date,
-        products: {
-          id: "2"
-        },
-        users: {
-          id: "2"
-        },
-      }
-      console.log(jwt);
-      const { response } = await crearReserva(body, jwt)
-      if (response.status === 200) {
-        alert("FUNCIONAAAAAAAAAAAAAAAAAAA")
-      } else {
-        alert("NO FUNCIONAAAAAAAAA")
-      }
-    }}
-
-*/
-
-    // const { ReservationUp, isReserved } = useReservation();
-
-    /*const handleReservationUp = (e) => {
-      e.preventDefault();
+  const handleReservation = () =>{
   
-        ReservationUp({ start_time, start_date, finish_date });
-        navigate("/login");
-     
-    }*/
+  Reservation({ start_time, start_date, finish_date });
+  
 
-    /*const handleSubmit = (start_time, start_date, finish_date, products, users) => {
-      const submitPayload = {
-        start_time: "10:00:00",
-        start_date: "PORfa FUNCIONA",
-        finish_date: "PORFA",
-        products: {
-          "id": 3
-        },
-        users: {
-          "id": 2
-        }
-      }
-  
-      axios.post("http://3.133.114.51:8086/bookings/addBooking", submitPayload)
-        .then(response => {
-          //get token from response
-          const token = response.data.token;
-  
-          //set JWT token to local
-          localStorage.setItem("token", token);
-  
-          //set token to axios common header
-          setAuthToken(token);
-  
-          //redirect user to home page
-          window.location.href = '/'
-        })
-        .catch(err => console.log(err));
-      
-    };*/
 
-    /* const [reservation, setReservation] = useState({
-       start_time: "10:00:00",
-       start_date: "PORfa FUNCIONA",
-       finish_date: "PORFA",
-       products: {
-         id: 3
-       },
-       users: {
-         id: 2
-       }
-     });
-   
-     const responseSubmit = (response) => {
-       if (response === 200) {
-         alert("funcionaaaaaaaaaaAAAAAAAA")
-       }
-     }
-   
-     const submitForm = (e) => {
-       e.preventDefault()
-       try {
-         reservationService.sendReservation(reservation, token).then(status => responseSubmit(status))
-           .catch(error => {
-             console.log(error);
-             alert("errorrr")
-           })
-       }
-       catch (e) {
-         console.log("ERROR" + e);
-       }
-     }
-   */
+}
+
+
     const checkIn = localStorage.getItem("date");
     const checkOut = localStorage.getItem("date2");
 
+
     const clickCalendar = (e) => {
       setDate(prevState => !prevState);
+      setStartDate(checkIn); 
+       setFinishDate(checkOut)
       console.log(date);
       e.preventDefault();
     }
@@ -289,10 +201,11 @@ function CardReservation(props) {
                   {checkIn == null ? (
                     <span>Selecciona tu fecha</span>) : (
                     <span>{checkOut.substring(1, 11)}</span>)}
+                    
                 </div>
                 <hr className="hrReservation"></hr>
-                {/*<Link to={"/product/" + props.title + "/reservation/success"}> */}
-                <button className="reservationButtonConfirm" onClick={handleReserva}>
+               
+                <button className="reservationButtonConfirm"  onClick={  handleReservation }>
                   Confirmar reserva
                 </button>
 
