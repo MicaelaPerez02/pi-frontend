@@ -1,10 +1,10 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 import { Slide } from 'react-slideshow-image';
 import useFetch from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 import "react-slideshow-image/dist/styles.css";
+import "../../styles/Accesories/Carrousel.css"
 
 function CarrouselProduct(props) {
     const { data, isLoaded } = useFetch(`/images/allImages`);
@@ -17,17 +17,12 @@ function CarrouselProduct(props) {
                 {data.map((image, index) =>
                     image.products.title == productId ? (
                         (
-                            <div key={index}>
-                                <div
-                                    style={{ height: '50vh', backgroundImage: `url(${image.url})`, backgroundSize: 'cover'}}>
-                                    <div
-                                        style={{
-                                            width: 0,
-                                        }}>
-                                    </div>
+                            <div key={index} className="each-slide-effect">
+                                <div 
+                                    style={{ backgroundImage: `url(${image.url})`}}>
                                 </div>
                             </div>
-                        )): null)}
+                        )) : null)}
             </Slide>
         </>
     )

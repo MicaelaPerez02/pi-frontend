@@ -26,8 +26,10 @@ In the project directory, you can run:
 
 ### `npm install --save react-dropdown-select`
 
-### `npm i rs-carousel`
+### `npm i react-slideshow-image`
 
 ### `npm start`
 
 ### `npm install react-time-picker`
+
+### `npm i react-medium-image-zoom`
