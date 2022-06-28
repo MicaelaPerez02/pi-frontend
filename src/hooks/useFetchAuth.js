@@ -1,21 +1,27 @@
-const API_URL = "http://localhost:8080";
-export default function LoginAuthService({ username, password }) {
-  return fetch(`${API_URL}/authenticate`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      username,
-      password
-    })
-  }).then(res => {
-    if (res.status !== 200) {
-      throw new Error("Lo sentimos, no pudimos iniciar sesión. Intentelo más tarde");
+
+import { useEffect, useState } from "react";
+
+export default function useFetchAuth(url) {
+  const [data, setData] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const authToken = JSON.parse(localStorage.getItem("user"));
+
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:8080" + url, {
+       method: "GET",
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+            "content-type": "application/json",
+        },
+      });
+      const datas = await response.json();
+      setData(datas);
+      setIsLoaded(true);
     }
-    return res.json();
-  }).then(res => {
-    const { jwt } = res;
-    return jwt;
-  });
+    fetchData();
+  }, [url])
+
+  return { data, isLoaded }
 }

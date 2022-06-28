@@ -5,9 +5,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import CalendarDetail from "../ProductInfo/CalendarDetail";
 import CalendarDetailResponsive from "../ProductInfo/CalendarDetailResponsive";
-import DropdownHours from "./ReservationPage/DropdownHours";
 import RulesDetails from "../ProductInfo/RulesDetails";
-import hours from "../../utils/hours.json";
 import useReservation from "../../hooks/useReservation";
 import TimePicker from 'react-time-picker';
 
@@ -33,8 +31,8 @@ function CardReservation(props) {
     });
   }
 
-  const checkIn = localStorage.getItem("date");
-  const checkOut = localStorage.getItem("date2");
+  const checkIn = JSON.parse(localStorage.getItem("date"));
+  const checkOut = JSON.parse(localStorage.getItem("date2"));
 
 
   const clickCalendar = (e) => {
@@ -181,7 +179,7 @@ function CardReservation(props) {
                 <p className="reservationCheckInOut">Check in </p>
                 {checkIn == null ? (
                   <span>Selecciona tu fecha</span>) : (
-                  <span>{checkIn.substring(1, 11)}</span>
+                  <span>{checkIn.substring(0, 10)}</span>
                 )}
               </div>
               <hr className="hrReservation"></hr>
@@ -189,7 +187,7 @@ function CardReservation(props) {
                 <p className="reservationCheckInOut">Check out </p>
                 {checkIn == null ? (
                   <span>Selecciona tu fecha</span>) : (
-                  <span>{checkOut.substring(1, 11)}</span>)}
+                  <span>{checkOut.substring(0, 10)}</span>)}
 
               </div>
               <hr className="hrReservation"></hr>

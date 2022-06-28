@@ -11,7 +11,7 @@ export default function useFetch(url) {
             setData(datas);
             setIsLoaded(true);
         }
-        fetchData()
+        fetchData();
     }, [url])
 
     return { data, isLoaded }
