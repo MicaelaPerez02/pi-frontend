@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import { FaWindowClose } from 'react-icons/fa';
 import useUser from '../../../hooks/useUser';
 
@@ -15,6 +16,10 @@ function ButtonSidebarSession() {
                 <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
                 <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("username"))}! </p>
             </div>
+            {JSON.parse(localStorage.getItem("username")) === "Admin" ?
+                <Link to="/product/addProduct">
+                    <button> Generar producto </button>
+                </Link> : <p>aaa</p>}
             <button className='button_close_sesion'> Cerrar Sesión <FaWindowClose className='icon_close_sesion' /> </button>
         </li>
     )

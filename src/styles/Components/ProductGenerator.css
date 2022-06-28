@@ -1,0 +1,47 @@
+.productGeneratorHeader {
+  background-color: var(--main-color);
+
+  margin-top: 5rem;
+  padding: 1rem;
+}
+
+.productGeneratorHeader p {
+  color: var(--light);
+}
+
+.productGeneratorBody {
+  background-color: var(--color5);
+  padding-bottom: 4rem;
+}
+
+.prodGeneratorTitle {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  text-align: left;
+
+  padding: 1rem;
+
+  color: var(--main-color);
+}
+
+.reservationInput {
+  background-color: var(--light) !important;
+
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 4px;
+}
+
+.productAtributesFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productAtributes {
+  margin-left: 3rem;
+}
+
+.subtitleProduct {
+  margin-bottom: 1rem;
+}

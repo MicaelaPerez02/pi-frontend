@@ -11,6 +11,8 @@ function Profile() {
         <p>{bookings.start_date}</p>
         <p>{bookings.finish_date}</p>
         <p>{bookings.products.title}</p>
+        <p>{bookings.users.id}</p>
+        <p>{bookings.users.username}</p>
       </>
     )
   });
