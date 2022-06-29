@@ -14,15 +14,14 @@ function ProductGenerator() {
   const { Images } = useImages();
   const { Cities } = useCities();
   const { Features } = useFeatures();
-  const [name, setName] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
-  const [url, setUrl] = useState("");
-  const [air_conditioning, setAirCond] = useState("");
-  const [wi_fi, setWifi] = useState("false");
-  const [heating, setHeating] = useState("");
-  const [parking, setParking] = useState("");
-  const [gym, setGym] = useState("");
   const [category, setCategory] = useState("");
+  const [name, setName] = useState("");
+  const [url, setUrl] = useState("");
+  const [air_conditioning, setAirCond] = useState(false);
+  const [wi_fi, setWifi] = useState(false);
+  const [heating, setHeating] = useState(false);
+  const [parking, setParking] = useState(false);
+  const [gym, setGym] = useState(false);
 
   /*post crear producto, agarro el id en algun lado y se lo seteo a la images post*/
 
@@ -35,10 +34,31 @@ function ProductGenerator() {
     /*products: {localStorage.getItem(cityId)}*/
   }
 
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
-    console.log(isChecked);
+  const handleAirConditioning = () => {
+    setAirCond(!air_conditioning);
+    console.log(air_conditioning);
   };
+
+  const handleChangeWifi = () => {
+    setWifi(!wi_fi);
+    console.log(wi_fi);
+  };
+
+  const handleHeating = () => {
+    setHeating(!heating);
+    console.log(heating);
+  };
+
+  const handleGym = () => {
+    setGym(!gym);
+    console.log(gym);
+  };
+
+  const handleParking = () => {
+    setParking(!parking);
+    console.log(parking);
+  };
+
 
   const categoryList =
     data.map((category, index) => {
@@ -114,13 +134,25 @@ function ProductGenerator() {
             <p className='prodGeneratorTitle'>Agregar atributos</p>
             <div className='productAtributesFlex'>
               <section>
+                <h5>Wifi</h5>
                 <input
-                  type="checkbox"
-                  id="topping"
-                  name="topping"
-                  value={wi_fi}
-                  checked={isChecked}
-                  onChange={handleOnChange}
+                  type="checkbox" id="topping" name="topping" value={wi_fi} onChange={handleChangeWifi}
+                />
+                <h5>Air conditioning</h5>
+                <input
+                  type="checkbox" id="topping" name="topping" value={air_conditioning} onChange={handleAirConditioning}
+                />
+                <h5>Heating</h5>
+                <input
+                  type="checkbox" id="topping" name="topping" value={heating} onChange={handleHeating}
+                />
+                <h5>Gym</h5>
+                <input
+                  type="checkbox" id="topping" name="topping" value={gym} onChange={handleGym}
+                />
+                <h5>Parking</h5>
+                <input
+                  type="checkbox" id="topping" name="topping" value={parking} onChange={handleParking}
                 />
               </section>
               <section className='productAtributes'>
