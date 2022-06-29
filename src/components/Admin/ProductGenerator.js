@@ -7,25 +7,38 @@ import useCities from '../services/POST cities/useCities';
 import useFetch from '../../hooks/useFetch';
 import CardCities from '../Cards/CardCities';
 import useImages from '../services/Post Images/useImages';
+import useFeatures from '../services/Post Features/useFeatures';
 
 function ProductGenerator() {
   const { data, isLoaded } = useFetch(`/categories/allCategories`);
-  const { Images } = useImages;
+  const { Images } = useImages();
   const { Cities } = useCities();
+  const { Features } = useFeatures();
   const [name, setName] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
   const [url, setUrl] = useState("");
+  const [air_conditioning, setAirCond] = useState("");
+  const [wi_fi, setWifi] = useState("false");
+  const [heating, setHeating] = useState("");
+  const [parking, setParking] = useState("");
+  const [gym, setGym] = useState("");
   const [category, setCategory] = useState("");
 
   /*post crear producto, agarro el id en algun lado y se lo seteo a la images post*/
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
     Cities({ name });
     Images({ url });
+    Features({ air_conditioning, wi_fi, heating, parking, gym })
     /*categories: category*/
     /*products: {localStorage.getItem(cityId)}*/
   }
+
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+    console.log(isChecked);
+  };
 
   const categoryList =
     data.map((category, index) => {
@@ -100,6 +113,16 @@ function ProductGenerator() {
             </div>
             <p className='prodGeneratorTitle'>Agregar atributos</p>
             <div className='productAtributesFlex'>
+              <section>
+                <input
+                  type="checkbox"
+                  id="topping"
+                  name="topping"
+                  value={wi_fi}
+                  checked={isChecked}
+                  onChange={handleOnChange}
+                />
+              </section>
               <section className='productAtributes'>
                 <div className="inputProdGenerator">
                   <h5 className="inputTitleProdGenerator">Nombre</h5>
