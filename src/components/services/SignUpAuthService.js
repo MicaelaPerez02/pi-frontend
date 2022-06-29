@@ -1,6 +1,6 @@
 const API_URL = "http://localhost:8080";
 
-export default function SignUpAuthService({ name, surname, username, email, password, city, roles }) {
+export default function SignUpAuthService({ name, surname, email, password, city, roles }) {
   return fetch(`${API_URL}/users/register`, {
     method: "POST",
     headers: {
@@ -9,7 +9,6 @@ export default function SignUpAuthService({ name, surname, username, email, pass
     body: JSON.stringify({
       name,
       surname,
-      username,
       email,
       password,
       city,

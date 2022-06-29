@@ -1,12 +1,12 @@
 const API_URL = "http://localhost:8080";
-export default function LoginAuthService({ username, password }) {
+export default function LoginAuthService({ email, password }) {
   return fetch(`${API_URL}/authenticate`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      username,
+      email,
       password
     })
   }).then(res => {

@@ -12,7 +12,7 @@ function Profile() {
         <p>{bookings.finish_date}</p>
         <p>{bookings.products.title}</p>
         <p>{bookings.users.id}</p>
-        <p>{bookings.users.username}</p>
+        <p>{bookings.users.email}</p>
       </>
     )
   });

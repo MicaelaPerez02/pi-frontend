@@ -17,7 +17,7 @@ import "../../styles/General/Buttons.css";
 
 function Login() {
     let navigate = useNavigate();
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { login, isLogged } = useUser();
 
@@ -36,21 +36,21 @@ function Login() {
     const validationLogin = (e) => {
         e.preventDefault();
 
-        login({ username, password });
+        login({ email, password });
 
         localStorage.removeItem("buttonReservationClick");
         if (localStorage.getItem("user").length > 5) {
-            localStorage.setItem("username", JSON.stringify(username));
+            localStorage.setItem("username", JSON.stringify(email));
             console.log(localStorage.getItem("username"));
 
-            localStorage.setItem("avatar", JSON.stringify(username[0].toUpperCase()));
+            localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
             console.log(localStorage.getItem("avatar"));
             navigate("/");
         }
     }
 
-    const onChangeUsername = (e) => {
-        setUsername(e.target.value);
+    const onChangeEmail = (e) => {
+        setEmail(e.target.value);
     }
 
     const onChangePassword = (e) => {
@@ -59,7 +59,7 @@ function Login() {
 
     return (
         <div>
-            {username.length < 500 ? <HeaderLogin /> : <Header username={username} />}
+            {email.length < 500 ? <HeaderLogin /> : <Header username={email} />}
             <div className="componentContainer">
                 <h1 className='titleForm'>Iniciar sesión</h1>
                 <form className="formContainer" onSubmit={validationLogin}>
@@ -70,7 +70,7 @@ function Login() {
                         <LoginError /> : ""}
                     <section>
                         <h5>Usuario</h5>
-                        <input type="text" placeholder="Ingrese su usuario" value={username} onChange={onChangeUsername} />
+                        <input type="text" placeholder="Ingrese su usuario" value={email} onChange={onChangeEmail} />
                     </section>
                     <section className="passwordSection">
                         <h5>Contraseña</h5>

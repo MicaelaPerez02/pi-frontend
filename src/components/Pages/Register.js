@@ -17,7 +17,6 @@ function Register() {
     const [state1, setState1] = useState(false);
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
-    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [city, setCity] = useState("");
@@ -52,14 +51,6 @@ function Register() {
         };
     }
 
-    const onChangeUsername = (e) => {
-        setUsername(e.target.value);
-        if (username.length < 2) {
-            localStorage.setItem("shortUsername", true);
-        } else {
-            localStorage.setItem("shortUsername", false);
-        };
-    }
     const onChangeCity = (e) => {
         setCity(e.target.value);
         if (city.length < 2) {
@@ -93,8 +84,8 @@ function Register() {
         localStorage.setItem("password", JSON.stringify(password));
         console.log(localStorage.getItem("password"));
 
-        if ((name && surname && username && email && password && city) !== "") {
-            SignUp({ name, surname, username, email, password, city });
+        if ((name && surname && email && password && city) !== "") {
+            SignUp({ name, surname, email, password, city });
             navigate("/login");
         } else {
             alert("Por favor, complete todos los campos.")
@@ -127,13 +118,6 @@ function Register() {
                         </section>
                     </div>
                     <div className="sectionFormContainer">
-                        <section>
-                            <h5>Nombre de usuario</h5>
-                            <input value={username} onChange={onChangeUsername} type="text" placeholder="Ingrese un nombre de usuario" />
-                            {localStorage.getItem('shortUsername') === 'true' ?
-                                <p className="validationError">El usuario debe tener mínimo 3 caracteres</p> : <p></p>
-                            }
-                        </section>
                         <section>
                             <h5>Ciudad</h5>
                             <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" />

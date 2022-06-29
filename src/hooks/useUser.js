@@ -5,8 +5,8 @@ import LoginAuthService from "../components/services/LoginAuthService";
 export default function useUser(){
     const {jwt, setJWT } = useContext(Context);
 
-    const login = useCallback(({username, password} ) => {
-        LoginAuthService({username, password})
+    const login = useCallback(({email, password} ) => {
+        LoginAuthService({email, password})
         .then (jwt => {
             console.log(jwt);
             localStorage.setItem("user", JSON.stringify(jwt));
