@@ -42,7 +42,6 @@ function CardReservation(props) {
     setDate(prevState => !prevState);
     setStartDate(checkIn);
     setFinishDate(checkOut);
-    console.log(products);
     e.preventDefault();
   }
 
@@ -128,7 +127,6 @@ function CardReservation(props) {
             </div>
             <div className="reservationCalendarComponentDouble">
               <CalendarDetailResponsive onChange={setStartDate} value={start_date} />
-              {console.log(start_date)}
               <div className="reservationCalendarButton">
                 <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
                 <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>

@@ -14,7 +14,6 @@ import Images from './Images';
 function CardDetail(props) {
     const handleClick = () => {
         localStorage.setItem("buttonReservationClick", true);
-        console.log(localStorage.getItem("buttonReservationClick"));
     }
 
     return (

@@ -29,7 +29,6 @@ function Login() {
 
     const toggleBtn = (e) => {
         setState(prevState => !prevState);
-        console.log(state);
         e.preventDefault();
     }
 
@@ -41,10 +40,8 @@ function Login() {
         localStorage.removeItem("buttonReservationClick");
         if (localStorage.getItem("user").length > 5) {
             localStorage.setItem("username", JSON.stringify(email));
-            console.log(localStorage.getItem("username"));
 
             localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
-            console.log(localStorage.getItem("avatar"));
             navigate("/");
         }
     }
