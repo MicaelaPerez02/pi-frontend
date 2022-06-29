@@ -6,18 +6,28 @@ import "../../styles/Components/ProductGenerator.css"
 import useCities from '../services/POST cities/useCities';
 import useFetch from '../../hooks/useFetch';
 import CardCities from '../Cards/CardCities';
+import useImages from '../services/Post Images/useImages';
 
 function ProductGenerator() {
   const { data, isLoaded } = useFetch(`/categories/allCategories`);
+  const { Images } = useImages;
   const { Cities } = useCities();
   const [name, setName] = useState("");
+  const [url, setUrl] = useState("");
+  const [category, setCategory] = useState("");
+
+  /*post crear producto, agarro el id en algun lado y se lo seteo a la images post*/
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     Cities({ name });
+    Images({ url });
+    /*categories: category*/
+    /*products: {localStorage.getItem(cityId)}*/
   }
 
-  /*const categoryList =
+  const categoryList =
     data.map((category, index) => {
       return (
         <>
@@ -25,7 +35,7 @@ function ProductGenerator() {
         </>
       )
     })
-*/
+
   return (
     <>
       <Header />
@@ -48,12 +58,13 @@ function ProductGenerator() {
                 </div>
                 <div className="inputProdGenerator">
                   <h5 className="inputTitleProdGenerator">Categoría</h5>
-                  {/*<select id="category" name="category" className='form_select' defaultValue={'DEFAULT'} 
-                  value={category} onChange={e => setCategory(e.target.value)}>
+                  <select id="category" name="category" className='form_select'
+                    value={category} onChange={e => setCategory(e.target.value)}>
                     <option className="form_option" hidden >Selecciona la categoría</option>
                     <option className="form_option" disabled >Selecciona la categoría</option>
                     {categoryList}
-                  </select> */}
+                    {console.log(category)}
+                  </select>
                 </div>
               </section>
               <section>
@@ -141,11 +152,16 @@ function ProductGenerator() {
                 </div>
               </section>
             </div>
+            <button className='buttonSubmit' onClick={handleSubmit}>Crear</button>
+          </form>
+          <form>
             <p className='prodGeneratorTitle'>Cargar imágenes</p>
             <div className='productAtributesFlex'>
               <section className='productAtributes'>
                 <div className="inputProdGenerator">
                   <input
+                    value={url}
+                    onChange={e => setUrl(e.target.value)}
                     name="text"
                     placeholder="Insertar url de la imágen"
                     className="inputProdGenerator"
@@ -154,7 +170,6 @@ function ProductGenerator() {
               </section>
               <TbCirclePlus className='iconPlusProduct' />
             </div>
-            <button className='buttonSubmit' onClick={handleSubmit}>Crear</button>
           </form>
         </section>
       </div>
