@@ -26,11 +26,10 @@ export default function ReservationPost({
         }),
     })
         .then((res) => {
-            if (res.status !== 200)
+            if (res.status !== 201)
                 throw new Error(
                     "Lo sentimos, la reserva no pudo ser registrada. Intentelo más tarde" +
                     res.status,
-                    console.log(authToken)
                 );
             return res.json();
         })
