@@ -19,7 +19,7 @@ export default function CityPost({
         }),
     })
         .then((res) => {
-            if (res.status !== 200)
+            if (res.status !== 201)
                 throw new Error(
                     "Lo sentimos, la ciudad no pudo ser registrada. Intentelo más tarde" +
                     res.status,

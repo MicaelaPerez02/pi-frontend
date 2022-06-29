@@ -16,10 +16,10 @@ function ButtonSidebarSession() {
                 <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
                 <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("username"))}! </p>
             </div>
-            {JSON.parse(localStorage.getItem("username")) === "Admin" ?
+            {JSON.parse(localStorage.getItem("username")) === "admin@gmail.com" ?
                 <Link to="/product/addProduct">
                     <button> Generar producto </button>
-                </Link> : <p>aaa</p>}
+                </Link> : <p></p>}
             <button className='button_close_sesion'> Cerrar Sesión <FaWindowClose className='icon_close_sesion' /> </button>
         </li>
     )

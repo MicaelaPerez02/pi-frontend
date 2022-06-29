@@ -21,10 +21,10 @@ function ButtonsHeaderSession() {
                 </Link>
             </section>
             <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
-            {JSON.parse(localStorage.getItem("username")) === "Admin" ?
+            {JSON.parse(localStorage.getItem("username")) === "admin@gmail.com" ?
                 <Link to="/product/addProduct">
                     <button> Generar producto </button>
-                </Link> : <p>aa</p>}
+                </Link> : <p></p>}
         </div>
     )
 }
