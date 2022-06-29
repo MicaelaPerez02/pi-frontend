@@ -4,8 +4,11 @@ import Header from '../Header/Header';
 import { TbCirclePlus } from "react-icons/tb";
 import "../../styles/Components/ProductGenerator.css"
 import useCities from '../services/POST cities/useCities';
+import useFetch from '../../hooks/useFetch';
+import CardCities from '../Cards/CardCities';
 
 function ProductGenerator() {
+  const { data, isLoaded } = useFetch(`/categories/allCategories`);
   const { Cities } = useCities();
   const [name, setName] = useState("");
 
@@ -14,6 +17,15 @@ function ProductGenerator() {
     Cities({ name });
   }
 
+  /*const categoryList =
+    data.map((category, index) => {
+      return (
+        <>
+          <option value={category.id} key={index}>{category.title}</option>
+        </>
+      )
+    })
+*/
   return (
     <>
       <Header />
@@ -36,11 +48,12 @@ function ProductGenerator() {
                 </div>
                 <div className="inputProdGenerator">
                   <h5 className="inputTitleProdGenerator">Categoría</h5>
-                  <input
-                    name="text"
-                    placeholder="Ingrese la categoría de la propiedad"
-                    className="inputProdGenerator"
-                  />
+                  {/*<select id="category" name="category" className='form_select' defaultValue={'DEFAULT'} 
+                  value={category} onChange={e => setCategory(e.target.value)}>
+                    <option className="form_option" hidden >Selecciona la categoría</option>
+                    <option className="form_option" disabled >Selecciona la categoría</option>
+                    {categoryList}
+                  </select> */}
                 </div>
               </section>
               <section>
@@ -54,6 +67,7 @@ function ProductGenerator() {
                 </div>
                 <div className="inputProdGenerator">
                   <h5 className="inputTitleProdGenerator">Ciudad</h5>
+                  <CardCities />
                   <input
                     value={name} onChange={e => setName(e.target.value)}
                     name="text"
