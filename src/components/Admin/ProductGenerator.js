@@ -17,6 +17,7 @@ function ProductGenerator() {
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
+  const [newFeature, setNewFeature] = useState("");
   const [air_conditioning, setAirCond] = useState(false);
   const [wi_fi, setWifi] = useState(false);
   const [heating, setHeating] = useState(false);
@@ -29,7 +30,38 @@ function ProductGenerator() {
     e.preventDefault();
     Cities({ name });
     Images({ url });
-    Features({ air_conditioning, wi_fi, heating, parking, gym })
+
+   /* if (air_conditioning) {
+      setAirCond("Si");
+    } else if (!air_conditioning)
+      setAirCond("No");
+
+    if (wi_fi) {
+      setWifi("Si");
+    } else if (!wi_fi)
+      setWifi("No");
+
+    if (heating) {
+      setHeating("Si");
+    } else if (!heating)
+      setHeating("No");
+
+    if (parking) {
+      setParking("Si");
+    } else if (!parking)
+      setParking("No");
+
+    if (gym) {
+      setGym("Si");
+    } else if (!gym)
+      setGym("No");
+
+    Features({ air_conditioning, wi_fi, heating, parking, gym }) 
+    
+    NO FUNCIONA PQ VAN A CAMBIAR LAS TABLAAS
+    */
+
+
     /*categories: category*/
     /*products: {localStorage.getItem(cityId)}*/
   }
@@ -58,7 +90,6 @@ function ProductGenerator() {
     setParking(!parking);
     console.log(parking);
   };
-
 
   const categoryList =
     data.map((category, index) => {
