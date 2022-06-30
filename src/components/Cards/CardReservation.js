@@ -94,7 +94,7 @@ function CardReservation(props) {
               <div className="reservationDataEmailCity">
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Correo electrónico</h5>
-                  {/*value={email}*/ }
+                  {/*value={email}*/}
                   <input
                     type="email"
                     placeholder="Ingrese su correo electrónico"
@@ -103,7 +103,7 @@ function CardReservation(props) {
                 </div>
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Ciudad</h5>
-                  {/*value={city}*/ }
+                  {/*value={city}*/}
                   <input
                     type="city"
                     placeholder="Ingrese su ciudad"
@@ -195,11 +195,11 @@ function CardReservation(props) {
 
               </div>
               <hr className="hrReservation"></hr>
-
-              <button className="reservationButtonConfirm" onClick={handleReservation}>
-                Confirmar reserva
-              </button>
-
+              <Link to="/product/:productId/reservation/success">
+                <button className="reservationButtonConfirm" onClick={handleReservation}>
+                  Confirmar reserva
+                </button>
+              </Link>
             </div>
           </div>
         </div>
