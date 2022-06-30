@@ -30,8 +30,8 @@ function FilterCategory() {
 
     return (
         <>
-            <Header />
-            <Navbar />
+                <Header />
+                <Navbar />
             <Categories />
             <div className='productContainer' key={categoryId}>
                 <p className='productInfoTitle'>Recomendaciones</p>

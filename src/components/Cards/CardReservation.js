@@ -9,6 +9,7 @@ import RulesDetails from "../ProductInfo/RulesDetails";
 import useReservation from "../../hooks/useReservation";
 import TimePicker from 'react-time-picker';
 
+
 function CardReservation(props) {
   const [date, setDate] = useState("");
 
@@ -16,29 +17,33 @@ function CardReservation(props) {
   const [start_date, setStartDate] = useState("");
   const [finish_date, setFinishDate] = useState("");
   const [products, setProducts] = useState(localStorage.getItem('idProduct'));
+  const navigate = useNavigate();
   // const [name, setName] = useState({name}); del atributo que viene del get usuarios 
   // const [surname, setSurname] = useState({surname}); del atributo que viene del get usuarios
   // const [city, setCity] = useState({city}); del atributo que viene del get usuarios
   // const [email, setEmail] = useState({email}); del atributo que viene del get usuarios 
   const { Reservation } = useReservation();
-
-  const handleReservation = () => {
-    Reservation({
-      start_time,
-      start_date,
-      finish_date,
-      products: {
-        id: products
-      },
-      users: {
-        id: JSON.parse(localStorage.getItem("userId"))
-      }
-    });
-  }
-
   const checkIn = JSON.parse(localStorage.getItem("date"));
   const checkOut = JSON.parse(localStorage.getItem("date2"));
 
+  const handleReservation = () => {
+    if ((checkIn && checkOut && start_time) != "") {
+      Reservation({
+        start_time,
+        start_date,
+        finish_date,
+        products: {
+          id: products
+        },
+        users: {
+          id: JSON.parse(localStorage.getItem("userId"))
+        }
+      });
+      navigate("/product/:productId/reservation/success");
+      localStorage.removeItem("date");
+      localStorage.removeItem("date2");
+    }
+  }
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
@@ -77,7 +82,6 @@ function CardReservation(props) {
               <div className="reservationNameLastName">
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Nombre</h5>
-                  {/*value={name}*/}
                   <input
                     type="text"
                     placeholder="Ingrese su nombre"
@@ -97,7 +101,6 @@ function CardReservation(props) {
               <div className="reservationDataEmailCity">
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Correo electrónico</h5>
-                  {/*value={email}*/}
                   <input
                     type="email"
                     placeholder="Ingrese su correo electrónico"
@@ -106,7 +109,6 @@ function CardReservation(props) {
                 </div>
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Ciudad</h5>
-                  {/*value={city}*/}
                   <input
                     type="city"
                     placeholder="Ingrese su ciudad"
@@ -128,7 +130,7 @@ function CardReservation(props) {
               </div>
             </div>
             <div className="reservationCalendarComponentDouble">
-              <CalendarDetailResponsive onChange={setStartDate} value={start_date} />
+              <CalendarDetailResponsive />
               <div className="reservationCalendarButton">
                 <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
                 <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
@@ -198,11 +200,11 @@ function CardReservation(props) {
 
               </div>
               <hr className="hrReservation"></hr>
-              <Link to="/product/:productId/reservation/success">
-                <button className="reservationButtonConfirm" onClick={handleReservation}>
-                  Confirmar reserva
-                </button>
-              </Link>
+
+              <button className="reservationButtonConfirm" onClick={handleReservation}>
+                Confirmar reserva
+              </button>
+
             </div>
           </div>
         </div>
@@ -210,7 +212,7 @@ function CardReservation(props) {
       <div className="reservationRules">
         <RulesDetails />
       </div>
-    </div >
+    </div>
   );
 }
 
