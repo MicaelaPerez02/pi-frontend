@@ -1,5 +1,3 @@
-const API_URL = "http://localhost:8080";
-
 export default function ReservationPost({
     start_time,
     start_date,
@@ -20,9 +18,7 @@ export default function ReservationPost({
             start_date,
             finish_date,
             products,
-            users: {
-                id: 4,
-            },
+            users
         }),
     })
         .then((res) => {

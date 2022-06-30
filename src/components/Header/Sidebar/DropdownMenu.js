@@ -12,11 +12,11 @@ export default function DropdownMenu() {
                     <MenuItem>Generar Producto</MenuItem>
                 </Link> :
                 <>
-                    <Link to="/profile">
+                    <Link to="/myBookings">
                         <MenuItem>Mis reservas</MenuItem>
                     </Link>
-                    <Link to="/profile">
-                    <MenuItem>Mis favoritos</MenuItem>
+                    <Link to="/myFavorites">
+                        <MenuItem>Mis favoritos</MenuItem>
                     </Link>
                 </>
             }

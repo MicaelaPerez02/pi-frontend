@@ -11,7 +11,7 @@ import ReservationSuccess from './components/Cards/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
 import './App.css';
 import {UserContextProvider } from "../src/components/services/userContext";
-import Profile from './components/User/Profile';
+import MyBookings from './components/User/MyBookings';
 import ProductGenerator from './components/Admin/ProductGenerator';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
           <Route path="/" element={< Home />} />
           <Route path="/login" element={< Login />} />
           <Route path="/register" element={< Register />} />
-          <Route path='/profile/' element={< Profile />} />
+          <Route path='/myBookings/' element={< MyBookings />} />
           <Route path='/product/addProduct' element={< ProductGenerator />} />
           <Route path="/product/:productId" element={< ProductDetails />} />
           <Route path="/category/:categoryId" element={< FilterCategory />} />

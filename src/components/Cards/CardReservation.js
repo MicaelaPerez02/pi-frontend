@@ -29,6 +29,9 @@ function CardReservation(props) {
       finish_date,
       products: {
         id: products
+      },
+      users: {
+        id: JSON.parse(localStorage.getItem("userId"))
       }
     });
   }

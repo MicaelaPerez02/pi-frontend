@@ -18,7 +18,7 @@ function ButtonSidebarSession() {
                 </Link> :
                 <>
                     <li className="nav-text">
-                        <Link to="/profile">
+                        <Link to="/myBookings">
                             <span>Mis reservas</span>
                         </Link>
                     </li>
