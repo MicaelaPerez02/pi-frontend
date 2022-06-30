@@ -38,7 +38,7 @@ function Login() {
         login({ email, password });
 
         localStorage.removeItem("buttonReservationClick");
-        if (localStorage.getItem("user").length > 5) {
+        if (localStorage.getItem("user")) {
             localStorage.setItem("username", JSON.stringify(email));
 
             localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));

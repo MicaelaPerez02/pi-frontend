@@ -191,12 +191,6 @@ p.avatarUser {
   transition: 1.5s;
 }
 
-.icon_footer {
-  font-size: 1.5rem;
-  color: var(--color3);
-  text-decoration: none;
-  margin: 0.8rem;
-}
 
 /*NAVMENU TABLET AND DESKTOP*/
 .navbar {
@@ -311,4 +305,5 @@ p.avatarUser {
   .iconCloseSesion {
     margin-top: 1rem;
   }
+
 }

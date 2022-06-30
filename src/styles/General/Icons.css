@@ -39,7 +39,7 @@
   color: var(--complementary);
 }
 
-.iconPlusProduct{
+.iconPlusProduct {
   font-size: 2rem;
   cursor: pointer;
 
@@ -50,13 +50,31 @@
   transition: 0.3s;
 }
 
-.iconPlusProduct:hover{
+.iconPlusProduct:hover {
   color: var(--complementary);
+}
+
+/*FOOTER ICONS*/
+.iconFooter,
+.iconFooter:hover {
+  font-size: 1.5rem;
+  color: var(--color3);
+  text-decoration: none;
+  margin: 0.8rem;
+}
+
+.iconCopy {
+  margin-bottom: -0.11rem;
 }
 
 @media screen and (min-width: 768px) {
   .iconClose {
     left: 95%;
+  }
+
+  .iconFooter,
+  .iconFooter:hover {
+    color: var(--light);
   }
 }
 

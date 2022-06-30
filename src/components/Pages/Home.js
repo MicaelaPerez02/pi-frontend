@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
 import Categories from '../Cards/Categories';
 import Products from '../Cards/Products';
 import '../../styles/Components/Home.css';
+import { useParams } from 'react-router-dom';
 
 function Home() {
     return (

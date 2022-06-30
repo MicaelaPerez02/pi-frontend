@@ -7,7 +7,7 @@ function Footer() {
     return (
         <div className='footer'>
             <div className='footer_info'>
-                <span><FaRegCopyright className='icon_copy'/></span>
+                <span><FaRegCopyright className='iconCopy'/></span>
                 <span>2022</span>
                 <span>HOMU</span>
             </div>

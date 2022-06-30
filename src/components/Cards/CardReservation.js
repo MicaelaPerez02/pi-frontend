@@ -11,7 +11,6 @@ import TimePicker from 'react-time-picker';
 
 function CardReservation(props) {
   const [date, setDate] = useState("");
-  let navigate = useNavigate();
 
   const [start_time, setStartTime] = useState("");
   const [start_date, setStartDate] = useState("");

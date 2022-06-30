@@ -19,15 +19,15 @@ function Sidebar(props) {
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
-                        <Link to='' className='menu-bars'>
+                        <Link to='/' className='menu-bars'>
                             <FaWindowClose className='icon_close' />
                         </Link>
-                        {localStorage.getItem("username").length > 1 ?
+                        {localStorage.getItem("username") ?
                         <p className='avatarUser'> {JSON.parse(localStorage.getItem("avatar"))}</p>
-                        : null }
+                        : <p></p> }
                     </li>
                     <li className="nav-text-menu">
-                        {localStorage.getItem("username").length > 1 ?
+                        {localStorage.getItem("username") ?
                             <div className='navTextUser'>
                                 <p className='nameUser'> Hola, <span>{JSON.parse(localStorage.getItem("username"))}</span> </p>
                             </div> : <span>MENÚ</span>}
