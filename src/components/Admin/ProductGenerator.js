@@ -68,27 +68,22 @@ function ProductGenerator() {
 
   const handleAirConditioning = () => {
     setAirCond(!air_conditioning);
-    console.log(air_conditioning);
   };
 
   const handleChangeWifi = () => {
     setWifi(!wi_fi);
-    console.log(wi_fi);
   };
 
   const handleHeating = () => {
     setHeating(!heating);
-    console.log(heating);
   };
 
   const handleGym = () => {
     setGym(!gym);
-    console.log(gym);
   };
 
   const handleParking = () => {
     setParking(!parking);
-    console.log(parking);
   };
 
   const categoryList =
@@ -127,7 +122,7 @@ function ProductGenerator() {
                     <option className="form_option" hidden >Selecciona la categoría</option>
                     <option className="form_option" disabled >Selecciona la categoría</option>
                     {categoryList}
-                    {console.log(category)}
+
                   </select>
                 </div>
               </section>

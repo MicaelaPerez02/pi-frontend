@@ -35,6 +35,14 @@ function Login() {
         e.preventDefault();
     }
 
+    const handleClick = (e) => {
+        if (localStorage.getItem("user")) {
+            navigate("/");
+            localStorage.setItem("username", JSON.stringify(email));
+            localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
+        }
+    };
+
     const validationLogin = (e) => {
         e.preventDefault();
 
@@ -52,14 +60,6 @@ function Login() {
     const onChangePassword = (e) => {
         setPassword(e.target.value);
     }
-
-    const handleClick = (e) => {
-        if (localStorage.getItem("user")) {
-            navigate("/");
-            localStorage.setItem("username", JSON.stringify(email));
-            localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
-        }
-    };
 
     return (
         <div>
@@ -83,10 +83,10 @@ function Login() {
                             {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                         </button>
                     </section>
+                    <section className="buttonContainer">
+                        <button className="buttonSubmit" onClick={handleClick}>Ingresar</button>
+                    </section>
                 </form>
-                <section className="buttonContainer">
-                    <button className="buttonSubmit" onClick={handleClick}>Ingresar</button>
-                </section>
                 <section className="createAcountContainer">
                     <p> ¿Aún no tienes cuenta? </p>
                     <Link to="/register">

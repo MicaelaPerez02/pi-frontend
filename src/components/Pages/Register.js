@@ -82,7 +82,6 @@ function Register() {
         e.preventDefault();
 
         localStorage.setItem("password", JSON.stringify(password));
-        console.log(localStorage.getItem("password"));
 
         if ((name && surname && email && password && city) !== "") {
             SignUp({ name, surname, email, password, city });

@@ -1,5 +1,3 @@
-const API_URL = "http://localhost:8080";
-
 export default function FeaturesPost({ air_conditioning, wi_fi, heating, parking, gym }) {
     const authToken = JSON.parse(localStorage.getItem("user"));
 

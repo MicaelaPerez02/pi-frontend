@@ -8,7 +8,6 @@ export default function useUser(){
     const login = useCallback(({email, password} ) => {
         LoginAuthService({email, password})
         .then (jwt => {
-            console.log(jwt);
             localStorage.setItem("user", JSON.stringify(jwt));
             setJWT(jwt);
         })

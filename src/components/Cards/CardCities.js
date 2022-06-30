@@ -13,9 +13,7 @@ function CardCities() {
     const citiesList =
         data.map((city, index) => {
             return (
-                <>
-                    <option value={city.id} key={index}>{city.name}, {city.country} </option>
-                </>
+                <option value={city.id} key={city.id}>{city.name}, {city.country} </option>
             )
         })
 
@@ -23,7 +21,6 @@ function CardCities() {
         <>
             <form className='formInputSelect' onChange={handleChange}>
                 <select id="city" name="city" className='form_select' value={city} onChange={e => setCity(e.target.value)}>
-                    {console.log(city)}
                     <option className="form_option" hidden >Selecciona el destino</option>
                     <option className="form_option" disabled >Selecciona el destino</option>
                     {citiesList}
