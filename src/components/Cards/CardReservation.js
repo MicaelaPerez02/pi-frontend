@@ -17,6 +17,7 @@ function CardReservation(props) {
   const [start_date, setStartDate] = useState("");
   const [finish_date, setFinishDate] = useState("");
   const [products, setProducts] = useState(localStorage.getItem('idProduct'));
+  const [userId, setUserId] = useState(localStorage.getItem("userId"));
   const navigate = useNavigate();
   // const [name, setName] = useState({name}); del atributo que viene del get usuarios 
   // const [surname, setSurname] = useState({surname}); del atributo que viene del get usuarios
@@ -36,7 +37,7 @@ function CardReservation(props) {
           id: products
         },
         users: {
-          id: JSON.parse(localStorage.getItem("userId"))
+          id: userId
         }
       });
       navigate("/product/:productId/reservation/success");
@@ -47,10 +48,17 @@ function CardReservation(props) {
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
+    subStringCheckIng();
     setStartDate(checkIn);
     setFinishDate(checkOut);
     e.preventDefault();
   }
+
+  const subStringCheckIng = () => {
+    checkIn.substring(0, 10);
+    checkOut.substring(0, 10)
+  }
+
 
   const removeDates = (e) => {
     localStorage.removeItem("date");

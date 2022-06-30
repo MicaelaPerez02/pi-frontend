@@ -9,10 +9,10 @@ export default function useFetchAuth(url) {
 
     const fetchData = async () => {
       const response = await fetch("http://localhost:8080" + url, {
-       method: "GET",
+        method: "GET",
         headers: {
-            Authorization: `Bearer ${authToken}`,
-            "content-type": "application/json",
+          Authorization: `Bearer ${authToken}`,
+          "content-type": "application/json",
         },
       });
       const datas = await response.json();

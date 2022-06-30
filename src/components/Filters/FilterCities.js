@@ -6,32 +6,27 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import Categories from '../Cards/Categories';
+import useFetchAuth from '../../hooks/useFetchAuth';
 
 function FilterCities() {
-    const { data, isLoaded } = useFetch(`/products/allProducts`);
-
     const { citiesId } = useParams();
+    const { data, isLoaded } = useFetchAuth(`/cities/findCity/2`);
 
     const citySelected = data.map((products, index) => {
-        if (products.cities.id == citiesId) {
-            return (
-                <CardProduct
-                    key={index}
-                    id={products.categories.id}
-                    url={products.url}
-                    rating={products.rating}
-                    review={products.review}
-                    location={products.location}
-                    watch={products.watch}
-                    title={products.title}
-                    description={products.description}
-                    cities={products.cities.name}
-                />
-            )
-        }
-        else {
-            return null;
-        }
+        return (
+            <CardProduct
+                key={index}
+                id={products.categories.id}
+                url={products.url}
+                rating={products.rating}
+                review={products.review}
+                location={products.location}
+                watch={products.watch}
+                title={products.title}
+                description={products.description}
+                cities={products.cities.name}
+            />
+        )
     });
 
     return (
