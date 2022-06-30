@@ -22,7 +22,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const [id, setId] = useState("");
     const { login, isLogged } = useUser();
-  
+
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
@@ -43,13 +43,6 @@ function Login() {
         localStorage.setItem("email", email);
 
         localStorage.removeItem("buttonReservationClick");
-        if (localStorage.getItem("user")) {
-
-            localStorage.setItem("username", JSON.stringify(email));
-
-            localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
-            navigate("/");
-        }
     }
 
     const onChangeEmail = (e) => {
@@ -59,6 +52,14 @@ function Login() {
     const onChangePassword = (e) => {
         setPassword(e.target.value);
     }
+
+    const handleClick = (e) => {
+        if (localStorage.getItem("user")) {
+            navigate("/");
+            localStorage.setItem("username", JSON.stringify(email));
+            localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
+        }
+    };
 
     return (
         <div>
@@ -82,10 +83,10 @@ function Login() {
                             {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                         </button>
                     </section>
-                    <section className="buttonContainer">
-                        <button className="buttonSubmit">Ingresar</button>
-                    </section>
                 </form>
+                <section className="buttonContainer">
+                    <button className="buttonSubmit" onClick={handleClick}>Ingresar</button>
+                </section>
                 <section className="createAcountContainer">
                     <p> ¿Aún no tienes cuenta? </p>
                     <Link to="/register">

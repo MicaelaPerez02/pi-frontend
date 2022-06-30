@@ -31,6 +31,15 @@
   font-weight: bold;
 }
 
+.reservationSuccessContainer button a {
+  text-decoration: none;
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
 .reservationSuccessContainer button {
   margin-top: 1rem;
   width: 55%;
@@ -39,51 +48,42 @@
   background-color: var(--main-color);
   margin-top: 0.5rem;
 
-  color: var(--light);
-  font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
-  cursor: pointer;
-
   transition: 0.8s;
 
   margin-top: 1rem;
 }
 
-.reservationSuccessContainer button:hover{
+.reservationSuccessContainer button:hover {
   background-color: var(--complementary);
 }
 
 @media screen and (min-width: 768px) {
   .reservationSuccessContainer {
-   width: 70%;
-   margin-left: 8rem;
+    width: 70%;
+    margin-left: 8rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .reservationSuccessContainer {
-   width: 60%;
-   margin-left: 13rem;
+    width: 60%;
+    margin-left: 13rem;
   }
 
   .reservationSuccess {
     padding-top: 15rem;
     padding-bottom: 19rem;
   }
-  
 }
 
 @media screen and (min-width: 1140px) {
-    .reservationSuccessContainer {
-     width: 35%;
-     margin-left: 30rem;
-    }
-  
-    .reservationSuccess {
-      padding-top: 15rem;
-      padding-bottom: 20rem;
-    }
-    
+  .reservationSuccessContainer {
+    width: 35%;
+    margin-left: 30rem;
   }
-  
+
+  .reservationSuccess {
+    padding-top: 15rem;
+    padding-bottom: 20rem;
+  }
+}
