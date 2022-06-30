@@ -1,0 +1,44 @@
+/* Position and sizing of burger button */
+.szh-menu-button{
+  width: 3rem;
+  height: 1.5rem;
+  margin: 1rem 0  0 1rem;
+
+  border-radius: 4px;
+  
+  color: var(--light);
+  background-color: var(--main-color);
+
+  transition: 0.5s;
+}
+
+.szh-menu-button:hover{
+  background-color: var(--complementary);
+}
+
+.szh-menu__item{
+  color: var(--color3);
+}
+
+.szh-menu__item:hover{
+  background-color: var(--complementary-soft);
+}
+
+a{
+  text-decoration: none;
+}
+
+
+.my-menu {
+  border: 2px solid green;
+}
+
+.my-menuitem {
+  color: var(--complementary) !important;
+  background-color: yellow;
+}
+
+.my-menuitem-hover {
+  color: yellow;
+  background-color: black;
+}

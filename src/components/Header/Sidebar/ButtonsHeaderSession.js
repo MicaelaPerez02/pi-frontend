@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaWindowClose } from 'react-icons/fa';
+import DropdownMenu from './DropdownMenu';
 
 function ButtonsHeaderSession() {
     const icon_close = () => {
@@ -9,22 +10,16 @@ function ButtonsHeaderSession() {
 
     return (
         <div className="buttonHeaderContainer">
-            <div className='nav-text-user'>
+            <div className='navTextUser'>
                 <button className="button_session" onClick={() => { icon_close(); window.location.reload(); }}>
-                    <Link to="/"><p><FaWindowClose className='icon_close_sesion' /> </p></Link>
+                    <Link to="/"><p><FaWindowClose className='iconCloseSesion' /> </p></Link>
                 </button>
+                <DropdownMenu />
             </div>
-            <section className="userOptions">
-                <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("username"))}! </p>
-                <Link to="/profile">
-                    <p className='perfilUser'> Mi perfil </p>
-                </Link>
-            </section>
-            <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
-            {JSON.parse(localStorage.getItem("username")) === "admin@gmail.com" ?
-                <Link to="/product/addProduct">
-                    <button> Generar producto </button>
-                </Link> : <p></p>}
+            <div className="userOptions">
+                <p className='nameUser'> Hola, <span>{JSON.parse(localStorage.getItem("username"))}</span> </p>
+            </div>
+            <p className='avatarUser'> {JSON.parse(localStorage.getItem("avatar"))}</p>
         </div>
     )
 }

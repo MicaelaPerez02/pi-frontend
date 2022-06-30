@@ -1,26 +1,32 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import { FaWindowClose } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 import useUser from '../../../hooks/useUser';
 
 function ButtonSidebarSession() {
-    const { logOut, isLogged } = useUser();
+    const { logOut } = useUser();
+
     const icon_close = () => {
         logOut();
         localStorage.clear();
     }
 
     return (
-        <li className="nav-text-user" onClick={() => { icon_close(); window.location.reload(); }}>
-            <div className='nav-text-user'>
-                <p className='avatar_user'> {JSON.parse(localStorage.getItem("avatar"))}</p>
-                <p className='name_user'> ¡Hola  {JSON.parse(localStorage.getItem("username"))}! </p>
-            </div>
+        <li className="navTextUser">
             {JSON.parse(localStorage.getItem("username")) === "admin@gmail.com" ?
                 <Link to="/product/addProduct">
                     <button> Generar producto </button>
-                </Link> : <p></p>}
-            <button className='button_close_sesion'> Cerrar Sesión <FaWindowClose className='icon_close_sesion' /> </button>
+                </Link> :
+                <>
+                    <li className="nav-text">
+                        <Link to="/profile">
+                            <span>Mis reservas</span>
+                        </Link>
+                    </li>
+                    <li className="nav-text">
+                        <span>Mis favoritos</span>
+                    </li>
+                </>}
+            <p className='closeSesion'> ¿Deseas <span className='spanCloseSesion' onClick={() => { icon_close(); window.location.reload(); }}>Cerrar Sesión</span>? </p>
         </li>
     )
 }

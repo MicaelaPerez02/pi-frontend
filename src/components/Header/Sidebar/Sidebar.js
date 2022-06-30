@@ -22,9 +22,15 @@ function Sidebar(props) {
                         <Link to='' className='menu-bars'>
                             <FaWindowClose className='icon_close' />
                         </Link>
+                        {localStorage.getItem("username").length > 1 ?
+                        <p className='avatarUser'> {JSON.parse(localStorage.getItem("avatar"))}</p>
+                        : null }
                     </li>
                     <li className="nav-text-menu">
-                        <span>MENÚ</span>
+                        {localStorage.getItem("username").length > 1 ?
+                            <div className='navTextUser'>
+                                <p className='nameUser'> Hola, <span>{JSON.parse(localStorage.getItem("username"))}</span> </p>
+                            </div> : <span>MENÚ</span>}
                     </li>
                     {props.buttonLogin !== localStorage.getItem("username") ? (<ButtonsSidebar />) : (<ButtonSidebarSession />)}
                 </ul>
@@ -37,13 +43,13 @@ function Sidebar(props) {
                 <Link to="" className='menu-bars'>
                     <FaBars onClick={showSidebar} className='icon_menu' />
                 </Link>
-                {props.buttonLogin !== localStorage.getItem("username") ? (<ButtonsHeader/>) : (
+                {props.buttonLogin !== localStorage.getItem("username") ? (<ButtonsHeader />) : (
                     <div className='session_container'>
                         <ButtonsHeaderSession />
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     )
 }
 
