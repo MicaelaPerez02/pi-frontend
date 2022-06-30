@@ -10,7 +10,6 @@ import CardCities from '../Cards/CardCities';
 function Navbar(props) {
     const navigate = useNavigate();
 
-
     const handleClick = () => {
         navigate("/cities/" + localStorage.getItem("cities"));
         window.location.reload();

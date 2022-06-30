@@ -24,12 +24,12 @@ function CardProduct(props) {
                 </div>
                 <div className='productMap'>
                     <p><FaMapMarkerAlt className='productIconMap' /> {props.location}</p>
-                    <span>{props.watch}</span>
+                    <span><a href={props.watch} target="_blank" rel="noreferrer">Ver en mapa</a></span>
                 </div>
                 <div className='productDescription'>
                     <p>{props.description}<span className='productMoreInfo'>...continuar leyendo</span></p>
                 </div>
-                <Link to={"/product/" + props.title} style={{ textDecoration: "none" }}>
+                <Link to={"/product/" + props.title}>
                     <div className='productButton'>
                         <button>Ver más</button>
                     </div>

@@ -15,6 +15,7 @@ function Cards() {
                 rating={product.rating}
                 review={product.review}
                 location={product.location}
+                map_url={product.map_url}
                 watch={product.watch}
                 title={product.title}
                 description={product.description}

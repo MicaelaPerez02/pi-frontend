@@ -29,14 +29,12 @@
   margin: 1.5rem 0 1rem 0;
 
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .cardCategory:hover {
-  transition: all 0.1s ease-out;
-  box-shadow: 8px 8px 8px rgba(38, 38, 38, 0.2);
-  top: -4px;
-  border: 1px solid #cccccc;
-  background-color: var(--light-);
+  transform: scale(1.02, 1.02);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .cardCategory a{
@@ -54,7 +52,7 @@
   font-weight: 700;
   line-height: 1.7rem;
   margin-top: 1.5rem;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 
   align-self: flex-start;
 }
@@ -84,7 +82,7 @@
   }
 
   .cardCategory{
-    width: 45%;
+    width: 46%;
     margin: 1rem 0.5rem 1rem 0.5rem;
   }
 
@@ -96,8 +94,10 @@
 
 @media screen and (min-width: 1024px) {
   .cardCategory {
-    flex: 20%;
+    flex: 23%;
+  }
 
-    margin: 1.5rem 0.5rem 2rem 0.5rem;
+  .categoryP{
+    padding-left: 0.5rem;
   }
 }
