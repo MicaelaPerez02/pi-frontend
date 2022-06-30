@@ -43,13 +43,14 @@
   margin-top: 0.2rem;
 }
 
-.header_logo_motto {
+.headerLogoMotto {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-left: 1rem;
 }
 
-.header_motto {
+.headerMotto {
   display: none;
 }
 
@@ -88,14 +89,12 @@
 }
 
 @media (min-width: 1024px) {
-  .header_motto {
+  .headerMotto {
     display: inline;
-    margin-left: 1.2rem;
-    margin-top: 0.8rem;
-    text-decoration: none;
+    margin: 0.5rem 0 0 1.2rem;
+    
     font-size: 1.2rem;
     font-weight: 200;
-    font-style: italic;
     line-height: 1.5rem;
     color: var(--light);
   }
