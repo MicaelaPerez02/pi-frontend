@@ -9,6 +9,7 @@ import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import useUser from "../../hooks/useUser";
 import GetUser from "../User/GetUser";
+import useFetchAuth from '../../hooks/useFetchAuth';
 import "../../styles/Components/Login.css";
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
@@ -21,6 +22,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { login, isLogged } = useUser();
+    const { data, isLoaded } = useFetchAuth(`/users/allUsers`);
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
@@ -44,13 +46,15 @@ function Login() {
     const handleLogin = (e) => {
         login({ email, password });
         // if (localStorage.getItem("user")) {
-
         localStorage.setItem("username", JSON.stringify(email));
         localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
-        console.log(localStorage.getItem("username"));
         // }
         navigate("/");
         e.preventDefault();
+    }
+
+    const onChangeEmail = (e) => {
+        setEmail(e.target.value);
     }
 
     return (
@@ -66,7 +70,7 @@ function Login() {
                         <LoginError /> : ""}
                     <section>
                         <h5>Usuario</h5>
-                        <input type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type="text" placeholder="Ingrese su usuario" value={email} onChange={onChangeEmail} />
                     </section>
                     <section className="passwordSection">
                         <h5>Contraseña</h5>

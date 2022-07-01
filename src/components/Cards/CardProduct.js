@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {AiFillStar} from "react-icons/ai"
 
 function CardProduct(props) {
     return (
@@ -14,7 +15,7 @@ function CardProduct(props) {
                         Array(props.rating)
                             .fill()
                             .map((_, index) => (
-                                <p key={index}>⭐</p>
+                                <p key={index}><AiFillStar/></p>
                             ))
                     }</span>
                     <p className="productReview">{props.review}</p>

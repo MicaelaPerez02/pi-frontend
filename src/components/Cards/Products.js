@@ -1,7 +1,6 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import CardProduct from './CardProduct';
-import GetUser from "../User/GetUser";
 import '../../styles/Components/Product.css';
 
 function Cards() {
@@ -31,7 +30,6 @@ function Cards() {
             <div className='productCardItems'>
                 <div className='productCardBox' key={productList.length++}>
                     {isLoaded ? productList : <p>Cargando...</p>}
-                    <GetUser />
                 </div>
             </div>
         </div>

@@ -33,7 +33,7 @@ function ProductDetails() {
     })
 
     return (
-        <div>
+        <div className="productDetailContainer">
             <Header className="productHeader" />
             <div className='productInfoContent'>
                 <div className='productBanner'>

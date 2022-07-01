@@ -1,28 +1,27 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoChevronLeft } from "react-icons/go";
-import { AiOutlineCheckCircle } from "react-icons/ai";
+import { AiOutlineCheckCircle, AiFillStar } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import CalendarDetail from "../ProductInfo/CalendarDetail";
 import CalendarDetailResponsive from "../ProductInfo/CalendarDetailResponsive";
 import RulesDetails from "../ProductInfo/RulesDetails";
 import useReservation from "../../hooks/useReservation";
 import TimePicker from 'react-time-picker';
-
+import useFetchAuth from '../../hooks/useFetchAuth';
 
 function CardReservation(props) {
   const [date, setDate] = useState("");
-
   const [start_time, setStartTime] = useState("");
   const [start_date, setStartDate] = useState("");
   const [finish_date, setFinishDate] = useState("");
   const [products, setProducts] = useState(localStorage.getItem('idProduct'));
   const [userId, setUserId] = useState(localStorage.getItem("userId"));
   const navigate = useNavigate();
-  // const [name, setName] = useState({name}); del atributo que viene del get usuarios 
-  // const [surname, setSurname] = useState({surname}); del atributo que viene del get usuarios
-  // const [city, setCity] = useState({city}); del atributo que viene del get usuarios
-  // const [email, setEmail] = useState({email}); del atributo que viene del get usuarios 
+  const [name, setName] = useState(localStorage.getItem("name"));
+  const [surname, setSurname] = useState(localStorage.getItem("surname"));
+  const [city, setCity] = useState(localStorage.getItem("city"));
+  const [email, setEmail] = useState(JSON.parse(localStorage.getItem("username")));
   const { Reservation } = useReservation();
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");
@@ -87,6 +86,7 @@ function CardReservation(props) {
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Nombre</h5>
                   <input
+                    value={name}
                     type="text"
                     placeholder="Ingrese su nombre"
                     className="inputRes"
@@ -94,8 +94,8 @@ function CardReservation(props) {
                 </div>
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Apellido</h5>
-                  {/*value={surname} */}
                   <input
+                    value={surname}
                     name="text"
                     placeholder="Ingrese su apellido"
                     className="inputRes"
@@ -106,6 +106,7 @@ function CardReservation(props) {
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Correo electrónico</h5>
                   <input
+                    value={email}
                     type="email"
                     placeholder="Ingrese su correo electrónico"
                     className="inputRes"
@@ -114,6 +115,7 @@ function CardReservation(props) {
                 <div className="reservationInput">
                   <h5 className="reservationInputTitle">Ciudad</h5>
                   <input
+                    value={city}
                     type="city"
                     placeholder="Ingrese su ciudad"
                     className="inputRes"
@@ -179,7 +181,7 @@ function CardReservation(props) {
                   .fill()
                   .map((_, index) => (
                     <p key={index} className="reservationStars">
-                      ⭐
+                      <AiFillStar />
                     </p>
                   ))}
               </span>

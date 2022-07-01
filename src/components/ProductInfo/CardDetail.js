@@ -3,6 +3,7 @@ import { GoChevronLeft } from "react-icons/go";
 import "../../styles/Components/ProductDetails.css";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { AiFillStar } from 'react-icons/ai';
 import CarrouselProduct from './CarrouselProduct';
 import CalendarDetail from './CalendarDetail';
 import CalendarDetailResponsive from './CalendarDetailResponsive';
@@ -39,7 +40,7 @@ function CardDetail(props) {
                             Array(props.rating)
                                 .fill()
                                 .map((_, index) => (
-                                    <p key={index} className="detailStars">⭐</p>
+                                    <p key={index} className="detailStars"><AiFillStar /></p>
                                 ))
                         }</span>
                         <p className='detailReview'>{props.review}</p>

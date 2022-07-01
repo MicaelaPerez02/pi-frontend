@@ -29,7 +29,7 @@ function FilterCategory() {
     })
 
     return (
-        <>
+        <div className='filterCategoryContainer'>
                 <Header />
                 <Navbar />
             <Categories />
@@ -42,7 +42,7 @@ function FilterCategory() {
                 </div>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

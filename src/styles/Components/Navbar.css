@@ -3,8 +3,7 @@
   height: 42%;
   background-color: var(--color3);
   padding: 0.5rem;
-  margin-top: 5rem;
-
+  padding-top: 5rem;
 }
 
 .navbarContainer h2 {
