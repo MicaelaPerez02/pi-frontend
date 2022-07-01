@@ -4,11 +4,10 @@ import Calendar from 'react-calendar';
 import "../../styles/Accesories/CalendarDetail.css";
 import { isWithinInterval } from "date-fns";
 import useFetchAuth from '../../hooks/useFetchAuth';
-import { useParams } from 'react-router-dom';
 
 function CalendarDetail() {
     const productId = localStorage.getItem("idProduct");
-    const { data, isLoaded } = useFetchAuth(`/bookings/findBookingByProduct/${productId}`);
+    const { data } = useFetchAuth(`/bookings/findBookingByProduct/${productId}`);
 
     const bookingsDates = data.map((bookings, index) => {
         return (
@@ -26,9 +25,7 @@ function CalendarDetail() {
     }
 
     function tileDisabled({ date, view }) {
-        // Add class to tiles in month view only
         if (view === 'month') {
-            // Check if a date React-Calendar wants to check is within any of the ranges
             return isWithinRanges(date, bookingsDates);
         }
     }

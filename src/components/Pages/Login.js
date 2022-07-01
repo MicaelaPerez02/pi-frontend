@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import useUser from "../../hooks/useUser";
-import useFetchAuth from '../../hooks/useFetchAuth';
+import GetUser from "../User/GetUser";
 import "../../styles/Components/Login.css";
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
@@ -20,7 +20,6 @@ function Login() {
     let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [id, setId] = useState("");
     const { login, isLogged } = useUser();
 
     const clearButtonClick = () => {
@@ -39,8 +38,6 @@ function Login() {
 
         login({ email, password });
 
-        localStorage.setItem("email", email);
-
         localStorage.removeItem("buttonReservationClick");
     }
 
@@ -50,6 +47,7 @@ function Login() {
 
         localStorage.setItem("username", JSON.stringify(email));
         localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
+        console.log(localStorage.getItem("username"));
         // }
         navigate("/");
         e.preventDefault();

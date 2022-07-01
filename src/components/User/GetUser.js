@@ -5,7 +5,7 @@ function GetUser() {
     const { data, isLoaded } = useFetchAuth(`/users/allUsers`);
 
     data.map((users) => {
-        if (users.email == localStorage.getItem("email")) {
+        if (users.email == JSON.parse(localStorage.getItem("username"))) {
             return (
                 localStorage.setItem("userId", users.id)
             )
@@ -13,8 +13,8 @@ function GetUser() {
     })
 
     return (
-    <>
-    </>
+        <>
+        </>
     )
 }
 
