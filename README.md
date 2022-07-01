@@ -12,6 +12,10 @@ In the project directory, you can run:
 
 ### `npm install react-hook-form`
 
+### `npm i nodemailer-react`
+
+### `npm i body-parser cors dotenv express nodemailer`
+
 ## Testing
 
 ### `npm install --save -dev @testing-library/react @testing-library/jest-dom`

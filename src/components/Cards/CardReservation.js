@@ -8,7 +8,6 @@ import CalendarDetailResponsive from "../ProductInfo/CalendarDetailResponsive";
 import RulesDetails from "../ProductInfo/RulesDetails";
 import useReservation from "../../hooks/useReservation";
 import TimePicker from 'react-time-picker';
-import useFetchAuth from '../../hooks/useFetchAuth';
 
 function CardReservation(props) {
   const [date, setDate] = useState("");
@@ -87,6 +86,7 @@ function CardReservation(props) {
                   <h5 className="reservationInputTitle">Nombre</h5>
                   <input
                     value={name}
+                    readOnly
                     type="text"
                     placeholder="Ingrese su nombre"
                     className="inputRes"
@@ -96,6 +96,7 @@ function CardReservation(props) {
                   <h5 className="reservationInputTitle">Apellido</h5>
                   <input
                     value={surname}
+                    readOnly
                     name="text"
                     placeholder="Ingrese su apellido"
                     className="inputRes"
@@ -107,6 +108,7 @@ function CardReservation(props) {
                   <h5 className="reservationInputTitle">Correo electrónico</h5>
                   <input
                     value={email}
+                    readOnly
                     type="email"
                     placeholder="Ingrese su correo electrónico"
                     className="inputRes"
@@ -116,6 +118,7 @@ function CardReservation(props) {
                   <h5 className="reservationInputTitle">Ciudad</h5>
                   <input
                     value={city}
+                    readOnly
                     type="city"
                     placeholder="Ingrese su ciudad"
                     className="inputRes"

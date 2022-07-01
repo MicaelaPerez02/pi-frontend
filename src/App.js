@@ -14,6 +14,7 @@ import { UserContextProvider } from "../src/components/services/userContext";
 import MyBookings from './components/User/MyBookings';
 import ProductGenerator from './components/Admin/ProductGenerator';
 import ProductGeneratorSuccess from './components/Admin/ProductGeneratorSuccess';
+import MyFavorites from './components/User/MyFavorites';
 
 function App() {
   const progress = new ProgressBar({
@@ -44,6 +45,7 @@ function App() {
           <Route path="/cities/:citiesId" element={< FilterCities />} />
           <Route path="/product/:productId/reservation" element={< Reservation />} />
           <Route path='/reservation/success' element={< ReservationSuccess />} />
+          <Route path="/myFavorites" element={< MyFavorites />} />
         </Routes>
       </BrowserRouter>
     </UserContextProvider>
