@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import {AiFillStar} from "react-icons/ai"
+import { AiFillStar, AiOutlineHeart} from "react-icons/ai"
 
 function CardProduct(props) {
     return (
         <div className="productInfoContainer" key={props.id}>
             <div className='productImageContainer'>
+                <AiOutlineHeart className="iconLike" />
                 <img src={props.url} alt={props.title} />
             </div>
             <div className='flex_deskt'>
@@ -15,7 +16,7 @@ function CardProduct(props) {
                         Array(props.rating)
                             .fill()
                             .map((_, index) => (
-                                <p key={index}><AiFillStar/></p>
+                                <p key={index}><AiFillStar /></p>
                             ))
                     }</span>
                     <p className="productReview">{props.review}</p>

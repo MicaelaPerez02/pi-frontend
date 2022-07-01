@@ -50,13 +50,15 @@
   display: none;
 }
 
-.reservationTitleCalendar {
+.reservationTitleCalendar,
+.reservationCheckHourTitle {
   align-self: flex-start;
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  margin-left: 2rem;
-}
+  margin-bottom: 1rem;
+  margin-left: 2.5rem;
 
+  color: var(--color3);
+}
 
 
 @media screen and (min-width: 768px) {

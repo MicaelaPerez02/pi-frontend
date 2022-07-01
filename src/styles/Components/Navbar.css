@@ -106,7 +106,7 @@ select.form_select:hover {
 
 @media screen and (min-width: 768px) {
   .navbarContainer {
-    height: 8.7rem;
+    height: 35%;
   }
 
   .navbarContainer h2 {

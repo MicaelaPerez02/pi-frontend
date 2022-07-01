@@ -8,7 +8,6 @@ import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import useUser from "../../hooks/useUser";
-import GetUser from "../User/GetUser";
 import useFetchAuth from '../../hooks/useFetchAuth';
 import "../../styles/Components/Login.css";
 import "../../styles/Components/Register.css";

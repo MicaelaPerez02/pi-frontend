@@ -1,3 +1,12 @@
+.iconLike{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+
+  color: red;
+}
+
 .iconClose {
   position: absolute;
   top: 6rem;

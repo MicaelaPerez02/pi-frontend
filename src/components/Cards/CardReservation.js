@@ -131,15 +131,15 @@ function CardReservation(props) {
             <div className="reservationCalendarOne">
               <CalendarDetail className="reservationCalendarComponent" />
               <div className="reservationCalendarButton">
-                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
-                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
+                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
             <div className="reservationCalendarComponentDouble">
               <CalendarDetailResponsive />
               <div className="reservationCalendarButton">
-                <button className='buttonSelectDay' onClick={clickCalendar}>Seleccionar fecha</button>
-                <button className='buttonRemoveDay' onClick={removeDates}>Remover fecha</button>
+                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
           </div>
