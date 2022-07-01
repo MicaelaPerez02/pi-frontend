@@ -13,6 +13,7 @@ import './App.css';
 import { UserContextProvider } from "../src/components/services/userContext";
 import MyBookings from './components/User/MyBookings';
 import ProductGenerator from './components/Admin/ProductGenerator';
+import ProductGeneratorSuccess from './components/Admin/ProductGeneratorSuccess';
 
 function App() {
   const progress = new ProgressBar({
@@ -37,6 +38,7 @@ function App() {
           <Route path="/register" element={< Register />} />
           <Route path='/myBookings/' element={< MyBookings />} />
           <Route path='/product/addProduct' element={< ProductGenerator />} />
+          <Route path='/product/addProduct/success' element={< ProductGeneratorSuccess />} />
           <Route path="/product/:productId" element={< ProductDetails />} />
           <Route path="/category/:categoryId" element={< FilterCategory />} />
           <Route path="/cities/:citiesId" element={< FilterCities />} />
