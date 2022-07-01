@@ -17,9 +17,9 @@ function ButtonsHeaderSession() {
                 <DropdownMenu />
             </div>
             <div className="userOptions">
-                <p className='nameUser'> Hola, <span>{JSON.parse(localStorage.getItem("username"))}</span> </p>
+                <p className='nameUser'> Hola, <span>{localStorage.getItem("username")}</span> </p>
             </div>
-            <p className='avatarUser'> {JSON.parse(localStorage.getItem("avatar"))}</p>
+            <p className='avatarUser'> {localStorage.getItem("avatar")}</p>
         </div>
     )
 }

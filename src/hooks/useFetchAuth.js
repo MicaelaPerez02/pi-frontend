@@ -5,7 +5,7 @@ export default function useFetchAuth(url) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const authToken = JSON.parse(localStorage.getItem("user"));
+    const authToken = localStorage.getItem("user");
 
     const fetchData = async () => {
       const response = await fetch("http://localhost:8080" + url, {

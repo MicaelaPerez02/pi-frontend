@@ -1,5 +1,5 @@
 export default function FeaturesPost({ air_conditioning, wi_fi, heating, parking, gym }) {
-    const authToken = JSON.parse(localStorage.getItem("user"));
+    const authToken = localStorage.getItem("user");
 
     return fetch(`http://localhost:8080/features/addFeature`, {
         method: "POST",

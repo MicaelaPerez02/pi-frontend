@@ -23,13 +23,13 @@ function Sidebar(props) {
                             <FaWindowClose className='icon_close' />
                         </Link>
                         {localStorage.getItem("username") ?
-                        <p className='avatarUser'> {JSON.parse(localStorage.getItem("avatar"))}</p>
+                        <p className='avatarUser'> {localStorage.getItem("avatar")}</p>
                         : <p></p> }
                     </li>
                     <li className="nav-text-menu">
                         {localStorage.getItem("username") ?
                             <div className='navTextUser'>
-                                <p className='nameUser'> Hola, <span>{JSON.parse(localStorage.getItem("username"))}</span> </p>
+                                <p className='nameUser'> Hola, <span>{localStorage.getItem("username")}</span> </p>
                             </div> : <span>MENÚ</span>}
                     </li>
                     {props.buttonLogin !== localStorage.getItem("username") ? (<ButtonsSidebar />) : (<ButtonSidebarSession />)}

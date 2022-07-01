@@ -5,7 +5,7 @@ export default function ReservationPost({
     products,
     users,
 }) {
-    const authToken = JSON.parse(localStorage.getItem("user"));
+    const authToken = localStorage.getItem("user");
 
     return fetch(`http://localhost:8080/bookings/addBooking`, {
         method: "POST",

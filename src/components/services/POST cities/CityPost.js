@@ -1,7 +1,7 @@
 export default function CityPost({
     name
 }) {
-    const authToken = JSON.parse(localStorage.getItem("user"));
+    const authToken = localStorage.getItem("user");
 
     return fetch(`http://localhost:8080/cities/addCity`, {
         method: "POST",

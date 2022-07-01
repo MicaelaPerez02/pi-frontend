@@ -13,7 +13,7 @@ function ButtonSidebarSession() {
     return (
         <li className="navTextUser">
             {
-                JSON.parse(localStorage.getItem("username")) === "admin@gmail.com" ?
+                localStorage.getItem("username") === "admin@gmail.com" ?
                     <Link to="/product/addProduct">
                         <button> Generar producto </button>
                     </Link> :

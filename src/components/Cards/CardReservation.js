@@ -21,7 +21,7 @@ function CardReservation(props) {
   const [name, setName] = useState(localStorage.getItem("name"));
   const [surname, setSurname] = useState(localStorage.getItem("surname"));
   const [city, setCity] = useState(localStorage.getItem("city"));
-  const [email, setEmail] = useState(JSON.parse(localStorage.getItem("username")));
+  const [email, setEmail] = useState(localStorage.getItem("username"));
   const { Reservation } = useReservation();
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");

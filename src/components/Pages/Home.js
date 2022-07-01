@@ -5,14 +5,12 @@ import Navbar from '../Navbar/Navbar';
 import Categories from '../Cards/Categories';
 import Products from '../Cards/Products';
 import '../../styles/Components/Home.css';
-import GetUser from '../User/GetUser';
 import useFetchAuth from '../../hooks/useFetchAuth';
-
 function Home() {
     const { data, isLoaded } = useFetchAuth(`/users/allUsers`);
+    const userId =data.map((users) => {
+        if (users.email === localStorage.getItem("username")) {
 
-    data.map((users) => {
-        if (users.email == JSON.parse(localStorage.getItem("username"))) {
             return (
                 localStorage.setItem("userId", users.id), 
                 localStorage.setItem("name", users.name),
@@ -21,12 +19,13 @@ function Home() {
             )
         }
     })
+
     return (
         <div className='home_container'>
+            {userId}
             <div className='home_header'>
                 <Header />
             </div>
-
             <div className='home_body'>
                 <Navbar />
             </div>

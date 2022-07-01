@@ -1,5 +1,5 @@
 export default function ImagesPost({ title, url, products }) {
-    const authToken = JSON.parse(localStorage.getItem("user"));
+    const authToken = localStorage.getItem("user");
 
     return fetch(`http://localhost:8080/images/addImage`, {
         method: "POST",
