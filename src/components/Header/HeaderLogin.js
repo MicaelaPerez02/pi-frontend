@@ -35,7 +35,7 @@ function HeaderLogin(props) {
                         <span>MENÚ</span>
                     </li>
                     <li className="nav-text">
-                        <Link to="/register" style={{ textDecoration: 'none' }}>
+                        <Link to="/register">
                             <span>Registrate</span>
                         </Link>
                     </li>

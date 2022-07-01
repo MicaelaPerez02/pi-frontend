@@ -10,7 +10,7 @@ import Reservation from './components/Cards/Reservation';
 import ReservationSuccess from './components/Cards/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
 import './App.css';
-import {UserContextProvider } from "../src/components/services/userContext";
+import { UserContextProvider } from "../src/components/services/userContext";
 import MyBookings from './components/User/MyBookings';
 import ProductGenerator from './components/Admin/ProductGenerator';
 
@@ -28,8 +28,8 @@ function App() {
     progress.finish();
   }, 500);
 
-    return (
-      <UserContextProvider>
+  return (
+    <UserContextProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={< Home />} />
@@ -41,11 +41,11 @@ function App() {
           <Route path="/category/:categoryId" element={< FilterCategory />} />
           <Route path="/cities/:citiesId" element={< FilterCities />} />
           <Route path="/product/:productId/reservation" element={< Reservation />} />
-          <Route path='/product/:productId/reservation/success' element={< ReservationSuccess />} />
+          <Route path='/reservation/success' element={< ReservationSuccess />} />
         </Routes>
       </BrowserRouter>
-      </UserContextProvider>
-    );
-  };
+    </UserContextProvider>
+  );
+};
 
-  export default App;
+export default App;

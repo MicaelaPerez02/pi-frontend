@@ -24,8 +24,8 @@ function CardReservation(props) {
   // const [city, setCity] = useState({city}); del atributo que viene del get usuarios
   // const [email, setEmail] = useState({email}); del atributo que viene del get usuarios 
   const { Reservation } = useReservation();
-  const checkIn = JSON.parse(localStorage.getItem("date"));
-  const checkOut = JSON.parse(localStorage.getItem("date2"));
+  const checkIn = localStorage.getItem("date");
+  const checkOut = localStorage.getItem("date2");
 
   const handleReservation = () => {
     if ((checkIn && checkOut && start_time) != "") {
@@ -40,7 +40,7 @@ function CardReservation(props) {
           id: userId
         }
       });
-      navigate("/product/:productId/reservation/success");
+      navigate("/reservation/success");
       localStorage.removeItem("date");
       localStorage.removeItem("date2");
     }
@@ -48,15 +48,11 @@ function CardReservation(props) {
 
   const clickCalendar = (e) => {
     setDate(prevState => !prevState);
-    subStringCheckIng();
     setStartDate(checkIn);
     setFinishDate(checkOut);
-    e.preventDefault();
-  }
 
-  const subStringCheckIng = () => {
-    checkIn.substring(0, 10);
-    checkOut.substring(0, 10)
+    console.log(checkIn, checkOut);
+    e.preventDefault();
   }
 
 
@@ -196,7 +192,7 @@ function CardReservation(props) {
                 <p className="reservationCheckInOut">Check in </p>
                 {checkIn == null ? (
                   <span>Selecciona tu fecha</span>) : (
-                  <span>{checkIn.substring(0, 10)}</span>
+                  <span>{checkIn}</span>
                 )}
               </div>
               <hr className="hrReservation"></hr>
@@ -204,15 +200,12 @@ function CardReservation(props) {
                 <p className="reservationCheckInOut">Check out </p>
                 {checkIn == null ? (
                   <span>Selecciona tu fecha</span>) : (
-                  <span>{checkOut.substring(0, 10)}</span>)}
-
+                  <span>{checkOut}</span>)}
               </div>
               <hr className="hrReservation"></hr>
-
               <button className="reservationButtonConfirm" onClick={handleReservation}>
                 Confirmar reserva
               </button>
-
             </div>
           </div>
         </div>

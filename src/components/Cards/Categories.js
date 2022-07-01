@@ -5,14 +5,12 @@ import CardCategory from './CardCategory';
 
 function Categories(props) {
     const { data, isLoaded } = useFetch(`/categories/allCategories`);
-
     const categoryList = data.map((category) => {
         return (
             <CardCategory
                 key={category.id}
                 url={category.url}
                 title={category.title}
-                description={category.description}
             />
         )
     })

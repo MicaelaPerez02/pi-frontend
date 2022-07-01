@@ -23,7 +23,6 @@ function Login() {
     const [id, setId] = useState("");
     const { login, isLogged } = useUser();
 
-
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
     }
@@ -35,14 +34,6 @@ function Login() {
         e.preventDefault();
     }
 
-    const handleClick = (e) => {
-        if (localStorage.getItem("user")) {
-            navigate("/");
-            localStorage.setItem("username", JSON.stringify(email));
-            localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
-        }
-    };
-
     const validationLogin = (e) => {
         e.preventDefault();
 
@@ -53,12 +44,15 @@ function Login() {
         localStorage.removeItem("buttonReservationClick");
     }
 
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value);
-    }
+    const handleLogin = (e) => {
+        login({ email, password });
+        // if (localStorage.getItem("user")) {
 
-    const onChangePassword = (e) => {
-        setPassword(e.target.value);
+        localStorage.setItem("username", JSON.stringify(email));
+        localStorage.setItem("avatar", JSON.stringify(email[0].toUpperCase()));
+        // }
+        navigate("/");
+        e.preventDefault();
     }
 
     return (
@@ -66,7 +60,7 @@ function Login() {
             {email.length < 500 ? <HeaderLogin /> : <Header username={email} />}
             <div className="componentContainer">
                 <h1 className='titleForm'>Iniciar sesión</h1>
-                <form className="formContainer" onSubmit={validationLogin}>
+                <form className="formContainer" onChange={validationLogin}>
                     <Link to={'/'}>
                         <FaWindowClose onClick={clearButtonClick} className="iconClose" />
                     </Link>
@@ -74,17 +68,17 @@ function Login() {
                         <LoginError /> : ""}
                     <section>
                         <h5>Usuario</h5>
-                        <input type="text" placeholder="Ingrese su usuario" value={email} onChange={onChangeEmail} />
+                        <input type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </section>
                     <section className="passwordSection">
                         <h5>Contraseña</h5>
-                        <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={onChangePassword} />
+                        <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <button className="buttonForm" onClick={toggleBtn}>
                             {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                         </button>
                     </section>
                     <section className="buttonContainer">
-                        <button className="buttonSubmit" onClick={handleClick}>Ingresar</button>
+                        <button className="buttonSubmit" onClick={handleLogin}>Ingresar</button>
                     </section>
                 </form>
                 <section className="createAcountContainer">
