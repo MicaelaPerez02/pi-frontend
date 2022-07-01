@@ -7,8 +7,8 @@ import useFetchAuth from '../../hooks/useFetchAuth';
 import { useParams } from 'react-router-dom';
 
 function CalendarDetail() {
-    const { data, isLoaded } = useFetchAuth("/bookings/allBookings");
-    const { productId } = useParams();
+    const productId = localStorage.getItem("idProduct");
+    const { data, isLoaded } = useFetchAuth(`/bookings/findBookingByProduct/${productId}`);
 
     const bookingsDates = data.map((bookings, index) => {
         return (
@@ -45,6 +45,7 @@ function CalendarDetail() {
                 localStorage.setItem('date2', JSON.stringify((date[1])).substring(1, 11));
                 console.log(localStorage.getItem('date'));
                 console.log(localStorage.getItem('date2'));
+                console.log(bookingsDates);
             }}
         />
     );
