@@ -7,12 +7,17 @@ import FooterSocialMedia from './FooterSocialMedia';
 import { Link } from 'react-router-dom';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { useState } from 'react';
+import useFetchAuth from '../../../hooks/useFetchAuth';
 import '../../../styles/Components/Header.css';
 import "../../../styles/Components/Sidebar.css";
 
 function Sidebar(props) {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+
+    const { data, isLoaded } = useFetchAuth(`/users/findUser/${localStorage.getItem("userId")}`);
+
+    const avatarUser = data.avatar;
 
     return (
         <div>
@@ -22,9 +27,10 @@ function Sidebar(props) {
                         <Link to='/' className='menu-bars'>
                             <FaWindowClose className='icon_close' />
                         </Link>
-                        {localStorage.getItem("username") ?
-                        <p className='avatarUser'> {localStorage.getItem("avatar")}</p>
-                        : <p></p> }
+                        <div> {(avatarUser == "https://www.gravatar.com/avatar/466dcf1001d04d8e101cf4a5cc9bc41d") ?
+                            <p className='avatarUser'> {localStorage.getItem("avatar")}</p> :
+                            <img src={avatarUser} alt="img perfil" className='avatarGravatar' />}
+                        </div>
                     </li>
                     <li className="nav-text-menu">
                         {localStorage.getItem("username") ?

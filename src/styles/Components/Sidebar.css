@@ -107,6 +107,10 @@ div.navTextUser {
   align-items: center;
   justify-content: center;
 }
+.avatarGravatar{
+  border-radius: 100%;
+  width: 65%;
+}
 
 .avatarUser {
   justify-content: center;

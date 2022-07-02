@@ -9,8 +9,12 @@ import CalendarDetail from './CalendarDetail';
 import CalendarDetailResponsive from './CalendarDetailResponsive';
 import MapDetail from './MapDetail';
 import RulesDetails from './RulesDetails';
+import CancelationDetail from './CancelationDetail';
+import SafetiesDetail from './SafetiesDetail';
 import FeaturesDetail from './FeaturesDetail';
 import ShareSocialMedia from './ShareSocialMedia';
+import { MdHealthAndSafety } from 'react-icons/md';
+import { MdCancel } from 'react-icons/md';
 import Images from './Images';
 
 function CardDetail(props) {
@@ -100,7 +104,24 @@ function CardDetail(props) {
                     map_url={props.map_url} />
             </div>
             <div className='detailRules'>
-                <RulesDetails />
+                <div className="rulesDetailsContainer">
+                    <h2 className="rulesDetailTitle">¿Qué tenes que saber? <hr className='hrRuleDetail' /></h2>
+                    <div className='rulesDetailContainerFlex'>
+                        <div className='rulesDetailFlex'>
+                            <div className="rulesDetailOne">
+                                {/*<RulesDetails 
+                                    rules={props.rules}
+                                />*/}
+                            </div>
+                            <div className="rulesDetailList">
+                                <SafetiesDetail />
+                            </div>
+                        </div>
+                        <div className='rulesDetailThree'>
+                            <CancelationDetail />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

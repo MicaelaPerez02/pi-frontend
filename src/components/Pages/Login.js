@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { FaWindowClose } from "react-icons/fa";
@@ -8,7 +8,6 @@ import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import useUser from "../../hooks/useUser";
-import GetUser from "../User/GetUser";
 import "../../styles/Components/Login.css";
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
@@ -18,7 +17,7 @@ import "../../styles/General/Buttons.css";
 import useFetchAuth from "../../hooks/useFetchAuth";
 
 function Login() {
-  
+
     const { data, isLoaded } = useFetchAuth(`/users/allUsers`);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -42,7 +41,7 @@ function Login() {
         data.map((users) => {
             if (users.email == localStorage.getItem("username")) {
                 return (
-                    localStorage.setItem("userId", users.id), 
+                    localStorage.setItem("userId", users.id),
                     localStorage.setItem("name", users.name),
                     localStorage.setItem("surname", users.surname),
                     localStorage.setItem("city", users.city)
@@ -50,35 +49,29 @@ function Login() {
             }
         })
 
-
-
-
-
-
-
         localStorage.removeItem("buttonReservationClick");
     }
 
     const handleLogin = (e) => {
         login({ email, password });
-       
-        
+
+
         e.preventDefault();
     }
 
     return (
-    
-        <div> 
-            
+
+        <div>
+
             {email.length < 500 ? <HeaderLogin /> : <Header username={email} />}
             <div className="componentContainer">
                 <h1 className='titleForm'>Iniciar sesión</h1>
-               
+
                 <form className="formContainer" onSubmit={validationLogin}>
                     <Link to={'/'}>
                         <FaWindowClose onClick={clearButtonClick} className="iconClose" />
                     </Link>
-            
+
                     {localStorage.getItem("buttonReservationClick") == "true" ?
                         <LoginError /> : ""}
                     <section>
@@ -95,7 +88,7 @@ function Login() {
                     <section className="buttonContainer">
                         <button className="buttonSubmit" onClick={handleLogin}>Ingresar</button>
                     </section>
-                
+
                 </form>
                 <section className="createAcountContainer">
                     <p> ¿Aún no tienes cuenta? </p>
