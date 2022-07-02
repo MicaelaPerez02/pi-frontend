@@ -9,7 +9,7 @@ function CardCategory(props) {
                 <img className='categoryImg' src={props.url} alt={props.title} />
             </Link>
             <p className='categoryTitle'>{props.title}</p>
-            <p className='categoryDescription'>{props.title}{props.description}</p> 
+            <p className='categoryDescription'>{props.description}</p> 
         </div>
     )
 }

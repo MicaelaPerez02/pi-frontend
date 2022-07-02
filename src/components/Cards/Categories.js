@@ -11,6 +11,7 @@ function Categories(props) {
                 key={category.id}
                 url={category.url}
                 title={category.title}
+                description={category.description}
             />
         )
     })
