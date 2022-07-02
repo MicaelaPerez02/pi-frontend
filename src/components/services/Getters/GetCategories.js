@@ -1,12 +1,13 @@
 import React from 'react';
 import useFetch from '../../../hooks/useFetch';
 
-function GetCategories() {
+function GetCategories(props) {
     const { data, isLoaded } = useFetch(`/categories/allCategories`);
+
     const categoryList =
         data.map((category, index) => {
             return (
-                <option value={category.id} key={index}>{category.title}</option>
+                <option value={category.id} onChange={props.onChange} key={index}>{category.title}</option>
             )
         })
 
