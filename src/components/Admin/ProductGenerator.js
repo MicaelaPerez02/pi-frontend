@@ -41,6 +41,7 @@ function ProductGeneratorCard() {
   const [newUrl, setNewUrl] = useState("https://bucket-pig6.s3.us-east-2.amazonaws.com/ProductoNuevo/PORTADAREAL.webp");
   const [selectCategories, setSelectCategory] = useState("");
   /*post crear producto, agarro el id en algun lado y se lo seteo a la images post*/
+  const flag = 16;
 
   const handleSubmit = (e) => {
     e.preventDefault();
