@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
@@ -9,6 +9,7 @@ import "../../styles/General/Forms.css";
 import "../../styles/General/Icons.css";
 import "../../styles/General/Elements.css";
 import "../../styles/General/Buttons.css";
+import emailjs from '@emailjs/browser';
 import useUserSingnUp from "../../hooks/useUserSignUp";
 
 function Register() {
@@ -20,8 +21,17 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [city, setCity] = useState("");
-
     const { SignUp, isSigned } = useUserSingnUp();
+
+
+    const sendEmail = (e) => {
+        emailjs.sendForm('homuProyect', 'template_vxfmf4b', "#formRegister", 'SLkHg1L_8kzpGb-yt')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
 
     const toggleBtn = (e) => {
         setState(prevState => !prevState);
@@ -85,6 +95,7 @@ function Register() {
 
         if ((name && surname && email && password && city) !== "") {
             SignUp({ name, surname, email, password, city });
+            sendEmail();
             navigate("/login");
         } else {
             alert("Por favor, complete todos los campos.")
@@ -96,14 +107,14 @@ function Register() {
             <HeaderRegister />
             <div className="componentContainer">
                 <h1 className="titleForm">Crear Cuenta</h1>
-                <form className="formContainer">
+                <form className="formContainer" id="formRegister">
                     <Link to='/'>
                         <FaWindowClose className="iconClose" />
                     </Link>
                     <div className="sectionFormContainer">
                         <section>
                             <h5>Nombre</h5>
-                            <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" />
+                            <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" name="name" />
                             {localStorage.getItem('shortName') === 'true' ?
                                 <p className="validationError">El nombre debe tener mínimo 3 caracteres</p> : <p></p>
                             }
@@ -128,7 +139,7 @@ function Register() {
                     <div className="sectionFormContainerTwo">
                         <section>
                             <h5>Email</h5>
-                            <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" />
+                            <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" name="email" />
                             {localStorage.getItem('shortEmail') === 'true' ?
                                 <p className="validationError">Ingrese un email válido</p> : <p></p>
                             }
@@ -151,12 +162,12 @@ function Register() {
                             </button>
                         </section>
                     </div>
+                    <section className="buttonContainer">
+                        <Link to="/login">
+                            <input type="submit" className="buttonSubmit" onClick={handleSignUp} />
+                        </Link>
+                    </section>
                 </form>
-                <section className="buttonContainer">
-                    <Link to="/login">
-                        <button className="buttonSubmit" onClick={handleSignUp}>Crear cuenta</button>
-                    </Link>
-                </section>
                 <section className="createAcountContainer">
                     <p> ¿Ya tienes una cuenta? </p>
                     <Link to="/login">

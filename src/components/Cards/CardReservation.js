@@ -8,6 +8,8 @@ import CalendarDetailResponsive from "../ProductInfo/CalendarDetailResponsive";
 import RulesDetails from "../ProductInfo/RulesDetails";
 import useReservation from "../../hooks/useReservation";
 import TimePicker from 'react-time-picker';
+import emailjs from '@emailjs/browser';
+import useUserSingnUp from "../../hooks/useUserSignUp";
 
 function CardReservation(props) {
   const [date, setDate] = useState("");
@@ -25,6 +27,15 @@ function CardReservation(props) {
   const checkIn = localStorage.getItem("date");
   const checkOut = localStorage.getItem("date2");
 
+  const sendEmail = (e) => {
+    emailjs.sendForm('homuProyect', 'template_varskqr', "#formReservation", 'SLkHg1L_8kzpGb-yt')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
   const handleReservation = () => {
     if ((checkIn && checkOut && start_time) != "") {
       Reservation({
@@ -38,6 +49,7 @@ function CardReservation(props) {
           id: userId
         }
       });
+      sendEmail();
       navigate("/reservation/success");
       localStorage.removeItem("date");
       localStorage.removeItem("date2");
@@ -79,7 +91,7 @@ function CardReservation(props) {
       <div className="reservationContainerAllFlex">
         <div className="reservationContainerFlex">
           <div className="reservationFormContainer">
-            <form className="reservationForm">
+            <form className="reservationForm" id="formReservation">
               <h4 className="reservationTitle">Tus datos</h4>
               <div className="reservationNameLastName">
                 <div className="reservationInput">
@@ -90,6 +102,7 @@ function CardReservation(props) {
                     type="text"
                     placeholder="Ingrese su nombre"
                     className="inputRes"
+                    name="name"
                   />
                 </div>
                 <div className="reservationInput">
@@ -112,6 +125,7 @@ function CardReservation(props) {
                     type="email"
                     placeholder="Ingrese su correo electrónico"
                     className="inputRes"
+                    name="email"
                   />
                 </div>
                 <div className="reservationInput">
