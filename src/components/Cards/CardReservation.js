@@ -5,17 +5,22 @@ import { AiOutlineCheckCircle, AiFillStar } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import CalendarDetail from "../ProductInfo/CalendarDetail";
 import CalendarDetailResponsive from "../ProductInfo/CalendarDetailResponsive";
-import RulesDetails from "../ProductInfo/RulesDetails";
+import 'react-calendar/dist/Calendar.css';
+import Calendar from 'react-calendar';
+import "../../styles/Accesories/CalendarDetail.css";
 import useReservation from "../../hooks/useReservation";
 import TimePicker from 'react-time-picker';
 import emailjs from '@emailjs/browser';
 import useUserSingnUp from "../../hooks/useUserSignUp";
+import useFetchAuth from "../../hooks/useFetchAuth";
+import { isWithinInterval } from "date-fns";
+import { set } from "react-hook-form";
 
 function CardReservation(props) {
   const [date, setDate] = useState("");
-  const [start_time, setStartTime] = useState("");
-  const [start_date, setStartDate] = useState("");
-  const [finish_date, setFinishDate] = useState("");
+  const [start_time, setStartTime] = useState(null);
+  const [start_date, setStartDate] = useState(null);
+  const [finish_date, setFinishDate] = useState(null);
   const [products, setProducts] = useState(localStorage.getItem('idProduct'));
   const [userId, setUserId] = useState(localStorage.getItem("userId"));
   const navigate = useNavigate();
@@ -24,8 +29,43 @@ function CardReservation(props) {
   const [city, setCity] = useState(localStorage.getItem("city"));
   const [email, setEmail] = useState(localStorage.getItem("username"));
   const { Reservation } = useReservation();
-  const checkIn = localStorage.getItem("date");
-  const checkOut = localStorage.getItem("date2");
+  const checkIn = window.localStorage.getItem("date");
+  const checkOut = window.localStorage.getItem("date2");
+
+  /* -------------------------------------------------------------------------- */
+  /*                               //CALENDARIOOOO                              */
+  /* -------------------------------------------------------------------------- */
+
+  const productId = localStorage.getItem("idProduct");
+  const { data } = useFetchAuth(`/bookings/findBookingByProduct/${productId}`);
+  const [dates, setDates] = useState()
+
+
+  const bookingsDates = data.map((bookings, index) => {
+    return (
+      [new Date(bookings.start_date),
+      new Date(bookings.finish_date)]
+    )
+  });
+
+  function isWithinRange(date, range) {
+    return isWithinInterval(date, { start: range[0], end: range[1] });
+  }
+
+  function isWithinRanges(date, ranges) {
+    return ranges.some(range => isWithinRange(date, range));
+  }
+
+  function tileDisabled({ date, view }) {
+    if (view === 'month') {
+      return isWithinRanges(date, bookingsDates);
+    }
+  }
+
+
+  /* -------------------------------------------------------------------------- */
+  /*                               fin calendario                               */
+  /* -------------------------------------------------------------------------- */
 
   const sendEmail = (e) => {
     emailjs.sendForm('homuProyect', 'template_varskqr', "#formReservation", 'SLkHg1L_8kzpGb-yt')
@@ -37,7 +77,7 @@ function CardReservation(props) {
   };
 
   const handleReservation = () => {
-    if ((checkIn && checkOut && start_time) != "") {
+    if (start_date !== null && finish_date !== null && start_time !== null) {
       Reservation({
         start_time,
         start_date,
@@ -50,17 +90,30 @@ function CardReservation(props) {
         }
       });
       sendEmail();
-      navigate("/reservation/success");
+      removeDates();
       localStorage.removeItem("date");
       localStorage.removeItem("date2");
+      navigate("/reservation/success");
+
+    } else if (start_date === null && finish_date === null) {
+      alert("Por favor, Seleccione una fecha");
+
+    } else if (start_time === null) {
+      alert("Por favor, Seleccione una hora");
+
     }
+
+
+
   }
 
-  const clickCalendar = (e) => {
-    setDate(prevState => !prevState);
-    setStartDate(checkIn);
-    setFinishDate(checkOut);
 
+
+
+  const clickCalendar = (e) => {
+    setStartDate(dates[0])
+    setFinishDate(dates[1])
+    setDate(prevState => !prevState);
     console.log(checkIn, checkOut);
     e.preventDefault();
   }
@@ -146,16 +199,48 @@ function CardReservation(props) {
               Seleccioná tu fecha de reserva
             </h4>
             <div className="reservationCalendarOne">
-              <CalendarDetail className="reservationCalendarComponent" />
+              <Calendar
+                selectRange={true}
+                minDate={new Date()}
+                maxDate={new Date(2023, 11, 16)}
+                tileDisabled={tileDisabled}
+
+                onChange={(date) => {
+                  setDates(date)
+
+                  localStorage.setItem('date', JSON.stringify((date[0])).substring(1, 11));
+                  localStorage.setItem('date2', JSON.stringify((date[1])).substring(1, 11));
+
+
+                }}
+
+
+              />
               <div className="reservationCalendarButton">
-                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonDay' onClick={clickCalendar} >Seleccionar fecha</button>
                 <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
             <div className="reservationCalendarComponentDouble">
-              <CalendarDetailResponsive />
+              <Calendar
+                showDoubleView={true}
+                selectRange={true}
+                minDate={new Date()}
+                maxDate={new Date(2023, 11, 16)}
+                tileDisabled={tileDisabled}
+
+                onChange={(date) => {
+                  setDates(date)
+                  localStorage.setItem('date', JSON.stringify((date[0])).substring(1, 11));
+                  localStorage.setItem('date2', JSON.stringify((date[1])).substring(1, 11));
+
+
+                }}
+
+
+              />
               <div className="reservationCalendarButton">
-                <button className='buttonDay' onClick={clickCalendar}>Seleccionar fecha</button>
+                <button className='buttonDay' onClick={clickCalendar} >Seleccionar fecha</button>
                 <button className='buttonDay' onClick={removeDates}>Remover fecha</button>
               </div>
             </div>
@@ -229,11 +314,9 @@ function CardReservation(props) {
           </div>
         </div>
       </div>
-      <div className="reservationRules">
-        <RulesDetails />
-      </div>
     </div>
   );
 }
+
 
 export default CardReservation;

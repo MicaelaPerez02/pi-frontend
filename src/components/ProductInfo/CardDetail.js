@@ -13,8 +13,6 @@ import CancelationDetail from './CancelationDetail';
 import SafetiesDetail from './SafetiesDetail';
 import FeaturesDetail from './FeaturesDetail';
 import ShareSocialMedia from './ShareSocialMedia';
-import { MdHealthAndSafety } from 'react-icons/md';
-import { MdCancel } from 'react-icons/md';
 import Images from './Images';
 
 function CardDetail(props) {
@@ -114,11 +112,11 @@ function CardDetail(props) {
                                 />*/}
                             </div>
                             <div className="rulesDetailList">
-                                <SafetiesDetail />
+                                {/*<SafetiesDetail />*/}
                             </div>
                         </div>
                         <div className='rulesDetailThree'>
-                            <CancelationDetail />
+                            {/* <CancelationDetail />*/}
                         </div>
                     </div>
                 </div>

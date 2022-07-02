@@ -54,6 +54,11 @@
   justify-content: center;
 }
 
+.inputCheckbok{
+  width: auto;
+  height: auto;
+}
+
 .formContainerProductGenerator{
   border-radius: 4px;
 }

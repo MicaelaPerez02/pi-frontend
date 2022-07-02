@@ -1,22 +1,20 @@
-export default function FeaturesPost({ icon, description, products }) {
+export default function SafetiesPost({description}) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://localhost:8080/features/addFeature`, {
+    return fetch(`http://localhost:8080/safeties/addSafety`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,
             "content-type": "application/json",
         },
         body: JSON.stringify({
-            icon, 
-            description, 
-            products
+            description
         }),
     })
         .then((res) => {
             if (res.status !== 201)
                 throw new Error(
-                    "Lo sentimos, la feature no pudo ser registrada. Intentelo más tarde" +
+                    "Lo sentimos, la regla no pudo ser registrada. Intentelo más tarde" +
                     res.status,
                 );
             return res.json();

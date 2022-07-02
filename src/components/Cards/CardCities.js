@@ -7,13 +7,14 @@ function CardCities() {
     let [city, setCity] = useState("");
     const navigate = useNavigate();
 
-    function handleChange(event) {
-        localStorage.setItem('cities', event.target.value);
-        localStorage.setItem('cityId', city);     
-    }
-
-    function handleClick (e) {
-        navigate("/cities" + city.id)
+    function cityName() {
+        data.map((city, index) => {
+            if (localStorage.getItem("cities") == city.id) {
+                return (
+                    localStorage.setItem("cityName", city.country)
+                )
+            }
+        })
     }
 
     const citiesList =
@@ -23,6 +24,16 @@ function CardCities() {
             )
         })
 
+    function handleChange(event) {
+        localStorage.setItem('cities', event.target.value);
+        localStorage.setItem('cityId', city);
+        cityName();
+    }
+
+    function handleClick(e) {
+        navigate("/cities" + city.id)
+    }
+
     return (
         <>
             <form className='formInputSelect' onChange={handleChange}>
@@ -30,6 +41,7 @@ function CardCities() {
                     <option className="form_option" hidden >Selecciona el destino</option>
                     <option className="form_option" disabled >Selecciona el destino</option>
                     {citiesList}
+                    {localStorage.setItem("cityName", city)}
                 </select>
             </form>
         </>
