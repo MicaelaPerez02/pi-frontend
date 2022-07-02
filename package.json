@@ -24,6 +24,8 @@
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-share": "^4.4.0",
+    "react-share-social": "^0.1.48",
     "react-slideshow-image": "^3.7.5",
     "react-time-picker": "^4.5.0",
     "rsuite": "^5.15.0",

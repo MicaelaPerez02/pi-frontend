@@ -1,4 +1,4 @@
-.iconLike{
+.iconLike {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -61,6 +61,15 @@
 
 .iconPlusProduct:hover {
   color: var(--complementary);
+}
+
+.iconShare {
+  font-size: 1rem;
+  cursor: pointer;
+
+  margin-left: 0.5rem;
+
+  color: var(--color3);
 }
 
 /*FOOTER ICONS*/

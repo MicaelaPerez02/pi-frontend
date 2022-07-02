@@ -10,6 +10,7 @@ import CalendarDetailResponsive from './CalendarDetailResponsive';
 import MapDetail from './MapDetail';
 import RulesDetails from './RulesDetails';
 import FeaturesDetail from './FeaturesDetail';
+import ShareSocialMedia from './ShareSocialMedia';
 import Images from './Images';
 
 function CardDetail(props) {
@@ -59,9 +60,9 @@ function CardDetail(props) {
                     title={props.title}
                     id={props.id}
                 />
-             
             </div>
             <div className='detailDescription'>
+                <ShareSocialMedia />
                 <p className='detailDescriptionSlogan'>{props.title}</p>
                 <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
             </div>
