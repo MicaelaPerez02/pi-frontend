@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import { TbCirclePlus } from "react-icons/tb";
 import "../../styles/Components/ProductGenerator.css"
 import useCities from '../services/POST cities/useCities';
-import useFetch from '../../hooks/useFetch';
 import CardCities from '../Cards/CardCities';
 import useImages from '../services/Post Images/useImages';
 import useFeatures from '../services/Post Features/useFeatures';
@@ -14,156 +13,213 @@ import useRules from '../services/Post Rules/useRules';
 import useCancellations from '../services/Post Cancellations/useCancellations';
 import useSafeties from '../services/Post Safeties/useSafeties';
 import useProducts from '../services/Post Products/useProducts';
+import GetRules from '../services/Getters/GetRules';
+import GetSafeties from '../services/Getters/GetSafeties';
+import GetCancellations from '../services/Getters/GetCancellations';
+import GetCities from '../services/Getters/GetCities';
+import GetProducts from '../services/Getters/GetProducts';
 
 function ProductGeneratorCard() {
   const { Cities } = useCities();
+  const { Images } = useImages();
   const { Rules } = useRules();
   const { Cancellations } = useCancellations();
   const { Safeties } = useSafeties();
   const { Features } = useFeatures();
   const { Products } = useProducts();
-  const [category, setCategory] = useState(1);
-  const [name, setName] = useState("");
-  const [url, setUrl] = useState("");
+  const [newCity, setNewCity] = useState("");
   const [newRule, setNewRule] = useState("");
   const [newCancellation, setNewCancellation] = useState("");
   const [newSafety, setNewSafety] = useState("");
   const [newFeature, setNewFeature] = useState("");
   const [newIcon, setNewIcon] = useState("");
-  const [newAddress, setNewAddress] = useState("Pedro Goyena 946");
-  const [newRating, setNewRating] = useState(5);
+  const [newAddress, setNewAddress] = useState("");
+  const [newRating, setNewRating] = useState();
   const [newReview, setReview] = useState(9);
-  const [newLocation, setNewLocation] = useState("A 200m del centro");
-  const [newMapUrl, setMapUrl] = useState("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016713276847!2d-58.383759084813825!3d-34.60373888045945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac5f6f420b3%3A0x3874bd32ee4d4ce3!2sBroadway%20Hotel%20%26%20Suites!5e0!3m2!1ses-419!2sar!4v1656798921587!5m2!1ses-419!2sar");
-  const [newWatch, setNewWatch] = useState("https://www.google.com.ar/maps/place/Broadway+Hotel+%26+Suites/@-34.6037389,-58.3837591,17z/data=!4m8!3m7!1s0x95bccac5f6f420b3:0x3874bd32ee4d4ce3!5m2!4m1!1i2!8m2!3d-34.6036576!4d-58.3833274");
-  const [newTitle, setNewTitle] = useState("Tuki House");
-  const [newDescription, setNewDescription] = useState("Casa equipada con 3 habitaciones, baño, cocina y comedor");
-  const [newUrl, setNewUrl] = useState("https://bucket-pig6.s3.us-east-2.amazonaws.com/ProductoNuevo/PORTADAREAL.webp");
+  const [newLocation, setNewLocation] = useState("");
+  const [newMapUrl, setNewMapUrl] = useState("");
+  const [newWatch, setNewWatch] = useState("");
+  const [newTitle, setNewTitle] = useState("");
+  const [newDescription, setNewDescription] = useState("");
+  const [newUrl, setNewUrl] = useState("");
+  const [newImagesUrl, setNewImagesUrl] = useState("");
   const [selectCategories, setSelectCategory] = useState("");
-  /*post crear producto, agarro el id en algun lado y se lo seteo a la images post*/
-  const flag = 16;
+  
+  let maxIdFeatures = JSON.parse(localStorage.getItem("maxIdFeatures"));
+  let maxIdCities = JSON.parse(localStorage.getItem("maxIdCities"));
+  let maxIdCancellation = JSON.parse(localStorage.getItem("maxIdCancellation"));
+  let maxIdSafeties = JSON.parse(localStorage.getItem("maxIdSafeties"));
+  let maxIdRules = JSON.parse(localStorage.getItem("maxIdRules"));
+  let maxIdProduct = JSON.parse(localStorage.getItem("maxIdProduct"));
+
+  function postElements(e) {
+    e.preventDefault();
+
+    Cities({
+      "name": newCity
+    })
+
+    Features({
+      "icon": newIcon,
+      "description": newFeature,
+    })
+
+    Cancellations({
+      "description": newCancellation
+    })
+
+    Rules({
+      "description": newRule,
+    })
+
+    Safeties({
+      "description": newSafety
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     Products({
-      address: "Pedro Goyena 946",
-      rating: "4",
-      review: "9",
-      location: "200 m del centro",
-      map_url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.016713276847!2d-58.383759084813825!3d-34.60373888045945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac5f6f420b3%3A0x3874bd32ee4d4ce3!2sBroadway%20Hotel%20%26%20Suites!5e0!3m2!1ses-419!2sar!4v1656798921587!5m2!1ses-419!2sar",
-      watch: "https://www.google.com.ar/maps/place/Broadway+Hotel+%26+Suites/@-34.6037389,-58.3837591,17z/data=!4m8!3m7!1s0x95bccac5f6f420b3:0x3874bd32ee4d4ce3!5m2!4m1!1i2!8m2!3d-34.6036576!4d-58.3833274",
-      title: "Tuki House",
-      description: "Casa equipada con 3 habitaciones, baño, cocina y comedor",
-      url: "https://bucket-pig6.s3.us-east-2.amazonaws.com/ProductoNuevo/PORTADAREAL.webp",
+      address: newAddress,
+      rating: newRating,
+      review: 3,
+      location: newLocation,
+      map_url: newMapUrl,
+      watch: newWatch,
+      title: newTitle,
+      description: newDescription,
+      url: newUrl,
       categories: {
-        id: 1
+        id: 3
       },
-      features: [
-        {
-          "id": 16,
-          "icon": newIcon,
-          "description": newFeature
-        }],
+      features: [{
+        "id": maxIdFeatures
+      }],
       cities: {
-        "id": 1
+        "id": maxIdCities
       },
-      rules: [
-        {
-          "id": 16,
-          "description": newRule
-        }],
-      cancellations: [
-        {
-          "id": 16,
-          "description": newCancellation
-        }],
-      safeties: [
-        {
-          "id": 16,
-          "description": newSafety
-        }]
+      cancellations: [{
+        "id": maxIdCancellation
+      }],
+      rules: [{
+        "id": maxIdRules
+      }],
+      safeties: [{
+        "id": maxIdSafeties
+      }]
     })
   }
+
+  function handleImages(e) {
+    e.preventDefault();
+
+    Images({
+      "url": newImagesUrl,
+      "products": {
+        "id": maxIdProduct
+      }
+    })
+  }
+
   return (
     <>
       <Header />
-      <form onSubmit={handleSubmit} className="formContainer">
+      <GetProducts />
+      <form className="categoryContainerCreator">
         <section className='categoryContainerCreator'>
+          <fieldset>
+            <legend>Crear propiedad</legend>
+            <label>Nombre de la propiedad</label>
+            <input type="text" value={newTitle} onChange={e => setNewTitle(e.target.value)} />
+            <label>Dirección</label>
+            <input type="text" value={newAddress} onChange={e => setNewAddress(e.target.value)} />
+            <label>Puntación (número 1 al 5)</label>
+            <input type="text" value={newRating} onChange={e => setNewRating(e.target.value)} />
+            <label>¿A qué distancia del centro se encuentra?</label>
+            <input type="text" value={newLocation} onChange={e => setNewLocation(e.target.value)} />
+            <label>Link del mapa de API</label>
+            <input type="url" value={newMapUrl} onChange={e => setNewMapUrl(e.target.value)} />
+            <label>Link del mapa</label>
+            <input type="url" value={newWatch} onChange={e => setNewWatch(e.target.value)} />
+            <label>Link de imágen de portada</label>
+            <input type="url" value={newUrl} onChange={e => setNewUrl(e.target.value)} />
+            <label>Descripción</label>
+            <input type="text" value={newDescription} onChange={e => setNewDescription(e.target.value)} />
+          </fieldset>
+        </section>
+
+      
+        <section>
           <GetCategories
-            onChange={e => setCategory(e.target.value)}
+            onChange={e => setSelectCategory(e.target.value)}
           />
-          {console.log(category)}
         </section>
 
         <section>
-          <form>
+          <fieldset>
             <legend>Elegir ciudad</legend>
             <CardCities />
+            <GetCities />
             <label>Ingresar otra</label>{
-              setName === "" ? setName(localStorage.getItem("cities"))
+              setNewCity === "" ? setNewCity(localStorage.getItem("cities"))
                 :
-                <input value={name} onChange={e => setName(e.target.value)} name="text" placeholder="Ingrese la ciudad de la propiedad" />
+                <input value={newCity} onChange={e => setNewCity(e.target.value)} name="text" placeholder="Ingrese la ciudad de la propiedad" />
             }
-          </form>
+          </fieldset>
         </section>
 
         <section>
           <GetFeatures />
-          <form>
-            <fieldset>
-              <legend>Agregar atributos</legend>
-              <label>Ingresar descripción</label>
-              <input type="text" value={newFeature} onChange={e => setNewFeature(e.target.value)} name="text" placeholder="Nombre" />
-              <label>Ingresar nombre de Icono</label>
-              <input type="text" value={newIcon} onChange={e => setNewIcon(e.target.value)} name="text" placeholder="Icono" />
-            </fieldset>
-          </form>
+          <fieldset>
+            <legend>Agregar atributos</legend>
+            <label>Ingresar descripción</label>
+            <input type="text" value={newFeature} onChange={e => setNewFeature(e.target.value)} name="text" placeholder="Nombre" />
+            <label>Ingresar nombre de Icono</label>
+            <input type="text" value={newIcon} onChange={e => setNewIcon(e.target.value)} name="text" placeholder="Icono" />
+          </fieldset>
         </section>
 
         <section>
-          <legend>Elegir reglas</legend>
-          <form>
+          <GetRules />
+          <fieldset>
+            <legend>Elegir reglas</legend>
             <label>Ingresar otra</label>
             <input type="text" value={newRule} onChange={e => setNewRule(e.target.value)} name="text" placeholder="Escriba aquí" />
-          </form>
+          </fieldset>
         </section>
 
         <section>
-          <legend>Elegir salud y seguridad</legend>
-          <form>
+          <GetSafeties />
+          <fieldset>
+            <legend>Elegir salud y seguridad</legend>
             <label>Ingresar otra</label>
             <input type="text" value={newSafety} onChange={e => setNewSafety(e.target.value)} name="text" placeholder="Escriba aquí" />
-          </form>
+          </fieldset>
         </section>
 
         <section>
-          <legend>Elegir políticas de cancelación </legend>
-          <form>
+          <GetCancellations />
+          <fieldset>
+            <legend>Elegir políticas de cancelación </legend>
             <label>Ingresar otra</label>
             <input type="text" value={newCancellation} onChange={e => setNewCancellation(e.target.value)} name="text" placeholder="Escriba aquí" />
-          </form>
+          </fieldset>
         </section>
 
-        <button onClick={handleSubmit}>Crear</button>
+        <button onClick={postElements}>Crear</button>
       </form>
 
       <form>
-        <p>Cargar imágenes</p>
-        <div>
-          <section>
-            <div>
-              <input
-                value={url}
-                onChange={e => setUrl(e.target.value)}
-                name="text"
-                placeholder="Insertar url de la imágen"
-              />
-            </div>
-          </section>
-          <TbCirclePlus className='iconPlusProduct' />
-        </div>
+        <fieldset>
+          <legend>Cargar imágenes</legend>
+          <input type="url" value={newImagesUrl} onChange={e => setNewImagesUrl(e.target.value)} placeholder="Insertar url de la imágen" />
+        </fieldset>
+        <TbCirclePlus className='iconPlusProduct' />
+        <button onClick={handleImages}>Cargar imagenes</button>
       </form>
+
+      <button className='buttonCreateProd' onClick={handleSubmit}>Crear producto</button>
       <Footer />
     </>
   )

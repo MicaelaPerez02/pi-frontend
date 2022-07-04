@@ -1,10 +1,12 @@
 
 
 .categoryContainerCreator {
-  background-color: var(--main-color);
-
   margin-top: 5rem;
   padding: 1rem;
+}
+
+.buttonCreateProd{
+  padding-bottom: 5rem;
 }
 
 .productGeneratorHeader p {

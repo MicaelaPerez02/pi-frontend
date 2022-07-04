@@ -9,6 +9,7 @@ function GetFeatures() {
         setFeature(prevState => !prevState);
     }
 
+
     const featuresList =
         data.map((feature, index) => {
             return (
@@ -19,11 +20,20 @@ function GetFeatures() {
             )
         })
 
+    const ids = data.map(id => {
+        return id.id;
+    })
+
+    const maxId = Math.max(...ids);
+    const maxIdPlus = maxId + 1;
+    
+
     return (
         <form>
             <fieldset>
                 <legend>Características</legend>
                 {featuresList}
+                {localStorage.setItem("maxIdFeatures", maxIdPlus)}
             </fieldset>
         </form>
     )
