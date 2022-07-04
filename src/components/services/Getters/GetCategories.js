@@ -12,14 +12,14 @@ function GetCategories(props) {
         })
 
     return (
-        <form>
-            <h5 className="inputTitleProdGenerator">Categoría</h5>
+        <>
+            <legend className="inputTitleProdGenerator">Categoría</legend>
             <select id="category" name="category" className='form_select'>
                 <option className="form_option" hidden >Selecciona la categoría</option>
                 <option className="form_option" disabled >Selecciona la categoría</option>
                 {categoryList}
             </select>
-        </form>
+        </>
     )
 }
 

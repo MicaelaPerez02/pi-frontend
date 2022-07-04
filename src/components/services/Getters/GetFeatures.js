@@ -9,14 +9,13 @@ function GetFeatures() {
         setFeature(prevState => !prevState);
     }
 
-
     const featuresList =
         data.map((feature, index) => {
             return (
-                <>
+                <section className='infoCheckbox'>
                     <label>{feature.description}</label>
                     <input type="checkbox" value={feature.description} id={feature.description} key={index} className="inputCheckbok" />
-                </>
+                </section>
             )
         })
 
@@ -26,16 +25,13 @@ function GetFeatures() {
 
     const maxId = Math.max(...ids);
     const maxIdPlus = maxId + 1;
-    
 
     return (
-        <form>
-            <fieldset>
+            <fieldset className='fieldsetCreateProductCheckbox'>
                 <legend>Características</legend>
                 {featuresList}
                 {localStorage.setItem("maxIdFeatures", maxIdPlus)}
             </fieldset>
-        </form>
     )
 }
 

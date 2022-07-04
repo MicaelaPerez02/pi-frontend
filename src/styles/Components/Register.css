@@ -7,10 +7,6 @@
   padding-left: 1.5rem;
 }
 
-section {
-  margin-bottom: 1rem;
-}
-
 .validationError {
   font-size: 0.8rem;
   margin: 0.2rem 0 0 0.2rem;

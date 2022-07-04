@@ -12,22 +12,21 @@ function GetCancellations() {
             )
         })
 
-    const ids = data.map(id =>{
+    const ids = data.map(id => {
         return id.id;
     })
 
     const maxId = Math.max(...ids);
     const maxIdPlus = maxId + 1;
 
-
     return (
-        <form>
-            <label for="Políticas de cancelación">Políticas de cancelación</label>
-            <select id="Politicas de cancelación" key={key++}>
+        <>
+            <label>Selecciona las políticas de cancelación</label>
+            <select id="Politicas de cancelación" key={key++} className="selectCreateProduct">
                 {cancellationsList}
                 {localStorage.setItem("maxIdCancellation", maxIdPlus)}
             </select>
-        </form>
+        </>
     )
 }
 

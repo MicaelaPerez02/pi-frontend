@@ -100,15 +100,8 @@ function CardReservation(props) {
 
     } else if (start_time === null) {
       alert("Por favor, Seleccione una hora");
-
     }
-
-
-
   }
-
-
-
 
   const clickCalendar = (e) => {
     setStartDate(dates[0])
@@ -117,7 +110,6 @@ function CardReservation(props) {
     console.log(checkIn, checkOut);
     e.preventDefault();
   }
-
 
   const removeDates = (e) => {
     localStorage.removeItem("date");

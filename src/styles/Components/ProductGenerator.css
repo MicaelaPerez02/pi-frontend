@@ -1,107 +1,107 @@
+.formContainerProductGenerator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-
-.categoryContainerCreator {
-  margin-top: 5rem;
-  padding: 1rem;
-}
-
-.buttonCreateProd{
-  padding-bottom: 5rem;
-}
-
-.productGeneratorHeader p {
-  color: var(--light);
-}
-
-.productGeneratorBody {
   background-color: var(--color5);
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 
-.prodGeneratorTitle {
+.formContainerProductGenerator h2 {
+  width: 100%;
   font-size: 20px;
   font-weight: 700;
   line-height: 23px;
-  text-align: left;
 
-  padding: 1rem;
-
-  color: var(--main-color);
+  padding: 1rem 0rem 1rem 1rem;
 }
 
-.sectionLastInput,
-.inputProdGenerator {
-  background-color: var(--light) !important;
+.subHeader {
+  width: 100%;
 
-  padding: 1rem;
-
-  font-size: 0.8rem;
-
-  align-items: center;
-  justify-content: center;
-}
-
-.inputTitleProdGenerator {
-  font-size: 0.8rem;
-}
-
-.prodGeneratorInputFlex section{
-  margin: 0;
-}
-
-.inputProdGenerator2,
-.inputProdGenerator,
-.sectionLastInput
- {
-
-  align-items: center;
-  justify-content: center;
-}
-
-.inputCheckbok{
-  width: auto;
-  height: auto;
-}
-
-.formContainerProductGenerator{
-  border-radius: 4px;
-}
-
-.productAtributesFlex {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--color3);
+  color: var(--light);
+  padding: 5rem 1rem 1rem 1rem;
+}
+
+.formCreateProduct,
+.formCreateImages {
+  width: 100%;
+  background-color: var(--color5);
+
+  padding: 0rem 1.5rem 1rem 1.5rem;
+}
+
+.fieldsetCreateProduct,
+.fieldsetCreateImage {
+  background-color: var(--light);
+
+  padding: 1rem 0 1rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.fieldsetCreateProduct select {
+  width: 95%;
+  height: 40px;
+  padding: 0.7rem;
+  border: 1px solid var(--color4);
+  font-size: 0.85rem;
+}
+
+.fieldsetCreateProduct label {
+  text-align: start;
+}
+
+.fieldsetCreateProduct input,
+.fieldsetCreateImage input {
+  width: 95%;
+  margin: 0.8rem 0;
+}
+
+.fieldsetCreateProductCheckbox {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 
-  margin-right: 0.5rem;
+  background-color: var(--light);
+
+  margin-top: 1rem;
+  padding-top: 1rem;
 }
 
-.productAtributes {
-  margin-left: 3rem;
+.infoCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0.2rem;
+  padding: 0rem 1rem 0.5rem 1rem;
 }
 
-.subtitleProduct {
-  margin-bottom: 1rem;
+.fieldsetCreateProductCheckbox input {
+  width: 20px;
+  height: 20px;
 }
 
+.selectCreateProduct {
+  margin: 0.5rem 1rem 0.5rem 0rem;
+}
 
-@media screen and (min-width: 768px){
-  .formContainerProductGenerator{
-    align-items: flex-start;
-  }
+.formCreateImages {
+  width: 100%;
+}
 
-  .prodGeneratorInputFlex{
-    display: flex;
-  }
+.fieldsetCreateImage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+}
 
-  .inputProdGenerator2{
-    background-color: var(--light);
-    
-  }
-
-  .sectionLastInput{
-    padding-right: 21.75rem;
-    background-color: var(--light);
-  }
-  
-  
+.formContainerCreateImages fieldset {
+  width: 90%;
 }

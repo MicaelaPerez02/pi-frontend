@@ -1,3 +1,7 @@
+input, label {
+  display:block;
+}
+
 .componentContainer {
   display: flex;
   flex-direction: column;

@@ -20,13 +20,13 @@ function GetRules() {
     const maxIdPlus = maxId + 1;
 
     return (
-        <form>
-            <label for="Reglas">Reglas</label>
-            <select id="Reglas" key={key++}>
+        <>
+            <label>Selecciona las regla</label>
+            <select id="Reglas" key={key++} className='selectCreateProduct'>
                 {rulesList}
                 {localStorage.setItem('maxIdRules', maxIdPlus)}
             </select>
-        </form>
+        </>
     )
 }
 
