@@ -17,7 +17,7 @@ function ButtonsHeaderSession() {
             <div className="userOptions">
                 <p className='nameUser'> Hola, <span>{localStorage.getItem("username")}</span> </p>
             </div>
-            {localStorage.getItem("user").length> 5? <div> {(avatarUser == "https://www.gravatar.com/avatar/466dcf1001d04d8e101cf4a5cc9bc41d") ?
+            {localStorage.getItem("user").length> 2? <div> {(avatarUser == "https://www.gravatar.com/avatar/466dcf1001d04d8e101cf4a5cc9bc41d") ?
                 <p className='avatarUser'> {localStorage.getItem("avatar")}</p> :
                 <img src={avatarUser} alt="img perfil" className='avatarGravatar' />}
             </div> : null}

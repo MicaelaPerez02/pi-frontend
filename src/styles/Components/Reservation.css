@@ -7,12 +7,6 @@
   background-color: var(--color3);
 }
 
-.reservationFormContainer {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
 .reservationForm {
   display: flex;
   flex-direction: column;
@@ -23,8 +17,13 @@
   width: 90%;
 
   padding: 1rem 2rem 1rem 2rem;
+  margin: 2rem 0 0 1.5rem;
   border-radius: 4px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.reservationForm fieldset {
+  border: none;
 }
 
 .reservationInputTitle {
@@ -270,8 +269,7 @@
   }
 
   .reservationForm {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    margin: 2rem 0 0 2.5rem;
   }
 
   .inputRes {
@@ -279,7 +277,6 @@
   }
 
   .reservationCardHotel {
-
     margin-top: 2rem;
     margin-right: 2rem;
     margin-left: 1rem;

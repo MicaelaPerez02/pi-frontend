@@ -66,7 +66,7 @@
   background-color: var(--main-color);
 }
 
-.nav-text span {
+.nav-text button {
   color: var(--color2);
   font-size: 1.2rem;
 
@@ -77,10 +77,12 @@
   padding: 0.5rem;
   margin-right: 1rem;
   border-radius: 4px;
+
+  background-color: transparent;
 }
 
 /*ANIMATION BUTTONS*/
-.nav-text span:after {
+.nav-text button:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -92,7 +94,7 @@
   transition: width 0.5s ease 0s, right 0.5s ease 0s;
   width: 0;
 }
-.nav-text span:hover:after {
+.nav-text button:hover:after {
   width: 100%;
   right: 0;
 }
@@ -100,7 +102,7 @@
 /*USER AND AVATAR*/
 
 div.navTextUser {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.7rem;
 
   display: flex;
   flex-direction: column;
@@ -111,6 +113,8 @@ div.navTextUser {
 .avatarGravatar{
   border-radius: 100%;
   width: 65%;
+
+  margin-top: 0.3rem;
 }
 
 .avatarUser {
@@ -156,6 +160,8 @@ p.avatarUser {
   font-weight: 700;
   line-height: 30px;
   text-align: right;
+
+  margin-left: 0.5rem;
 }
 
 .closeSesion {
@@ -165,7 +171,7 @@ p.avatarUser {
   letter-spacing: 0em;
   text-align: right;
 
-  margin: 24rem 1.5rem 0 0;
+  margin: 28rem 1.5rem 0 0;
 }
 
 .spanCloseSesion {

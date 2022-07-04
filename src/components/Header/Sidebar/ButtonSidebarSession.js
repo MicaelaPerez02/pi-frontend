@@ -14,17 +14,19 @@ function ButtonSidebarSession() {
         <li className="navTextUser">
             {
                 localStorage.getItem("username") === "admin@gmail.com" ?
-                    <Link to="/product/addProduct">
-                        <button> Generar producto </button>
-                    </Link> :
+                    <li className="nav-text">
+                        <Link to="/product/addProduct">
+                            <button> Generar producto </button>
+                        </Link>
+                    </li> :
                     <ul>
                         <li className="nav-text">
                             <Link to="/myBookings">
-                                <span>Mis reservas</span>
+                                <button>Mis reservas</button>
                             </Link>
                         </li>
                         <li className="nav-text">
-                            <span>Mis favoritos</span>
+                            <button>Mis favoritos</button>
                         </li>
                     </ul>
             }

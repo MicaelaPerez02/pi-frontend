@@ -131,12 +131,14 @@ function CardReservation(props) {
       </div>
       <div className="reservationContainerAllFlex">
         <div className="reservationContainerFlex">
-          <div className="reservationFormContainer">
-            <form className="reservationForm" id="formReservation">
-              <h4 className="reservationTitle">Tus datos</h4>
+
+          <form className="reservationForm" id="formReservation">
+            <fieldset>
+              <legend className="reservationTitle">Tus datos</legend>
+
               <div className="reservationNameLastName">
-                <div className="reservationInput">
-                  <h5 className="reservationInputTitle">Nombre</h5>
+                <section className="reservationInput">
+                  <label className="reservationInputTitle">Nombre</label>
                   <input
                     value={name}
                     readOnly
@@ -145,9 +147,9 @@ function CardReservation(props) {
                     className="inputRes"
                     name="name"
                   />
-                </div>
-                <div className="reservationInput">
-                  <h5 className="reservationInputTitle">Apellido</h5>
+                </section>
+                <section className="reservationInput">
+                  <label className="reservationInputTitle">Apellido</label>
                   <input
                     value={surname}
                     readOnly
@@ -155,11 +157,12 @@ function CardReservation(props) {
                     placeholder="Ingrese su apellido"
                     className="inputRes"
                   />
-                </div>
+                </section>
               </div>
+
               <div className="reservationDataEmailCity">
-                <div className="reservationInput">
-                  <h5 className="reservationInputTitle">Correo electrónico</h5>
+                <section className="reservationInput">
+                  <label className="reservationInputTitle">Correo electrónico</label>
                   <input
                     value={email}
                     readOnly
@@ -168,9 +171,9 @@ function CardReservation(props) {
                     className="inputRes"
                     name="email"
                   />
-                </div>
-                <div className="reservationInput">
-                  <h5 className="reservationInputTitle">Ciudad</h5>
+                </section>
+                <section className="reservationInput">
+                  <label className="reservationInputTitle">Ciudad</label>
                   <input
                     value={city}
                     readOnly
@@ -178,10 +181,12 @@ function CardReservation(props) {
                     placeholder="Ingrese su ciudad"
                     className="inputRes"
                   />
-                </div>
+                </section>
               </div>
-            </form>
-          </div>
+
+            </fieldset>
+          </form>
+
           <div className="reservationCalendar">
             <h4 className="reservationTitleCalendar">
               Seleccioná tu fecha de reserva
