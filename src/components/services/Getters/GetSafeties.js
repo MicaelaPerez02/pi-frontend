@@ -22,7 +22,7 @@ function GetSafeties() {
     return (
         <>
             <label>Selecciona la información sobre salud y seguridad</label>
-            <select id="Salud y seguridad" key={key++} className="selectCreateProduct">
+            <select id="Salud y seguridad" key={key++} className='selectCreateProduct form_select'>
                 {safetiesList}
                 {localStorage.setItem('maxIdSafeties', maxIdPlus)}
             </select>

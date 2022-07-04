@@ -14,9 +14,9 @@ function GetCategories(props) {
     return (
         <>
             <legend className="inputTitleProdGenerator">Categoría</legend>
-            <select id="category" name="category" className='form_select'>
-                <option className="form_option" hidden >Selecciona la categoría</option>
-                <option className="form_option" disabled >Selecciona la categoría</option>
+            <select id="category" name="category" className='selectCreateProduct form_select'>
+                <option hidden >Selecciona la categoría</option>
+                <option disabled >Selecciona la categoría</option>
                 {categoryList}
             </select>
         </>

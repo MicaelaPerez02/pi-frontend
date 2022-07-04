@@ -22,7 +22,7 @@ function GetRules() {
     return (
         <>
             <label>Selecciona las regla</label>
-            <select id="Reglas" key={key++} className='selectCreateProduct'>
+            <select id="Reglas" key={key++} className='selectCreateProduct form_select'>
                 {rulesList}
                 {localStorage.setItem('maxIdRules', maxIdPlus)}
             </select>

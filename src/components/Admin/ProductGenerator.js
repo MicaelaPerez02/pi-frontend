@@ -155,7 +155,7 @@ function ProductGeneratorCard() {
             </fieldset>
           </section>
 
-          <section>
+          <section className='selectCategoriesNewProd'>
             <fieldset className='fieldsetCreateProduct'>
               <GetCategories onChange={e => setSelectCategory(e.target.value)} />
             </fieldset>
@@ -164,8 +164,7 @@ function ProductGeneratorCard() {
           <section>
             <fieldset className='fieldsetCreateProduct'>
               <legend>Elegir ciudad</legend>
-              <CardCities />
-              <GetCities />
+              <GetCities onChange={e => setNewCity(e.target.value)} />
               <label>Ingresar otra</label>{
                 setNewCity === "" ? setNewCity(localStorage.getItem("cities"))
                   :
@@ -220,7 +219,7 @@ function ProductGeneratorCard() {
             <legend>Cargar imágenes</legend>
             <input type="url" value={newImagesUrl} onChange={e => setNewImagesUrl(e.target.value)} placeholder="Insertar url de la imágen" />
             <div>
-            <TbCirclePlus className='iconPlusProduct' />
+              <TbCirclePlus className='iconPlusProduct' />
             </div>
           </fieldset>
           <button className='buttonCreate' onClick={handleImages}>Cargar imagenes</button>

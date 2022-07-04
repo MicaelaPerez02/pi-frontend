@@ -22,7 +22,7 @@ function GetCancellations() {
     return (
         <>
             <label>Selecciona las políticas de cancelación</label>
-            <select id="Politicas de cancelación" key={key++} className="selectCreateProduct">
+            <select id="Politicas de cancelación" key={key++} className='selectCreateProduct form_select'>
                 {cancellationsList}
                 {localStorage.setItem("maxIdCancellation", maxIdPlus)}
             </select>
