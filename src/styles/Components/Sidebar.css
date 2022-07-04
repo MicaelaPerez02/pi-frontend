@@ -107,6 +107,7 @@ div.navTextUser {
   align-items: center;
   justify-content: center;
 }
+
 .avatarGravatar{
   border-radius: 100%;
   width: 65%;
@@ -294,17 +295,6 @@ p.avatarUser {
     align-items: center;
   }
 
-  .button_session {
-    width: auto;
-    height: 50%;
-
-    display: flex;
-    align-items: center;
-
-    cursor: pointer;
-
-    background-color: transparent;
-  }
 
   .iconCloseSesion {
     margin-top: 1rem;

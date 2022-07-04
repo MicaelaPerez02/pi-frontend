@@ -3,18 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoChevronLeft } from "react-icons/go";
 import { AiOutlineCheckCircle, AiFillStar } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import CalendarDetail from "../ProductInfo/CalendarDetail";
-import CalendarDetailResponsive from "../ProductInfo/CalendarDetailResponsive";
 import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
 import "../../styles/Accesories/CalendarDetail.css";
 import useReservation from "../../hooks/useReservation";
 import TimePicker from 'react-time-picker';
 import emailjs from '@emailjs/browser';
-import useUserSingnUp from "../../hooks/useUserSignUp";
 import useFetchAuth from "../../hooks/useFetchAuth";
 import { isWithinInterval } from "date-fns";
-import { set } from "react-hook-form";
 
 function CardReservation(props) {
   const [date, setDate] = useState("");
@@ -202,11 +198,7 @@ function CardReservation(props) {
 
                   localStorage.setItem('date', JSON.stringify((date[0])).substring(1, 11));
                   localStorage.setItem('date2', JSON.stringify((date[1])).substring(1, 11));
-
-
                 }}
-
-
               />
               <div className="reservationCalendarButton">
                 <button className='buttonDay' onClick={clickCalendar} >Seleccionar fecha</button>
@@ -220,16 +212,11 @@ function CardReservation(props) {
                 minDate={new Date()}
                 maxDate={new Date(2023, 11, 16)}
                 tileDisabled={tileDisabled}
-
                 onChange={(date) => {
                   setDates(date)
                   localStorage.setItem('date', JSON.stringify((date[0])).substring(1, 11));
                   localStorage.setItem('date2', JSON.stringify((date[1])).substring(1, 11));
-
-
                 }}
-
-
               />
               <div className="reservationCalendarButton">
                 <button className='buttonDay' onClick={clickCalendar} >Seleccionar fecha</button>
@@ -299,9 +286,11 @@ function CardReservation(props) {
                   <span>{checkOut}</span>)}
               </div>
               <hr className="hrReservation"></hr>
-              <button className="reservationButtonConfirm" onClick={handleReservation}>
-                Confirmar reserva
-              </button>
+              <Link to="/reservation/success" >
+                <button className="reservationButtonConfirm" onClick={handleReservation}>
+                  Confirmar reserva
+                </button>
+              </Link>
             </div>
           </div>
         </div>

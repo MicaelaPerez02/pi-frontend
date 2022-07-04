@@ -48,21 +48,16 @@ function Login() {
                 )
             }
         })
-
         localStorage.removeItem("buttonReservationClick");
     }
 
     const handleLogin = (e) => {
         login({ email, password });
-
-
         e.preventDefault();
     }
 
     return (
-
         <div>
-
             {email.length < 500 ? <HeaderLogin /> : <Header username={email} />}
             <div className="componentContainer">
                 <h1 className='titleForm'>Iniciar sesión</h1>
@@ -75,7 +70,7 @@ function Login() {
                     {localStorage.getItem("buttonReservationClick") == "true" ?
                         <LoginError /> : ""}
                     <section>
-                        <h5>Usuario</h5>
+                        <h5>Email</h5>
                         <input type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </section>
                     <section className="passwordSection">
@@ -85,8 +80,8 @@ function Login() {
                             {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                         </button>
                     </section>
-                    <section className="buttonContainer">
-                        <button className="buttonSubmit" onClick={handleLogin}>Ingresar</button>
+                    <section>
+                        <input type="submit" className="buttonSubmit" value="Ingresar" onClick={handleLogin} />
                     </section>
 
                 </form>

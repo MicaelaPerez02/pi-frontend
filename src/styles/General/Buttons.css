@@ -11,6 +11,8 @@
   line-height: 19px;
 
   cursor: pointer;
+
+  margin-top: 0;
 }
 
 .navbarButton {
@@ -35,7 +37,20 @@
   background-color: var(--complementary);
 }
 
-.buttonCreateAll,
+.buttonCreateAll{
+  width: 150%;
+  height: 2.5rem;
+  border-radius: 4px;
+  background-color: var(--main-color);
+  margin: 1rem 1rem 0 0.3rem;
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+
+  transition: 0.8s;
+}
 .buttonCreate,
 .buttonDay {
   width: 40%;
@@ -77,10 +92,6 @@
 }
 
 @media screen and (min-width: 1024px){
-  .buttonCreateAll{
-    margin-left: 2rem;
-  }
-  
   .buttonCreate{
     margin-left: 25rem;
   }

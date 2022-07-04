@@ -8,6 +8,32 @@
     margin-bottom: 1rem;
 }
 
+.emptyBookingList{
+    width: 100%;
+    height: 35rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color5);
+}
+
+.bookingEmptyMessage{
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.textButton{
+    text-decoration: none;
+    color: var(--color3);
+    font-size: 1rem;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    cursor: pointer;
+  }
+
 @media screen and (min-width: 1024px){
     .bookingsContainer{
         display: flex;

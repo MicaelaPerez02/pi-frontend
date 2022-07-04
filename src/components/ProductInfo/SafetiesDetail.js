@@ -2,21 +2,18 @@ import React from 'react';
 import { BsFileEarmarkRuled } from 'react-icons/bs';
 import useFetch from '../../hooks/useFetch';
 
-function SafetiesDetail() {
-    const { data, isLoaded } = useFetch(`/safeties/allSafeties`);
-
-    const safeties = data.map((safetie, index) => {
-        if (localStorage.getItem('idProduct') == safetie.products.id) {
-            return (
-                <p>{safetie.description}</p>
-            )
-        }
-    })
-
+function SafetiesDetail(props) {
+    
     return (
         <>
-            <h3 className="rulesDetailSubtitle"><BsFileEarmarkRuled className='rulesIcon' />Salud y seguridad</h3>
-            {safeties}
+            <h3 className='detailFeatureTitle'>Salud y seguridad<hr className='hrFeatureDetail' /></h3>
+            <div className='detailFeaturesContainer'>
+                {props.safeties.map((safetie, index) => (
+                    <ul className='detailFeatureUl' key={index}>
+                        <li>{safetie.description}</li>
+                    </ul>
+                ))}
+            </div>
         </>
     )
 }

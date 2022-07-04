@@ -127,7 +127,7 @@ function Register() {
                             }
                         </section>
                     </div>
-                    <div className="sectionFormContainer">
+                    <div className="sectionFormContainerTwo">
                         <section>
                             <h5>Ciudad</h5>
                             <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" />
@@ -160,11 +160,14 @@ function Register() {
                             <button className="buttonForm" onClick={toggleBtnConfirm}>
                                 {state1 ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                             </button>
+                            {localStorage.getItem('shortPassword') === 'true' ?
+                                <p className="validationError">La contraseña debe tener más de 5 caracteres</p> : <p></p>
+                            }
                         </section>
                     </div>
                     <section className="buttonContainer">
                         <Link to="/login">
-                            <input type="submit" className="buttonSubmit" onClick={handleSignUp} />
+                            <input type="submit" className="buttonSubmit" value="Crear cuenta" onClick={handleSignUp} />
                         </Link>
                     </section>
                 </form>

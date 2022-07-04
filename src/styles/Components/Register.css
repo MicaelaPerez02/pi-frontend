@@ -13,8 +13,8 @@
   color: rgb(224, 48, 48);
 }
 
-@media screen and (min-width: 768px){
-  .buttonContainer {
-    margin-top: 2rem;
-  }
+.buttonContainer{
+  margin-left: 1.5rem;
+  margin-top: 0;
 }
+

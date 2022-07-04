@@ -27,6 +27,9 @@ function ProductDetails() {
                     features={product.features}
                     map_url={product.map_url}
                     images={product.images}
+                    safeties={product.safeties}
+                    rules={product.rules}
+                    cancellations={product.cancellations}
                 />
             )
         }

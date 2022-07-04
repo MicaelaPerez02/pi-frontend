@@ -107,16 +107,20 @@ function CardDetail(props) {
                     <div className='rulesDetailContainerFlex'>
                         <div className='rulesDetailFlex'>
                             <div className="rulesDetailOne">
-                                {/*<RulesDetails 
+                                <RulesDetails
                                     rules={props.rules}
-                                />*/}
+                                />
                             </div>
                             <div className="rulesDetailList">
-                                {/*<SafetiesDetail />*/}
+                                <SafetiesDetail 
+                                    safeties={props.safeties}
+                                />
                             </div>
                         </div>
                         <div className='rulesDetailThree'>
-                            {/* <CancelationDetail />*/}
+                            <CancelationDetail 
+                                cancellations={props.cancellations}
+                            />
                         </div>
                     </div>
                 </div>

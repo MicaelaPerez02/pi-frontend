@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { TbCirclePlus } from "react-icons/tb";
 import "../../styles/Components/ProductGenerator.css"
 import useCities from '../services/POST cities/useCities';
-import CardCities from '../Cards/CardCities';
 import useImages from '../services/Post Images/useImages';
 import useFeatures from '../services/Post Features/useFeatures';
 import GetFeatures from '../services/Getters/GetFeatures';
@@ -78,8 +78,6 @@ function ProductGeneratorCard() {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
     Products({
       address: newAddress,
       rating: newRating,
@@ -129,7 +127,9 @@ function ProductGeneratorCard() {
         <GetProducts />
         <section className='subHeader'>
           <h1>Administración</h1>
-          <GoChevronLeft className='iconArrowBack' />
+          <Link to="/">
+            <GoChevronLeft className='iconArrowBack' />
+          </Link>
         </section>
         <h2>Crear propiedad</h2>
         <form className='formCreateProduct'>
@@ -243,7 +243,9 @@ function ProductGeneratorCard() {
           <button className='buttonCreate' onClick={handleImages}>Cargar imagenes</button>
         </form>
 
-        <button className='buttonCreateAll' onClick={handleSubmit}>Crear producto</button>
+        <Link to="/product/addProduct/success">
+          <button className='buttonCreateAll' onClick={handleSubmit}>Crear producto</button>
+        </Link>
       </div>
       <Footer />
     </>

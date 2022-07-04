@@ -9,25 +9,18 @@ function ButtonsHeaderSession() {
 
     const avatarUser = data.avatar;
 
-    const icon_close = () => {
-        localStorage.clear();
-    }
-
     return (
         <div className="buttonHeaderContainer">
             <div className='navTextUser'>
-                <button className="button_session" onClick={() => { icon_close(); window.location.reload(); }}>
-                    <Link to="/"><p><FaWindowClose className='iconCloseSesion' /> </p></Link>
-                </button>
                 <DropdownMenu />
             </div>
             <div className="userOptions">
                 <p className='nameUser'> Hola, <span>{localStorage.getItem("username")}</span> </p>
             </div>
-            <div> {(avatarUser == "https://www.gravatar.com/avatar/466dcf1001d04d8e101cf4a5cc9bc41d") ?
+            {localStorage.getItem("user").length> 5? <div> {(avatarUser == "https://www.gravatar.com/avatar/466dcf1001d04d8e101cf4a5cc9bc41d") ?
                 <p className='avatarUser'> {localStorage.getItem("avatar")}</p> :
                 <img src={avatarUser} alt="img perfil" className='avatarGravatar' />}
-            </div>
+            </div> : null}
         </div>
     )
 }
