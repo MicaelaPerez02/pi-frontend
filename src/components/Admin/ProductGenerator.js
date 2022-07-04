@@ -133,84 +133,102 @@ function ProductGeneratorCard() {
         </section>
         <h2>Crear propiedad</h2>
         <form className='formCreateProduct'>
-          <section>
-            <fieldset className='fieldsetCreateProduct'>
-              <legend>Datos de la propiedad</legend>
-              <label>Nombre de la propiedad</label>
-              <input type="text" value={newTitle} onChange={e => setNewTitle(e.target.value)} />
-              <label>Dirección</label>
-              <input type="text" value={newAddress} onChange={e => setNewAddress(e.target.value)} />
-              <label>Puntación (número 1 al 5)</label>
-              <input type="text" value={newRating} onChange={e => setNewRating(e.target.value)} />
-              <label>¿A qué distancia del centro se encuentra?</label>
-              <input type="text" value={newLocation} onChange={e => setNewLocation(e.target.value)} />
-              <label>Link del mapa de API</label>
-              <input type="url" value={newMapUrl} onChange={e => setNewMapUrl(e.target.value)} />
-              <label>Link del mapa</label>
-              <input type="url" value={newWatch} onChange={e => setNewWatch(e.target.value)} />
-              <label>Link de imágen de portada</label>
-              <input type="url" value={newUrl} onChange={e => setNewUrl(e.target.value)} />
-              <label>Descripción</label>
-              <input type="text" value={newDescription} onChange={e => setNewDescription(e.target.value)} />
-            </fieldset>
+          <fieldset className='fieldsetCreateProduct'>
+            <legend>Datos de la propiedad</legend>
+            <section className='infoCreateProdContainer'>
+              <div>
+                <label>Nombre de la propiedad</label>
+                <input type="text" value={newTitle} onChange={e => setNewTitle(e.target.value)} />
+                <label>Dirección</label>
+                <input type="text" value={newAddress} onChange={e => setNewAddress(e.target.value)} />
+                <label>Puntación (Número del 1 al 5)</label>
+                <input type="text" value={newRating} onChange={e => setNewRating(e.target.value)} />
+              </div>
+              <div>
+                <label>¿A qué distancia del centro se encuentra?</label>
+                <input type="text" value={newLocation} onChange={e => setNewLocation(e.target.value)} />
+                <label>Link del mapa de API</label>
+                <input type="url" value={newMapUrl} onChange={e => setNewMapUrl(e.target.value)} />
+                <label>Link del mapa</label>
+                <input type="url" value={newWatch} onChange={e => setNewWatch(e.target.value)} />
+              </div>
+            </section>
+            <label>Link de imágen de portada</label>
+            <input type="url" value={newUrl} onChange={e => setNewUrl(e.target.value)} />
+            <label>Descripción</label>
+            <input type="text" className='descriptionInput' value={newDescription} onChange={e => setNewDescription(e.target.value)} />
+          </fieldset>
+
+          <div className='categoryAndCityContainer'>
+            <section>
+              <fieldset className='fieldsetCreateProduct'>
+                <GetCategories onChange={e => setSelectCategory(e.target.value)} />
+              </fieldset>
+            </section>
+
+            <section>
+              <fieldset className='fieldsetCreateProduct'>
+                <legend>Elegir ciudad</legend>
+                <GetCities onChange={e => setNewCity(e.target.value)} />
+                <label>Ingresar otra</label>{
+                  setNewCity === "" ? setNewCity(localStorage.getItem("cities"))
+                    :
+                    <input value={newCity} onChange={e => setNewCity(e.target.value)} name="text" placeholder="Ingrese la ciudad de la propiedad" />
+                }
+              </fieldset>
+            </section>
+          </div>
+
+          <section className='featureCreateContainer'>
+            <div className='featureCheckboxContainer'>
+              <GetFeatures />
+            </div>
+            <div className='featureInfoCreateContainer'>
+              <fieldset className='fieldsetCreateProduct'>
+                <legend>Crea tu propia característica</legend>
+                <section className='featureCreateSection'>
+                  <div className='featureCreateInfoDiv'>
+                    <label>Ingresar descripción</label>
+                    <input type="text" value={newFeature} onChange={e => setNewFeature(e.target.value)} name="text" placeholder="Nombre" />
+                    <label>Ingresar nombre de Icono</label>
+                    <input type="text" value={newIcon} onChange={e => setNewIcon(e.target.value)} name="text" placeholder="Icono" />
+                  </div>
+                  <div className="featureCreateIcon">
+                    <TbCirclePlus className='iconPlusProduct' />
+                  </div>
+                </section>
+              </fieldset>
+            </div>
           </section>
 
-          <section className='selectCategoriesNewProd'>
-            <fieldset className='fieldsetCreateProduct'>
-              <GetCategories onChange={e => setSelectCategory(e.target.value)} />
-            </fieldset>
-          </section>
+          <div className='createRulesSafetiesCancellContainer'>
+            <section>
+              <fieldset className='fieldsetCreateProduct'>
+                <GetRules />
+                <legend>Elegir reglas</legend>
+                <label>Crea tu propia regla</label>
+                <input type="text" value={newRule} onChange={e => setNewRule(e.target.value)} name="text" placeholder="Escriba aquí" />
+              </fieldset>
+            </section>
 
-          <section>
-            <fieldset className='fieldsetCreateProduct'>
-              <legend>Elegir ciudad</legend>
-              <GetCities onChange={e => setNewCity(e.target.value)} />
-              <label>Ingresar otra</label>{
-                setNewCity === "" ? setNewCity(localStorage.getItem("cities"))
-                  :
-                  <input value={newCity} onChange={e => setNewCity(e.target.value)} name="text" placeholder="Ingrese la ciudad de la propiedad" />
-              }
-            </fieldset>
-          </section>
+            <section>
+              <fieldset className='fieldsetCreateProduct'>
+                <GetSafeties />
+                <legend>Elegir información sobre salud y seguridad</legend>
+                <label>Crea tu información de salud y seguridad</label>
+                <input type="text" value={newSafety} onChange={e => setNewSafety(e.target.value)} name="text" placeholder="Escriba aquí" />
+              </fieldset>
+            </section>
 
-          <section>
-            <GetFeatures />
-            <fieldset className='fieldsetCreateProduct'>
-              <legend>Crea tu propia característica</legend>
-              <label>Ingresar descripción</label>
-              <input type="text" value={newFeature} onChange={e => setNewFeature(e.target.value)} name="text" placeholder="Nombre" />
-              <label>Ingresar nombre de Icono</label>
-              <input type="text" value={newIcon} onChange={e => setNewIcon(e.target.value)} name="text" placeholder="Icono" />
-            </fieldset>
-          </section>
-
-          <section>
-            <fieldset className='fieldsetCreateProduct'>
-              <GetRules />
-              <legend>Elegir reglas</legend>
-              <label>Crea tu propia regla</label>
-              <input type="text" value={newRule} onChange={e => setNewRule(e.target.value)} name="text" placeholder="Escriba aquí" />
-            </fieldset>
-          </section>
-
-          <section>
-            <fieldset className='fieldsetCreateProduct'>
-              <GetSafeties />
-              <legend>Elegir información sobre salud y seguridad</legend>
-              <label>Crea tu información de salud y seguridad</label>
-              <input type="text" value={newSafety} onChange={e => setNewSafety(e.target.value)} name="text" placeholder="Escriba aquí" />
-            </fieldset>
-          </section>
-
-          <section>
-            <fieldset className='fieldsetCreateProduct'>
-              <GetCancellations />
-              <legend>Elegir políticas de cancelación </legend>
-              <label>Crea tu propia política de cancelación</label>
-              <input type="text" value={newCancellation} onChange={e => setNewCancellation(e.target.value)} name="text" placeholder="Escriba aquí" />
-            </fieldset>
-          </section>
-
+            <section>
+              <fieldset className='fieldsetCreateProduct'>
+                <GetCancellations />
+                <legend>Elegir políticas de cancelación </legend>
+                <label>Crea tu propia política de cancelación</label>
+                <input type="text" value={newCancellation} onChange={e => setNewCancellation(e.target.value)} name="text" placeholder="Escriba aquí" />
+              </fieldset>
+            </section>
+          </div>
           <button className='buttonCreate' onClick={postElements}>Guardar información</button>
         </form>
 
@@ -225,7 +243,7 @@ function ProductGeneratorCard() {
           <button className='buttonCreate' onClick={handleImages}>Cargar imagenes</button>
         </form>
 
-        <button className='buttonCreate' onClick={handleSubmit}>Crear producto</button>
+        <button className='buttonCreateAll' onClick={handleSubmit}>Crear producto</button>
       </div>
       <Footer />
     </>

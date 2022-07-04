@@ -19,7 +19,7 @@ function GetCities(props) {
 
     return (
         <>
-            <legend className="inputTitleProdGenerator">Ciudades</legend>
+            <label className="inputTitleProdGenerator">Ciudades</label>
             <select id="Cities" name="cities" className='selectCreateProduct form_select'>
                 <option hidden >Selecciona la ciudad</option>
                 <option disabled >Selecciona la ciudad</option>
