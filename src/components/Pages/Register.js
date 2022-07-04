@@ -1,18 +1,18 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
 import { FaWindowClose } from "react-icons/fa";
 import HeaderRegister from "../Header/HeaderRegister";
+import emailjs from '@emailjs/browser';
+import useUserSingnUp from "../../hooks/useUserSignUp";
+import validator from 'validator'
+import PasswordValidator from "password-validator";
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
 import "../../styles/General/Icons.css";
 import "../../styles/General/Elements.css";
 import "../../styles/General/Buttons.css";
-import emailjs from '@emailjs/browser';
-import useUserSingnUp from "../../hooks/useUserSignUp";
-import validator from 'validator'
-import PasswordValidator from "password-validator";
 
 function Register() {
     let navigate = useNavigate();
@@ -53,14 +53,14 @@ function Register() {
         if (name === "") {
             setErrorName("El nombre es requerido")
         } else if (name.length < 4) {
-            setErrorName("El nombre debe tener mas de 4 caracteres")
+            setErrorName("El nombre debe tener mas de 4 letras")
         } else {
             setErrorName("")
         }
         if (surname === "") {
             setErrorSurname("El apellido es requerido")
         } else if (surname.length < 4) {
-            setErrorSurname("El apellido debe tener mas de 4 caracteres")
+            setErrorSurname("El apellido debe tener mas de 4 letras")
         } else {
             setErrorSurname("")
         }
@@ -72,19 +72,19 @@ function Register() {
         if (city === "") {
             setErrorCity("Ingrese una ciudad valida")
         } else if (city.length < 3) {
-            setErrorCity("La ciudad tiene que tener mas de 3 caracteres")
+            setErrorCity("La ciudad debe que tener mas de 3 letras")
         } else {
             setErrorCity("")
         }
         if (passwordValidated) {
             setErrorPassword("")
         } else if (password.length < 8) {
-            setErrorPassword("La contraseña debe tener al menos 8 caracteres y un numero")
+            setErrorPassword("La contraseña debe tener al menos 8 letras y un número")
         }
         if (passwordConfirmValidated) {
             setErrorConfirm("")
         } else if (passwordConfirm.length < 8) {
-            setErrorConfirm("La contraseña debe tener al menos 8 caracteres y un numero")
+            setErrorConfirm("La contraseña debe tener al menos 8 letras y un número")
         }
         if (password !== passwordConfirm) {
             setErrorConfirm("Las contraseñas no coinciden")
@@ -145,27 +145,22 @@ function Register() {
 
     const onChangeName = (e) => {
         setName(e.target.value);
-
     }
 
     const onChangeSurname = (e) => {
         setSurname(e.target.value);
-
     }
 
     const onChangeCity = (e) => {
         setCity(e.target.value)
-
     }
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value);
-
     }
 
     const onChangePassword = (e) => {
         setPassword(e.target.value);
-
     }
     const onChangePasswordConfirm = (e) => {
         setPasswordConfirm(e.target.value);
@@ -186,85 +181,91 @@ function Register() {
     }
 
     return (
-        <div className="registerContainer">
+        <>
             <HeaderRegister />
-            <div className="componentContainer">
-                <h1 className="titleForm">Crear Cuenta</h1>
-                <form className="formContainer" id="formRegister">
+            <div className="formRegisterContainer">
+                <section>
+                    <h1 className="titleFormRegister">Crear Cuenta</h1>
                     <Link to='/'>
                         <FaWindowClose className="iconClose" />
                     </Link>
-                    <div className="sectionFormContainer">
-                        <section>
-                            <h5>Nombre</h5>
-                            <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" name="name" />
-                            {name === "" || name.length < 4 ?
-                                <p className="validationError">{errorName}</p> : <p></p>
-                            }
+                </section>
+
+                <form className="formContainerRegister" id="formRegister">
+                    <fieldset>
+
+                        <div className="sectionFormContainerRegister">
+                            <section>
+                                <label>Nombre</label>
+                                <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" name="name" />
+                                {name === "" || name.length < 4 ?
+                                    <p className="validationError">{errorName}</p> : <p></p>}
+                            </section>
+                            <section>
+                                <label>Apellido</label>
+                                <input value={surname} onChange={onChangeSurname} type="text" placeholder="Ingrese su apellido" required />
+                                {surname === "" || surname.length < 4 ?
+                                    <p className="validationError">{errorSurname}</p> : <p></p>
+                                }
+                            </section>
+                        </div>
+                        <div className="sectionFlexContaineRegister">
+                            <section>
+                                <label>Ciudad</label>
+                                <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" />
+                                {city === "" || city.length < 3 ?
+                                    <p className="validationError">{errorCity}</p> : <p></p>
+                                }
+                            </section>
+                            <section>
+                                <label>Email</label>
+                                <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" name="email" />
+                                {emailVerified ? <p></p> : <p className="validationError">{errorEmail}</p>
+                                }
+                            </section>
+                            <section className="passwordSectionRegister">
+                                <label>Contraseña</label>
+                                <input type={state ? "text" : "password"} name="password" placeholder="Ingrese una contraseña" value={password} onChange={onChangePassword} />
+                                <button className="buttonFormRegister" onClick={toggleBtn}>
+                                    {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
+                                </button>
+                                {passwordValidated ?
+                                    <p></p> : <p className="validationError">{errorPassword}</p>
+                                }
+                            </section>
+                            <section className="passwordSectionRegister">
+                                <label>Confirmar contraseña </label>
+                                <input type={state1 ? "text" : "password"} placeholder="Confirme la contraseña" value={passwordConfirm} onChange={onChangePasswordConfirm} />
+                                <button className="buttonFormRegister" onClick={toggleBtnConfirm}>
+                                    {state1 ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
+                                </button>
+                                {passwordConfirmValidated || password !== passwordConfirm ?
+                                    <p></p> : <p className="validationError">{errorPassword}</p>
+                                }
+                                {password === passwordConfirm ?
+                                    <p></p> : <p className="validationError">Las contraseñas no coinciden</p>
+                                }
+                            </section>
+                        </div>
+
+                        <section className="buttonCreateAccount">
+                            <Link to="/login">
+                                <input type="submit" className="buttonSubmitRegister" value="Crear cuenta" onClick={handleSignUp} />
+                            </Link>
                         </section>
-                        <section>
-                            <h5>Apellido</h5>
-                            <input value={surname} onChange={onChangeSurname} type="text" placeholder="Ingrese su apellido" required />
-                            {surname === "" || surname.length < 4 ?
-                                <p className="validationError">{errorSurname}</p> : <p></p>
-                            }
-                        </section>
-                    </div>
-                    <div className="sectionFormContainer">
-                        <section>
-                            <h5>Ciudad</h5>
-                            <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" />
-                            {city === "" || city.length < 3 ?
-                                <p className="validationError">{errorCity}</p> : <p></p>
-                            }
-                        </section>
-                    </div>
-                    <div className="sectionFormContainerTwo">
-                        <section>
-                            <h5>Email</h5>
-                            <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" name="email" />
-                            {emailVerified ? <p></p> : <p className="validationError">{errorEmail}</p>
-                            }
-                        </section>
-                        <section>
-                            <h5>Contraseña</h5>
-                            <input type={state ? "text" : "password"} name="password" placeholder="Ingrese una contraseña" value={password} onChange={onChangePassword} />
-                            <button className="buttonForm" onClick={toggleBtn}>
-                                {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
-                            </button>
-                            {passwordValidated ?
-                                <p></p> : <p className="validationError">{errorPassword}</p>
-                            }
-                        </section>
-                        <section>
-                            <h5>Confirmar contraseña </h5>
-                            <input type={state1 ? "text" : "password"} placeholder="Confirme la contraseña" value={passwordConfirm} onChange={onChangePasswordConfirm} />
-                            <button className="buttonForm" onClick={toggleBtnConfirm}>
-                                {state1 ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
-                            </button>
-                            {passwordConfirmValidated || password !== passwordConfirm ?
-                                <p></p> : <p className="validationError">{errorPassword}</p>
-                            }
-                            {password === passwordConfirm ?
-                                <p></p> : <p className="validationError">Las contrseñas no coinciden</p>
-                            }
-                        </section>
-                    </div>
-                    <section className="buttonContainer">
-                        <Link to="/login">
-                            <input type="submit" className="buttonSubmit" onClick={handleSignUp} />
-                        </Link>
-                    </section>
+
+                    </fieldset>
                 </form>
-                <section className="createAcountContainer">
+
+                <section className="createAccountContainer">
                     <p> ¿Ya tienes una cuenta? </p>
                     <Link to="/login">
-                        <p className="spanAccountColor">Inicia sesión</p>
+                        <button className="spanAccountColor">Inicia sesión</button>
                     </Link>
                 </section>
             </div>
             <Footer />
-        </div>
+        </>
     );
 }
 

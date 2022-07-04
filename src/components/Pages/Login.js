@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
@@ -17,7 +17,6 @@ import "../../styles/General/Buttons.css";
 import useFetchAuth from "../../hooks/useFetchAuth";
 
 function Login() {
-
     const { data, isLoaded } = useFetchAuth(`/users/allUsers`);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -56,17 +55,20 @@ function Login() {
         e.preventDefault();
     }
 
+    useEffect(() =>{
+
+    })
+
     return (
         <div>
             {email.length < 500 ? <HeaderLogin /> : <Header username={email} />}
-            <div className="componentContainer">
-                <h1 className='titleForm'>Iniciar sesión</h1>
+            <div className="componentContainerLogin">
+                <h1 className='titleFormLogin'>Iniciar sesión</h1>
 
                 <form className="formContainer" onSubmit={validationLogin}>
                     <Link to={'/'}>
                         <FaWindowClose onClick={clearButtonClick} className="iconClose" />
                     </Link>
-
                     {localStorage.getItem("buttonReservationClick") == "true" ?
                         <LoginError /> : ""}
                     <section>
@@ -83,9 +85,8 @@ function Login() {
                     <section>
                         <input type="submit" className="buttonSubmit" value="Ingresar" onClick={handleLogin} />
                     </section>
-
                 </form>
-                <section className="createAcountContainer">
+                <section className="loginAccountContainer">
                     <p> ¿Aún no tienes cuenta? </p>
                     <Link to="/register">
                         <p className="spanAccountColor">Registrate</p>
@@ -95,9 +96,7 @@ function Login() {
             <section className="footerContainer">
                 <Footer />
             </section>
-
         </div>
-
     );
 }
 

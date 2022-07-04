@@ -1,20 +1,98 @@
-.registerContainer {
+.formRegisterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   background-color: var(--color5);
-  padding-bottom: 6rem;
+
+  padding: 8rem 0 6rem 0;
 }
 
-.sectionFormContainerTwo {
-  padding-left: 1.5rem;
+.titleFormRegister {
+  color: var(--complementary);
+  align-items: center;
+
+  padding-bottom: 2rem;
+}
+
+.formContainerRegister {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+.formContainerRegister fieldset {
+  border: none;
 }
 
 .validationError {
   font-size: 0.8rem;
-  margin: 0.2rem 0 0 0.2rem;
+  margin: 0.2rem 0 1rem 0.2rem;
   color: rgb(224, 48, 48);
 }
 
-.buttonContainer{
-  margin-left: 1.5rem;
-  margin-top: 0;
+.passwordSectionRegister input{
+  margin: 1rem 0 -1.5rem 0;
 }
 
+.buttonFormRegister {
+  background-color: transparent;
+  position: relative;
+  top: -0.5rem;
+  left: 80%;
+}
+
+.buttonSubmitRegister {
+  height: 40px;
+  width: 300px;
+
+  border-radius: 4px;
+  background-color: var(--complementary);
+  color: var(--light);
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+
+  cursor: pointer;
+
+  margin-top: 2rem;
+}
+
+.createAccountContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .sectionFormContainerRegister {
+    display: flex;
+  }
+
+  .sectionFormContainerRegister section {
+    margin: 0.5rem 0.5rem;
+  }
+
+  .sectionFormContainerRegister input {
+    width: 218px;
+
+    border: 1px solid var(--color4);
+    transition: 0.4s;
+
+    font-size: 0.85rem;
+  }
+
+  .sectionFlexContaineRegister {
+    margin-left: 0.5rem;
+  }
+
+  .buttonFormRegister {
+    left: 85%;
+  }
+
+  .buttonCreateAccount{
+    margin-left: 5rem;
+  }
+}

@@ -1,8 +1,25 @@
+.componentContainerLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color5);
+
+  padding: 8rem 0 6rem 0;
+}
+
+.titleFormLogin{
+  color: var(--complementary);
+  align-items: center;
+
+  padding-bottom: 2rem;
+}
+
 .passwordSection {
   padding-top: 1.5rem;
 }
 
-.createAcountContainer {
+.loginAccountContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +34,7 @@
 
 /**************************LOGIN RESERVATION ERROR***********************************/
 
-.loginErrorContainer{
+.loginErrorContainer {
   width: 70%;
 
   background-color: var(--complementary-soft);
@@ -26,7 +43,7 @@
   border-radius: 4px;
 }
 
-.loginErrorFlex{
+.loginErrorFlex {
   width: 100%;
 
   display: flex;
@@ -34,11 +51,11 @@
   justify-content: center;
 }
 
-.loginErrorFlex p{
+.loginErrorFlex p {
   width: 65%;
   color: var(--complementary);
   font-weight: 700;
-}   
+}
 
 @media screen and (min-width: 768px) {
   .footerContainer {
