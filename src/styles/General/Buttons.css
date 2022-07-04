@@ -38,7 +38,7 @@
 }
 
 .buttonCreateAll{
-  width: 150%;
+  width:40%;
   height: 2.5rem;
   border-radius: 4px;
   background-color: var(--main-color);
@@ -88,11 +88,5 @@
   .navbarButton:hover,
   .navbarButton:focus {
     box-shadow: inset 14rem 0 0 0 var(--complementary);
-  }
-}
-
-@media screen and (min-width: 1024px){
-  .buttonCreate{
-    margin-left: 25rem;
   }
 }

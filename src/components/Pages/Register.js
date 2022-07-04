@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
@@ -11,6 +11,8 @@ import "../../styles/General/Elements.css";
 import "../../styles/General/Buttons.css";
 import emailjs from '@emailjs/browser';
 import useUserSingnUp from "../../hooks/useUserSignUp";
+import validator from 'validator'
+import PasswordValidator from "password-validator";
 
 function Register() {
     let navigate = useNavigate();
@@ -20,8 +22,105 @@ function Register() {
     const [surname, setSurname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [passwordConfirm, setPasswordConfirm] = useState("");
     const [city, setCity] = useState("");
     const { SignUp, isSigned } = useUserSingnUp();
+
+    /* -------------------------------------------------------------------------- */
+    /*                                 VALIDACION                                 */
+    /* -------------------------------------------------------------------------- */
+    const [errorName, setErrorName] = useState("")
+    const [errorSurname, setErrorSurname] = useState("")
+    const [errorEmail, setErrorEmail] = useState("")
+    const [errorPassword, setErrorPassword] = useState("")
+    const [errorCity, setErrorCity] = useState("")
+    const [errorConfirm, setErrorConfirm] = useState("")
+
+
+    const emailVerified = validator.isEmail(email)
+
+    let schema = new PasswordValidator();
+    schema
+        .is().min(8)                                    // Minimum length 8
+        .is().max(100)                                 // Maximum length 100
+        .has().letters()                               // Must have letters
+        .has().digits()                                // Must have digits
+        .is().not().oneOf(['Passw0rd', 'Password123']); // Blacklist these values
+    let passwordValidated = schema.validate(password);
+    let passwordConfirmValidated = schema.validate(passwordConfirm);
+
+    useEffect(() => {
+        if (name === "") {
+            setErrorName("El nombre es requerido")
+        } else if (name.length < 4) {
+            setErrorName("El nombre debe tener mas de 4 caracteres")
+        } else {
+            setErrorName("")
+        }
+        if (surname === "") {
+            setErrorSurname("El apellido es requerido")
+        } else if (surname.length < 4) {
+            setErrorSurname("El apellido debe tener mas de 4 caracteres")
+        } else {
+            setErrorSurname("")
+        }
+        if (emailVerified) {
+            setErrorEmail("")
+        } else {
+            setErrorEmail("Ingrese un email valido")
+        }
+        if (city === "") {
+            setErrorCity("Ingrese una ciudad valida")
+        } else if (city.length < 3) {
+            setErrorCity("La ciudad tiene que tener mas de 3 caracteres")
+        } else {
+            setErrorCity("")
+        }
+        if (passwordValidated) {
+            setErrorPassword("")
+        } else if (password.length < 8) {
+            setErrorPassword("La contraseña debe tener al menos 8 caracteres y un numero")
+        }
+        if (passwordConfirmValidated) {
+            setErrorConfirm("")
+        } else if (passwordConfirm.length < 8) {
+            setErrorConfirm("La contraseña debe tener al menos 8 caracteres y un numero")
+        }
+        if (password !== passwordConfirm) {
+            setErrorConfirm("Las contraseñas no coinciden")
+        }
+    }, [emailVerified, city, password, passwordConfirm, name, surname])
+
+    const validateData = () => {
+        let isValid = true;
+        if (name === "" || name.length < 4) {
+            isValid = false;
+        }
+        if (surname === "" || surname.length < 4) {
+            isValid = false;
+        }
+        if (!emailVerified) {
+            isValid = false;
+        }
+        if (city === "" || city.length < 3) {
+            isValid = false;
+        }
+        if (!passwordValidated) {
+            isValid = false;
+        }
+        if (!passwordConfirmValidated) {
+            isValid = false;
+        }
+        if (password !== passwordConfirm) {
+            isValid = false;
+        }
+        return isValid;
+    }
+
+
+    /* -------------------------------------------------------------------------- */
+    /*                               FIN VALIDACION                               */
+    /* -------------------------------------------------------------------------- */
 
 
     const sendEmail = (e) => {
@@ -31,6 +130,7 @@ function Register() {
             }, (error) => {
                 console.log(error.text);
             });
+
     };
 
     const toggleBtn = (e) => {
@@ -45,61 +145,44 @@ function Register() {
 
     const onChangeName = (e) => {
         setName(e.target.value);
-        if (name.length < 2) {
-            localStorage.setItem("shortName", true);
-        } else {
-            localStorage.setItem("shortName", false);
-        };
+
     }
 
     const onChangeSurname = (e) => {
         setSurname(e.target.value);
-        if (surname.length < 2) {
-            localStorage.setItem("shortSurname", true);
-        } else {
-            localStorage.setItem("shortSurname", false);
-        };
+
     }
 
     const onChangeCity = (e) => {
-        setCity(e.target.value);
-        if (city.length < 2) {
-            localStorage.setItem("shortCity", true);
-        } else {
-            localStorage.setItem("shortCity", false);
-        };
+        setCity(e.target.value)
+
     }
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value);
-        if (email.length < 3) {
-            localStorage.setItem("shortEmail", true);
-        } else {
-            localStorage.setItem("shortEmail", false);
-        };
+
     }
 
     const onChangePassword = (e) => {
         setPassword(e.target.value);
-        if (password.length < 3) {
-            localStorage.setItem("shortPassword", true);
-        } else {
-            localStorage.setItem("shortPassword", false);
-        };
+
+    }
+    const onChangePasswordConfirm = (e) => {
+        setPasswordConfirm(e.target.value);
     }
 
     const handleSignUp = (e) => {
         e.preventDefault();
-
-        localStorage.setItem("password", JSON.stringify(password));
-
-        if ((name && surname && email && password && city) !== "") {
-            SignUp({ name, surname, email, password, city });
-            sendEmail();
-            navigate("/login");
-        } else {
+        if (!validateData()) {
             alert("Por favor, complete todos los campos.")
+            console.log("no valido");
+            return;
         }
+        console.log("sign up creado correctamente");
+        localStorage.setItem("password", JSON.stringify(password));
+        SignUp({ name, surname, email, password, city });
+        sendEmail();
+        navigate("/login");
     }
 
     return (
@@ -115,24 +198,24 @@ function Register() {
                         <section>
                             <h5>Nombre</h5>
                             <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" name="name" />
-                            {localStorage.getItem('shortName') === 'true' ?
-                                <p className="validationError">El nombre debe tener mínimo 3 caracteres</p> : <p></p>
+                            {name === "" || name.length < 4 ?
+                                <p className="validationError">{errorName}</p> : <p></p>
                             }
                         </section>
                         <section>
                             <h5>Apellido</h5>
                             <input value={surname} onChange={onChangeSurname} type="text" placeholder="Ingrese su apellido" required />
-                            {localStorage.getItem('shortSurname') === 'true' ?
-                                <p className="validationError">El apellido debe tener mínimo 3 caracteres</p> : <p></p>
+                            {surname === "" || surname.length < 4 ?
+                                <p className="validationError">{errorSurname}</p> : <p></p>
                             }
                         </section>
                     </div>
-                    <div className="sectionFormContainerTwo">
+                    <div className="sectionFormContainer">
                         <section>
                             <h5>Ciudad</h5>
                             <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" />
-                            {localStorage.getItem('shortCity') === 'true' ?
-                                <p className="validationError">Ingrese una ciudad válida</p> : <p></p>
+                            {city === "" || city.length < 3 ?
+                                <p className="validationError">{errorCity}</p> : <p></p>
                             }
                         </section>
                     </div>
@@ -140,8 +223,7 @@ function Register() {
                         <section>
                             <h5>Email</h5>
                             <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" name="email" />
-                            {localStorage.getItem('shortEmail') === 'true' ?
-                                <p className="validationError">Ingrese un email válido</p> : <p></p>
+                            {emailVerified ? <p></p> : <p className="validationError">{errorEmail}</p>
                             }
                         </section>
                         <section>
@@ -150,24 +232,27 @@ function Register() {
                             <button className="buttonForm" onClick={toggleBtn}>
                                 {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                             </button>
-                            {localStorage.getItem('shortPassword') === 'true' ?
-                                <p className="validationError">La contraseña debe tener más de 5 caracteres</p> : <p></p>
+                            {passwordValidated ?
+                                <p></p> : <p className="validationError">{errorPassword}</p>
                             }
                         </section>
                         <section>
                             <h5>Confirmar contraseña </h5>
-                            <input type={state1 ? "text" : "password"} placeholder="Confirme la contraseña" />
+                            <input type={state1 ? "text" : "password"} placeholder="Confirme la contraseña" value={passwordConfirm} onChange={onChangePasswordConfirm} />
                             <button className="buttonForm" onClick={toggleBtnConfirm}>
                                 {state1 ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                             </button>
-                            {localStorage.getItem('shortPassword') === 'true' ?
-                                <p className="validationError">La contraseña debe tener más de 5 caracteres</p> : <p></p>
+                            {passwordConfirmValidated || password !== passwordConfirm ?
+                                <p></p> : <p className="validationError">{errorPassword}</p>
+                            }
+                            {password === passwordConfirm ?
+                                <p></p> : <p className="validationError">Las contrseñas no coinciden</p>
                             }
                         </section>
                     </div>
                     <section className="buttonContainer">
                         <Link to="/login">
-                            <input type="submit" className="buttonSubmit" value="Crear cuenta" onClick={handleSignUp} />
+                            <input type="submit" className="buttonSubmit" onClick={handleSignUp} />
                         </Link>
                     </section>
                 </form>

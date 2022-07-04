@@ -26,17 +26,23 @@ function MyBookings() {
     }
   });
 
+  let bookingsUser = [];
 
+  const bookingsListFilter = data.map(bookings => {
+    if (bookings.users.id === JSON.parse(localStorage.getItem("userId")))
+      bookingsUser.push(bookings.id);
+  })
 
+  console.log(bookingsUser.length);
   return (
     <>
       <Header />
       <div className="bookingsContainer">
         <h3 className="title bookingTitle">Mis reservas</h3>
-        {bookingsList[0] === undefined ?
+        {bookingsUser.length > 0 ?
+          <section> {bookingsList} </section> :
           <section className="emptyBookingList"> <MyBookingsEmpty /> </section>
-          :
-          <section> {bookingsList} </section>}
+        }
       </div>
       <Footer />
     </>
