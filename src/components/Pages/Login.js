@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
@@ -55,48 +55,52 @@ function Login() {
         e.preventDefault();
     }
 
-    useEffect(() =>{
-
-    })
-
     return (
-        <div>
+        <>
             {email.length < 500 ? <HeaderLogin /> : <Header username={email} />}
             <div className="componentContainerLogin">
-                <h1 className='titleFormLogin'>Iniciar sesión</h1>
-
-                <form className="formContainer" onSubmit={validationLogin}>
+                <section>
+                    <h1 className='titleFormLogin'>Iniciar sesión</h1>
                     <Link to={'/'}>
                         <FaWindowClose onClick={clearButtonClick} className="iconClose" />
                     </Link>
-                    {localStorage.getItem("buttonReservationClick") == "true" ?
-                        <LoginError /> : ""}
-                    <section>
-                        <h5>Email</h5>
-                        <input type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </section>
-                    <section className="passwordSection">
-                        <h5>Contraseña</h5>
-                        <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
-                        <button className="buttonForm" onClick={toggleBtn}>
-                            {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
-                        </button>
-                    </section>
-                    <section>
-                        <input type="submit" className="buttonSubmit" value="Ingresar" onClick={handleLogin} />
-                    </section>
+                </section>
+
+                <form className="formContainerLogin" onSubmit={validationLogin}>
+                    <fieldset>
+                        {localStorage.getItem("buttonReservationClick") == "true" ?
+                            <LoginError /> : ""}
+
+                        <section>
+                            <label>Email</label>
+                            <input type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        </section>
+
+                        <section className="passwordSection">
+                            <label>Contraseña</label>
+                            <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <button className="buttonFormLogin" onClick={toggleBtn}>
+                                {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
+                            </button>
+                        </section>
+
+                        <section className="buttonAccessAccount">
+                            <input type="submit" className="buttonSubmitLogin" value="Ingresar" onClick={handleLogin} />
+                        </section>
+
+                    </fieldset>
                 </form>
+
                 <section className="loginAccountContainer">
                     <p> ¿Aún no tienes cuenta? </p>
                     <Link to="/register">
-                        <p className="spanAccountColor">Registrate</p>
+                        <p className="spanAccountColorLogin">Registrate</p>
                     </Link>
                 </section>
+
             </div>
-            <section className="footerContainer">
-                <Footer />
-            </section>
-        </div>
+            <Footer />
+        </>
     );
 }
 

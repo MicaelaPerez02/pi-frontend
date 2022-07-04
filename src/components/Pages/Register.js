@@ -260,7 +260,7 @@ function Register() {
                 <section className="createAccountContainer">
                     <p> ¿Ya tienes una cuenta? </p>
                     <Link to="/login">
-                        <button className="spanAccountColor">Inicia sesión</button>
+                        <button className="spanAccountColorRegister">Inicia sesión</button>
                     </Link>
                 </section>
             </div>
