@@ -5,11 +5,12 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import Categories from '../Cards/Categories';
-import useFetchAuth from '../../hooks/useFetchAuth';
+import useFetch from '../../hooks/useFetch';
 
 function FilterCities() {
     const { citiesId } = useParams();
-    const { data, isLoaded } = useFetchAuth(`/products/cities/${citiesId}`);
+    let cityId = localStorage.getItem('cities');
+    const { data, isLoaded } = useFetch(`/products/cities/${cityId}`);
 
     const navigate = useNavigate();
 
