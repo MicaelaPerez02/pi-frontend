@@ -38,3 +38,4 @@ In the project directory, you can run:
 
 ### `npm i react-responsive-modal --force`
 
+### ` npm install react-laag`

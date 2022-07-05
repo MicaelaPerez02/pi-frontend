@@ -112,9 +112,9 @@ div.navTextUser {
 
 .avatarGravatar{
   border-radius: 100%;
-  width: 65%;
+  width: 90%;
 
-  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .avatarUser {
@@ -144,8 +144,6 @@ p.avatarUser {
   display: flex;
   flex-direction: column;
   color: var(--light);
-
-  margin: 0 0.5rem 0 0;
 
   font-size: 1rem;
   font-weight: 700;

@@ -11,7 +11,7 @@ function ButtonSidebarSession() {
     }
 
     return (
-        <li className="navTextUser">
+        <ul className="navTextUser">
             {
                 localStorage.getItem("username") === "admin@gmail.com" ?
                     <li className="nav-text">
@@ -19,7 +19,7 @@ function ButtonSidebarSession() {
                             <button> Generar producto </button>
                         </Link>
                     </li> :
-                    <ul>
+                    <>
                         <li className="nav-text">
                             <Link to="/myBookings">
                                 <button>Mis reservas</button>
@@ -28,10 +28,10 @@ function ButtonSidebarSession() {
                         <li className="nav-text">
                             <button>Mis favoritos</button>
                         </li>
-                    </ul>
+                    </>
             }
             <p className='closeSesion'> ¿Deseas <span className='spanCloseSesion' onClick={() => { icon_close(); window.location.reload(); }}>Cerrar Sesión</span>? </p>
-        </li>
+        </ul>
     )
 }
 
