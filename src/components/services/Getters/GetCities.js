@@ -6,7 +6,7 @@ function GetCities(props) {
     const cityList =
         data.map((city, index) => {
             return (
-                <option value={city.id} onChange={props.onChange} key={index}>{city.title}</option>
+                <option value={city.id} key={index}>{city.name} {city.country}</option>
             )
         })
 
@@ -17,10 +17,14 @@ function GetCities(props) {
     const maxId = Math.max(...ids);
     const maxIdPlus = maxId + 1;
 
+    function handleChange(event) {
+        localStorage.setItem('cityId', event.target.value);
+    }
+
     return (
         <>
             <label className="inputTitleProdGenerator">Ciudades</label>
-            <select id="Cities" name="cities" className='selectCreateProduct form_select'>
+            <select id="Cities" name="cities" className='selectCreateProduct form_select' onChange={handleChange}>
                 <option hidden >Selecciona la ciudad</option>
                 <option disabled >Selecciona la ciudad</option>
                 {cityList}

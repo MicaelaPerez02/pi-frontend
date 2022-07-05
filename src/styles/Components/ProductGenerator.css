@@ -135,6 +135,10 @@
   margin: 0.2rem 0 0 0.5rem;
 }
 
+.checked-item {
+  text-decoration: line-through;
+}
+
 @media screen and (min-width: 768px) {
   .infoCreateProdContainer {
     display: flex;
@@ -238,9 +242,9 @@
   .createRulesSafetiesCancellContainer {
     padding-bottom: 1rem;
   }
-  .createRulesSafetiesCancellContainer section{
+  .createRulesSafetiesCancellContainer section {
     width: 30.5%;
-  }  
+  }
 
   .formCreateImages {
     width: 90%;

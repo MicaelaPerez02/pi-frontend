@@ -19,10 +19,14 @@ function GetRules() {
     const maxId = Math.max(...ids);
     const maxIdPlus = maxId + 1;
 
+    function handleChange(event) {
+        localStorage.setItem('rulesId', event.target.value);
+    }
+
     return (
         <>
             <label>Selecciona las regla</label>
-            <select id="Reglas" key={key++} className='selectCreateProduct form_select'>
+            <select id="Reglas" key={key++} className='selectCreateProduct form_select' onChange={handleChange}>
                 {rulesList}
                 {localStorage.setItem('maxIdRules', maxIdPlus)}
             </select>

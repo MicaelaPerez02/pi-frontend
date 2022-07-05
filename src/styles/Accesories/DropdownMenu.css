@@ -1,4 +1,8 @@
 /* Position and sizing of burger button */
+.szh-menu{
+  min-width: 0;
+}
+
 .szh-menu-button{
   width: 3rem;
   height: 1.5rem;

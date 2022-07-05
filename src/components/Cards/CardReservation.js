@@ -22,7 +22,7 @@ function CardReservation(props) {
   const navigate = useNavigate();
   const [name, setName] = useState(localStorage.getItem("name"));
   const [surname, setSurname] = useState(localStorage.getItem("surname"));
-  const [city, setCity] = useState(localStorage.getItem("city"));
+  const [city, setCity] = useState(localStorage.getItem("cityUser"));
   const [email, setEmail] = useState(localStorage.getItem("username"));
   const { Reservation } = useReservation();
   const checkIn = window.localStorage.getItem("date");
@@ -35,7 +35,6 @@ function CardReservation(props) {
   const productId = localStorage.getItem("idProduct");
   const { data } = useFetchAuth(`/bookings/findBookingByProduct/${productId}`);
   const [dates, setDates] = useState()
-
 
   const bookingsDates = data.map((bookings, index) => {
     return (
@@ -57,7 +56,6 @@ function CardReservation(props) {
       return isWithinRanges(date, bookingsDates);
     }
   }
-
 
   /* -------------------------------------------------------------------------- */
   /*                               fin calendario                               */
@@ -197,10 +195,8 @@ function CardReservation(props) {
                 minDate={new Date()}
                 maxDate={new Date(2023, 11, 16)}
                 tileDisabled={tileDisabled}
-
                 onChange={(date) => {
                   setDates(date)
-
                   localStorage.setItem('date', JSON.stringify((date[0])).substring(1, 11));
                   localStorage.setItem('date2', JSON.stringify((date[1])).substring(1, 11));
                 }}
@@ -253,11 +249,13 @@ function CardReservation(props) {
           <p className="reservationCardTitle">Detalle de la reserva</p>
           <div className="reservationCardInfo">
             <div className="reservationCardImage">
-              <img
-                src={props.images}
-                alt={props.title}
-                className="reservationCardImage"
-              />
+              
+                <img
+                  src={props.images}
+                  alt={props.title}
+                  className="reservationCardImage"
+                />
+             
             </div>
             <div className="reservationCardInfoFlex">
               <p className="reservationCardCategory">{props.categories}</p>

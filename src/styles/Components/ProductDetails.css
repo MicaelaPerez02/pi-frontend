@@ -103,6 +103,12 @@
   padding: 0 0.5rem 0 0.5rem;
 }
 
+.detailSocialMedia{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .detailIconMap {
   margin-right: 0.5rem;
   color: var(--complementary);

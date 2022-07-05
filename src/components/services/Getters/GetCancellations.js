@@ -19,10 +19,14 @@ function GetCancellations() {
     const maxId = Math.max(...ids);
     const maxIdPlus = maxId + 1;
 
+    function handleChange(event) {
+        localStorage.setItem('cancellationId', event.target.value);
+    }
+
     return (
         <>
             <label>Selecciona las políticas de cancelación</label>
-            <select id="Politicas de cancelación" key={key++} className='selectCreateProduct form_select'>
+            <select id="Politicas de cancelación" key={key++} className='selectCreateProduct form_select' onChange={handleChange}>
                 {cancellationsList}
                 {localStorage.setItem("maxIdCancellation", maxIdPlus)}
             </select>

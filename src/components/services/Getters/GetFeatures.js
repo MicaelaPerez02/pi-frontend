@@ -1,20 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useResolvedPath } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 
 function GetFeatures() {
     const { data, isLoaded } = useFetch(`/features/allFeatures`);
-    const [feature, setFeature] = useState(false);
+    const [checked, setChecked] = useState([]);
 
-    const selectFeature = () => {
-        setFeature(prevState => !prevState);
-    }
+    // Add/Remove checked item from list
+    const handleCheck = (event) => {
+        let updatedList = [...checked];
+        if (event.target.checked) {
+            updatedList = [...checked + event.target.value];
+        } else {
+            updatedList.splice(checked.indexOf(event.target.value), 9);
+        }
+        setChecked(updatedList);
+
+        localStorage.setItem('featurePost', updatedList);
+    };
+
+    const isChecked = (item) =>
+        checked.includes(item) ? "checked-item" : "not-checked-item";
 
     const featuresList =
         data.map((feature, index) => {
             return (
                 <section className='infoCheckbox'>
                     <label>{feature.description}</label>
-                    <input type="checkbox" value={feature.description} id={feature.description} key={index} className="inputCheckbok" />
+                    <input type="checkbox" value={feature.id} id={feature.description} key={index} className={isChecked(feature)} onChange={handleCheck} />
                 </section>
             )
         })

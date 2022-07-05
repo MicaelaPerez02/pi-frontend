@@ -1,7 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import CardProduct from '../Cards/CardProduct';
-import useFetch from '../../hooks/useFetch';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
@@ -10,7 +9,13 @@ import useFetchAuth from '../../hooks/useFetchAuth';
 
 function FilterCities() {
     const { citiesId } = useParams();
-    const { data, isLoaded } = useFetchAuth(`/cities/findCity/2`);
+    const { data, isLoaded } = useFetchAuth(`/products/cities/${citiesId}`);
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/cities/" + localStorage.getItem("cities"));
+    }
 
     const citySelected = data.map((products, index) => {
         return (
@@ -35,10 +40,10 @@ function FilterCities() {
             <Navbar />
             <Categories />
             <div className='productContainer' key={citiesId}>
-                <p className='productInfoTitle'>Recomendaciones</p>
+                <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardItems'>
                     <div className='productCardBox'>
-                        {isLoaded ? citySelected : <div>Cargando...</div>}
+                        {isLoaded ? <div onClick={handleClick}>{citySelected} </div> : <div>Cargando...</div>}
                     </div>
                 </div>
             </div>

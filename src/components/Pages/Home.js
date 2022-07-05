@@ -15,7 +15,7 @@ function Home() {
                 localStorage.setItem("userId", users.id), 
                 localStorage.setItem("name", users.name),
                 localStorage.setItem("surname", users.surname),
-                localStorage.setItem("city", users.city)
+                localStorage.setItem("cityUser", users.city)
             )
         }
     })

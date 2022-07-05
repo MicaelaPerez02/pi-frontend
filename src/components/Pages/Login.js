@@ -37,16 +37,6 @@ function Login() {
         e.preventDefault();
         login({ email, password });
 
-        data.map((users) => {
-            if (users.email == localStorage.getItem("username")) {
-                return (
-                    localStorage.setItem("userId", users.id),
-                    localStorage.setItem("name", users.name),
-                    localStorage.setItem("surname", users.surname),
-                    localStorage.setItem("city", users.city)
-                )
-            }
-        })
         localStorage.removeItem("buttonReservationClick");
     }
 

@@ -36,4 +36,5 @@ In the project directory, you can run:
 
 ### `npm install react-time-picker`
 
-### `npm i react-medium-image-zoom`
+### `npm i react-responsive-modal --force`
+

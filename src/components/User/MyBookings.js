@@ -40,7 +40,7 @@ function MyBookings() {
       <div className="bookingsContainer">
         <h3 className="title bookingTitle">Mis reservas</h3>
         {bookingsUser.length > 0 ?
-          <section> {bookingsList} </section> :
+          <section>{bookingsList}</section> :
           <section className="emptyBookingList"> <MyBookingsEmpty /> </section>
         }
       </div>

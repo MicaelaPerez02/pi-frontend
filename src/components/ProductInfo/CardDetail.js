@@ -49,6 +49,9 @@ function CardDetail(props) {
                         <p className='detailReview'>{props.review}</p>
                     </div>
                 </div>
+                <div className="detailSocialMedia">
+                    <ShareSocialMedia />
+                </div>
             </div>
             <div className='detailCarrouselContainer'>
                 <CarrouselProduct className='detailCarrousel'
@@ -64,7 +67,7 @@ function CardDetail(props) {
                 />
             </div>
             <div className='detailDescription'>
-                <ShareSocialMedia />
+
                 <p className='detailDescriptionSlogan'>{props.title}</p>
                 <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
             </div>
@@ -112,13 +115,13 @@ function CardDetail(props) {
                                 />
                             </div>
                             <div className="rulesDetailList">
-                                <SafetiesDetail 
+                                <SafetiesDetail
                                     safeties={props.safeties}
                                 />
                             </div>
                         </div>
                         <div className='rulesDetailThree'>
-                            <CancelationDetail 
+                            <CancelationDetail
                                 cancellations={props.cancellations}
                             />
                         </div>

@@ -1,8 +1,22 @@
-.shareSocialMediaContainer{
-    display: flex;
-    justify-content: center;
+.shareSocialMediaContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .shareSocialMediaContainer div {
-    padding: 0 1rem 0.5rem 0;
+  padding: 0 1rem 0.5rem 0;
+}
+
+.menuItemSocialMedia {
+  padding: -1rem;
+  min-width: none;
+}
+
+.buttonShareSocialMedia {
+  margin-top: -0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.buttonShareSocialMedia:active {
+  background-color: none;
 }

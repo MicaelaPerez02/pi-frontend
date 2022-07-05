@@ -34,8 +34,8 @@ function ProductGeneratorCard() {
   const [newFeature, setNewFeature] = useState("");
   const [newIcon, setNewIcon] = useState("");
   const [newAddress, setNewAddress] = useState("");
-  const [newRating, setNewRating] = useState();
-  const [newReview, setReview] = useState(9);
+  const [newRating, setNewRating] = useState("");
+  const [newReview, setReview] = useState("");
   const [newLocation, setNewLocation] = useState("");
   const [newMapUrl, setNewMapUrl] = useState("");
   const [newWatch, setNewWatch] = useState("");
@@ -43,8 +43,9 @@ function ProductGeneratorCard() {
   const [newDescription, setNewDescription] = useState("");
   const [newUrl, setNewUrl] = useState("");
   const [newImagesUrl, setNewImagesUrl] = useState("");
-  const [selectCategories, setSelectCategory] = useState("");
+  const [selectCategories, setSelectCategory] = useState();
 
+  let categorySel = JSON.parse(localStorage.getItem("categoryId"));
   let maxIdFeatures = JSON.parse(localStorage.getItem("maxIdFeatures"));
   let maxIdCities = JSON.parse(localStorage.getItem("maxIdCities"));
   let maxIdCancellation = JSON.parse(localStorage.getItem("maxIdCancellation"));
@@ -61,7 +62,7 @@ function ProductGeneratorCard() {
 
     Features({
       "icon": newIcon,
-      "description": newFeature,
+      "description": newFeature
     })
 
     Cancellations({
@@ -69,7 +70,7 @@ function ProductGeneratorCard() {
     })
 
     Rules({
-      "description": newRule,
+      "description": newRule
     })
 
     Safeties({
@@ -80,8 +81,8 @@ function ProductGeneratorCard() {
   const handleSubmit = (e) => {
     Products({
       address: newAddress,
-      rating: newRating,
-      review: 3,
+      rating: 5,
+      review: newReview,
       location: newLocation,
       map_url: newMapUrl,
       watch: newWatch,
@@ -89,7 +90,7 @@ function ProductGeneratorCard() {
       description: newDescription,
       url: newUrl,
       categories: {
-        id: 3
+        id: categorySel
       },
       features: [{
         "id": maxIdFeatures
@@ -162,19 +163,18 @@ function ProductGeneratorCard() {
           <div className='categoryAndCityContainer'>
             <section>
               <fieldset className='fieldsetCreateProduct'>
-                <GetCategories onChange={e => setSelectCategory(e.target.value)} />
+                <GetCategories />
               </fieldset>
             </section>
 
             <section>
               <fieldset className='fieldsetCreateProduct'>
                 <legend>Elegir ciudad</legend>
-                <GetCities onChange={e => setNewCity(e.target.value)} />
-                <label>Ingresar otra</label>{
-                  setNewCity === "" ? setNewCity(localStorage.getItem("cities"))
-                    :
-                    <input value={newCity} onChange={e => setNewCity(e.target.value)} name="text" placeholder="Ingrese la ciudad de la propiedad" />
-                }
+                <GetCities />
+                <label>Ingresar otra</label>
+                <input value={newCity} onChange={e => setNewCity(e.target.value)} name="text" placeholder="Ingrese la ciudad de la propiedad" />
+                {newCity === null || newCity === "" ? maxIdCities = JSON.parse(localStorage.getItem('cityId')) : console.log(newCity)}
+                {/*newCity === null || newCity === "" ? setNewCity(0) : console.log(maxIdCities)*/}
               </fieldset>
             </section>
           </div>
@@ -182,6 +182,8 @@ function ProductGeneratorCard() {
           <section className='featureCreateContainer'>
             <div className='featureCheckboxContainer'>
               <GetFeatures />
+              {newFeature === null || newFeature === "" ? maxIdFeatures = JSON.parse(localStorage.getItem('featurePost')) : console.log(newFeature)}
+              {/*newFeature === null || newFeature === "" ? setNewFeature("ESTO SE DEBERIA EVITAR") : console.log(maxIdFeatures) */}
             </div>
             <div className='featureInfoCreateContainer'>
               <fieldset className='fieldsetCreateProduct'>
@@ -208,6 +210,8 @@ function ProductGeneratorCard() {
                 <legend>Elegir reglas</legend>
                 <label>Crea tu propia regla</label>
                 <input type="text" value={newRule} onChange={e => setNewRule(e.target.value)} name="text" placeholder="Escriba aquí" />
+                {newRule === null || newRule === "" ? maxIdRules = JSON.parse(localStorage.getItem('rulesId')) : console.log(newRule)}
+                {/*newRule === null || newRule === "" ? setNewRule(0) : console.log(maxIdRules)*/}
               </fieldset>
             </section>
 
@@ -217,6 +221,8 @@ function ProductGeneratorCard() {
                 <legend>Elegir información sobre salud y seguridad</legend>
                 <label>Crea tu información de salud y seguridad</label>
                 <input type="text" value={newSafety} onChange={e => setNewSafety(e.target.value)} name="text" placeholder="Escriba aquí" />
+                {newSafety === null || newSafety === "" ? maxIdSafeties = JSON.parse(localStorage.getItem('safetiesId')) : console.log(newSafety)}
+                {/*newSafety === null || newSafety === "" ? setNewSafety?(0) : console.log(maxIdSafeties)*/}
               </fieldset>
             </section>
 
@@ -226,6 +232,8 @@ function ProductGeneratorCard() {
                 <legend>Elegir políticas de cancelación </legend>
                 <label>Crea tu propia política de cancelación</label>
                 <input type="text" value={newCancellation} onChange={e => setNewCancellation(e.target.value)} name="text" placeholder="Escriba aquí" />
+                {newCancellation === null || newCancellation === "" ? maxIdCancellation = JSON.parse(localStorage.getItem('cancellationId')) : console.log(newCancellation)}
+                {/*newCancellation === null || newCancellation === "" ? setNewCancellation(0) : console.log(maxIdCancellation)*/}
               </fieldset>
             </section>
           </div>

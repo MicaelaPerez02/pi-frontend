@@ -5,6 +5,7 @@ import CardCategory from './CardCategory';
 
 function Categories(props) {
     const { data, isLoaded } = useFetch(`/categories/allCategories`);
+
     const categoryList = data.map((category) => {
         return (
             <CardCategory
@@ -18,7 +19,7 @@ function Categories(props) {
 
     return (
         <>
-            <h1 className='categoryP'>Buscar por tipo de alojamiento</h1>
+            <h2 className='categoryP'>Buscar por tipo de alojamiento</h2>
             <div key={props.id} className="categoryItem">
                 {isLoaded ? categoryList : <p>Cargando...</p>}
             </div>

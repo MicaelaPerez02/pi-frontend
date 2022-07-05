@@ -72,6 +72,11 @@
   color: var(--color3);
 }
 
+.iconShareSocialMedia{
+  font-size: 1.5rem;
+  margin-right: 2.5rem;
+}
+
 .iconArrowBack {
   font-size: 2rem;
   text-decoration: "none" !important;

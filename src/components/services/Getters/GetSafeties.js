@@ -19,10 +19,14 @@ function GetSafeties() {
     const maxId = Math.max(...ids);
     const maxIdPlus = maxId + 1;
 
+    function handleChange(event) {
+        localStorage.setItem('safetiesId', event.target.value);
+    }
+
     return (
         <>
             <label>Selecciona la información sobre salud y seguridad</label>
-            <select id="Salud y seguridad" key={key++} className='selectCreateProduct form_select'>
+            <select id="Salud y seguridad" key={key++} className='selectCreateProduct form_select' onChange={handleChange}>
                 {safetiesList}
                 {localStorage.setItem('maxIdSafeties', maxIdPlus)}
             </select>
