@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoChevronLeft } from "react-icons/go";
+import { BsFillSuitHeartFill } from "react-icons/bs";
 import "../../styles/Components/ProductDetails.css";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -51,6 +52,7 @@ function CardDetail(props) {
                 </div>
                 <div className="detailSocialMedia">
                     <ShareSocialMedia />
+                    <BsFillSuitHeartFill className='iconLikeCardDetail' />
                 </div>
             </div>
             <div className='detailCarrouselContainer'>

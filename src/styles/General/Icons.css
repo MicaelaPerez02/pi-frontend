@@ -77,6 +77,14 @@
   margin-right: 2.5rem;
 }
 
+.iconLikeCardDetail{
+  font-size: 1.5rem;
+
+  color: var(--light);
+  margin-bottom: 0.7rem;
+  margin-left: -0.5rem;
+}
+
 .iconArrowBack {
   font-size: 2rem;
   text-decoration: "none" !important;
