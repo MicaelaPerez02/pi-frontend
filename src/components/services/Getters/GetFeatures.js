@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useResolvedPath } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
 import useFetch from '../../../hooks/useFetch';
+import ContextCheckbox from '../checkboxContext';
 
-function GetFeatures() {
+function GetFeatures(props) {
     const { data, isLoaded } = useFetch(`/features/allFeatures`);
     const [checked, setChecked] = useState([]);
-
+    const { checkboxArray, setCheckboxArray } = useContext(ContextCheckbox);
+    let { index, setIndex } = useState(0);
     // Add/Remove checked item from list
-    const handleCheck = (event) => {
+
+    let handleCheck = (event) => {
         let updatedList = [...checked];
         if (event.target.checked) {
-            updatedList = [...checked + event.target.value];
+            updatedList = [...checked, + event.target.value];
         } else {
-            updatedList.splice(checked.indexOf(event.target.value), 9);
+            updatedList.splice(checked.indexOf(event.target.value), 1);
         }
         setChecked(updatedList);
 
-        localStorage.setItem('featurePost', updatedList);
+        props.funct(updatedList);
     };
+
 
     const isChecked = (item) =>
         checked.includes(item) ? "checked-item" : "not-checked-item";
@@ -39,6 +42,7 @@ function GetFeatures() {
     const maxId = Math.max(...ids);
     const maxIdPlus = maxId + 1;
 
+
     return (
         <fieldset className='fieldsetCreateProductCheckbox'>
             <legend>Características</legend>
@@ -48,4 +52,4 @@ function GetFeatures() {
     )
 }
 
-export default GetFeatures
+export default GetFeatures;

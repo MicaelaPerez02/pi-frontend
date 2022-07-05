@@ -4,15 +4,12 @@ import LoginAuthService from "../components/services/LoginAuthService";
 
 export default function useUser(){
     const {jwt, setJWT } = useContext(Context);
-  
 
     const login = useCallback(({email, password}) => {
         LoginAuthService({email, password})
         .then (jwt => {
             localStorage.setItem("user", jwt);
-            setJWT(jwt);
-
-      
+            setJWT(jwt);    
         })
         .catch(err => {
             console.error(err);
@@ -22,10 +19,7 @@ export default function useUser(){
     const logOut = useCallback (()=>{
         setJWT(null);
         localStorage.setItem("user",null);
-    }, [setJWT])
-   
-
-    
+    }, [setJWT])    
 
     return {
         login,

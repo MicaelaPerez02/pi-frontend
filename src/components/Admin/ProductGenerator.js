@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -19,6 +19,7 @@ import GetCancellations from '../services/Getters/GetCancellations';
 import GetCities from '../services/Getters/GetCities';
 import GetProducts from '../services/Getters/GetProducts';
 import { GoChevronLeft } from "react-icons/go";
+
 function ProductGeneratorCard() {
   const { Cities } = useCities();
   const { Images } = useImages();
@@ -44,6 +45,34 @@ function ProductGeneratorCard() {
   const [newUrl, setNewUrl] = useState("");
   const [newImagesUrl, setNewImagesUrl] = useState("");
   const [selectCategories, setSelectCategory] = useState();
+
+  let checkboxArray = [];
+  let feature0 = 0;
+  let feature1 = 0;
+  let feature2 = 0;
+  let feature3 = 0;
+  let feature4 = 0;
+  let feature5 = 0;
+  let feature6 = 0;
+  let feature7 = 0;
+
+  const pull_data = (data) => {
+    checkboxArray.push(data);
+
+    checkboxArray.map((id, index) => {
+      feature0 = id[0];
+      feature1 = id[1];
+      feature2 = id[2];
+      feature3 = id[3];
+      feature4 = id[4];
+      feature5 = id[5];
+      feature6 = id[6];
+      feature7 = id[7];
+
+      console.log(feature0);
+      localStorage.setItem('feature0', feature0);
+    })
+  }
 
   let categorySel = JSON.parse(localStorage.getItem("categoryId"));
   let maxIdFeatures = JSON.parse(localStorage.getItem("maxIdFeatures"));
@@ -181,8 +210,8 @@ function ProductGeneratorCard() {
 
           <section className='featureCreateContainer'>
             <div className='featureCheckboxContainer'>
-              <GetFeatures />
-              {newFeature === null || newFeature === "" ? maxIdFeatures = JSON.parse(localStorage.getItem('featurePost')) : console.log(newFeature)}
+              <GetFeatures funct={pull_data} />
+              {newFeature === null || newFeature === "" ? maxIdFeatures = JSON.parse(localStorage.getItem('feature0')) : console.log(newFeature)}
               {/*newFeature === null || newFeature === "" ? setNewFeature("ESTO SE DEBERIA EVITAR") : console.log(maxIdFeatures) */}
             </div>
             <div className='featureInfoCreateContainer'>
