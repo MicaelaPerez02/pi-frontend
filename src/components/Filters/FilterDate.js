@@ -1,26 +1,24 @@
 import React from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
+import { useParams, useNavigate } from 'react-router-dom';
+import CardProduct from '../Cards/CardProduct';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import DateRangePicker from 'rsuite/DateRangePicker';
-import "../../styles/Components/Navbar.css";
-import '../../styles/Accesories/DatePickerLibrary.css';
-import '../../styles/General/Buttons.css';
-import 'rsuite/dist/rsuite.min.css';
-import CardCities from '../Cards/CardCities';
-import CardProduct from '../Cards/CardProduct';
 import Categories from '../Cards/Categories';
+import useFetch from '../../hooks/useFetch';
 
-function FilterCityAndDate() {
+function FilterDate() {
     let datePicker = localStorage.getItem('datePicker').substring(1, 11);
     let datePicker2 = localStorage.getItem('datePicker2').substring(1, 11);
-    let cityId = localStorage.getItem('cities');
 
-    const { data, isLoaded } = useFetch(`/products/productsAvailable/${datePicker}/${datePicker2}/${cityId}`);
+    const { data, isLoaded } = useFetch(`/products/productsAvailable/${datePicker}/${datePicker2}/`);
 
-    const cityAndDateSelected = data.map((products, index) => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/products/" + datePicker + datePicker2);
+    }
+
+    const productOnDateSelected = data.map((products, index) => {
         return (
             <CardProduct
                 key={index}
@@ -38,21 +36,21 @@ function FilterCityAndDate() {
     });
 
     return (
-        <div className='filterCategoryContainer'>
+        <>
             <Header />
             <Navbar />
             <Categories />
             <div className='productContainer'>
-                <p className='productInfoTitle'>Recomendaciones</p>
+                <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardItems'>
                     <div className='productCardBox'>
-                        {isLoaded ? cityAndDateSelected : <div>Cargando...</div>}
+                        {isLoaded ? <div onClick={handleClick}>{productOnDateSelected} </div> : <div>Cargando...</div>}
                     </div>
                 </div>
             </div>
             <Footer />
-        </div>
+        </>
     )
 }
 
-export default FilterCityAndDate;
+export default FilterDate;

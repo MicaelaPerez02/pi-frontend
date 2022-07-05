@@ -16,6 +16,7 @@ import MyBookings from './components/User/MyBookings';
 import ProductGenerator from './components/Admin/ProductGenerator';
 import ProductGeneratorSuccess from './components/Admin/ProductGeneratorSuccess';
 import MyFavorites from './components/User/MyFavorites';
+import FilterDate from './components/Filters/FilterDate';
 
 function App() {
   const progress = new ProgressBar({
@@ -45,6 +46,7 @@ function App() {
           <Route path="/category/:categoryId" element={< FilterCategory />} />
           <Route path="/cities/:citiesId" element={< FilterCities />} />
           <Route path="/products/:dateCityId" element={< FilterCityAndDate />} />
+          <Route path="/products/:dateId" element={< FilterDate />} />
           <Route path="/product/:productId/reservation" element={< Reservation />} />
           <Route path='/reservation/success' element={< ReservationSuccess />} />
           <Route path="/myFavorites" element={< MyFavorites />} />
