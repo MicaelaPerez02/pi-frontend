@@ -32,6 +32,8 @@
     --num-cols: 2;
     --row-height: 200px;
 
+    width: 50%;
+
     box-sizing: border-box;
 
     display: grid;
@@ -39,18 +41,37 @@
     grid-auto-rows: 12rem;
 
     background-color: var(--color5);
-    margin-left: 1.5rem;
-    margin-right: 0.5rem;
+
+    margin: 0rem 0.5rem 0 1.5rem;
   }
 
-  .detailImage > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
+  .detailImage div img{
+    height: 12rem;
+    margin-right: 0.5rem;
     padding: 0.5rem;
-    border-radius: 10px;
+  }
+
+  .__react_modal_image__medium_img{
+    width: 80%;
+    height: 35rem !important;
   }
 }
 
 
+@media screen and (min-width: 1440px){
+
+  .imagesContainerGrid{
+    width: 60%;
+  }
+
+  .detailImage div img{
+    height: 12rem;
+    width: 25rem;
+    object-fit: cover;
+  }
+
+  .__react_modal_image__medium_img{
+    width: 65% !important;
+    height: 38rem !important;
+  }
+}

@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { TbCirclePlus } from "react-icons/tb";
 import "../../styles/Components/ProductGenerator.css"
-import useCities from '../services/POST cities/useCities';
+import useCities from '../services/Post Cities/useCities';
 import useImages from '../services/Post Images/useImages';
 import useFeatures from '../services/Post Features/useFeatures';
 import GetFeatures from '../services/Getters/GetFeatures';

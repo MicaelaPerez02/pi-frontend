@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ImageGaleryDetail from './ImageGaleryDetail';
 import useFetch from '../../hooks/useFetch';
 import "../../styles/Accesories/ImageGaleryDetail.css";
@@ -8,7 +8,6 @@ import FrontImage from './FrontImage';
 
 function Images() {
     const { data, isLoaded } = useFetch(`/images/allImages`);
-
     const { productId } = useParams();
 
     const imagesList = data.map((img) => {
