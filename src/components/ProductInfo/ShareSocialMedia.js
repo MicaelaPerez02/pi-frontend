@@ -5,30 +5,29 @@ import "../../styles/Accesories/ShareSocialMedia.css";
 import { useParams } from 'react-router-dom';
 
 function ShareSocialMedia() {
-    //const{productId} = useParams();
-    //const shareUrl = `http://localhost:3000/product/${productId}`;
+    const { productId } = useParams();
 
-    const shareUrl = "http://homu.online/"
+    const shareUrl = `http://homu.online/product/${productId}`
 
     return (
         <div className="shareSocialMediaContainer">
             <div>
-                <FacebookShareButton url={shareUrl} title="Estás en el lugar correcto">
+                <FacebookShareButton url={shareUrl} title="¿Qué te parece este lugar?">
                     <BsFacebook className="iconShare" />
                 </FacebookShareButton>
             </div>
             <div>
-                <TwitterShareButton url={shareUrl} title="Estás en el lugar correcto">
+                <TwitterShareButton url={shareUrl} title="¿Qué te parece este lugar?">
                     <BsTwitter className="iconShare" />
                 </TwitterShareButton>
             </div>
             <div>
-                <WhatsappShareButton url={shareUrl} title="Estás en el lugar correcto">
+                <WhatsappShareButton url={shareUrl} title="¿Qué te parece este lugar?">
                     <BsWhatsapp className="iconShare" />
                 </WhatsappShareButton>
             </div>
             <div>
-                <LinkedinShareButton url={shareUrl}>
+                <LinkedinShareButton url={shareUrl} title="¿Qué te parece este lugar?">
                     <BsLinkedin className="iconShare" />
                 </LinkedinShareButton>
             </div>

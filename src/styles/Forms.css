@@ -1,0 +1,85 @@
+.componentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color5);
+
+  padding-top: 9rem;
+}
+
+.titleForm {
+  color: var(--complementary);
+  align-items: center;
+
+  padding-bottom: 2rem;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+  padding: 0.7rem;
+  border: 1px solid var(--color4);
+  transition: 0.4s;
+
+  font-size: 0.85rem;
+}
+
+input:hover {
+  border: 2px solid var(--complementary-soft);
+}
+
+.buttonForm {
+  background-color: transparent;
+  position: relative;
+  top: 0.43rem;
+  right: 10%;
+}
+
+.spanAccountColor {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 14px;
+  text-align: center;
+
+  color: var(--complementary);
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  input {
+    height: 40px;
+    width: 448px;
+    left: 0px;
+    top: 0px;
+    border-radius: 5px;
+  }
+
+  .sectionFormContainer {
+    display: flex;
+  }
+
+  .sectionFormContainer section{
+    margin:0.5rem 0.5rem;
+  }
+
+  .sectionFormContainer input {
+    width: 218px;
+
+    border: 1px solid var(--color4);
+    transition: 0.4s;
+
+    font-size: 0.85rem;
+  }
+
+  .sectionFormContainerTwo {
+    margin-top: 0.5rem;
+  }
+}

@@ -27,11 +27,11 @@ function GetFeatures() {
     const maxIdPlus = maxId + 1;
 
     return (
-            <fieldset className='fieldsetCreateProductCheckbox'>
-                <legend>Características</legend>
-                {featuresList}
-                {localStorage.setItem("maxIdFeatures", maxIdPlus)}
-            </fieldset>
+        <fieldset className='fieldsetCreateProductCheckbox'>
+            <legend>Características</legend>
+            {featuresList}
+            {localStorage.setItem("maxIdFeatures", maxIdPlus)}
+        </fieldset>
     )
 }
 

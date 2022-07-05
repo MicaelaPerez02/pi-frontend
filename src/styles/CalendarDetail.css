@@ -1,0 +1,91 @@
+.react-calendar__month-view__days__day--weekend {
+  color: var(--selected-day-color) !important;
+}
+
+.react-calendar__tile--active {
+  background-color: var(--complementary) !important;
+}
+
+.react-calendar__tile--hasActive {
+  background-color: var(--complementary) !important;
+}
+
+.react-calendar__navigation__arrow,
+.react-calendar__navigation__next2-button {
+  color: var(--complementary) !important;
+}
+
+.react-calendar {
+  border-radius: 0.5rem !important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
+  padding: 1rem;
+
+  width: 90%;
+  margin-left: 5%;
+}
+
+.reservationCalendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem 0 0 0;
+  margin-bottom: 2rem;
+}
+
+.reservationCalendarOne{
+  display: flex;
+  flex-direction: column;
+}
+
+.reservationCalendarButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reservationCalendarComponentDouble {
+  display: none;
+}
+
+.reservationTitleCalendar {
+  align-self: flex-start;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2rem;
+}
+
+.buttonSelectDay,
+.buttonRemoveDay {
+  width: 40%;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  background-color: var(--main-color);
+  margin: 1rem 1rem 0 0.3rem;
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+
+  transition: 0.8s;
+}
+
+
+.buttonSelectDay:hover,
+.buttonRemoveDay:hover {
+  background-color: var(--complementary);
+}
+
+
+@media screen and (min-width: 768px) {
+  .reservationCalendarOne {
+    display: none;
+  }
+
+  .reservationCalendarComponentDouble {
+    display: block;
+  }
+}

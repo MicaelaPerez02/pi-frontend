@@ -1,0 +1,48 @@
+@media screen and (min-width: 1024px) {
+
+  .detailImageGalery {
+    --gap: 1rem;
+    --num-cols: 3;
+    --row-height: 280px;
+
+    box-sizing: border-box;
+    padding: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+
+    gap: var(--gap);
+
+    background-color: var(--color5);
+  }
+
+  .detailImage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 0.3rem;
+  }
+
+  .detailImageVerMas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--selected-day-color);
+    color: var(--light);
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    transition: 0.5s;
+
+    cursor: pointer;
+  }
+
+  .detailImageVerMas:hover{
+      filter: blur(4px);
+  }
+
+
+}

@@ -17,12 +17,12 @@ function Categories(props) {
     })
 
     return (
-        <div className='categoryContainer'>
-            <p className='categoryP'>Buscar por tipo de alojamiento</p>
+        <>
+            <h1 className='categoryP'>Buscar por tipo de alojamiento</h1>
             <div key={props.id} className="categoryItem">
                 {isLoaded ? categoryList : <p>Cargando...</p>}
             </div>
-        </div>
+        </>
     )
 }
 

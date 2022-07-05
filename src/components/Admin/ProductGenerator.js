@@ -232,8 +232,8 @@ function ProductGeneratorCard() {
           <button className='buttonCreate' onClick={postElements}>Guardar información</button>
         </form>
 
-       {/*} <Link to="/product/addProduct/success"> */}
-          <button className='buttonCreateAll' onClick={handleSubmit}>Crear producto</button>
+        {/*} <Link to="/product/addProduct/success"> */}
+        <button className='buttonCreateAll' onClick={handleSubmit}>Crear producto</button>
         {/*</Link> */}
 
         <form className='formCreateImages'>

@@ -1,5 +1,4 @@
 import React from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Slide } from 'react-slideshow-image';
 import useFetch from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
