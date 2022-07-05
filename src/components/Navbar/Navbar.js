@@ -20,8 +20,8 @@ function Navbar(props) {
             <h2 className="title">Buscar ofertas en hoteles, casas y mucho más</h2>
             <section className='navbarElementsContainer'>
                 <CardCities key={props.id} />
-                <DateRangePicker placeholder="Seleccione el rango de fechas" className='datePickerDesktop' format='dd-MM-yyyy' />
-                <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='datePickerMobile' />
+                <DateRangePicker aria-placeholder="Seleccione el rango de fechas" className='datePickerDesktop' format='dd-MM-yyyy' />
+                <DateRangePicker aria-placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='datePickerMobile' />
                 <section className="navbarButtonContainer">
                     <Link to={"/cities/" + localStorage.getItem("cities")} >
                         <button className='navbarButton' onClick={handleClick}>Buscar</button>
