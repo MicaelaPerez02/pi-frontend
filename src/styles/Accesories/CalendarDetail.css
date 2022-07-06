@@ -1,18 +1,18 @@
 .react-calendar__month-view__days__day--weekend {
-  color: var(--selected-day-color) !important;
+  color: var(--color3) !important;
 }
 
 .react-calendar__tile--active {
-  background-color: var(--complementary) !important;
+  background-color: var(--selected-day-color) !important;
 }
 
 .react-calendar__tile--hasActive {
-  background-color: var(--complementary) !important;
+  background-color: var(--selected-day-color) !important;
 }
 
 .react-calendar__navigation__arrow,
 .react-calendar__navigation__next2-button {
-  color: var(--complementary) !important;
+  color: var(--color3) !important;
 }
 
 .react-calendar {

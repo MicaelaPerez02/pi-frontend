@@ -46,6 +46,7 @@ function Sidebar(props) {
 
             <div className="navbar">
                 <Link to="" className='menu-bars'>
+                    <p className='hidden'>Icono cerrar menú hamburguesa</p>
                     <FaBars onClick={showSidebar} className='icon_menu' />
                 </Link>
                 {props.buttonLogin !== localStorage.getItem("username") ? (<ButtonsHeader />) : (

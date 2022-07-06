@@ -52,6 +52,7 @@ function Login() {
                 <section>
                     <h1 className='titleFormLogin'>Iniciar sesión</h1>
                     <Link to={'/'}>
+                        <p className='hidden'>Icono cerrar sesión</p>
                         <FaWindowClose onClick={clearButtonClick} className="iconClose" />
                     </Link>
                 </section>
@@ -61,14 +62,21 @@ function Login() {
                         {localStorage.getItem("buttonReservationClick") == "true" ?
                             <LoginError /> : ""}
                         <section>
-                            <label>Email</label>
-                            <input type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <label for="Email">Email</label>
+                            <input id="Email" type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </section>
                         <section className="passwordSection">
-                            <label>Contraseña</label>
-                            <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <label for="Password">Contraseña</label>
+                            <input id="Password" type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <button className="buttonFormLogin" onClick={toggleBtn}>
-                                {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
+                                {state ? <>
+                                    <p className="hidden">Boton mostrar contraseña</p>
+                                    <AiOutlineEye className="iconEyeBlind" />
+                                </> :
+                                    <>
+                                        <p className="hidden">Boton ocultar contraseña</p>
+                                        <AiOutlineEyeInvisible className="iconEyeBlind" />
+                                    </>}
                             </button>
                         </section>
                         <section className="buttonAccessAccount">

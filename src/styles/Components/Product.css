@@ -145,8 +145,10 @@
 
 .productMoreInfo {
   cursor: pointer;
-  color: var(--complementary);
+  color: var(--color3);
   cursor: pointer;
+  font-weight: 700;
+  font-style: italic;
   margin-left: 0.1rem;
 }
 

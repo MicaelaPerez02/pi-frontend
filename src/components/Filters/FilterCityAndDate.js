@@ -1,15 +1,12 @@
 import React from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import DateRangePicker from 'rsuite/DateRangePicker';
 import "../../styles/Components/Navbar.css";
 import '../../styles/Accesories/DatePickerLibrary.css';
 import '../../styles/General/Buttons.css';
 import 'rsuite/dist/rsuite.min.css';
-import CardCities from '../Cards/CardCities';
 import CardProduct from '../Cards/CardProduct';
 import Categories from '../Cards/Categories';
 

@@ -188,6 +188,7 @@ function Register() {
                 <section>
                     <h1 className="titleFormRegister">Crear Cuenta</h1>
                     <Link to='/'>
+                        <p className="hidden">Icono cerrar página de registro</p>
                         <FaWindowClose className="iconClose" />
                     </Link>
                 </section>
@@ -196,14 +197,14 @@ function Register() {
                     <fieldset>
                         <div className="sectionFormContainerRegister">
                             <section>
-                                <label>Nombre</label>
-                                <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" name="name" />
+                                <label for="Name">Nombre</label>
+                                <input value={name} onChange={onChangeName} type="text" placeholder="Ingrese su nombre" name="name" id="Name" />
                                 {name === "" || name.length < 4 ?
                                     <p className="validationError">{errorName}</p> : <p></p>}
                             </section>
                             <section>
-                                <label>Apellido</label>
-                                <input value={surname} onChange={onChangeSurname} type="text" placeholder="Ingrese su apellido" required />
+                                <label for="Surname">Apellido</label>
+                                <input value={surname} onChange={onChangeSurname} type="text" placeholder="Ingrese su apellido" id="Surname" required />
                                 {surname === "" || surname.length < 4 ?
                                     <p className="validationError">{errorSurname}</p> : <p></p>
                                 }
@@ -212,31 +213,38 @@ function Register() {
 
                         <div className="sectionFlexContaineRegister">
                             <section>
-                                <label>Ciudad</label>
-                                <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" />
+                                <label for="CityName">Ciudad</label>
+                                <input value={city} onChange={onChangeCity} type="text" placeholder="Ingrese su ciudad" id="CityName" />
                                 {city === "" || city.length < 3 ?
                                     <p className="validationError">{errorCity}</p> : <p></p>
                                 }
                             </section>
                             <section>
-                                <label>Email</label>
-                                <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" name="email" />
+                                <label for="Email">Email</label>
+                                <input value={email} onChange={onChangeEmail} type="email" placeholder="Ingrese su email" name="email" id="Email" />
                                 {emailVerified ? <p></p> : <p className="validationError">{errorEmail}</p>
                                 }
                             </section>
                             <section className="passwordSectionRegister">
-                                <label>Contraseña</label>
-                                <input type={state ? "text" : "password"} name="password" placeholder="Ingrese una contraseña" value={password} onChange={onChangePassword} />
+                                <label for="Password">Contraseña</label>
+                                <input type={state ? "text" : "password"} name="password" placeholder="Ingrese una contraseña" value={password} onChange={onChangePassword} id="Password" />
                                 <button className="buttonFormRegister" onClick={toggleBtn}>
-                                    {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
+                                    {state ? <>
+                                        <p className="hidden">Boton ocultar contraseña</p>
+                                        <AiOutlineEye className="iconEyeBlind" />
+                                    </> :
+                                        <>
+                                            <p className="hidden">Boton mostrar contraseña</p>
+                                            <AiOutlineEyeInvisible className="iconEyeBlind" />
+                                        </>}
                                 </button>
                                 {passwordValidated ?
                                     <p></p> : <p className="validationError">{errorPassword}</p>
                                 }
                             </section>
                             <section className="passwordSectionRegister">
-                                <label>Confirmar contraseña </label>
-                                <input type={state1 ? "text" : "password"} placeholder="Confirme la contraseña" value={passwordConfirm} onChange={onChangePasswordConfirm} />
+                                <label for="ConfirmPassword">Confirmar contraseña </label>
+                                <input type={state1 ? "text" : "password"} placeholder="Confirme la contraseña" value={passwordConfirm} onChange={onChangePasswordConfirm} id="ConfirmPassword" />
                                 <button className="buttonFormRegister" onClick={toggleBtnConfirm}>
                                     {state1 ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                                 </button>
@@ -251,6 +259,7 @@ function Register() {
 
                         <section className="buttonCreateAccount">
                             <Link to="/login">
+                                <p className="hidden">Link hacia formulario de iniciar sesión</p>
                                 <input type="submit" className="buttonSubmitRegister" value="Crear cuenta" onClick={handleSignUp} />
                             </Link>
                         </section>

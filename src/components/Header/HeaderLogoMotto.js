@@ -10,6 +10,7 @@ function HeaderLogoMotto() {
                     src="https://bucket-pig6.s3.us-east-2.amazonaws.com/Logos+Homu/Recurso+2finals.png"
                     alt='Logo Homu'
                 />
+                <p className='hidden'> Logo de Homu Proyect</p>
             </Link>
             <h2 className='headerMotto'>Estás en el lugar correcto</h2>
         </div>

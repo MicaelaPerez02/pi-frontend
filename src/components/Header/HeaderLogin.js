@@ -16,6 +16,7 @@ function HeaderLogin(props) {
                 <HeaderLogoMotto />
                 <section className="navbar">
                     <Link to="" className='menu-bars'>
+                    <p className='hidden'>Icono menú</p>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
                     <Link to="/register">
@@ -29,6 +30,7 @@ function HeaderLogin(props) {
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
                         <Link to='' className='menu-bars'>
+                        <p className='hidden'>Cerrar menú hamburguesa</p>
                             <FaWindowClose className='icon_close' />
                         </Link>
                     </li>

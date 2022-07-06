@@ -3,10 +3,10 @@
   height: 42%;
   background-color: var(--color3);
   padding: 0.5rem;
-  padding-top: 5rem;
+  padding-top: 5.5rem;
 }
 
-.navbarContainer h2 {
+.navbarContainer h1{
   color: var(--light);
   margin: 1rem 1rem 0.5rem 1rem;
 }
@@ -23,6 +23,9 @@
   display: none !important;
 }
 
+.rs-picker-toggle-placeholder{
+  color: var(--color3) !important;
+}
 .cards_body {
   margin-bottom: 3rem;
   margin-top: 1.5rem;
@@ -35,6 +38,7 @@
 
   padding-bottom: 0.4rem;
   margin-left: 0.8rem;
+  color: var(--color3);
 }
 
 .form_select {
@@ -109,7 +113,7 @@ select.form_select:hover {
     height: 30%;
   }
 
-  .navbarContainer h2 {
+  .navbarContainer h1 {
     margin-top: 1.3rem;
   }
 
@@ -130,7 +134,6 @@ select.form_select:hover {
 
   .formInputSelect {
     width: 17rem;
-    margin-bottom: 1.2rem;
   }
 
   .form_select {
@@ -152,10 +155,7 @@ select.form_select:hover {
 }
 
 @media screen and (min-width: 1024px) {
-  .navbarContainer {
-    padding-bottom: 9rem;
-    height: 8.2rem;
-  }
+
 
   .navbarElementsContainer {
     justify-content: center;

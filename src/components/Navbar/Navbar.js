@@ -14,9 +14,9 @@ function Navbar(props) {
     }
     return (
         <div className='navbarContainer'>
-        
-            <h2 className="title">Buscar ofertas en hoteles, casas y mucho más</h2>
-            
+
+            <h1 className="title">Buscar ofertas en hoteles, casas y mucho más</h1>
+
             <section className='navbarElementsContainer'>
                 <CardCities key={props.id} />
                 <DateRangePicker placeholder="Seleccione el rango de fechas" className='datePickerDesktop' format='dd-MM-yyyy'

@@ -18,6 +18,7 @@ function HeaderRegister() {
                 <HeaderLogoMotto />
                 <section className="navbar">
                     <Link to="" className='menu-bars'>
+                        <p className='hidden'>Icono menú hamburguesa</p>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
                     <Link to="/login">
@@ -31,6 +32,7 @@ function HeaderRegister() {
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
                         <Link to='' className='menu-bars'>
+                        <p className='hidden'>Icono cerrar menú hamburguesa</p>
                             <FaWindowClose className='icon_close' />
                         </Link>
                     </li>
@@ -44,7 +46,7 @@ function HeaderRegister() {
                     </li>
                 </ul>
             </nav>
-            
+
         </div>
     )
 }

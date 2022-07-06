@@ -118,6 +118,7 @@ function ProductGeneratorCard() {
         <section className='subHeader'>
           <h1>Administración</h1>
           <Link to="/">
+            <p className='hidden'>Volver atras</p>
             <GoChevronLeft className='iconArrowBack' />
           </Link>
         </section>

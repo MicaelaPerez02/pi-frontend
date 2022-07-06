@@ -127,6 +127,7 @@ function CardReservation(props) {
           </div>
           <Link to="/">
             <div className="detailIconContainer">
+              <p className='hidden'>Volver atrás</p>
               <GoChevronLeft className="detailIcon" />
             </div>
           </Link>
@@ -141,72 +142,75 @@ function CardReservation(props) {
 
               <div className="reservationNameLastName">
                 <section className="reservationInput">
-                  <label className="reservationInputTitle">Nombre</label>
+                  <label className="reservationInputTitle" for="Name">Nombre</label>
                   <input
                     value={name}
                     readOnly
                     type="text"
                     placeholder="Ingrese su nombre"
                     className="inputRes"
-                    name="name"
+                    id="Name"
                   />
                 </section>
                 <section className="reservationInput">
-                  <label className="reservationInputTitle">Apellido</label>
+                  <label className="reservationInputTitle" for="Surname">Apellido</label>
                   <input
                     value={surname}
                     readOnly
                     name="text"
                     placeholder="Ingrese su apellido"
                     className="inputRes"
+                    id="Surname"
                   />
                 </section>
               </div>
 
               <div className="reservationDataEmailCity">
                 <section className="reservationInput">
-                  <label className="reservationInputTitle">Correo electrónico</label>
+                  <label className="reservationInputTitle" for="Email">Correo electrónico</label>
                   <input
                     value={email}
                     readOnly
                     type="email"
                     placeholder="Ingrese su correo electrónico"
                     className="inputRes"
-                    name="email"
+                    id="Email"
                   />
                 </section>
                 <section className="reservationInput">
-                  <label className="reservationInputTitle">Ciudad</label>
+                  <label className="reservationInputTitle" for="CityName">Ciudad</label>
                   <input
                     value={city}
                     readOnly
                     type="city"
                     placeholder="Ingrese su ciudad"
                     className="inputRes"
+                    id="CityName"
                   />
                 </section>
               </div>
 
               <div className="reservationDataOptional">
                 <section className="reservationInput">
-                  <label className="reservationInputTitle">Datos extra para el vendedor</label>
+                  <label className="reservationInputTitle" for="DataExtra">Datos extra para el vendedor</label>
                   <input
                     value={seller_info}
                     onChange={e => setSellerInfo(e.target.value)}
                     type="text"
                     placeholder="Escriba aquí"
                     className="inputRes"
+                    id="DataExtra"
                   />
                 </section>
                 <section className="reservationInputCheckbox">
-                  <label className="reservationInputTitle">¿Poseé vacunación contra COVID-19?</label>
+                  <label className="reservationInputTitle" for="CheckboxCovid">¿Poseé vacunación contra COVID-19?</label>
                   <input
                     value={vaccinated}
                     readOnly
                     type="checkbox"
                     placeholder="Ingrese su correo electrónico"
                     className="inputResCheckbox"
-                    name="checkbox"
+                    id="CheckboxCovid"
                   />
                 </section>
               </div>
@@ -275,7 +279,7 @@ function CardReservation(props) {
           </div>
         </div>
         <div className="reservationCardHotel">
-          <p className="reservationCardTitle">Detalle de la reserva</p>
+          <h2 className="reservationCardTitle">Detalle de la reserva</h2>
           <div className="reservationCardInfo">
             <div className="reservationCardImage">
 

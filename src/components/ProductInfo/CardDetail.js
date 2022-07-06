@@ -30,6 +30,7 @@ function CardDetail(props) {
                         <h3 className='detailTitle'>{props.title}</h3>
                     </section>
                     <Link to="/">
+                    <p className='hidden'>Volver</p>
                         <section className='detailIconContainer'>
                             <GoChevronLeft className='detailIcon' />
                         </section>
