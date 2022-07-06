@@ -11,7 +11,7 @@ function FilterDate() {
     let datePicker = localStorage.getItem('datePicker').substring(1, 11);
     let datePicker2 = localStorage.getItem('datePicker2').substring(1, 11);
 
-    const { data, isLoaded } = useFetch(`/products/productsAvailable/byDate/${datePicker}/${datePicker2}/`);
+    const { data, isLoaded } = useFetch(`/products/productsAvailable/${datePicker}/${datePicker2}/`);
 
     const productOnDateSelected = data.map((products, index) => {
         return (

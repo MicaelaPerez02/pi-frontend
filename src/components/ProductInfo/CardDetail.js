@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GoChevronLeft } from "react-icons/go";
 import { BsFillSuitHeartFill } from "react-icons/bs";
 import "../../styles/Components/ProductDetails.css";
@@ -17,8 +17,15 @@ import ShareSocialMedia from './ShareSocialMedia';
 import Images from './Images';
 
 function CardDetail(props) {
+    const [state, setState] = useState(false);
+
     const handleClick = () => {
         localStorage.setItem("buttonReservationClick", true);
+    }
+
+    const toggleBtn = (e) => {
+        setState(prevState => !prevState);
+        e.preventDefault();
     }
 
     return (
@@ -30,7 +37,7 @@ function CardDetail(props) {
                         <h3 className='detailTitle'>{props.title}</h3>
                     </section>
                     <Link to="/">
-                    <p className='hidden'>Volver</p>
+                        <p className='hidden'>Volver</p>
                         <section className='detailIconContainer'>
                             <GoChevronLeft className='detailIcon' />
                         </section>
@@ -73,7 +80,12 @@ function CardDetail(props) {
             </section>
             <section className='detailDescription'>
                 <h4 className='detailDescriptionSlogan'>{props.title}</h4>
-                <h4 className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></h4>
+                    {state ? <>
+                        <h4 className='detailDescriptionInfo'>{props.description} <span onClick={toggleBtn}>...continuar leyendo</span></h4>
+                    </> :
+                        <>
+                            <h4 className='detailDescriptionInfo'>{props.long_description}<span onClick={toggleBtn}> ...leer menos</span></h4>
+                        </>}
             </section>
             <section className='detailFeatures'>
                 <FeaturesDetail features={props.features} />
@@ -92,8 +104,10 @@ function CardDetail(props) {
                         <section className='detailCalendarReservationFlex'>
                             <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
                             <section className='detailButtonReservationDiv'>
-                                {localStorage.getItem("username") == null ? <Link to="/login">
-                                    <button className="detailButtonReservation" onClick={handleClick}> Iniciar reserva</button> </Link> :
+                                {localStorage.getItem("username") == null ?
+                                    <Link to="/login">
+                                        <button className="detailButtonReservation" onClick={handleClick}> Iniciar reserva</button>
+                                    </Link> :
                                     <Link to={"/product/" + props.title + "/reservation"}>
                                         <button className="detailButtonReservation"> Iniciar reserva</button>
                                     </Link>

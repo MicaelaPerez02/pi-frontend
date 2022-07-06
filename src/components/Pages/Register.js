@@ -6,15 +6,14 @@ import { FaWindowClose } from "react-icons/fa";
 import HeaderRegister from "../Header/HeaderRegister";
 import emailjs from '@emailjs/browser';
 import useUserSingnUp from "../../hooks/useUserSignUp";
-import validator from 'validator'
+import validator from 'validator';
 import PasswordValidator from "password-validator";
+import Alert from 'react-popup-alert'
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
 import "../../styles/General/Icons.css";
 import "../../styles/General/Elements.css";
 import "../../styles/General/Buttons.css";
-import Rodal from 'rodal';
-import 'rodal/lib/rodal.css';
 
 function Register() {
     let navigate = useNavigate();
@@ -28,18 +27,38 @@ function Register() {
     const [city, setCity] = useState("");
     const { SignUp, isSigned } = useUserSingnUp();
 
+    /*POP UP ALERT*/
+    const [alert, setAlert] = useState({
+        type: 'error',
+        text: 'This is a alert message',
+        show: false
+    })
+    function onCloseAlert() {
+        setAlert({
+            type: '',
+            text: '',
+            show: false
+        })
+    }
+
+    function onShowAlert(type) {
+        setAlert({
+            type: type,
+            text: 'La cuenta no fue creada, intentelo nuevamente',
+            show: true
+        })
+    }
     /* -------------------------------------------------------------------------- */
     /*                                 VALIDACION                                 */
     /* -------------------------------------------------------------------------- */
-    const [errorName, setErrorName] = useState("")
-    const [errorSurname, setErrorSurname] = useState("")
-    const [errorEmail, setErrorEmail] = useState("")
-    const [errorPassword, setErrorPassword] = useState("")
-    const [errorCity, setErrorCity] = useState("")
-    const [errorConfirm, setErrorConfirm] = useState("")
+    const [errorName, setErrorName] = useState("");
+    const [errorSurname, setErrorSurname] = useState("");
+    const [errorEmail, setErrorEmail] = useState("");
+    const [errorPassword, setErrorPassword] = useState("");
+    const [errorCity, setErrorCity] = useState("");
+    const [errorConfirm, setErrorConfirm] = useState("");
 
-
-    const emailVerified = validator.isEmail(email)
+    const emailVerified = validator.isEmail(email);
 
     let schema = new PasswordValidator();
     schema
@@ -52,27 +71,27 @@ function Register() {
     let passwordConfirmValidated = schema.validate(passwordConfirm);
 
     useEffect(() => {
-        if (name === "") {
-            setErrorName("El nombre es requerido")
-        } else if (name.length < 4) {
-            setErrorName("El nombre debe tener mas de 4 letras")
+        if (name.length === 0) {
+            setErrorName("")
+        } else if (name.length < 3) {
+            setErrorName("El nombre debe tener mas de 3 letras")
         } else {
             setErrorName("")
         }
-        if (surname === "") {
-            setErrorSurname("El apellido es requerido")
+        if (surname.length === 0) {
+            setErrorSurname("")
         } else if (surname.length < 4) {
             setErrorSurname("El apellido debe tener mas de 4 letras")
         } else {
             setErrorSurname("")
         }
-        if (emailVerified) {
+        if (emailVerified === true || email.length === 0) {
             setErrorEmail("")
         } else {
             setErrorEmail("Ingrese un email valido")
         }
-        if (city === "") {
-            setErrorCity("Ingrese una ciudad valida")
+        if (city.length === 0) {
+            setErrorCity("")
         } else if (city.length < 3) {
             setErrorCity("La ciudad debe que tener mas de 3 letras")
         } else {
@@ -80,7 +99,7 @@ function Register() {
         }
         if (passwordValidated) {
             setErrorPassword("")
-        } else if (password.length < 8) {
+        } else if (password.length !== 0 && password.length < 8) {
             setErrorPassword("La contraseña debe tener al menos 8 letras y un número")
         }
         if (passwordConfirmValidated) {
@@ -169,16 +188,16 @@ function Register() {
 
     const handleSignUp = (e) => {
         e.preventDefault();
+
         if (!validateData()) {
-            alert("Por favor, complete todos los campos.")
-            console.log("no valido");
-            return;
+            onShowAlert("error");
+        } else {
+            console.log("sign up creado correctamente");
+            localStorage.setItem("password", JSON.stringify(password));
+            SignUp({ name, surname, email, password, city });
+            sendEmail();
+            navigate("/login");
         }
-        console.log("sign up creado correctamente");
-        localStorage.setItem("password", JSON.stringify(password));
-        SignUp({ name, surname, email, password, city });
-        sendEmail();
-        navigate("/login");
     }
 
     return (
@@ -230,11 +249,11 @@ function Register() {
                                 <input type={state ? "text" : "password"} name="password" placeholder="Ingrese una contraseña" value={password} onChange={onChangePassword} id="Password" />
                                 <button className="buttonFormRegister" onClick={toggleBtn}>
                                     {state ? <>
-                                        <p className="hidden">Boton ocultar contraseña</p>
+                                        <p className="hidden">Botón ocultar contraseña</p>
                                         <AiOutlineEye className="iconEyeBlind" />
                                     </> :
                                         <>
-                                            <p className="hidden">Boton mostrar contraseña</p>
+                                            <p className="hidden">Botón mostrar contraseña</p>
                                             <AiOutlineEyeInvisible className="iconEyeBlind" />
                                         </>}
                                 </button>
@@ -255,6 +274,23 @@ function Register() {
                                     <p></p> : <p className="validationError">Las contraseñas no coinciden</p>
                                 }
                             </section>
+
+                            <section className="alertRegister">
+                                <Alert
+                                    header={''}
+                                    btnText={''}
+                                    text={alert.text}
+                                    type={alert.type}
+                                    show={alert.show}
+                                    onClosePress={onCloseAlert}
+                                    pressCloseOnOutsideClick={true}
+                                    showBorderBottom={true}
+                                    alertStyles={{}}
+                                    headerStyles={{}}
+                                    textStyles={{}}
+                                    buttonStyles={{}}
+                                />
+                            </section>
                         </div>
 
                         <section className="buttonCreateAccount">
@@ -274,6 +310,7 @@ function Register() {
                 </section>
             </div>
             <Footer />
+
         </>
     );
 }

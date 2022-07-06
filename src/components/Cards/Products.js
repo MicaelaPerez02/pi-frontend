@@ -21,6 +21,7 @@ function Cards() {
                 title={product.title}
                 description={product.description}
                 categories={product.categories.title}
+                long_description={product.long_description}
             />
         )
     });

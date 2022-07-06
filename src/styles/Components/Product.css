@@ -177,12 +177,12 @@
   .productContainer {
     width: 100%;
     height: 100%;
-    background-color: var(--color4);
+  
   }
 
   .productInfoTitle {
     margin-left: 2.6rem;
-    color: var(--color3);
+    color: var(--light);
   }
 
   .productInfoContainer {
@@ -200,7 +200,6 @@
   .productContainer {
     width: 100%;
     height: 100%;
-    background-color: var(--color4);
   }
 
   .productCardBox {

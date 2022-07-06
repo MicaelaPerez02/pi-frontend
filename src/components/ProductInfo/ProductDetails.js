@@ -30,6 +30,7 @@ function ProductDetails() {
                     safeties={product.safeties}
                     rules={product.rules}
                     cancellations={product.cancellations}
+                    long_description={product.long_description}
                 />
             )
         }

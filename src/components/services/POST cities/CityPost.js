@@ -3,7 +3,7 @@ export default function CityPost({
 }) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://3.133.114.51:8086/cities/addCity`, {
+    return fetch(`http://localhost:8080/cities/addCity`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

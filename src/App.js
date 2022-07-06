@@ -12,7 +12,6 @@ import ReservationSuccess from './components/Cards/ReservationSuccess';
 import ProgressBar from "@badrap/bar-of-progress";
 import './App.css';
 import { UserContextProvider } from "../src/components/services/userContext";
-import { CheckboxContextProvider } from './components/services/checkboxContext';
 import MyBookings from './components/User/MyBookings';
 import ProductGenerator from './components/Admin/ProductGenerator';
 import ProductGeneratorSuccess from './components/Admin/ProductGeneratorSuccess';
@@ -36,7 +35,6 @@ function App() {
 
   return (
     <UserContextProvider>
-      <CheckboxContextProvider>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={< Home />} />
@@ -50,13 +48,12 @@ function App() {
             <Route path="/category/:categoryId" element={< FilterCategory />} />
             <Route path="/cities/:citiesId" element={< FilterCities />} />
             <Route path="/products/:dateCityId" element={< FilterCityAndDate />} />
-            <Route path="/products/:dateId" element={< FilterDate />} />
+            <Route path="/products/dateFilter" element={< FilterDate />} />
             <Route path="/product/:productId/reservation" element={< Reservation />} />
             <Route path='/reservation/success' element={< ReservationSuccess />} />
             <Route path="/myFavorites" element={< MyFavorites />} />
           </Routes>
         </BrowserRouter>
-      </CheckboxContextProvider>
     </UserContextProvider>
   );
 };

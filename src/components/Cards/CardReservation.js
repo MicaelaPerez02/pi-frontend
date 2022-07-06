@@ -117,6 +117,11 @@ function CardReservation(props) {
     e.preventDefault();
   }
 
+  function handleChangeCheckbox(e) {
+    setVaccinated(prevState => !prevState);
+    console.log(vaccinated);
+  }
+
   return (
     <div className="reservationPage">
       <div className="reservationContainer">
@@ -167,14 +172,15 @@ function CardReservation(props) {
 
               <div className="reservationDataEmailCity">
                 <section className="reservationInput">
-                  <label className="reservationInputTitle" for="Email">Correo electrónico</label>
+                  <label className="reservationInputTitle" for="email">Correo electrónico</label>
                   <input
                     value={email}
                     readOnly
                     type="email"
                     placeholder="Ingrese su correo electrónico"
                     className="inputRes"
-                    id="Email"
+                    name="email"
+                    id="email"
                   />
                 </section>
                 <section className="reservationInput">
@@ -206,7 +212,7 @@ function CardReservation(props) {
                   <label className="reservationInputTitle" for="CheckboxCovid">¿Poseé vacunación contra COVID-19?</label>
                   <input
                     value={vaccinated}
-                    readOnly
+                    onChange={handleChangeCheckbox}
                     type="checkbox"
                     placeholder="Ingrese su correo electrónico"
                     className="inputResCheckbox"

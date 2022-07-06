@@ -10,7 +10,7 @@ import CardCities from '../Cards/CardCities';
 function Navbar(props) {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate("/products/cityAndDate");
+        navigate("/products/dateFilter");
     }
     return (
         <div className='navbarContainer'>
@@ -21,10 +21,9 @@ function Navbar(props) {
                 <CardCities key={props.id} />
                 <DateRangePicker placeholder="Seleccione el rango de fechas" className='datePickerDesktop' format='dd-MM-yyyy'
                     onChange={(date) => {
-                        localStorage.setItem('datePicker', JSON.stringify((date[0])));
-                        localStorage.setItem('datePicker2', JSON.stringify((date[1])))
-                    }}
-                />
+                        localStorage.setItem('datePicker', JSON.stringify((date[0]).substring(1, 11)));
+                        localStorage.setItem('datePicker2', JSON.stringify((date[1]).substring(1, 11)));
+                    }} />
                 <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='datePickerMobile'
                     onChange={(date) => {
                         localStorage.setItem('datePicker', JSON.stringify((date[0])));

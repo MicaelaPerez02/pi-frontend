@@ -108,8 +108,6 @@ function ProductGeneratorCard() {
     })
   }
 
-
-
   return (
     <>
       <Header />

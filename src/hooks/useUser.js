@@ -13,6 +13,7 @@ export default function useUser(){
         })
         .catch(err => {
             console.error(err);
+            return err.json;
         })
     },[setJWT]);
 

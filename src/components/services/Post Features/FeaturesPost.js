@@ -1,7 +1,7 @@
 export default function FeaturesPost({ icon, description, products }) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://3.133.114.51:8086/features/addFeature`, {
+    return fetch(`http://localhost:8080/features/addFeature`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

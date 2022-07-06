@@ -43,7 +43,7 @@ function CardProduct(props) {
                         <button>Ver más</button>
                     </div>
                 </Link>
-                
+
             </div>
         </div>
     )

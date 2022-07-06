@@ -39,7 +39,6 @@ function FilterCityAndDate() {
             <Header />
             <Navbar />
             <Categories />
-
             <section className='productContainer'>
                 <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardItems'>
