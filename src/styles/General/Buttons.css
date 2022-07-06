@@ -22,7 +22,7 @@
 }
 
 .buttonCreateAll{
-  width:40%;
+  width:100%;
   height: 2.5rem;
   border-radius: 4px;
   background-color: var(--main-color);
@@ -35,7 +35,22 @@
 
   transition: 0.8s;
 }
-.buttonCreate,
+
+.buttonCreate {
+  width: 45%;
+  height: 2.5rem;
+  border-radius: 4px;
+  background-color: var(--main-color);
+  margin: 1rem 1rem 0 0.3rem;
+  color: var(--light);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+
+  transition: 0.8s;
+}
+
 .buttonDay {
   width: 40%;
   height: 2.5rem;

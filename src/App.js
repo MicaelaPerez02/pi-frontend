@@ -18,6 +18,7 @@ import ProductGenerator from './components/Admin/ProductGenerator';
 import ProductGeneratorSuccess from './components/Admin/ProductGeneratorSuccess';
 import MyFavorites from './components/User/MyFavorites';
 import FilterDate from './components/Filters/FilterDate';
+import ProductImageGenerator from './components/Admin/UploadImages';
 
 function App() {
   const progress = new ProgressBar({
@@ -43,6 +44,7 @@ function App() {
             <Route path="/register" element={< Register />} />
             <Route path='/myBookings/' element={< MyBookings />} />
             <Route path='/product/addProduct' element={< ProductGenerator />} />
+            <Route path='/product/addProduct/images' element={< ProductImageGenerator />} />
             <Route path='/product/addProduct/success' element={< ProductGeneratorSuccess />} />
             <Route path="/product/:productId" element={< ProductDetails />} />
             <Route path="/category/:categoryId" element={< FilterCategory />} />
