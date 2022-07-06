@@ -7,12 +7,13 @@ import useFetchAuth from '../../../hooks/useFetchAuth';
 function ButtonsHeaderSession() {
     return (
         <div className="buttonHeaderContainer">
-            <div className="userOptions">
+            <section className="userOptions">
                 <p className='nameUser'> Hola, <span>{localStorage.getItem("username")}</span> </p>
-            </div>
-            <div className='navTextUser'>
+            </section>
+
+            <section className='navTextUser'>
                 <DropdownMenu />
-            </div>
+            </section>
         </div>
     )
 }

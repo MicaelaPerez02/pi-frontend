@@ -11,7 +11,7 @@ function HeaderLogoMotto() {
                     alt='Logo Homu'
                 />
             </Link>
-            <p className='headerMotto'>Estás en el lugar correcto</p>
+            <h2 className='headerMotto'>Estás en el lugar correcto</h2>
         </div>
     )
 }

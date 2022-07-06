@@ -1,0 +1,12 @@
+.react-time-picker__wrapper{
+    height: 6.5rem !important;
+    width: 8.2rem;
+    flex-direction: row !important; 
+}
+
+.react-time-picker__inputGroup__input{
+    width: 0.5rem !important;
+    padding: 0 0.5rem;
+    height: 1rem;
+    display: flex !important;
+}

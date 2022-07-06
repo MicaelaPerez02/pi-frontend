@@ -1,7 +1,7 @@
 export default function SafetiesPost({description}) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://localhost:8080/cancellations/addCancellation`, {
+    return fetch(`http://3.133.114.51:8086/cancellations/addCancellation`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

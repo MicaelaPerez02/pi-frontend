@@ -40,14 +40,18 @@ function FilterCities() {
             <Header />
             <Navbar />
             <Categories />
-            <div className='productContainer' key={citiesId}>
+
+            <section className='productContainer' key={citiesId}>
                 <h2 className='productInfoTitle'>Recomendaciones</h2>
+
                 <div className='productCardItems'>
                     <div className='productCardBox'>
                         {isLoaded ? <div onClick={handleClick}>{citySelected} </div> : <div>Cargando...</div>}
                     </div>
                 </div>
-            </div>
+                
+            </section>
+
             <Footer />
         </>
     )

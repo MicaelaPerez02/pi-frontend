@@ -6,7 +6,7 @@ function MyBookingsEmpty() {
     return (
         <>
             <BiConfused className='iconConfused'/>
-            <p className='bookingEmptyMessage'>Aún no has efectuado ninguna reserva</p>
+            <h1 className='bookingEmptyMessage'>Aún no has efectuado ninguna reserva</h1>
             <Link to="/">
                 <button className='textButton'>Volver al inicio</button>
             </Link>

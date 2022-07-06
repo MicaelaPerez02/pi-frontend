@@ -6,11 +6,10 @@ import HeaderLogoMotto from './HeaderLogoMotto';
 function Header() {
     return (
         <div className='header'>
-            <div className='header_container'>
+            <section className='header_container'>
                 <HeaderLogoMotto />
                 <Sidebar buttonLogin={localStorage.getItem("username") ? localStorage.getItem("username") : "Iniciar Sesion"} />
-                
-            </div>
+            </section>
         </div>
     )
 }

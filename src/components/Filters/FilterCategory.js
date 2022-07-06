@@ -30,17 +30,19 @@ function FilterCategory() {
 
     return (
         <div className='filterCategoryContainer'>
-                <Header />
-                <Navbar />
+            <Header />
+            <Navbar />
             <Categories />
-            <div className='productContainer' key={categoryId}>
-                <p className='productInfoTitle'>Recomendaciones</p>
+
+            <section className='productContainer' key={categoryId}>
+                <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardItems'>
                     <div className='productCardBox'>
                         {isLoaded ? categorySelected : <div>Cargando...</div>}
                     </div>
                 </div>
-            </div>
+            </section>
+            
             <Footer />
         </div>
     )

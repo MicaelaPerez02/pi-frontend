@@ -1,5 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import CardCities from './CardCities';
 
@@ -18,9 +17,7 @@ function Cities() {
     })
 
     return (
-        <>
-            {isLoaded ? cityList : <option>Cargando...</option>}
-        </>
+        isLoaded ? cityList : <option>Cargando...</option>
     )
 }
 

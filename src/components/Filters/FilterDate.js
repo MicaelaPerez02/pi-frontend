@@ -11,12 +11,7 @@ function FilterDate() {
     let datePicker = localStorage.getItem('datePicker').substring(1, 11);
     let datePicker2 = localStorage.getItem('datePicker2').substring(1, 11);
 
-    const { data, isLoaded } = useFetch(`/products/productsAvailable/${datePicker}/${datePicker2}/`);
-
-    const navigate = useNavigate();
-    const handleClick = () => {
-        navigate("/products/" + datePicker + datePicker2);
-    }
+    const { data, isLoaded } = useFetch(`/products/productsAvailable/byDate/${datePicker}/${datePicker2}/`);
 
     const productOnDateSelected = data.map((products, index) => {
         return (
@@ -40,14 +35,16 @@ function FilterDate() {
             <Header />
             <Navbar />
             <Categories />
-            <div className='productContainer'>
+
+            <section className='productContainer'>
                 <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardItems'>
                     <div className='productCardBox'>
-                        {isLoaded ? <div onClick={handleClick}>{productOnDateSelected} </div> : <div>Cargando...</div>}
+                        {isLoaded ? <div>{productOnDateSelected} </div> : <div>Cargando...</div>}
                     </div>
                 </div>
-            </div>
+            </section>
+            
             <Footer />
         </>
     )

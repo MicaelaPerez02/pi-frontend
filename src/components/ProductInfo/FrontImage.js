@@ -21,9 +21,7 @@ function FrontImage() {
     });
 
     return (
-        <>
-            {isLoaded ? productList : <p>Cargando...</p>}
-        </>
+        isLoaded ? productList : <p>Cargando...</p>
     )
 }
 

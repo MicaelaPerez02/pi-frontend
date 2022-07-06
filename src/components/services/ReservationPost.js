@@ -1,4 +1,6 @@
 export default function ReservationPost({
+    seller_info,
+    vaccinated,
     start_time,
     start_date,
     finish_date,
@@ -7,13 +9,15 @@ export default function ReservationPost({
 }) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://localhost:8080/bookings/addBooking`, {
+    return fetch(`http://3.133.114.51:8086/bookings/addBooking`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,
             "content-type": "application/json",
         },
         body: JSON.stringify({
+            seller_info,
+            vaccinated,
             start_time,
             start_date,
             finish_date,

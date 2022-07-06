@@ -42,14 +42,16 @@ function FilterCityAndDate() {
             <Header />
             <Navbar />
             <Categories />
-            <div className='productContainer'>
-                <p className='productInfoTitle'>Recomendaciones</p>
+
+            <section className='productContainer'>
+                <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardItems'>
                     <div className='productCardBox'>
                         {isLoaded ? cityAndDateSelected : <div>Cargando...</div>}
                     </div>
                 </div>
-            </div>
+            </section>
+
             <Footer />
         </div>
     )

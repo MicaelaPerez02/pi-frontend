@@ -4,18 +4,18 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 function MyBookingCard(props) {
     return (
         <div className="reservationCardHotel">
-            <p className="reservationCardTitle">Detalle de la reserva</p>
+            <h2 className="reservationCardTitle">Detalle de la reserva</h2>
             <div className="reservationCardInfo">
-                <div className="reservationCardImage">
+                <section className="reservationCardImage">
                     <img
                         src={props.url}
                         alt={props.title}
                         className="reservationCardImage"
                     />
-                </div>
+                </section>
                 <div className="reservationCardInfoFlex">
-                    <p className="reservationCardCategory">{props.categories}</p>
-                    <p className="reservationCardName">{props.title}</p>
+                    <h3 className="reservationCardCategory">{props.categories}</h3>
+                    <h3 className="reservationCardName">{props.title}</h3>
                     <span className="reservationRating">
                         {Array(props.rating)
                             .fill()
@@ -25,20 +25,20 @@ function MyBookingCard(props) {
                                 </p>
                             ))}
                     </span>
-                    <p className="reservationCities">
+                    <h3 className="reservationCities">
                         <FaMapMarkerAlt className="productIconMap" />
                         {props.cities}
-                    </p>
+                    </h3>
                     <hr className="hrReservation"></hr>
-                    <div className="reservationCheckInOutContainer">
+                    <section className="reservationCheckInOutContainer">
                         <p className="reservationCheckInOut">Check in </p>
                         <span>{props.start_date}</span>
-                    </div>
+                    </section>
                     <hr className="hrReservation"></hr>
-                    <div className="reservationCheckInOutContainer">
+                    <section className="reservationCheckInOutContainer">
                         <p className="reservationCheckInOut">Check out</p>
                         <span>{props.finish_date}</span>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

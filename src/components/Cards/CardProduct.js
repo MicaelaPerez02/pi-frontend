@@ -1,17 +1,20 @@
 import React from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { AiFillStar, AiOutlineHeart} from "react-icons/ai"
+import { AiFillStar, AiOutlineHeart } from "react-icons/ai"
 
 function CardProduct(props) {
     return (
         <div className="productInfoContainer" key={props.id}>
-            <div className='productImageContainer'>
+
+            <section className='productImageContainer'>
                 <AiOutlineHeart className="iconLike" />
                 <img src={props.url} alt={props.title} />
-            </div>
+            </section>
+
             <div className='flex_deskt'>
-                <div className='productRatingContainer'>
+
+                <section className='productRatingContainer'>
                     <span className="productRatingFlex"><p className='productRating'> {props.categories} </p>{
                         Array(props.rating)
                             .fill()
@@ -20,22 +23,27 @@ function CardProduct(props) {
                             ))
                     }</span>
                     <p className="productReview">{props.review}</p>
-                </div>
-                <div className='productTitle'>
+                </section>
+
+                <section className='productTitle'>
                     <p>{props.title}</p>
-                </div>
-                <div className='productMap'>
+                </section>
+
+                <section className='productMap'>
                     <p><FaMapMarkerAlt className='productIconMap' /> {props.location}</p>
                     <span><a href={props.watch} target="_blank" rel="noreferrer">Ver en mapa</a></span>
-                </div>
-                <div className='productDescription'>
+                </section>
+
+                <section className='productDescription'>
                     <p>{props.description}<span className='productMoreInfo'>...continuar leyendo</span></p>
-                </div>
+                </section>
+
                 <Link to={"/product/" + props.title}>
                     <div className='productButton'>
                         <button>Ver más</button>
                     </div>
                 </Link>
+                
             </div>
         </div>
     )

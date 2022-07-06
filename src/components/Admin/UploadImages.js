@@ -31,7 +31,6 @@ function UploadImages() {
                             <TbCirclePlus className='iconPlusProduct' />
                         </div>
                     </fieldset>
-
                     <Link to="/product/addProduct/success">
                         <button className='buttonCreate' onClick={handleImages}>Cargar imagenes</button>
                     </Link>

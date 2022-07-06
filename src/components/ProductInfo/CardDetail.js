@@ -25,21 +25,22 @@ function CardDetail(props) {
         <div>
             <div className="detailContainer">
                 <div className="detailHeaderContainer">
-                    <div className="detailHeader">
-                        <p className='detailCategories'>{props.categories}</p>
-                        <strong className='detailTitle'>{props.title}</strong>
-                    </div>
+                    <section className="detailHeader">
+                        <h2 className='detailCategories'>{props.categories}</h2>
+                        <h3 className='detailTitle'>{props.title}</h3>
+                    </section>
                     <Link to="/">
-                        <div className='detailIconContainer'>
+                        <section className='detailIconContainer'>
                             <GoChevronLeft className='detailIcon' />
-                        </div>
+                        </section>
                     </Link>
                 </div>
             </div>
+
             <div className="detailCityContent">
-                <div className='detailCity'>
-                    <p className='detailCityTitle'> <FaMapMarkerAlt className='detailIconMap' />{props.cities}</p>
-                    <div className='detailOpinion'>
+                <section className='detailCity'>
+                    <h3 className='detailCityTitle'> <FaMapMarkerAlt className='detailIconMap' />{props.cities}</h3>
+                    <section className='detailOpinion'>
                         <span className="detailRating">{
                             Array(props.rating)
                                 .fill()
@@ -48,69 +49,70 @@ function CardDetail(props) {
                                 ))
                         }</span>
                         <p className='detailReview'>{props.review}</p>
-                    </div>
-                </div>
-                <div className="detailSocialMedia">
+                    </section>
+                </section>
+                <section className="detailSocialMedia">
                     <ShareSocialMedia />
                     <BsFillSuitHeartFill className='iconLikeCardDetail' />
-                </div>
+                </section>
             </div>
-            <div className='detailCarrouselContainer'>
+
+            <section className='detailCarrouselContainer'>
                 <CarrouselProduct className='detailCarrousel'
                     url={props.url}
                 />
-            </div>
-            <div>
+            </section>
+            <section>
                 <Images
                     key={props.id}
                     url={props.url}
                     title={props.title}
                     id={props.id}
                 />
-            </div>
-            <div className='detailDescription'>
+            </section>
+            <section className='detailDescription'>
+                <h4 className='detailDescriptionSlogan'>{props.title}</h4>
+                <h4 className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></h4>
+            </section>
+            <section className='detailFeatures'>
+                <FeaturesDetail features={props.features} />
+            </section>
 
-                <p className='detailDescriptionSlogan'>{props.title}</p>
-                <p className='detailDescriptionInfo'>{props.description} <span className='detailWatchMore'>...ver más</span></p>
-            </div>
-            <div className='detailFeatures'>
-                <FeaturesDetail
-                    features={props.features}
-                />
-            </div>
             <div className='detailCalendar'>
-                <h3 className='detailCalendarTitle'>Fechas disponibles <hr className='hrProdDetail'></hr></h3>
-                <div className="detailCalendarFlex">
+                <h4 className='detailCalendarTitle'>Fechas disponibles <hr className='hrProdDetail'></hr></h4>
+                <section className="detailCalendarFlex">
                     <CalendarDetail className="detailCalendarDisplay" />
-                </div>
+                </section>
                 <div className="detailCalendarFlexDesktop">
-                    <div className="detailCalendarDouble">
+                    <section className="detailCalendarDouble">
                         <CalendarDetailResponsive className="detailCalendarDisplayDos" />
-                    </div>
+                    </section>
                     <div className="detailCalendarReservationContainer">
-                        <div className='detailCalendarReservationFlex'>
+                        <section className='detailCalendarReservationFlex'>
                             <p className="detailInfoReservation">Agrega tus fechas de viajes para obtener precios exactos</p>
-                            <div className='detailButtonReservationDiv'>
+                            <section className='detailButtonReservationDiv'>
                                 {localStorage.getItem("username") == null ? <Link to="/login">
                                     <button className="detailButtonReservation" onClick={handleClick}> Iniciar reserva</button> </Link> :
                                     <Link to={"/product/" + props.title + "/reservation"}>
                                         <button className="detailButtonReservation"> Iniciar reserva</button>
                                     </Link>
                                 }
-                            </div>
-                        </div>
+                            </section>
+                        </section>
                     </div>
                 </div>
             </div>
-            <div className='detailMap'>
+
+            <section className='detailMap'>
                 <MapDetail cities={props.cities}
                     map_url={props.map_url} />
-            </div>
+            </section>
+
             <div className='detailRules'>
                 <div className="rulesDetailsContainer">
-                    <h2 className="rulesDetailTitle">¿Qué tenes que saber? <hr className='hrRuleDetail' /></h2>
+                    <h4 className="rulesDetailTitle">¿Qué tenes que saber? <hr className='hrRuleDetail' /></h4>
                     <div className='rulesDetailContainerFlex'>
-                        <div className='rulesDetailFlex'>
+                        <section className='rulesDetailFlex'>
                             <div className="rulesDetailOne">
                                 <RulesDetails
                                     rules={props.rules}
@@ -121,12 +123,13 @@ function CardDetail(props) {
                                     safeties={props.safeties}
                                 />
                             </div>
-                        </div>
-                        <div className='rulesDetailThree'>
+                        </section>
+
+                        <section className='rulesDetailThree'>
                             <CancelationDetail
                                 cancellations={props.cancellations}
                             />
-                        </div>
+                        </section>
                     </div>
                 </div>
             </div>

@@ -14,18 +14,18 @@ function HeaderRegister() {
 
     return (
         <div className='header'>
-            <div className='header_container'>
+            <section className='header_container'>
                 <HeaderLogoMotto />
-                <div className="navbar">
+                <section className="navbar">
                     <Link to="" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
                     <Link to="/login">
                         <button className='header_button'>Inicia Sesion</button>
                     </Link>
+                </section>
+            </section>
 
-                </div>
-            </div>
             <nav
                 className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
@@ -44,6 +44,7 @@ function HeaderRegister() {
                     </li>
                 </ul>
             </nav>
+            
         </div>
     )
 }

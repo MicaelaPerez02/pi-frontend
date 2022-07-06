@@ -25,15 +25,14 @@ function CardCities() {
     }
 
     return (
-        <>
             <form className='formInputSelect' onChange={handleChange}>
+            <label>Selecciona el destino</label>
                 <select id="city" name="city" className='form_select' value={city} onChange={onChange}>
                     <option className="form_option" hidden >Selecciona el destino</option>
                     <option className="form_option" disabled >Selecciona el destino</option>
                     {citiesList}
                 </select>
             </form>
-        </>
     )
 }
 

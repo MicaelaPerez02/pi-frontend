@@ -11,9 +11,12 @@ import TimePicker from 'react-time-picker';
 import emailjs from '@emailjs/browser';
 import useFetchAuth from "../../hooks/useFetchAuth";
 import { isWithinInterval } from "date-fns";
+import "../../styles/Accesories/React-Time-Picker.css";
 
 function CardReservation(props) {
   const [date, setDate] = useState("");
+  const [vaccinated, setVaccinated] = useState(false);
+  const [seller_info, setSellerInfo] = useState("");
   const [start_time, setStartTime] = useState(null);
   const [start_date, setStartDate] = useState(null);
   const [finish_date, setFinishDate] = useState(null);
@@ -29,7 +32,7 @@ function CardReservation(props) {
   const checkOut = window.localStorage.getItem("date2");
 
   /* -------------------------------------------------------------------------- */
-  /*                               //CALENDARIOOOO                              */
+  /*                               //CALENDARIO                                 */
   /* -------------------------------------------------------------------------- */
 
   const productId = localStorage.getItem("idProduct");
@@ -73,6 +76,8 @@ function CardReservation(props) {
   const handleReservation = () => {
     if (start_date !== null && finish_date !== null && start_time !== null) {
       Reservation({
+        seller_info,
+        vaccinated,
         start_time,
         start_date,
         finish_date,
@@ -182,6 +187,30 @@ function CardReservation(props) {
                 </section>
               </div>
 
+              <div className="reservationDataOptional">
+                <section className="reservationInput">
+                  <label className="reservationInputTitle">Datos extra para el vendedor</label>
+                  <input
+                    value={seller_info}
+                    onChange={e => setSellerInfo(e.target.value)}
+                    type="text"
+                    placeholder="Escriba aquí"
+                    className="inputRes"
+                  />
+                </section>
+                <section className="reservationInputCheckbox">
+                  <label className="reservationInputTitle">¿Poseé vacunación contra COVID-19?</label>
+                  <input
+                    value={vaccinated}
+                    readOnly
+                    type="checkbox"
+                    placeholder="Ingrese su correo electrónico"
+                    className="inputResCheckbox"
+                    name="checkbox"
+                  />
+                </section>
+              </div>
+
             </fieldset>
           </form>
 
@@ -249,13 +278,13 @@ function CardReservation(props) {
           <p className="reservationCardTitle">Detalle de la reserva</p>
           <div className="reservationCardInfo">
             <div className="reservationCardImage">
-              
-                <img
-                  src={props.images}
-                  alt={props.title}
-                  className="reservationCardImage"
-                />
-             
+
+              <img
+                src={props.images}
+                alt={props.title}
+                className="reservationCardImage"
+              />
+
             </div>
             <div className="reservationCardInfoFlex">
               <p className="reservationCardCategory">{props.categories}</p>

@@ -5,12 +5,12 @@ function ButtonsSidebar() {
     return (
         <ul>
             <li className="nav-text">
-                <Link to="/login">
+                <Link to="/login" style={{textDecoration: 'none'}}>
                     <span>Iniciar Sesión</span>
                 </Link>
             </li>
             <li className="nav-text">
-                <Link to="/register">
+                <Link to="/register" style={{textDecoration: 'none'}}>
                     <span>Crear cuenta</span>
                 </Link>
             </li>

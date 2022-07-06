@@ -69,35 +69,6 @@
   padding: 1rem 0.5rem 5rem 0.5rem;
 }
 
-.fieldsetCreateProductCheckbox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: var(--light);
-
-  margin-top: 1rem;
-  padding-top: 1rem;
-}
-
-.fieldsetCreateProductCheckbox legend {
-  margin: 0 0 0 1.5rem;
-}
-
-.infoCheckbox {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin: 0.2rem;
-  padding: 0rem 1rem 0.5rem 1rem;
-}
-
-.fieldsetCreateProductCheckbox input {
-  width: 20px;
-  height: 20px;
-}
-
 .featureCreateSection {
   display: flex;
   align-items: center;

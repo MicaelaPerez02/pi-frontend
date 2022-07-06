@@ -12,17 +12,18 @@ function HeaderLogin(props) {
     const showSidebar = () => setSidebar(!sidebar);
     return (
         <div className='header'>
-            <div className='header_container'>
+            <section className='header_container'>
                 <HeaderLogoMotto />
-                <div className="navbar">
+                <section className="navbar">
                     <Link to="" className='menu-bars'>
                         <FaBars onClick={showSidebar} className='icon_menu' />
                     </Link>
                     <Link to="/register">
                         <button className='header_button'>Registrate</button>
                     </Link>
-                </div>
-            </div>
+                </section>
+            </section>
+
             <nav
                 className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
@@ -41,6 +42,7 @@ function HeaderLogin(props) {
                     </li>
                 </ul>
             </nav>
+
         </div>
     )
 }

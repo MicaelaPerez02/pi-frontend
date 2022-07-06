@@ -7,18 +7,20 @@ import "../../styles/Components/ReservationSuccess.css";
 
 function ReservationSuccess(props) {
     return (
-        <div className="reservationSuccess">
+        <section className="reservationSuccess">
             <Header />
+
             <div className='reservationSuccessContainer'>
                 <IoIosCheckmarkCircle className='reservationSuccessIcon' />
-                <h2>¡Muchas gracias!</h2>
+                <h1>¡Muchas gracias!</h1>
                 <p>{props.description}</p>
                 <button>
                     <Link to="/">OK</Link>
                 </button>
             </div>
+            
             <Footer />
-        </div>
+        </section>
     )
 }
 

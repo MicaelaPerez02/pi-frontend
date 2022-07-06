@@ -39,9 +39,9 @@ function ProductDetails() {
         <div className="productDetailContainer">
             <Header className="productHeader" />
             <div className='productInfoContent'>
-                <div className='productBanner'>
+                <section className='productBanner'>
                     {isLoaded ? productSelected : <div>Cargando...</div>}
-                </div>
+                </section>
                 <Footer />
             </div>
         </div>

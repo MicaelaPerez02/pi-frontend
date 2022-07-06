@@ -8,7 +8,6 @@ import useFetchAuth from '../../hooks/useFetchAuth';
 function CalendarDetail() {
     const productId = localStorage.getItem("idProduct");
     const { data } = useFetchAuth(`/bookings/findBookingByProduct/${productId}`);
-
     const bookingsDates = data.map((bookings, index) => {
         return (
             [new Date(bookings.start_date),
@@ -29,6 +28,7 @@ function CalendarDetail() {
             return isWithinRanges(date, bookingsDates);
         }
     }
+
     return (
         <Calendar
             showDoubleView={true}
@@ -36,7 +36,6 @@ function CalendarDetail() {
             minDate={new Date()}
             maxDate={new Date(2023, 11, 16)}
             tileDisabled={tileDisabled}
-
             onChange={(date) => {
                 localStorage.setItem('date', JSON.stringify((date[0])).substring(1, 11));
                 localStorage.setItem('date2', JSON.stringify((date[1])).substring(1, 11));

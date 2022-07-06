@@ -17,11 +17,13 @@ function CarrouselProduct(props) {
                     image.products.title == productId ? (
                         (
                             <div key={index} className="each-slide-effect">
-                                <div 
-                                    style={{ backgroundImage: `url(${image.url})`}}>
+                                <div
+                                    style={{ backgroundImage: `url(${image.url})` }}>
                                 </div>
                             </div>
-                        )) : null)}
+                        ))
+                        :
+                null)}
             </Slide>
         </>
     )

@@ -1,7 +1,7 @@
 export default function RulesPost({description}) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://localhost:8080/rules/addRule`, {
+    return fetch(`http://3.133.114.51:8086/rules/addRule`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

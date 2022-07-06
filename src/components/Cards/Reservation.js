@@ -24,8 +24,7 @@ function Reservation() {
                     cities={product.cities.name}
                     images={product.url}
                 />
-            )
-        }
+            )}
     })
 
     return (

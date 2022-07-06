@@ -1,19 +1,20 @@
 import React from 'react';
-import {FaRegCopyright } from 'react-icons/fa';
+import { FaRegCopyright } from 'react-icons/fa';
 import FooterSocialMedia from '../Header/Sidebar/FooterSocialMedia';
 import '../../styles/Components/Footer.css';
 
 function Footer() {
     return (
         <div className='footer'>
-            <div className='footer_info'>
-                <span><FaRegCopyright className='iconCopy'/></span>
+            <section className='footer_info'>
+                <span><FaRegCopyright className='iconCopy' /></span>
                 <span>2022</span>
                 <span>HOMU</span>
-            </div>
-            <div className='footer_menu'>
+            </section>
+
+            <section className='footer_menu'>
                 <FooterSocialMedia />
-            </div>
+            </section>
         </div>
     )
 }

@@ -13,6 +13,8 @@ import "../../styles/General/Forms.css";
 import "../../styles/General/Icons.css";
 import "../../styles/General/Elements.css";
 import "../../styles/General/Buttons.css";
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css';
 
 function Register() {
     let navigate = useNavigate();
@@ -130,7 +132,6 @@ function Register() {
             }, (error) => {
                 console.log(error.text);
             });
-
     };
 
     const toggleBtn = (e) => {
@@ -193,7 +194,6 @@ function Register() {
 
                 <form className="formContainerRegister" id="formRegister">
                     <fieldset>
-
                         <div className="sectionFormContainerRegister">
                             <section>
                                 <label>Nombre</label>
@@ -209,6 +209,7 @@ function Register() {
                                 }
                             </section>
                         </div>
+
                         <div className="sectionFlexContaineRegister">
                             <section>
                                 <label>Ciudad</label>
@@ -253,7 +254,6 @@ function Register() {
                                 <input type="submit" className="buttonSubmitRegister" value="Crear cuenta" onClick={handleSignUp} />
                             </Link>
                         </section>
-
                     </fieldset>
                 </form>
 

@@ -7,7 +7,7 @@ import "../../../styles/Accesories/DropdownMenu.css";
 
 export default function DropdownMenu() {
     const { data, isLoaded } = useFetchAuth(`/users/findUser/${localStorage.getItem("userId")}`);
-   
+
     const closeSesion = () => {
         localStorage.clear();
     }
@@ -19,9 +19,11 @@ export default function DropdownMenu() {
                 <div> {(avatarUser == "https://www.gravatar.com/avatar/466dcf1001d04d8e101cf4a5cc9bc41d") ?
                     <p className='avatarUser'> {localStorage.getItem("avatar")}</p>
                     :
-                    <img src={avatarUser} alt="img perfil" className='avatarGravatar' />}
-                </div> : null}
-            </MenuButton>} transition>
+                    <img src={avatarUser} alt="Imagen de perfíl gravatar" className='avatarGravatar' />}
+                </div> : "null"}
+            </MenuButton>
+            } transition>
+
             {localStorage.getItem("username") === "admin@gmail.com" ?
                 <>
                     <Link to="/product/addProduct">
@@ -30,7 +32,8 @@ export default function DropdownMenu() {
                     <Link to="/">
                         <MenuItem onClick={() => { closeSesion(); window.location.reload(); }}>Cerrar sesión</MenuItem>
                     </Link>
-                </> :
+                </>
+                :
                 <>
                     <Link to="/myBookings">
                         <MenuItem>Mis reservas</MenuItem>

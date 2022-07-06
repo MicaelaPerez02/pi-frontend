@@ -60,12 +60,10 @@ function Login() {
                     <fieldset>
                         {localStorage.getItem("buttonReservationClick") == "true" ?
                             <LoginError /> : ""}
-
                         <section>
                             <label>Email</label>
                             <input type="text" placeholder="Ingrese su usuario" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </section>
-
                         <section className="passwordSection">
                             <label>Contraseña</label>
                             <input type={state ? "text" : "password"} name="password" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -73,11 +71,9 @@ function Login() {
                                 {state ? <AiOutlineEye className="iconEyeBlind" /> : <AiOutlineEyeInvisible className="iconEyeBlind" />}
                             </button>
                         </section>
-
                         <section className="buttonAccessAccount">
                             <input type="submit" className="buttonSubmitLogin" value="Ingresar" onClick={handleLogin} />
                         </section>
-
                     </fieldset>
                 </form>
 
