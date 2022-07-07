@@ -17,6 +17,25 @@
   margin: 0rem 2rem;
 }
 
+.reservationSuccessContainer {
+  animation: reservationSuccessContainer 2s ease 1s;
+}
+@keyframes reservationSuccessContainer {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
 .reservationSuccessIcon {
   font-size: 5rem;
   color: var(--complementary);

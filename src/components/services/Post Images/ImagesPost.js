@@ -1,7 +1,7 @@
 export default function ImagesPost({ title, url, products }) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://3.133.114.51:8086/images/addImage`, {
+    return fetch(`http://localhost:8080/images/addImage`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

@@ -12,6 +12,7 @@ function MyBookings() {
   const bookingsList = data.map((bookings) => {
     if (bookings.users.id === JSON.parse(localStorage.getItem("userId"))) {
       return (
+        <div className="myCards">
         <MyBookingCard
           id={bookings.id}
           url={bookings.products.url}
@@ -22,6 +23,7 @@ function MyBookings() {
           rating={bookings.products.rating}
           cities={bookings.products.cities.name}
         />
+        </div>
       )
     }
   });
@@ -39,7 +41,7 @@ function MyBookings() {
       <div className="bookingsContainer">
         <h3 className="title bookingTitle">Mis reservas</h3>
         {bookingsUser.length > 0 ?
-          <section>{bookingsList}</section> :
+          <section className='myBooking'>{bookingsList}</section> :
           <section className="emptyBookingList">
             <MyBookingsEmpty />
           </section>

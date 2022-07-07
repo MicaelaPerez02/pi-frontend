@@ -165,7 +165,7 @@ function CardReservation(props) {
       </div>
       <div className="reservationContainerAllFlex">
         <div className="reservationContainerFlex">
-        <h2 className="reservationCardTitle">Tus datos</h2>
+        <h2 className="reservationCardTitleForm">Tus datos</h2>
           <form className="reservationForm" id="formReservation">
             <fieldset>
               <legend className="reservationTitle">Tus datos</legend>
@@ -309,7 +309,7 @@ function CardReservation(props) {
             </div>
           </div>
         </div>
-        <div>
+        <div className="reservationCardReservation">
           <h2 className="reservationCardTitle">Detalle de la reserva</h2>
           <div className="reservationCardHotel">
             <div className="reservationCardInfo">

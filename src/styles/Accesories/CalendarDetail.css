@@ -47,6 +47,7 @@
   display: none;
 }
 
+.reservationCardTitleForm,
 .reservationCardTitle,
 .reservationTitleCalendarForm,
 .reservationTitleCalendar {
@@ -58,6 +59,7 @@
   color: var(--color3);
 }
 
+.reservationCardTitleForm,
 .reservationCardTitle {
   margin-bottom: 1rem;
 }
@@ -87,12 +89,11 @@
 
   .reservationCheckHourTitle,
   .reservationCardTitle,
+  .reservationCardTitleForm,
   .reservationTitleCalendarForm,
   .reservationTitleCalendar {
     margin-left: 2.5rem;
   }
-
-  
 
 }
 

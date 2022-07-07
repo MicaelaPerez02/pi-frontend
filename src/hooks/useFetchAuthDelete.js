@@ -8,7 +8,7 @@ export default function useFetchAuth(url) {
         const authToken = localStorage.getItem("user");
 
         const fetchData = async () => {
-            const response = await fetch("http://3.133.114.51:8086" + url, {
+            const response = await fetch("http://localhost:8080" + url, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${authToken}`,

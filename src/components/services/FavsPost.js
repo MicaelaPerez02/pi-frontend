@@ -4,7 +4,7 @@ export default function FavsPost({
 }) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://3.133.114.51:8086/favourites/addFavourite`, {
+    return fetch(`http://localhost:8080/favourites/addFavourite`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

@@ -2,15 +2,15 @@ import React from 'react';
 import useFetchAuth from '../../hooks/useFetchAuth';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import MyFavouritesEmpty from './MyFavouritesEmpty copy';
 import MyFavoriteCard from './MyFavoriteCard';
+import MyBookingsEmpty from './MyBookingsEmpty';
 
 function MyFavorites() {
 
     const authToken = localStorage.getItem("user");
 
     const deleteMethod = async (id2) => {
-        const response = await fetch(`http://3.133.114.51:8086/favourites/deleteFavourite/${id2}`, {
+        const response = await fetch(`http://localhost:8080/favourites/deleteFavourite/${id2}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${authToken}`,
@@ -55,12 +55,12 @@ function MyFavorites() {
     return (
         <>
             <Header />
-            <br /><br /><br /><br /><br />
-            <div className='productContainer'>
-                <p className='productInfoTitle'>Mis Favoritos</p>
-                    <div className='productCardBox' key={productList.length++}>
-                        {favsUser.length > 0 ? productList : <MyFavouritesEmpty />}
-                    </div>
+            <div className="bookingsContainer">
+                <h3 className="title bookingTitle">Mis favoritos</h3>
+                {favsUser.length > 0 ? <section className='myBooking'>{productList}</section> :
+                    <section className="emptyBookingList">
+                        <MyBookingsEmpty />
+                    </section>}
             </div>
             <Footer />
         </>

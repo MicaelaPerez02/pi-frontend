@@ -34,11 +34,23 @@
     cursor: pointer;
   }
 
+  .myBooking{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
 @media screen and (min-width: 1024px){
     .bookingsContainer{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .myBooking{
+        flex-direction: row;
+        padding-bottom: 17rem;
     }
 }
