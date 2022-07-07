@@ -355,7 +355,7 @@ function CardReservation(props) {
                 </div>
                 <hr className="hrReservation"></hr>
 
-                <section className="alertRegister">
+                <section className="alertReservation">
                   <Alert
                     header={''}
                     btnText={''}

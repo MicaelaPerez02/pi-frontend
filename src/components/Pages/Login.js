@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AiOutlineEyeInvisible, AiOutlineEye } from "react-icons/ai";
@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import HeaderLogin from "../Header/HeaderLogin";
 import LoginError from "./LoginError";
 import useUser from "../../hooks/useUser";
+import Alert from 'react-popup-alert';
 import "../../styles/Components/Login.css";
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
@@ -15,12 +16,16 @@ import "../../styles/General/Icons.css";
 import "../../styles/General/Elements.css";
 import "../../styles/General/Buttons.css";
 import useFetchAuth from "../../hooks/useFetchAuth";
+import { count } from "rsuite/esm/utils/ReactChildren";
 
 function Login() {
     const { data, isLoaded } = useFetchAuth(`/users/allUsers`);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [logged, setLogged] = useState(true);
     const { login } = useUser();
+    const [user, setUser] = useState(null);
+    const [count, setCount] = useState(0);
 
     const clearButtonClick = () => {
         localStorage.removeItem("buttonReservationClick");
@@ -40,10 +45,35 @@ function Login() {
         localStorage.removeItem("buttonReservationClick");
     }
 
-    const handleLogin = (e) => {
-        login({ email, password });
-        e.preventDefault();
+    /*POP UP ALERT*/
+    const [alert, setAlert] = useState({
+        type: 'error',
+        text: 'This is a alert message',
+        show: false
+    })
+    function onCloseAlert() {
+        setAlert({
+            type: '',
+            text: '',
+            show: false
+        })
     }
+
+    function onShowAlert(type) {
+        setAlert({
+            type: type,
+            text: 'Usuario o contraseña incorrectos, intentelo nuevamente',
+            show: true
+        })
+    }
+
+    useEffect(() => {
+        console.log(count)
+        if (count > 0) {
+            onShowAlert("error");
+            return;
+        }
+    });
 
     return (
         <>
@@ -80,10 +110,28 @@ function Login() {
                             </button>
                         </section>
                         <section className="buttonAccessAccount">
-                            <input type="submit" className="buttonSubmitLogin" value="Ingresar" onClick={handleLogin} />
+                            <button type="submit" className="buttonSubmitLogin" onClick={() => setCount(count + 1)} >
+                                Ingresar
+                            </button>
                         </section>
                     </fieldset>
                 </form>
+                <section className="alertLogin">
+                    <Alert
+                        header={''}
+                        btnText={''}
+                        text={alert.text}
+                        type={alert.type}
+                        show={alert.show}
+                        onClosePress={onCloseAlert}
+                        pressCloseOnOutsideClick={true}
+                        showBorderBottom={true}
+                        alertStyles={{}}
+                        headerStyles={{}}
+                        textStyles={{}}
+                        buttonStyles={{}}
+                    />
+                </section>
 
                 <section className="loginAccountContainer">
                     <p> ¿Aún no tienes cuenta? </p>

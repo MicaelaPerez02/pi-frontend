@@ -395,4 +395,8 @@
     margin-bottom: 5rem;
     font-size: 1.5rem;
   }
+
+  .alertReservation{
+    padding-left: 4rem;
+  }
 }
