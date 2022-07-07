@@ -30,7 +30,7 @@ function ButtonSidebarSession() {
                         </li>
                     </>
             }
-            <p className='closeSesion'> ¿Deseas <span className='spanCloseSesion' onClick={() => { icon_close(); window.location.reload(); }}>Cerrar Sesión</span>? </p>
+            <p className='closeSesion'> ¿Deseas <span className='spanCloseSesion' onClick={() => { icon_close(); window.location.reload(); }}>cerrar Sesión</span>? </p>
         </ul>
     )
 }

@@ -10,6 +10,8 @@
   color: var(--color3);
 
   padding: 0.5rem 1rem 0rem 1.1rem;
+
+  text-decoration: underline;
 }
 
 .hrRuleDetail {

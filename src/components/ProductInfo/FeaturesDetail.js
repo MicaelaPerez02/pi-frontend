@@ -8,55 +8,55 @@ import { CgInfo } from 'react-icons/cg';
 function FeaturesDetail(props) {
     return (
         <>
-            <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?<hr className='hrFeatureDetail' /></h3>
+            <h3 className='detailFeatureTitle'>¿Qué ofrece este lugar?</h3>
             <div className='detailFeaturesContainer'>
                 {props.features.map((feature, index) => (
                     <ul className='detailFeatureUl' key={index}>
                         {feature.icon == "BiWifi" ?
                             <>
                                 <li>
-                                    <BiWifi />{feature.description}
+                                    <BiWifi className="iconFeature"/>{feature.description}
                                 </li>
                             </>
                             : feature.icon == "RiParkingFill" ?
                                 <>
                                     <li>
-                                        <RiParkingFill />{feature.description}
+                                        <RiParkingFill className="iconFeature" />{feature.description}
                                     </li>
                                 </>
                                 : feature.icon == "FaTemperatureHigh" ?
                                     <>
                                         <li>
-                                            <FaTemperatureHigh />{feature.description}
+                                            <FaTemperatureHigh className="iconFeature" />{feature.description}
                                         </li>
                                     </>
                                     : feature.icon == "FaHotjar" ?
                                         <>
                                             <li>
-                                                <FaHotjar />{feature.description}
+                                                <FaHotjar className="iconFeature"/>{feature.description}
                                             </li>
                                         </>
                                         : feature.icon == "GiGymBag" ?
                                             <>
                                                 <li>
-                                                    <GiGymBag />{feature.description}
+                                                    <GiGymBag className="iconFeature"/>{feature.description}
                                                 </li>
                                             </> :
                                             feature.icon == "Buscar icono" ?
                                                 <>
                                                     <li>
-                                                        <CgInfo />{feature.description}
+                                                        <CgInfo className="iconFeature" />{feature.description}
                                                     </li>
                                                 </> :
                                                 feature.icon == "buscar icono" ?
                                                     <>
                                                         <li>
-                                                            <CgInfo />{feature.description}
+                                                            <CgInfo className="iconFeature" />{feature.description}
                                                         </li>
                                                     </> :
                                                     <>
                                                         <li>
-                                                            <CgInfo />{feature.description}
+                                                            <CgInfo className="iconFeature"/>{feature.description}
                                                         </li>
                                                     </>
                         }

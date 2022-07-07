@@ -190,8 +190,6 @@ function Register() {
         if (!validateData()) {
             onShowAlert("error");
         } else {
-            console.log("sign up creado correctamente");
-            localStorage.setItem("password", JSON.stringify(password));
             SignUp({ name, surname, email, password, city });
             sendEmail();
             navigate("/login");

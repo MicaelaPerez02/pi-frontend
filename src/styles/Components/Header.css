@@ -95,7 +95,8 @@
 @media (min-width: 1024px) {
   .headerMotto {
     display: inline;
-    margin: 0.5rem 0 0 1.2rem;
+    margin: 1.5rem 0 0 1.2rem;
+    padding-top:1rem;
     
     font-size: 1.2rem;
     font-weight: 200;

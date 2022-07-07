@@ -30,9 +30,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  padding: 2rem 0 0 0;
-  margin-bottom: 2rem;
 }
 
 .reservationCalendarOne {
@@ -50,16 +47,34 @@
   display: none;
 }
 
-.reservationTitleCalendar,
-.reservationCheckHourTitle {
+.reservationCardTitle,
+.reservationTitleCalendarForm,
+.reservationTitleCalendar {
   align-self: flex-start;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
-  margin-left: 2.5rem;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
 
   color: var(--color3);
 }
 
+.reservationCardTitle {
+  margin-bottom: 1rem;
+}
+
+.reservationTitleCalendar {
+  margin-bottom: 1rem;
+}
+
+.reservationCheckHourTitle {
+  align-self: flex-start;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+
+  color: var(--color3);
+}
 
 @media screen and (min-width: 768px) {
   .reservationCalendarOne {
@@ -69,4 +84,15 @@
   .reservationCalendarComponentDouble {
     display: block;
   }
+
+  .reservationCheckHourTitle,
+  .reservationCardTitle,
+  .reservationTitleCalendarForm,
+  .reservationTitleCalendar {
+    margin-left: 2.5rem;
+  }
+
+  
+
 }
+

@@ -11,6 +11,7 @@ import TimePicker from 'react-time-picker';
 import emailjs from '@emailjs/browser';
 import useFetchAuth from "../../hooks/useFetchAuth";
 import { isWithinInterval } from "date-fns";
+import Alert from 'react-popup-alert';
 import "../../styles/Accesories/React-Time-Picker.css";
 
 function CardReservation(props) {
@@ -30,6 +31,28 @@ function CardReservation(props) {
   const { Reservation } = useReservation();
   const checkIn = window.localStorage.getItem("date");
   const checkOut = window.localStorage.getItem("date2");
+
+  /*POP UP ALERT*/
+  const [alert, setAlert] = useState({
+    type: 'error',
+    text: 'This is a alert message',
+    show: false
+  })
+  function onCloseAlert() {
+    setAlert({
+      type: '',
+      text: '',
+      show: false
+    })
+  }
+
+  function onShowAlert(type) {
+    setAlert({
+      type: type,
+      text: 'La reserva no fue creada, intentelo nuevamente',
+      show: true
+    })
+  }
 
   /* -------------------------------------------------------------------------- */
   /*                               //CALENDARIO                                 */
@@ -73,7 +96,8 @@ function CardReservation(props) {
       });
   };
 
-  const handleReservation = () => {
+  const handleReservation = (e) => {
+    e.preventDefault();
     if (start_date !== null && finish_date !== null && start_time !== null) {
       Reservation({
         seller_info,
@@ -88,17 +112,18 @@ function CardReservation(props) {
           id: userId
         }
       });
+
+      navigate("/reservation/success");
       sendEmail();
       removeDates();
       localStorage.removeItem("date");
       localStorage.removeItem("date2");
-      navigate("/reservation/success");
-
-    } else if (start_date === null && finish_date === null) {
-      alert("Por favor, Seleccione una fecha");
-
+    } else if (start_date === null || finish_date === null) {
+      onShowAlert("Por favor, seleccione una fecha");
     } else if (start_time === null) {
-      alert("Por favor, Seleccione una hora");
+      onShowAlert("Por favor, seleccione un horario");
+    } else if (start_time === null && start_date === null && finish_date === null) {
+      onShowAlert("Por favor, ingrese los datos requeridos")
     }
   }
 
@@ -328,7 +353,24 @@ function CardReservation(props) {
                   <span>{checkOut}</span>)}
               </div>
               <hr className="hrReservation"></hr>
-              <Link to="/reservation/success" >
+
+              <section className="alertRegister">
+                <Alert
+                  header={''}
+                  btnText={''}
+                  text={alert.text}
+                  type={alert.type}
+                  show={alert.show}
+                  onClosePress={onCloseAlert}
+                  pressCloseOnOutsideClick={true}
+                  showBorderBottom={true}
+                  alertStyles={{}}
+                  headerStyles={{}}
+                  textStyles={{}}
+                  buttonStyles={{}}
+                />
+              </section>
+              <Link to="reservation/success">
                 <button className="reservationButtonConfirm" onClick={handleReservation}>
                   Confirmar reserva
                 </button>

@@ -101,6 +101,10 @@
 
 /*USER AND AVATAR*/
 
+.userSesionContainer {
+  padding-right: 2rem;
+}
+
 div.navTextUser {
   margin-bottom: 0.7rem;
 
@@ -110,11 +114,23 @@ div.navTextUser {
   justify-content: center;
 }
 
-.avatarGravatar{
+.avatarGravatar {
   border-radius: 100%;
   width: 90%;
 
   margin-bottom: 0.5rem;
+}
+
+.avatarGravatarSidebar {
+  border-radius: 100%;
+  width: 50%;
+  margin-left: 2rem;
+
+  margin-top: 0.5rem;
+}
+
+.avatarContainer {
+  display: flex;
 }
 
 .avatarUser {
@@ -149,6 +165,9 @@ p.avatarUser {
   font-weight: 700;
   line-height: 19px;
   text-align: right;
+
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
 
 .nameUser span {
@@ -169,7 +188,7 @@ p.avatarUser {
   letter-spacing: 0em;
   text-align: right;
 
-  margin: 25rem 1.5rem 0 0;
+  margin: 21rem 1.5rem 0 0;
 }
 
 .spanCloseSesion {
@@ -199,7 +218,6 @@ p.avatarUser {
   right: 0;
   transition: 1.5s;
 }
-
 
 /*NAVMENU TABLET AND DESKTOP*/
 .navbar {
@@ -246,6 +264,17 @@ p.avatarUser {
     margin-top: 0.5rem;
   }
 
+  .navTextUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iconDropdown {
+    font-size: 1rem;
+    color: var(--light);
+  }
+
   .buttonHeaderContainer {
     display: flex;
     align-items: center;
@@ -271,10 +300,14 @@ p.avatarUser {
     height: 3rem;
   }
 
+  .avatarGravatar {
+    padding: 0;
+  }
+
   .nameUser {
     flex-direction: row;
     align-items: center;
-    padding: 0.5rem 1rem 0 1rem;
+    padding: 0rem 0 0.5rem 0.5rem;
 
     font-size: 0.8rem;
   }
@@ -299,9 +332,7 @@ p.avatarUser {
     align-items: center;
   }
 
-
   .iconCloseSesion {
     margin-top: 1rem;
   }
-
 }

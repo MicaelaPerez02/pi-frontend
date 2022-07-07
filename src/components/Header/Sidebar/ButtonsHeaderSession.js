@@ -1,5 +1,6 @@
 import React from 'react';
 import DropdownMenu from './DropdownMenu';
+import {BiDownArrow} from "react-icons/bi";
 
 function ButtonsHeaderSession() {
     return (

@@ -45,7 +45,7 @@
 }
 
 .detailIcon:hover {
-  color: var(--complementary);
+  transform: rotateZ(360deg);
 }
 
 .iconPlusProduct {

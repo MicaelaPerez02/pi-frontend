@@ -34,7 +34,12 @@ function CardDetail(props) {
                 <div className="detailHeaderContainer">
                     <section className="detailHeader">
                         <h2 className='detailCategories'>{props.categories}</h2>
-                        <h3 className='detailTitle'>{props.title}</h3>
+                        <section className="detailSocialMedia">
+                            <h3 className='detailTitle'>{props.title}</h3>
+                            <ShareSocialMedia 
+                                title={props.title}
+                            />
+                        </section>
                     </section>
                     <Link to="/">
                         <p className='hidden'>Volver</p>
@@ -59,9 +64,7 @@ function CardDetail(props) {
                         <p className='detailReview'>{props.review}</p>
                     </section>
                 </section>
-                <section className="detailSocialMedia">
-                    <ShareSocialMedia />
-                </section>
+
             </div>
 
             <section className='detailCarrouselContainer'>
@@ -79,19 +82,20 @@ function CardDetail(props) {
             </section>
             <section className='detailDescription'>
                 <h4 className='detailDescriptionSlogan'>{props.title}</h4>
-                    {state ? <>
-                        <h4 className='detailDescriptionInfo'>{props.description} <span onClick={toggleBtn}>...continuar leyendo</span></h4>
-                    </> :
-                        <>
-                            <h4 className='detailDescriptionInfo'>{props.long_description}<span onClick={toggleBtn}> ...leer menos</span></h4>
-                        </>}
+
+                {state ? <>
+                    <h4 className='detailDescriptionInfo'>{props.description} <span onClick={toggleBtn}>...continuar leyendo</span></h4>
+                </> :
+                    <>
+                        <h4 className='detailDescriptionInfo'>{props.long_description}<span onClick={toggleBtn}> ...leer menos</span></h4>
+                    </>}
             </section>
             <section className='detailFeatures'>
                 <FeaturesDetail features={props.features} />
             </section>
 
             <div className='detailCalendar'>
-                <h4 className='detailCalendarTitle'>Fechas disponibles <hr className='hrProdDetail'></hr></h4>
+                <h4 className='detailCalendarTitle'>Fechas disponibles</h4>
                 <section className="detailCalendarFlex">
                     <CalendarDetail className="detailCalendarDisplay" />
                 </section>
@@ -124,7 +128,7 @@ function CardDetail(props) {
 
             <div className='detailRules'>
                 <div className="rulesDetailsContainer">
-                    <h4 className="rulesDetailTitle">¿Qué tenes que saber? <hr className='hrRuleDetail' /></h4>
+                    <h4 className="rulesDetailTitle">¿Qué tenes que saber?</h4>
                     <div className='rulesDetailContainerFlex'>
                         <section className='rulesDetailFlex'>
                             <div className="rulesDetailOne">

@@ -6,13 +6,13 @@ function SafetiesDetail(props) {
     
     return (
         <>
-            <h3 className='detailFeatureTitle'>Salud y seguridad<hr className='hrFeatureDetail' /></h3>
+            <h3 className='detailFeatureTitle'><BsFileEarmarkRuled className='rulesIcon' />Salud y seguridad</h3>
             <div className='detailFeaturesContainer'>
+            <ul className='detailFeatureUl' key={props.id}>
                 {props.safeties.map((safetie, index) => (
-                    <ul className='detailFeatureUl' key={index}>
                         <li>{safetie.description}</li>
-                    </ul>
                 ))}
+                </ul>
             </div>
         </>
     )
