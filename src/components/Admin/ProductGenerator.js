@@ -182,8 +182,6 @@ function ProductGeneratorCard() {
   }
 
   function postElements(e) {
-    e.preventDefault();
-
     Cities({
       "name": newCity
     })
@@ -351,7 +349,7 @@ function ProductGeneratorCard() {
                   <label>Ingresar nombre de Icono</label>
                   <input type="text" value={newIcon} onChange={e => setNewIcon(e.target.value)} name="text" placeholder="Icono" />
                 </div>
-                
+
               </section>
             </fieldset>
           </section>

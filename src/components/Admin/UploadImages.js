@@ -74,28 +74,28 @@ function UploadImages() {
     useEffect(() => {
         if (newImagesUrl.length === 0) {
             setErrorUrl1("");
-        } else if (newImagesUrl.length < 10) {
+        } else if (newImagesUrl.length < 15) {
             setErrorUrl1("Ingrese una url valida");
         } else {
             setErrorUrl1("");
         }
         if (newImagesUrl2.length === 0) {
             setErrorUrl2("")
-        } else if (newImagesUrl2.length < 10) {
+        } else if (newImagesUrl2.length < 15) {
             setErrorUrl2("Ingrese una url valida")
         } else {
             setErrorUrl2("")
         }
         if (newImagesUrl3.length === 0) {
             setErrorUrl3("")
-        } else if (newImagesUrl2.length < 10) {
+        } else if (newImagesUrl2.length < 15) {
             setErrorUrl3("Ingrese una url valida")
         } else {
             setErrorUrl2("")
         }
         if (newImagesUrl4.length === 0) {
             setErrorUrl4("")
-        } else if (newImagesUrl4.length < 10) {
+        } else if (newImagesUrl4.length < 15) {
             setErrorUrl4("Ingrese una url valida")
         } else {
             setErrorUrl4("")
@@ -139,19 +139,19 @@ function UploadImages() {
                         <legend>Cargar imágenes</legend>
 
                         <input type="url" value={newImagesUrl} onChange={e => setNewImagesUrl(e.target.value)} placeholder="Insertar url de la imágen" />
-                        {newImagesUrl === "" || newImagesUrl.length < 4 ?
+                        {newImagesUrl === "" || newImagesUrl.length < 15 ?
                             <p className="validationError">{errorUrl1}</p> : <p></p>}
 
                         <input type="url" value={newImagesUrl2} onChange={e => setNewImagesUrl2(e.target.value)} placeholder="Insertar url de la imágen" />
-                        {newImagesUrl2 === "" || newImagesUrl2.length < 4 ?
+                        {newImagesUrl2 === "" || newImagesUrl2.length < 15 ?
                             <p className="validationError">{errorUrl2}</p> : <p></p>}
 
                         <input type="url" value={newImagesUrl3} onChange={e => setNewImagesUrl3(e.target.value)} placeholder="Insertar url de la imágen" />
-                        {newImagesUrl3 === "" || newImagesUrl3.length < 4 ?
+                        {newImagesUrl3 === "" || newImagesUrl3.length < 15 ?
                             <p className="validationError">{errorUrl3}</p> : <p></p>}
 
                         <input type="url" value={newImagesUrl4} onChange={e => setNewImagesUrl4(e.target.value)} placeholder="Insertar url de la imágen" />
-                        {newImagesUrl4 === "" || newImagesUrl4.length < 4 ?
+                        {newImagesUrl4 === "" || newImagesUrl4.length < 15 ?
                             <p className="validationError">{errorUrl4}</p> : <p></p>}
                     </fieldset>
                     <Link to="/product/addProduct/success">
