@@ -128,6 +128,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 
   margin-left: 5%;
+  
   margin-bottom: 2rem;
 }
 
@@ -294,7 +295,7 @@
   }
 
   .reservationForm {
-    margin: 2rem 0 0 2.5rem;
+    margin: 0rem 0 0 1.8rem;
   }
 
   .inputRes {
@@ -302,9 +303,7 @@
   }
 
   .reservationCardHotel {
-    margin-top: 2rem;
-    margin-right: 2rem;
-    margin-left: 1rem;
+    margin: 0 1rem;
   }
 
   .reservationCardInfo {
@@ -320,5 +319,9 @@
     width: 100%;
     padding: 0;
     margin-top: 2rem;
+  }
+
+  .reservationCardTitle{
+    margin-left: 2rem;
   }
 }

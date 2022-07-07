@@ -165,7 +165,7 @@ function CardReservation(props) {
       </div>
       <div className="reservationContainerAllFlex">
         <div className="reservationContainerFlex">
-
+        <h2 className="reservationCardTitle">Tus datos</h2>
           <form className="reservationForm" id="formReservation">
             <fieldset>
               <legend className="reservationTitle">Tus datos</legend>
@@ -309,72 +309,74 @@ function CardReservation(props) {
             </div>
           </div>
         </div>
-        <div className="reservationCardHotel">
+        <div>
           <h2 className="reservationCardTitle">Detalle de la reserva</h2>
-          <div className="reservationCardInfo">
-            <div className="reservationCardImage">
+          <div className="reservationCardHotel">
+            <div className="reservationCardInfo">
+              <div className="reservationCardImage">
 
-              <img
-                src={props.images}
-                alt={props.title}
-                className="reservationCardImage"
-              />
-
-            </div>
-            <div className="reservationCardInfoFlex">
-              <p className="reservationCardCategory">{props.categories}</p>
-              <p className="reservationCardName">{props.title}</p>
-              <span className="reservationRating">
-                {Array(props.rating)
-                  .fill()
-                  .map((_, index) => (
-                    <p key={index} className="reservationStars">
-                      <AiFillStar />
-                    </p>
-                  ))}
-              </span>
-              <p className="reservationCities">
-                <FaMapMarkerAlt className="productIconMap" />
-                {props.cities}
-              </p>
-              <hr className="hrReservation"></hr>
-              <div className="reservationCheckInOutContainer">
-                <p className="reservationCheckInOut">Check in </p>
-                {checkIn == null ? (
-                  <span>Selecciona tu fecha</span>) : (
-                  <span>{checkIn}</span>
-                )}
-              </div>
-              <hr className="hrReservation"></hr>
-              <div className="reservationCheckInOutContainer">
-                <p className="reservationCheckInOut">Check out </p>
-                {checkIn == null ? (
-                  <span>Selecciona tu fecha</span>) : (
-                  <span>{checkOut}</span>)}
-              </div>
-              <hr className="hrReservation"></hr>
-
-              <section className="alertRegister">
-                <Alert
-                  header={''}
-                  btnText={''}
-                  text={alert.text}
-                  type={alert.type}
-                  show={alert.show}
-                  onClosePress={onCloseAlert}
-                  pressCloseOnOutsideClick={true}
-                  showBorderBottom={true}
-                  alertStyles={{}}
-                  headerStyles={{}}
-                  textStyles={{}}
-                  buttonStyles={{}}
+                <img
+                  src={props.images}
+                  alt={props.title}
+                  className="reservationCardImage"
                 />
-              </section>
-              <Link to="reservation/success">
-                <button className="reservationButtonConfirm" onClick={handleReservation}>
-                  Confirmar reserva
-                </button>
-              </Link>
+
+              </div>
+              <div className="reservationCardInfoFlex">
+                <p className="reservationCardCategory">{props.categories}</p>
+                <p className="reservationCardName">{props.title}</p>
+                <span className="reservationRating">
+                  {Array(props.rating)
+                    .fill()
+                    .map((_, index) => (
+                      <p key={index} className="reservationStars">
+                        <AiFillStar />
+                      </p>
+                    ))}
+                </span>
+                <p className="reservationCities">
+                  <FaMapMarkerAlt className="productIconMap" />
+                  {props.cities}
+                </p>
+                <hr className="hrReservation"></hr>
+                <div className="reservationCheckInOutContainer">
+                  <p className="reservationCheckInOut">Check in </p>
+                  {checkIn == null ? (
+                    <span>Selecciona tu fecha</span>) : (
+                    <span>{checkIn}</span>
+                  )}
+                </div>
+                <hr className="hrReservation"></hr>
+                <div className="reservationCheckInOutContainer">
+                  <p className="reservationCheckInOut">Check out </p>
+                  {checkIn == null ? (
+                    <span>Selecciona tu fecha</span>) : (
+                    <span>{checkOut}</span>)}
+                </div>
+                <hr className="hrReservation"></hr>
+
+                <section className="alertRegister">
+                  <Alert
+                    header={''}
+                    btnText={''}
+                    text={alert.text}
+                    type={alert.type}
+                    show={alert.show}
+                    onClosePress={onCloseAlert}
+                    pressCloseOnOutsideClick={true}
+                    showBorderBottom={true}
+                    alertStyles={{}}
+                    headerStyles={{}}
+                    textStyles={{}}
+                    buttonStyles={{}}
+                  />
+                </section>
+                <Link to="reservation/success">
+                  <button className="reservationButtonConfirm" onClick={handleReservation}>
+                    Confirmar reserva
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
