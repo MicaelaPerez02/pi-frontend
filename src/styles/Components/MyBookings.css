@@ -47,10 +47,18 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding-top: 1rem;
     }
-
+    .bookingTitle{
+        padding-top: 6rem;
+    }
     .myBooking{
         flex-direction: row;
-        padding-bottom: 17rem;
+        padding-bottom: 20rem;
+    }
+
+    .myCards{
+        width: 75%;
+        padding-top: 2rem;
     }
 }
