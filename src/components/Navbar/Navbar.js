@@ -9,6 +9,7 @@ import CardCities from '../Cards/CardCities';
 
 function Navbar(props) {
     const navigate = useNavigate();
+
     const handleClick = () => {
         navigate("/products/dateFilter");
     }
@@ -20,14 +21,20 @@ function Navbar(props) {
             <section className='navbarElementsContainer'>
                 <CardCities key={props.id} />
                 <DateRangePicker placeholder="Seleccione el rango de fechas" className='datePickerDesktop' format='dd-MM-yyyy'
-                    onChange={(date) => {
-                        localStorage.setItem('datePicker', JSON.stringify((date[0]).substring(1, 11)));
-                        localStorage.setItem('datePicker2', JSON.stringify((date[1]).substring(1, 11)));
-                    }} />
-                <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='datePickerMobile'
+
                     onChange={(date) => {
                         localStorage.setItem('datePicker', JSON.stringify((date[0])));
-                        localStorage.setItem('datePicker2', JSON.stringify((date[1])))
+                        localStorage.setItem('datePicker2', JSON.stringify((date[1])));
+
+                        handleClick();
+                    }} />
+                <DateRangePicker placeholder="Seleccione el rango de fechas" oneTap showOneCalendar hoverRange="week" format='dd-MM-yyyy' className='datePickerMobile'
+                    
+                    onChange={(date) => {
+                        localStorage.setItem('datePicker', JSON.stringify((date[0])));
+                        localStorage.setItem('datePicker2', JSON.stringify((date[1])));
+
+                        handleClick();
                     }}
                 />
                 <section className="navbarButtonContainer">

@@ -1,29 +1,14 @@
 import React, { useState } from 'react'
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { AiFillStar, AiOutlineHeart } from "react-icons/ai"
-import FavDelete from '../User/FavDelete';
+import { AiFillStar } from "react-icons/ai"
 import '../../styles/Components/Product.css';
-import useFavs from "../../hooks/useFavs";
-import useUser from "../../hooks/useUser";
-import useFetchAuth from '../../hooks/useFetchAuth';
+
 
 function MyFavoriteCard(props) {
-    const [products, setProducts] = useState();
-    const [userId, setUserId] = useState(localStorage.getItem("userId"));
-    const { Favs } = useFavs();
-    const { addFav } = useUser();
-    const { data } = useFetchAuth(`/favourites/allFavourites`);
-    const [isFaved, setIsFaved] = useState("");
-    const [isFav, setIsFav] = useState(false);
-    const [state, setState] = useState(false);
-    const idsFavs = data.map(fav => console.log(fav.id));
-
     const handleDelete = () => {
         props.onDelete(props.id2)
     }
-    
-    const authToken = localStorage.getItem("user");
 
     return (
         <>

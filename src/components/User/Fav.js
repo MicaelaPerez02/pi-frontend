@@ -3,9 +3,6 @@ import '../../styles/Components/Product.css';
 import useFavs from "../../hooks/useFavs";
 import useUser from "../../hooks/useUser";
 import useFetchAuth from '../../hooks/useFetchAuth';
-import FavDelete from "./FavDelete";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import { set } from "react-hook-form";
 
 export default function Fav({ id, id2, onDelete }) {
     const [products, setProducts] = useState(id);
@@ -16,7 +13,6 @@ export default function Fav({ id, id2, onDelete }) {
     const [isFaved, setIsFaved] = useState("🤍");
     const [isFav, setIsFav] = useState(false);
     const [state, setState] = useState(false);
-    const idsFavs = data.map(fav => console.log(fav.id));
 
     const toggle = () => {
         setIsFav(!isFav);

@@ -13,6 +13,7 @@ export default function DropdownMenu() {
     }
 
     const avatarUser = data.avatar;
+    
     return (
         <Menu menuButton={
             <MenuButton>{localStorage.getItem("user").length > 2 ?
@@ -20,11 +21,12 @@ export default function DropdownMenu() {
                     <p className='avatarUser'> {localStorage.getItem("avatar")}</p>
                     :
                     <img src={avatarUser} alt="Imagen de perfíl gravatar" className='avatarGravatar' />}
+                    {console.log(avatarUser)}
                 </div> : "null"}
             </MenuButton>
             } transition>
 
-            {localStorage.getItem("username") === "admin@gmail.com" ?
+            {localStorage.getItem("username") === "administrador@homu.com" ?
                 <>
                     <Link to="/product/addProduct">
                         <MenuItem>Generar Producto</MenuItem>

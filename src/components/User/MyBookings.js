@@ -33,7 +33,6 @@ function MyBookings() {
       bookingsUser.push(bookings.id);
   })
 
-  console.log(bookingsUser.length);
   return (
     <>
       <Header />
