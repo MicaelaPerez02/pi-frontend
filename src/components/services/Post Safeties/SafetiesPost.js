@@ -1,7 +1,7 @@
 export default function SafetiesPost({description}) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://localhost:8080/safeties/addSafety`, {
+    return fetch(`http://3.133.114.51:8086/safeties/addSafety`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

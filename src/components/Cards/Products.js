@@ -1,7 +1,6 @@
 import React from 'react';
 import useFetch from '../../hooks/useFetch';
 import CardProduct from './CardProduct';
-import {AiOutlineHeart} from "react-icons/ai"
 import '../../styles/Components/Product.css';
 
 function Cards() {

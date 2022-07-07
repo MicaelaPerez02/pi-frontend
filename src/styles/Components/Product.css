@@ -7,6 +7,15 @@
   padding-bottom: 3rem;
 }
 
+#favIcon{
+  background-color:transparent;
+  color: red;
+  border: none;
+  width: 5%;
+  position: absolute;
+  font-size: 1.5rem;
+}
+
 .productInfoTitle {
   font-size: 1.5rem;
   font-weight: 700;
@@ -254,5 +263,9 @@
 
   .productImageContainer{
     height: 20rem;
+  }
+  
+  #favIcon{
+    font-size: 2rem;
   }
 }

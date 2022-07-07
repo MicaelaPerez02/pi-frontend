@@ -2,18 +2,17 @@ import React from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AiFillStar, AiOutlineHeart } from "react-icons/ai"
+import Fav from '../User/Fav';
 
 function CardProduct(props) {
     return (
         <div className="productInfoContainer" key={props.id}>
+            <Fav id={props.id} className="favIcon" />
 
-            <section className='productImageContainer'>
-                <AiOutlineHeart className="iconLike" />
+            <div className='productImageContainer'>
                 <img src={props.url} alt={props.title} />
-            </section>
-
+            </div>
             <div className='flex_deskt'>
-
                 <section className='productRatingContainer'>
                     <span className="productRatingFlex"><p className='productRating'> {props.categories} </p>{
                         Array(props.rating)
