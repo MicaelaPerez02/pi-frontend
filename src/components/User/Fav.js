@@ -3,6 +3,7 @@ import '../../styles/Components/Product.css';
 import useFavs from "../../hooks/useFavs";
 import useUser from "../../hooks/useUser";
 import useFetchAuth from '../../hooks/useFetchAuth';
+import {RiHeartAddFill, RiHeartFill} from "react-icons/ri";
 
 export default function Fav({ id, id2, onDelete }) {
     const [products, setProducts] = useState(id);
@@ -10,7 +11,7 @@ export default function Fav({ id, id2, onDelete }) {
     const { Favs } = useFavs();
     const { addFav } = useUser();
     const { data } = useFetchAuth(`/favourites/allFavourites`);
-    const [isFaved, setIsFaved] = useState("🤍");
+    const [isFaved, setIsFaved] = useState(<RiHeartAddFill />);
     const [isFav, setIsFav] = useState(false);
     const [state, setState] = useState(false);
 
@@ -31,7 +32,7 @@ export default function Fav({ id, id2, onDelete }) {
         const productList = data.map(fav => fav.products.id)
         if (products == productList[0] || products == productList[1] || products == productList[2] || products == productList[3]
             || products == productList[4] || products == productList[5] || products == productList[6] || products == productList[7]) {
-            setIsFaved("❤")
+            setIsFaved(<RiHeartFill />)
             setIsFav(true)
         }
     }, [setIsFav, setIsFaved, products, data]);

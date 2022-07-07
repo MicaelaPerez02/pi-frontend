@@ -23,7 +23,6 @@
   display: flex;
   flex-direction: column;
   flex: wrap;
-  justify-content: space-around;
 
   overflow: hidden;
 

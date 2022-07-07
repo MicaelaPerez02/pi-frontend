@@ -43,6 +43,6 @@ a {
 
 .szh-menu--state-open,
 .szh-menu--dir-bottom {
-  top: 35px !important;
-  left: -150px !important;
+  top: 25px !important;
+  left: -80px !important;
 }

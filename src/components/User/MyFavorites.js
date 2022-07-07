@@ -58,13 +58,9 @@ function MyFavorites() {
             <br /><br /><br /><br /><br />
             <div className='productContainer'>
                 <p className='productInfoTitle'>Mis Favoritos</p>
-                <div className='productCardItems'>
                     <div className='productCardBox' key={productList.length++}>
-
                         {favsUser.length > 0 ? productList : <MyFavouritesEmpty />}
                     </div>
-
-                </div>
             </div>
             <Footer />
         </>

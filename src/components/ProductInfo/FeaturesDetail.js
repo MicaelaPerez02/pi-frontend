@@ -12,7 +12,6 @@ function FeaturesDetail(props) {
             <div className='detailFeaturesContainer'>
                 {props.features.map((feature, index) => (
                     <ul className='detailFeatureUl' key={index}>
-
                         {feature.icon == "BiWifi" ?
                             <>
                                 <li>
@@ -61,8 +60,6 @@ function FeaturesDetail(props) {
                                                         </li>
                                                     </>
                         }
-
-                        <li>{feature.icon} {feature.description}</li>
                     </ul>
                 ))}
             </div>

@@ -28,13 +28,9 @@ function Cards() {
     return (
         <section className='productContainer'>
             <h2 className='productInfoTitle'>Recomendaciones</h2>
-
-            <div className='productCardItems'>
                 <section className='productCardBox' key={productList.length++}>
                     {isLoaded ? productList : <p>Cargando...</p>}
                 </section>
-            </div>
-            
         </section>
     )
 }
