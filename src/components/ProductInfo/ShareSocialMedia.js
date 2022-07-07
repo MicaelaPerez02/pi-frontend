@@ -13,7 +13,7 @@ function ShareSocialMedia() {
 
     return (
         <Menu menuButton={<MenuButton className='buttonShareSocialMedia' type="button">
-            Compartir <FaShareAltSquare className='iconShareSocialMedia' />
+            <p className="hidden">Dropdown compartir en redes sociales</p> <FaShareAltSquare className='iconShareSocialMedia' />
         </MenuButton>} transition>
             <MenuItem className='menuItemSocialMedia'>
                 <FacebookShareButton url={shareUrl} title="¿Qué te parece este lugar?" type="button">

@@ -61,7 +61,6 @@ function CardDetail(props) {
                 </section>
                 <section className="detailSocialMedia">
                     <ShareSocialMedia />
-                    <BsFillSuitHeartFill className='iconLikeCardDetail' />
                 </section>
             </div>
 
