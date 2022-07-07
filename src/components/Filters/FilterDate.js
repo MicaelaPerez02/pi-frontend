@@ -41,7 +41,7 @@ function FilterDate() {
             <section className='productContainer'>
                 <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardBox'>
-                    {isLoaded ? <div>{productOnDateSelected} </div> : <div>Cargando...</div>}
+                    {isLoaded ? productOnDateSelected : <div>Cargando...</div>}
                 </div>
             </section>
 

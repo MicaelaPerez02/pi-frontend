@@ -42,11 +42,10 @@ function FilterCities() {
             <div className="categories_body">
                 <Categories />
             </div>
-
             <section className='productContainer' key={citiesId}>
                 <h2 className='productInfoTitle'>Recomendaciones</h2>
                 <div className='productCardBox'>
-                    {isLoaded ? <div onClick={handleClick}>{citySelected} </div> : <div>Cargando...</div>}
+                    {isLoaded ? <div onClick={handleClick} className="productCardBox">{citySelected} </div> : <div>Cargando...</div>}
                 </div>
             </section>
 
