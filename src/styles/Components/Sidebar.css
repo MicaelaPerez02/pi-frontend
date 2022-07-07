@@ -114,6 +114,8 @@ div.navTextUser {
   justify-content: center;
 }
 
+
+
 .avatarGravatar {
   border-radius: 100%;
   width: 15%;
@@ -253,6 +255,14 @@ p.avatarUser {
 
 /***MEDIA QUERYS***/
 @media screen and (min-width: 768px) {
+
+  .avatarGravatar {
+    border-radius: 100%;
+    width: 90%;
+  
+    margin:0;
+    padding: 0;
+  }
   .nav-menu {
     display: none;
   }
