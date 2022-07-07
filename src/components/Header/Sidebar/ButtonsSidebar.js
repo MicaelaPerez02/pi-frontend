@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 
 function ButtonsSidebar() {
     return (
-        <ul>
-            <li className="nav-text">
-                <Link to="/login" style={{textDecoration: 'none'}}>
-                    <span>Iniciar Sesión</span>
-                </Link>
-            </li>
-            <li className="nav-text">
-                <Link to="/register" style={{textDecoration: 'none'}}>
-                    <span>Crear cuenta</span>
-                </Link>
-            </li>
+        <ul className="navTextUser">
+            <Link to="/login">
+                <li className="nav-text">
+                    <button>Iniciar Sesión</button>
+                </li>
+            </Link>
+
+            <Link to="/register">
+                <li className="nav-text">
+                    <button>Crear cuenta</button>
+                </li>
+            </Link>
         </ul>
     )
 }

@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: center;
 
-  margin-left: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .spanAccountColorLogin {
@@ -52,7 +52,7 @@
   text-align: center;
 
   color: var(--complementary);
-  margin-left: 0.5rem;
+  margin: 0.55rem 0 0.5rem 0.5rem;
 }
 
 /**************************LOGIN RESERVATION ERROR***********************************/

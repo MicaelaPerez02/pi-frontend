@@ -16,7 +16,7 @@ export default function DropdownMenu() {
     return (
         <Menu menuButton={
             <MenuButton>{localStorage.getItem("user").length > 2 ?
-                <div> {(avatarUser == "https://www.gravatar.com/avatar/466dcf1001d04d8e101cf4a5cc9bc41d") ?
+                <div> {(avatarUser == "http://www.gravatar.com/avatar/bd0e4cf4cb4a75b48e1734ec8693cb55.png?d=https%3A%2F%2Fbucket-pig6.s3.us-east-2.amazonaws.com%2FLogos%2BHomu%2FLogoH.png") ?
                     <p className='avatarUser'> {localStorage.getItem("avatar")}</p>
                     :
                     <img src={avatarUser} alt="Imagen de perfíl gravatar" className='avatarGravatar' />}

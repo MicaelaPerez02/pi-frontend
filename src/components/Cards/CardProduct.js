@@ -22,7 +22,12 @@ function CardProduct(props) {
                                 <p key={index}><AiFillStar /></p>
                             ))
                     }</span>
-                    <p className="productReview">{props.review}</p>
+                    {
+                        props.review <= 8 ? <section className='productReviewSection'> <p className="productReviewText">Muy bueno</p>
+                            <p className="productReview">{props.review}</p></section>
+                            : <section className='productReviewSection'><p className="productReviewText">Excelente</p>
+                                <p className="productReview">{props.review}</p></section>
+                    }
                 </section>
 
                 <section className='productTitle'>

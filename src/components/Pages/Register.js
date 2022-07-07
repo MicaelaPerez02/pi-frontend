@@ -8,7 +8,7 @@ import emailjs from '@emailjs/browser';
 import useUserSingnUp from "../../hooks/useUserSignUp";
 import validator from 'validator';
 import PasswordValidator from "password-validator";
-import Alert from 'react-popup-alert'
+import Alert from 'react-popup-alert';
 import "../../styles/Components/Register.css";
 import "../../styles/General/Forms.css";
 import "../../styles/General/Icons.css";
@@ -138,11 +138,9 @@ function Register() {
         return isValid;
     }
 
-
     /* -------------------------------------------------------------------------- */
     /*                               FIN VALIDACION                               */
     /* -------------------------------------------------------------------------- */
-
 
     const sendEmail = (e) => {
         emailjs.sendForm('homuProyect', 'template_vxfmf4b', "#formRegister", 'SLkHg1L_8kzpGb-yt')

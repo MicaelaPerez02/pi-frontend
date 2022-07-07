@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: center;
   color: var(--color3);
-  padding-bottom: 1rem;
+  padding: 0.5rem 0;
 }
 
 .datePickerDesktop {
@@ -38,6 +38,10 @@
 
   padding-bottom: 0.4rem;
   margin-left: 0.8rem;
+  color: var(--color3);
+}
+
+.formInputSelect select{
   color: var(--color3);
 }
 
@@ -106,6 +110,10 @@ select.form_select:hover {
 
 .categories_body {
   background-color: var(--light);
+}
+
+.navbarButtonContainer{
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 768px) {

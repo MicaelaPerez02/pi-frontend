@@ -18,6 +18,7 @@ import GetCancellations from '../services/Getters/GetCancellations';
 import GetCities from '../services/Getters/GetCities';
 import GetProducts from '../services/Getters/GetProducts';
 import { GoChevronLeft } from "react-icons/go";
+import { FaRandom } from 'react-icons/fa';
 
 function ProductGeneratorCard() {
   const { Cities } = useCities();
@@ -49,6 +50,8 @@ function ProductGeneratorCard() {
   let maxIdCancellation = JSON.parse(localStorage.getItem("maxIdCancellation"));
   let maxIdSafeties = JSON.parse(localStorage.getItem("maxIdSafeties"));
   let maxIdRules = JSON.parse(localStorage.getItem("maxIdRules"));
+
+  const random = Math.floor(Math.random() * 8);;
 
   function postElements(e) {
     e.preventDefault();
@@ -92,6 +95,10 @@ function ProductGeneratorCard() {
       },
       features: [{
         "id": maxIdFeatures
+      }, {
+        "id": 3
+      }, {
+        "id": 2
       }],
       cities: {
         "id": maxIdCities
@@ -196,7 +203,6 @@ function ProductGeneratorCard() {
                 <legend>Elegir reglas</legend>
                 <label>Crea tu propia regla</label>
                 <input type="text" value={newRule} onChange={e => setNewRule(e.target.value)} name="text" placeholder="Escriba aquí" />
-                {newRule === null || newRule === "" ? maxIdRules = JSON.parse(localStorage.getItem('rulesId')) : console.log(newRule)}
               </fieldset>
             </section>
 
@@ -206,7 +212,6 @@ function ProductGeneratorCard() {
                 <legend>Elegir información sobre salud y seguridad</legend>
                 <label>Crea tu información de salud y seguridad</label>
                 <input type="text" value={newSafety} onChange={e => setNewSafety(e.target.value)} name="text" placeholder="Escriba aquí" />
-                {newSafety === null || newSafety === "" ? maxIdSafeties = JSON.parse(localStorage.getItem('safetiesId')) : console.log(newSafety)}
               </fieldset>
             </section>
 
@@ -216,7 +221,6 @@ function ProductGeneratorCard() {
                 <legend>Elegir políticas de cancelación </legend>
                 <label>Crea tu propia política de cancelación</label>
                 <input type="text" value={newCancellation} onChange={e => setNewCancellation(e.target.value)} name="text" placeholder="Escriba aquí" />
-                {newCancellation === null || newCancellation === "" ? maxIdCancellation = JSON.parse(localStorage.getItem('cancellationId')) : console.log(newCancellation)}
               </fieldset>
             </section>
           </div>

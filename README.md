@@ -39,3 +39,5 @@ In the project directory, you can run:
 ### `npm i react-responsive-modal --force`
 
 ### ` npm install react-laag`
+
+### ` npm i react-popup-alert@1.0.7 --force`

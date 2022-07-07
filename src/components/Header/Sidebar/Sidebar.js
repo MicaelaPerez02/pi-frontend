@@ -25,9 +25,10 @@ function Sidebar(props) {
                         <Link to='/' className='menu-bars'>
                             <FaWindowClose className='icon_close' />
                         </Link>
-                        <div> {(avatarUser == "http://www.gravatar.com/avatar/bd0e4cf4cb4a75b48e1734ec8693cb55.png?d=https%3A%2F%2Fbucket-pig6.s3.us-east-2.amazonaws.com%2FLogos%2BHomu%2FLogoH.png") ?
+                        <div> {
+                            (avatarUser == "http://www.gravatar.com/avatar/bd0e4cf4cb4a75b48e1734ec8693cb55.png?d=https%3A%2F%2Fbucket-pig6.s3.us-east-2.amazonaws.com%2FLogos%2BHomu%2FLogoH.png") ?
                             <p className='avatarUser'> {localStorage.getItem("avatar")}</p> :
-                            <img src={avatarUser} alt="img perfil" className='avatarGravatar' />}
+                            <img src={avatarUser} alt="" className='avatarGravatar' />}
                         </div>
                     </li>
 

@@ -41,7 +41,7 @@
   background-color: transparent;
   position: relative;
   top: -0.5rem;
-  left: 80%;
+  left: 88%;
 }
 
 .spanAccountColorRegister {
@@ -74,7 +74,8 @@
 .createAccountContainer {
   display: flex;
   align-items: center;
-  margin-right: 1.5rem;
+
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .alert-body{
@@ -88,7 +89,7 @@
   }
 
   .sectionFormContainerRegister section {
-    margin: 0.5rem 0.5rem;
+    margin: 0.5rem 0 -0.5rem 0.5rem;
   }
 
   .sectionFormContainerRegister input {
@@ -104,8 +105,12 @@
     margin-left: 0.5rem;
   }
 
+  .sectionFlexContaineRegister section{
+    margin: 0.3rem 0 0 0;
+  }
+
   .buttonFormRegister {
-    left: 85%;
+    left: 90%;
   }
 
   .buttonCreateAccount {
