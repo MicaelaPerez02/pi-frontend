@@ -22,11 +22,13 @@
 }
 
 .buttonCreateAll{
-  width:100%;
-  height: 2.5rem;
+  width:60%;
+  height: 3rem;
   border-radius: 4px;
   background-color: var(--main-color);
-  margin: 1rem 1rem 0 0.3rem;
+
+  margin: 0 3rem 0 3rem;
+  padding: 0 2rem;
   color: var(--light);
   font-size: 1rem;
   font-weight: 700;
@@ -37,11 +39,11 @@
 }
 
 .buttonCreate {
-  width: 45%;
+  width: 40%;
   height: 2.5rem;
   border-radius: 4px;
   background-color: var(--main-color);
-  margin: 1rem 1rem 0 0.3rem;
+  margin: 1rem 0.5rem 0 0.3rem;
   color: var(--light);
   font-size: 1rem;
   font-weight: 700;

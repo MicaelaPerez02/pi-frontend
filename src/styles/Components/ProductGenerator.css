@@ -42,9 +42,13 @@
 .fieldsetCreateImage {
   background-color: var(--light);
 
-  padding: 1rem 0 1rem 1.5rem;
+  padding: 1rem 0 1rem 1rem;
   margin-top: 1rem;
   margin-bottom: 3rem;
+}
+
+.fieldsetCreateProduct{
+  padding: 1rem 0 1rem 1.5rem;
 }
 
 
@@ -78,7 +82,7 @@
 }
 
 .featureCreateInfoDiv {
-  width: 95%;
+  width: 100%;
 }
 
 .featureCreateIcon {
