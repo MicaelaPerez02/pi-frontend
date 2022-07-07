@@ -26,7 +26,9 @@ function ButtonSidebarSession() {
                             </Link>
                         </li>
                         <li className="nav-text">
-                            <button>Mis favoritos</button>
+                            <Link to="/myFavorites">
+                                <button>Mis favoritos</button>
+                            </Link>
                         </li>
                     </>
             }

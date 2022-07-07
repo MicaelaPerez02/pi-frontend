@@ -70,6 +70,7 @@ function Login() {
     useEffect(() => {
         console.log(count)
         if (count > 0) {
+            setTimeout("", 1000);
             onShowAlert("error");
             return;
         }
