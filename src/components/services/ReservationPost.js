@@ -9,7 +9,7 @@ export default function ReservationPost({
 }) {
     const authToken = localStorage.getItem("user");
 
-    return fetch(`http://localhost:8080/bookings/addBooking`, {
+    return fetch(`http://3.133.114.51:8086/bookings/addBooking`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${authToken}`,

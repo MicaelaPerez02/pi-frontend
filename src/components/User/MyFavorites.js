@@ -10,7 +10,7 @@ function MyFavorites() {
     const authToken = localStorage.getItem("user");
 
     const deleteMethod = async (id2) => {
-        const response = await fetch(`http://localhost:8080/favourites/deleteFavourite/${id2}`, {
+        const response = await fetch(`http://3.133.114.51:8086/favourites/deleteFavourite/${id2}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${authToken}`,
